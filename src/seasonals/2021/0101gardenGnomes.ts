@@ -26,7 +26,7 @@ import { bouncersGroup } from "../../bouncers/_index";
 export const gardenGnomesGroup = new Year2021SeasonalGroup({
   name: "Garden Gnomes",
   starts: "2021-01-01T00:00:00-06:00",
-  ends: "2021-12-31T23:59:00-06:00",
+  ends: "3000-12-31T23:59:00-06:00",
 }).addParent(bouncersGroup);
 
 export const gardenGnome = new Year2021SeasonalPOBType("Garden Gnome", 2775)
