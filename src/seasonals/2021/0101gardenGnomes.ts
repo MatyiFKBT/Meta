@@ -8,7 +8,7 @@ import { calf, cow, milk, bacon, pig, piglet } from "../../evolutions/farm";
 import { bagofCoins, coin, treasureChest } from "../../evolutions/reseller";
 import { treehouse, skyland } from "../../normal/destination";
 import { greenie, premium } from "../../normal/misc";
-import { iceMystery, airMystery } from "../../normal/mystery";
+import { iceMystery, airMystery, fireMystery } from "../../normal/mystery";
 import { crossbow } from "../../normal/weapons";
 import {
   poiDrinkDepot,
@@ -21,12 +21,13 @@ import { onyx, pinkDiamond } from "../../normal/jewels";
 import { flatLou } from "../../normal/flats";
 import { firstWheel, muscleCar, pennyFarthingBike } from "../../evolutions/education";
 import { joystickVirtual, urbanFit } from "../../normal/gaming";
+import { bouncersGroup } from "../../bouncers/_index";
 
 export const gardenGnomesGroup = new Year2021SeasonalGroup({
   name: "Garden Gnomes",
   starts: "2021-01-01T00:00:00-06:00",
   ends: "2021-12-31T23:59:00-06:00",
-});
+}).addParent(bouncersGroup);
 
 export const gardenGnome = new Year2021SeasonalPOBType("Garden Gnome", 2775)
   .addGroup(gardenGnomesGroup)
@@ -194,6 +195,18 @@ export const skiingGardenGnome = new Year2021SeasonalPOBType("Skiing Garden Gnom
     treehouse,
     skyland
   );
+export const stoneGardenGnome = new Year2021SeasonalPOBType("Stone Garden Gnome")
+  .addGroup(gardenGnomesGroup)
+  .addBouncerLandsOn(type => type.hasTags(TypeTags.TypeVirtual), greenie);
+export const newYearsEveGardenGnome = new Year2021SeasonalPOBType("New Years Eve Garden Gnome")
+  .addGroup(gardenGnomesGroup)
+  .addBouncerLandsOn(
+    type => type.hasTags(TypeTags.TypeVirtual),
+    greenie,
+    fireMystery,
+    treehouse,
+    skyland
+  );
 export const gnomeHockeyHelmet = new Year2021SeasonalScatterType("Gnome Hockey Helmet", 2802)
   .addGroup(gardenGnomesGroup)
   .standalone();
@@ -243,5 +256,8 @@ export const gnomeGamingHeadset = new Year2021SeasonalScatterType("Gnome Gaming 
   .addGroup(gardenGnomesGroup)
   .standalone();
 export const gnomeToqueTopper = new Year2021SeasonalScatterType("Gnome Toque Topper")
+  .addGroup(gardenGnomesGroup)
+  .standalone();
+export const gnomeCountdownCap = new Year2021SeasonalScatterType("Gnome Countdown Cap")
   .addGroup(gardenGnomesGroup)
   .standalone();

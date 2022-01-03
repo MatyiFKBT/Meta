@@ -1,7 +1,3 @@
-// import { Group } from "../common/group";
-// import { BouncerType, ScatterType, Type, TypeTags } from "../common/type";
-
-import { homeGroup } from "../../base";
 import { Group } from "../../common/group";
 import { TypeTags } from "../../common/type";
 import {
@@ -15,9 +11,7 @@ import {
 
 export const year2021SeasonalGroup = new Group({
   name: "2021 Seasonal Specials",
-})
-  .addParent(seasonalGroup)
-  .addParent(homeGroup);
+}).addParent(seasonalGroup);
 
 export class Year2021SeasonalBouncerType extends SeasonalBouncerType {
   override template(): this {
