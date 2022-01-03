@@ -39,3 +39,9 @@ export const n2015MunzeeMemoreezFriendz = new Year2021SeasonalScatterType(
   .addGroup(timeCapzuleGroup)
   .standalone()
   .addHidden(TypeHidden.Deploy);
+export const n2016MunzeeMemoreezRootz = new Year2021SeasonalScatterType(
+  "2016 Munzee Memoreez: Rootz"
+)
+  .addGroup(timeCapzuleGroup)
+  .standalone()
+  .addHidden(TypeHidden.Deploy);
