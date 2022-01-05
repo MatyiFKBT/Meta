@@ -30,9 +30,10 @@ export class DestinationRoomType extends Type {
   }
 }
 
-export const destinationGroup = new Group({ name: "Destinations", id: "destination" }).addParent(
-  normalGroup
-);
+export const destinationGroup = new Group({
+  name: "Destinations",
+  human_id: "destination",
+}).addParent(normalGroup);
 
 export const n1StarMotel = new DestinationRoomsType("1 Star Motel", 70)
   .physical()

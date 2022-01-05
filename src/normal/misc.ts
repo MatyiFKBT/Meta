@@ -16,7 +16,7 @@ export class MiscScatterType extends ScatterType {
   }
 }
 
-export const miscGroup = new Group({ name: "Misc", id: "misc" }).addParent(normalGroup);
+export const miscGroup = new Group({ name: "Misc", human_id: "misc" }).addParent(normalGroup);
 
 export const greenie = new MiscType("Greenie")
   .setIcons("munzee", "greenie", "normal", "standard")

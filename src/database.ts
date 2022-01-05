@@ -1,4 +1,4 @@
-import { GroupData, GroupDatabase } from "./common/group";
+import { Group, GroupData, GroupDatabase } from "./common/group";
 import { LegacyData } from "./common/legacy";
 import { TypeData, TypeDatabase } from "./common/type";
 
@@ -21,15 +21,65 @@ export class Database {
     this.groups = new GroupDatabase();
   }
 
+  generateGroupIcon(group: Group): string[] {
+    const types = this.types.types.filter(i => i.groups.includes(group));
+    const groups = this.groups.groups.filter(i => i.parents.includes(group));
+
+    if (types.length && groups.length) {
+      // Types AND Groups
+      if (types.length >= 2) {
+        return [types[0].icons[0], types[types.length - 1].icons[0], groups[0].icons[0]];
+      } else if (types.length === 1 && groups.length >= 2) {
+        return [types[0].icons[0], groups[0].icons[0], groups[1].icons[0]];
+      } else if (groups[0].icons[1]) {
+        return [types[0].icons[0], groups[0].icons[0], groups[0].icons[1]];
+      } else {
+        return [types[0].icons[0], groups[0].icons[0]];
+      }
+    } else if (types.length) {
+      // Types Only
+      if (types.length >= 3) {
+        return [
+          types[0].icons[0],
+          types[Math.floor((types.length - 1) / 2)].icons[0],
+          types[types.length - 1].icons[0],
+        ];
+      } else {
+        return types.map(i => i.icons[0]);
+      }
+    } else if (groups.length) {
+      // Groups Only
+      if (groups.length >= 3) {
+        return [
+          groups[0].icons[0],
+          groups[Math.floor((groups.length - 1) / 2)].icons[0],
+          groups[groups.length - 1].icons[0],
+        ];
+      } else if (groups.length === 2) {
+        if (groups[0].icons.length >= 2) {
+          return [groups[0].icons[0], groups[0].icons[1], groups[1].icons[0]];
+        } else if (groups[1].icons.length >= 2) {
+          return [groups[0].icons[0], groups[1].icons[0], groups[1].icons[1]];
+        } else {
+          return [groups[0].icons[0], groups[1].icons[0]];
+        }
+      } else {
+        return groups[0].icons;
+      }
+    }
+    return [""];
+  }
+
   generateGroupIcons() {
     for (let i = 0; i < 5; i++) {
       for (const group of this.groups.groups) {
-        if (!group.icon) {
-          group.icon =
-            group.icon ??
-            this.types.types.find(i => i.groups.includes(group))?.icons[0] ??
-            this.groups.groups.find(i => i.parents.includes(group))?.icon ??
-            (i === 4 ? "" : undefined);
+        if (!group.icons) {
+          if (this.groups.groups.some(i => i.parents.includes(group) && !i.icons) && i !== 4)
+            continue;
+          const icons = this.generateGroupIcon(group);
+          if (icons.length) {
+            group.icons = icons;
+          }
         }
       }
     }

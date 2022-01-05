@@ -72,6 +72,9 @@ export const poseidon = new ModernMythType("Poseidon", 2524)
 export const poseidonHost = new ModernMythHostType("Poseidon Host")
   .physical()
   .addHostTypeOf(poseidon);
+export const poseidonVirtualHost = new ModernMythHostType("Poseidon Virtual Host")
+  .virtual()
+  .addHostTypeOf(poseidon);
 
 // Aphrodite
 export const glasses = new ModernMythScatterType("Glasses", 2579).standalone();
@@ -86,12 +89,12 @@ export const aphrodite = new ModernMythType("Aphrodite", 2576)
     pinkDiamond
   )
   .scattererScatters(glasses, shellPhone);
+export const aphroditeHost = new ModernMythHostType("Aphrodite Host")
+  .physical()
+  .addHostTypeOf(aphrodite);
 export const aphroditeVirtualHost = new ModernMythHostType("Aphrodite Virtual Host")
   .setIcons("aphrodite_virtual_host", "aphroditevirtualhost")
   .virtual()
-  .addHostTypeOf(aphrodite);
-export const aphroditeHost = new ModernMythHostType("Aphrodite Host")
-  .physical()
   .addHostTypeOf(aphrodite);
 
 // Hades
@@ -118,6 +121,9 @@ export const hades = new ModernMythType("Hades", 2994)
   )
   .scattererScatters(bident, firestarter);
 export const hadesHost = new ModernMythHostType("Hades Host").physical().addHostTypeOf(hades);
+export const hadesVirtualHost = new ModernMythHostType("Hades Virtual Host")
+  .virtual()
+  .addHostTypeOf(hades);
 
 // Zeus
 export const lightningBolt = new ModernMythScatterType("Lightning Bolt").standalone();
@@ -143,3 +149,6 @@ export const zeus = new ModernMythType("Zeus", 3421)
   )
   .scattererScatters(lightningBolt, multimeter);
 export const zeusHost = new ModernMythHostType("Zeus Host").physical().addHostTypeOf(zeus);
+export const zeusVirtualHost = new ModernMythHostType("Zeus Virtual Host")
+  .virtual()
+  .addHostTypeOf(zeus);

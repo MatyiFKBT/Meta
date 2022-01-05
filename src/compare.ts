@@ -47,14 +47,6 @@ export async function compareWithOldDB(database: Database) {
   await fs.rm(outDir, { recursive: true, force: true });
   await fs.ensureDir(outDir);
 
-  await fs.writeFile(
-    join(outDir, "newdb.legacy.json"),
-    JSON.stringify(JSON.parse(fjss(database.toLegacyJSONSorted().types)), null, 2)
-  );
-  await fs.writeFile(
-    join(outDir, "olddb.legacy.json"),
-    JSON.stringify(JSON.parse(fjss(require("../olddb.json").types)), null, 2)
-  );
   const newLegacyCmp = omitCompareTypeDetails(
     JSON.parse(fjss(database.toLegacyJSONSorted().types))
   );

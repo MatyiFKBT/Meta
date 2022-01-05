@@ -10,7 +10,7 @@ export class OtherType extends Type {
   }
 }
 
-export const otherGroup = new Group({ name: "Others", id: "other" });
+export const otherGroup = new Group({ name: "Others", human_id: "other" });
 
 export const zeeCred = new OtherType("ZeeCred");
 export const rover = new OtherType("Rover");

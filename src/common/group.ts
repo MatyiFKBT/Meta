@@ -2,12 +2,14 @@ import { LegacyAccessory, LegacyCategory } from "./legacy";
 
 export interface GroupOptions {
   name: string;
-  id?: string;
+  human_id?: string;
 }
 
 export interface GroupData {
-  id: number | string;
+  id: number;
   name: string;
+  human_id: string;
+  icons: string[];
   seasonal?: GroupSeasonalProperties;
   parents: (number | string)[];
 }
@@ -37,16 +39,17 @@ export class Group {
   static nextId() {
     return this.latestId++;
   }
-  id: number | string = null!;
-  icon: string = null!;
+  id: number = Group.nextId();
+  icons: string[] = null!;
   name: string;
+  human_id: string;
   parents: Group[] = [];
   seasonal?: GroupSeasonalProperties;
   accessories: GroupAccessory[] = [];
 
   constructor(options: GroupOptions) {
     this.name = options.name;
-    this.id = options.id ?? Group.nextId();
+    this.human_id = options.human_id?.toString() ?? options.name.replace(/\s+/g, "_").toLowerCase();
     this.template();
   }
 
@@ -61,6 +64,8 @@ export class Group {
   toJSON(): GroupData {
     return {
       id: this.id,
+      human_id: this.human_id,
+      icons: this.icons,
       name: this.name,
       seasonal: this.seasonal,
       parents: this.parents.map(i => i.id),
@@ -70,8 +75,8 @@ export class Group {
   toLegacyJSON(): LegacyCategory {
     return {
       name: this.name,
-      id: this.id.toString(),
-      icon: this.icon,
+      id: this.human_id,
+      icon: this.icons[0],
       seasonal: this.seasonal
         ? {
             year: this.seasonal.year,
@@ -79,7 +84,7 @@ export class Group {
             end: new Date(this.seasonal.ends).valueOf(),
           }
         : undefined,
-      parents: this.parents.map(i => i.id.toString()),
+      parents: this.parents.map(i => i.human_id),
       accessories:
         this.accessories.length > 0 ? (this.accessories as LegacyAccessory[]) : undefined,
     };

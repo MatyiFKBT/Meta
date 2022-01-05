@@ -108,7 +108,11 @@ async function output(database: Database): Promise<void> {
       .join("\n")
   );
   await fs.writeFile(
-    join(outDir, "newdb.legacy.min.json"),
+    join(outDir, "database.legacy.json"),
+    JSON.stringify(database.toLegacyJSON(), null, 2)
+  );
+  await fs.writeFile(
+    join(outDir, "database.legacy.min.json"),
     JSON.stringify(database.toLegacyJSON())
   );
 

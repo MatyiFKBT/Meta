@@ -594,7 +594,7 @@ export class Type {
       icons: this.data_icons,
       id: this.data_id.toString(),
       state: this.data_state,
-      category: this.groups[this.groups.length - 1].id.toString(),
+      category: this.groups[this.groups.length - 1].human_id.toString(),
       tags: [...this.data_tags],
       hidden: [...this.data_hidden],
       meta:
