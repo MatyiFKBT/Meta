@@ -7,6 +7,7 @@ import {
   SeasonalScatterType,
   SeasonalType,
   seasonalGroup,
+  SeasonalGroupOptions,
 } from "../_index";
 
 export const year2021SeasonalGroup = new Group({
@@ -42,8 +43,11 @@ export class Year2021SeasonalType extends SeasonalType {
 }
 
 export class Year2021SeasonalGroup extends SeasonalGroup {
+  constructor(options: SeasonalGroupOptions) {
+    super({ year: 2021, ...options });
+  }
   override template(): this {
     super.template();
-    return this.seasonalYear(2021).addParent(year2021SeasonalGroup);
+    return this.addParent(year2021SeasonalGroup);
   }
 }

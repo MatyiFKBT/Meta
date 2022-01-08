@@ -30,7 +30,7 @@ export const toyTrike = new Year2021SeasonalBouncerType("Toy Trike")
     i => i.hasTags(TypeTags.TypeVirtual),
     flatLou,
     poiTransportation,
-    i => i.meta.evolution_base === firstWheel.id
+    i => i.meta.evolution?.base === firstWheel.id
   );
 export const bicentennialBicycle = new Year2021SeasonalBouncerType("Bicentennial Bicycle")
   .addGroup(worldBicycleDay2021Group)
@@ -38,7 +38,7 @@ export const bicentennialBicycle = new Year2021SeasonalBouncerType("Bicentennial
     i => i.hasTags(TypeTags.TypeVirtual),
     flatLou,
     poiTransportation,
-    i => i.meta.evolution_base === firstWheel.id
+    i => i.meta.evolution?.base === firstWheel.id
   );
 export const tandemTwins = new Year2021SeasonalBouncerType("Tandem Twins")
   .addGroup(worldBicycleDay2021Group)
@@ -46,7 +46,7 @@ export const tandemTwins = new Year2021SeasonalBouncerType("Tandem Twins")
     i => i.hasTags(TypeTags.TypeVirtual),
     flatLou,
     poiTransportation,
-    i => i.meta.evolution_base === firstWheel.id
+    i => i.meta.evolution?.base === firstWheel.id
   );
 export const startingLine = new Year2021SeasonalScatterType("Starting Line")
   .addGroup(worldBicycleDay2021Group)

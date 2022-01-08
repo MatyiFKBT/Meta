@@ -12,7 +12,9 @@ export class VirtualType extends Type {
   }
 }
 
-export const virtualGroup = new Group({ name: "Virtuals", human_id: "virtual" }).addParent(normalGroup);
+export const virtualGroup = new Group({ name: "Virtuals", human_id: "virtual" }).addParent(
+  normalGroup
+);
 
 export const virtual = new VirtualType("Virtual", 1409);
 export const virtualRainbow = new VirtualType("Virtual Rainbow", 1410);

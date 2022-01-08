@@ -47,25 +47,6 @@ async function generate(): Promise<Database> {
     chalk.blue`${database.types.types.length} type${database.types.types.length === 1 ? "" : "s"}`
   );
   console.info(
-    chalk.greenBright.bold.italic`${database.types.types.length} types done, ${
-      1565 - database.types.types.length
-    } types to go!`
-  );
-  console.info(
-    chalk.greenBright.bold.italic`${
-      database.types.types.filter(i => !i.groups.some(i => i.seasonal)).length
-    } regular types done, ${
-      948 - database.types.types.filter(i => !i.groups.some(i => i.seasonal)).length
-    } regular types to go!`
-  );
-  console.info(
-    chalk.greenBright.bold.italic`${
-      database.types.types.filter(i => i.groups.some(i => i.seasonal)).length
-    } seasonal specials done, ${
-      617 - database.types.types.filter(i => i.groups.some(i => i.seasonal)).length
-    } seasonal specials to go!`
-  );
-  console.info(
     chalk.blue`${database.groups.groups.length} group${
       database.groups.groups.length === 1 ? "" : "s"
     }`
@@ -100,6 +81,16 @@ async function output(database: Database): Promise<void> {
   );
   await fs.writeFile(join(outDir, "database.czm"), database.toCZM());
   await fs.writeFile(join(outDir, "database.compact.czm"), database.toCZM(true));
+  await fs.writeFile(
+    join(outDir, "database.xml"),
+    database.toXML().toString({ prettyPrint: true })
+  );
+  await fs.writeFile(join(outDir, "database.min.xml"), database.toXML().toString());
+  await fs.writeFile(
+    join(outDir, "database.compact.xml"),
+    database.toXML(true).toString({ prettyPrint: true })
+  );
+  await fs.writeFile(join(outDir, "database.compact.min.xml"), database.toXML(true).toString());
   await fs.writeFile(
     join(outDir, "database.types.list.txt"),
     database.types.types

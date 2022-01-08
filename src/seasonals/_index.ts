@@ -34,8 +34,9 @@ export class SeasonalType extends Type {
   }
 }
 
+export type SeasonalGroupOptions = GroupOptions & Partial<GroupSeasonalProperties>;
 export class SeasonalGroup extends Group {
-  constructor(options: GroupOptions & Partial<GroupSeasonalProperties>) {
+  constructor(options: SeasonalGroupOptions) {
     super(options);
     this.seasonal = {
       year: options.year!,

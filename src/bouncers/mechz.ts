@@ -47,7 +47,7 @@ export const arcticLASERShark = new MechType("Arctic L.A.S.E.R. Shark")
 export const geoLoggersRUMBot = new MechType("GeoLoggers RUMBot").addBouncerLandsOn(
   greenie,
   type => type.hasTags(TypeTags.TypeReseller),
-  type => type.meta.evolution_base === coin.id,
+  type => type.meta.evolution?.base === coin.id,
   type => type.hasTags(TypeTags.TypeVirtual),
   skyland,
   treehouse
@@ -55,7 +55,7 @@ export const geoLoggersRUMBot = new MechType("GeoLoggers RUMBot").addBouncerLand
 export const goldnCoinsRUMBot = new MechType("Gold'n Coins RUMBot").addBouncerLandsOn(
   greenie,
   type => type.hasTags(TypeTags.TypeReseller),
-  type => type.meta.evolution_base === coin.id,
+  type => type.meta.evolution?.base === coin.id,
   type => type.hasTags(TypeTags.TypeVirtual),
   skyland,
   treehouse
@@ -63,7 +63,7 @@ export const goldnCoinsRUMBot = new MechType("Gold'n Coins RUMBot").addBouncerLa
 export const nEGSRUMBot = new MechType("NEGS RUMBot").addBouncerLandsOn(
   greenie,
   type => type.hasTags(TypeTags.TypeReseller),
-  type => type.meta.evolution_base === coin.id,
+  type => type.meta.evolution?.base === coin.id,
   type => type.hasTags(TypeTags.TypeVirtual),
   skyland,
   treehouse
@@ -71,7 +71,7 @@ export const nEGSRUMBot = new MechType("NEGS RUMBot").addBouncerLandsOn(
 export const sCGSRUMBot = new MechType("SCGS RUMBot").addBouncerLandsOn(
   greenie,
   type => type.hasTags(TypeTags.TypeReseller),
-  type => type.meta.evolution_base === coin.id,
+  type => type.meta.evolution?.base === coin.id,
   type => type.hasTags(TypeTags.TypeVirtual),
   skyland,
   treehouse

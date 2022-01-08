@@ -1,7 +1,17 @@
+import { Group } from "../../common/group";
 import { TypeTags } from "../../common/type";
-import { SeasonalBouncerType, SeasonalGroup, SeasonalScatterType, SeasonalType } from "../_index";
+import {
+  SeasonalBouncerType,
+  seasonalGroup,
+  SeasonalGroup,
+  SeasonalGroupOptions,
+  SeasonalScatterType,
+  SeasonalType,
+} from "../_index";
 
-// TODO: Pre-2017 categories
+export const year2017SeasonalGroup = new Group({
+  name: "2017 Seasonal Specials",
+}).addParent(seasonalGroup);
 
 export class Year2017SeasonalBouncerType extends SeasonalBouncerType {
   override template(): this {
@@ -25,8 +35,11 @@ export class Year2017SeasonalType extends SeasonalType {
 }
 
 export class Year2017SeasonalGroup extends SeasonalGroup {
+  constructor(options: SeasonalGroupOptions) {
+    super({ year: 2017, ...options });
+  }
   override template(): this {
     super.template();
-    return this.seasonalYear(2017);
+    return this.addParent(year2017SeasonalGroup);
   }
 }

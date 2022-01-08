@@ -41,10 +41,10 @@ export const tuxFlatRob = new FancyFlatType("Tux Flat Rob", 1707)
 
 export const fancyFlatRobHost = new FancyFlatHostType("Fancy Flat Rob Host", 1708)
   .physical()
-  .addHostTypeOf(beachFlatRob, coldFlatRob, tuxFlatRob);
+  .addBouncerHostType(beachFlatRob, coldFlatRob, tuxFlatRob);
 export const fancyFlatRobVirtualHost = new FancyFlatHostType("Fancy Flat Rob Virtual Host", 1709)
   .virtual()
-  .addHostTypeOf(beachFlatRob, coldFlatRob, tuxFlatRob);
+  .addBouncerHostType(beachFlatRob, coldFlatRob, tuxFlatRob);
 
 export const matterUpFlatMatt = new FancyFlatType("Matt'er Up Flat Matt", 1985)
   .addTag(TypeTags.VirtualColourRed)
@@ -64,10 +64,10 @@ export const footyFlatMatt = new FancyFlatType("Footy Flat Matt", 1987)
 
 export const fancyFlatMattHost = new FancyFlatHostType("Fancy Flat Matt Host", 1988)
   .physical()
-  .addHostTypeOf(matterUpFlatMatt, faceOffFlatMatt, footyFlatMatt);
+  .addBouncerHostType(matterUpFlatMatt, faceOffFlatMatt, footyFlatMatt);
 export const fancyFlatMattVirtualHost = new FancyFlatHostType("Fancy Flat Matt Virtual Host", 1989)
   .virtual()
-  .addHostTypeOf(matterUpFlatMatt, faceOffFlatMatt, footyFlatMatt);
+  .addBouncerHostType(matterUpFlatMatt, faceOffFlatMatt, footyFlatMatt);
 
 export const internationEllesFlatLou = new FancyFlatType("InternationElles Flat Lou", 2625)
   .addTag(TypeTags.VirtualColourLouPink)
@@ -87,7 +87,7 @@ export const polkaDotFlatLou = new FancyFlatType("Polka Dot Flat Lou", 2627)
 
 export const fancyFlatLouHost = new FancyFlatHostType("Fancy Flat Lou Host")
   .physical()
-  .addHostTypeOf(internationEllesFlatLou, teamGBFlatLou, polkaDotFlatLou);
+  .addBouncerHostType(internationEllesFlatLou, teamGBFlatLou, polkaDotFlatLou);
 export const fancyFlatLouVirtualHost = new FancyFlatHostType("Fancy Flat Lou Virtual Host")
   .virtual()
-  .addHostTypeOf(internationEllesFlatLou, teamGBFlatLou, polkaDotFlatLou);
+  .addBouncerHostType(internationEllesFlatLou, teamGBFlatLou, polkaDotFlatLou);

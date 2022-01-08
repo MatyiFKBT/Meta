@@ -4,6 +4,7 @@ import {
   SeasonalBouncerType,
   seasonalGroup,
   SeasonalGroup,
+  SeasonalGroupOptions,
   SeasonalScatterType,
   SeasonalType,
 } from "../_index";
@@ -34,8 +35,11 @@ export class Year2019SeasonalType extends SeasonalType {
 }
 
 export class Year2019SeasonalGroup extends SeasonalGroup {
+  constructor(options: SeasonalGroupOptions) {
+    super({ year: 2019, ...options });
+  }
   override template(): this {
     super.template();
-    return this.seasonalYear(2019).addParent(year2019SeasonalGroup);
+    return this.addParent(year2019SeasonalGroup);
   }
 }

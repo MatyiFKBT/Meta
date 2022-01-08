@@ -84,8 +84,8 @@ export const butterfly = new NatureEvolutionBouncerType("Butterfly", 1830)
     cornStalk,
     type =>
       [tulipSeed.id, roseSeed.id, carnationSeed.id, lilySeed.id].includes(
-        type.meta.evolution_base ?? -1
-      ) && (type.meta.evolution_stage || 0) >= 3,
+        type.meta.evolution?.base ?? -1
+      ) && (type.meta.evolution?.stage || 0) >= 3,
     type => type.hasTags(TypeTags.TypeSeasonal),
     trailMunzee,
     greenie,
@@ -109,8 +109,8 @@ export const morphoButterfly = new NatureEvolutionBouncerType("Morpho Butterfly"
     cornStalk,
     type =>
       [tulipSeed.id, roseSeed.id, carnationSeed.id, lilySeed.id].includes(
-        type.meta.evolution_base ?? -1
-      ) && (type.meta.evolution_stage || 0) >= 3,
+        type.meta.evolution?.base ?? -1
+      ) && (type.meta.evolution?.stage || 0) >= 3,
     type => type.hasTags(TypeTags.TypeSeasonal),
     trailMunzee,
     greenie,
@@ -134,8 +134,8 @@ export const monarchButterfly = new NatureEvolutionBouncerType("Monarch Butterfl
     cornStalk,
     type =>
       [tulipSeed.id, roseSeed.id, carnationSeed.id, lilySeed.id].includes(
-        type.meta.evolution_base ?? -1
-      ) && (type.meta.evolution_stage || 0) >= 3,
+        type.meta.evolution?.base ?? -1
+      ) && (type.meta.evolution?.stage || 0) >= 3,
     type => type.hasTags(TypeTags.TypeSeasonal),
     trailMunzee,
     greenie,
@@ -159,8 +159,8 @@ export const limeButterfly = new NatureEvolutionBouncerType("Lime Butterfly", 18
     cornStalk,
     type =>
       [tulipSeed.id, roseSeed.id, carnationSeed.id, lilySeed.id].includes(
-        type.meta.evolution_base ?? -1
-      ) && (type.meta.evolution_stage || 0) >= 3,
+        type.meta.evolution?.base ?? -1
+      ) && (type.meta.evolution?.stage || 0) >= 3,
     type => type.hasTags(TypeTags.TypeSeasonal),
     trailMunzee,
     greenie,
@@ -170,10 +170,10 @@ export const limeButterfly = new NatureEvolutionBouncerType("Lime Butterfly", 18
   .setEvolutionBase(butterflyEgg);
 export const butterflyHost = new TPOBHostType("Butterfly Host", 1843)
   .physical()
-  .addHostTypeOf(butterfly, morphoButterfly, monarchButterfly, limeButterfly);
+  .addBouncerHostType(butterfly, morphoButterfly, monarchButterfly, limeButterfly);
 export const butterflyVirtualHost = new TPOBHostType("Butterfly Virtual Host", 1844)
   .virtual()
-  .addHostTypeOf(butterfly, morphoButterfly, monarchButterfly, limeButterfly);
+  .addBouncerHostType(butterfly, morphoButterfly, monarchButterfly, limeButterfly);
 
 // Frog
 export const frogEgg = new NatureEvolutionType("Frog Egg", 2106).physical().setEvolutionStage(1);
@@ -195,8 +195,8 @@ export const frog = new NatureEvolutionBouncerType("Frog", 2067)
   .addBouncerLandsOn(
     muscleCar,
     type =>
-      [seaweed.id, canoe.id, safariTruck.id].includes(type.meta.evolution_base ?? -1) &&
-      (type.meta.evolution_stage || 0) >= 3,
+      [seaweed.id, canoe.id, safariTruck.id].includes(type.meta.evolution?.base ?? -1) &&
+      (type.meta.evolution?.stage || 0) >= 3,
     earthMystery,
     waterMystery,
     trailMunzee,
@@ -210,8 +210,8 @@ export const treeFrog = new NatureEvolutionBouncerType("Tree Frog", 2110)
     skyland,
     muscleCar,
     type =>
-      [seaweed.id, canoe.id, safariTruck.id].includes(type.meta.evolution_base ?? -1) &&
-      (type.meta.evolution_stage || 0) >= 3,
+      [seaweed.id, canoe.id, safariTruck.id].includes(type.meta.evolution?.base ?? -1) &&
+      (type.meta.evolution?.stage || 0) >= 3,
     earthMystery,
     waterMystery,
     trailMunzee,
@@ -225,8 +225,8 @@ export const poisonDartFrog = new NatureEvolutionBouncerType("Poison Dart Frog",
     skyland,
     muscleCar,
     type =>
-      [seaweed.id, canoe.id, safariTruck.id].includes(type.meta.evolution_base ?? -1) &&
-      (type.meta.evolution_stage || 0) >= 3,
+      [seaweed.id, canoe.id, safariTruck.id].includes(type.meta.evolution?.base ?? -1) &&
+      (type.meta.evolution?.stage || 0) >= 3,
     earthMystery,
     waterMystery,
     trailMunzee,
@@ -240,8 +240,8 @@ export const tomatoFrog = new NatureEvolutionBouncerType("Tomato Frog", 2112)
     skyland,
     muscleCar,
     type =>
-      [seaweed.id, canoe.id, safariTruck.id].includes(type.meta.evolution_base ?? -1) &&
-      (type.meta.evolution_stage || 0) >= 3,
+      [seaweed.id, canoe.id, safariTruck.id].includes(type.meta.evolution?.base ?? -1) &&
+      (type.meta.evolution?.stage || 0) >= 3,
     earthMystery,
     waterMystery,
     trailMunzee,
@@ -252,10 +252,10 @@ export const tomatoFrog = new NatureEvolutionBouncerType("Tomato Frog", 2112)
   .setEvolutionBase(frogEgg);
 export const frogHost = new TPOBHostType("Frog Host", 2113)
   .physical()
-  .addHostTypeOf(frog, treeFrog, poisonDartFrog, tomatoFrog);
+  .addBouncerHostType(frog, treeFrog, poisonDartFrog, tomatoFrog);
 export const frogVirtualHost = new TPOBHostType("Frog Virtual Host", 2114)
   .virtual()
-  .addHostTypeOf(frog, treeFrog, poisonDartFrog, tomatoFrog);
+  .addBouncerHostType(frog, treeFrog, poisonDartFrog, tomatoFrog);
 
 // Jellyfish
 export const planulaLarva = new NatureEvolutionType("Planula Larva", 2461)
@@ -280,7 +280,7 @@ export const jellyfish = new NatureEvolutionBouncerType("Jellyfish")
   .addBouncerLandsOn(
     treehouse,
     skyland,
-    type => [seaweed.id, canoe.id, safariTruck.id].includes(type.meta.evolution_base ?? -1),
+    type => [seaweed.id, canoe.id, safariTruck.id].includes(type.meta.evolution?.base ?? -1),
     earthMystery,
     waterMystery,
     greenie,
@@ -292,7 +292,7 @@ export const boxJellyfish = new NatureEvolutionBouncerType("Box Jellyfish", 2466
   .addBouncerLandsOn(
     treehouse,
     skyland,
-    type => [seaweed.id, canoe.id, safariTruck.id].includes(type.meta.evolution_base ?? -1),
+    type => [seaweed.id, canoe.id, safariTruck.id].includes(type.meta.evolution?.base ?? -1),
     earthMystery,
     waterMystery,
     greenie,
@@ -304,7 +304,7 @@ export const goldenJellyfish = new NatureEvolutionBouncerType("Golden Jellyfish"
   .addBouncerLandsOn(
     treehouse,
     skyland,
-    type => [seaweed.id, canoe.id, safariTruck.id].includes(type.meta.evolution_base ?? -1),
+    type => [seaweed.id, canoe.id, safariTruck.id].includes(type.meta.evolution?.base ?? -1),
     earthMystery,
     waterMystery,
     greenie,
@@ -316,7 +316,7 @@ export const pBJellyfish = new NatureEvolutionBouncerType("PB & Jellyfish", 2468
   .addBouncerLandsOn(
     treehouse,
     skyland,
-    type => [seaweed.id, canoe.id, safariTruck.id].includes(type.meta.evolution_base ?? -1),
+    type => [seaweed.id, canoe.id, safariTruck.id].includes(type.meta.evolution?.base ?? -1),
     earthMystery,
     waterMystery,
     greenie,
@@ -326,10 +326,10 @@ export const pBJellyfish = new NatureEvolutionBouncerType("PB & Jellyfish", 2468
   .setEvolutionBase(planulaLarva);
 export const jellyfishHost = new TPOBHostType("Jellyfish Host")
   .physical()
-  .addHostTypeOf(jellyfish, boxJellyfish, goldenJellyfish, pBJellyfish);
+  .addBouncerHostType(jellyfish, boxJellyfish, goldenJellyfish, pBJellyfish);
 export const jellyfishVirtualHost = new TPOBHostType("Jellyfish Virtual Host")
   .virtual()
-  .addHostTypeOf(jellyfish, boxJellyfish, goldenJellyfish, pBJellyfish);
+  .addBouncerHostType(jellyfish, boxJellyfish, goldenJellyfish, pBJellyfish);
 
 // Turtle
 
@@ -354,7 +354,7 @@ export const turtle = new NatureEvolutionBouncerType("Turtle")
   .addBouncerLandsOn(
     treehouse,
     skyland,
-    type => [seaweed.id, canoe.id, safariTruck.id].includes(type.meta.evolution_base ?? -1),
+    type => [seaweed.id, canoe.id, safariTruck.id].includes(type.meta.evolution?.base ?? -1),
     earthMystery,
     waterMystery,
     greenie,
@@ -366,7 +366,7 @@ export const seaTurtle = new NatureEvolutionBouncerType("Sea Turtle", 2476)
   .addBouncerLandsOn(
     treehouse,
     skyland,
-    type => [seaweed.id, canoe.id, safariTruck.id].includes(type.meta.evolution_base ?? -1),
+    type => [seaweed.id, canoe.id, safariTruck.id].includes(type.meta.evolution?.base ?? -1),
     earthMystery,
     waterMystery,
     greenie,
@@ -378,7 +378,7 @@ export const snappingTurtle = new NatureEvolutionBouncerType("Snapping Turtle", 
   .addBouncerLandsOn(
     treehouse,
     skyland,
-    type => [seaweed.id, canoe.id, safariTruck.id].includes(type.meta.evolution_base ?? -1),
+    type => [seaweed.id, canoe.id, safariTruck.id].includes(type.meta.evolution?.base ?? -1),
     earthMystery,
     waterMystery,
     greenie,
@@ -390,7 +390,7 @@ export const taekwondoTortoise = new NatureEvolutionBouncerType("Taekwondo Torto
   .addBouncerLandsOn(
     treehouse,
     skyland,
-    type => [seaweed.id, canoe.id, safariTruck.id].includes(type.meta.evolution_base ?? -1),
+    type => [seaweed.id, canoe.id, safariTruck.id].includes(type.meta.evolution?.base ?? -1),
     earthMystery,
     waterMystery,
     greenie,
@@ -400,10 +400,10 @@ export const taekwondoTortoise = new NatureEvolutionBouncerType("Taekwondo Torto
   .setEvolutionBase(turtleEgg);
 export const turtleHost = new TPOBHostType("Turtle Host")
   .physical()
-  .addHostTypeOf(turtle, seaTurtle, snappingTurtle, taekwondoTortoise);
+  .addBouncerHostType(turtle, seaTurtle, snappingTurtle, taekwondoTortoise);
 export const turtleVirtualHost = new TPOBHostType("Turtle Virtual Host")
   .virtual()
-  .addHostTypeOf(turtle, seaTurtle, snappingTurtle, taekwondoTortoise);
+  .addBouncerHostType(turtle, seaTurtle, snappingTurtle, taekwondoTortoise);
 
 // Bee
 export const beeEggs = new NatureEvolutionType("Bee Eggs").physical().setEvolutionStage(1);
@@ -427,7 +427,7 @@ export const bee = new NatureEvolutionBouncerType("Bee")
     skyland,
     type =>
       [tulipSeed.id, roseSeed.id, lilySeed.id, carnationSeed.id].includes(
-        type.meta.evolution_base ?? -1
+        type.meta.evolution?.base ?? -1
       ),
     earthMystery,
     greenie,
@@ -441,7 +441,7 @@ export const honeyBee = new NatureEvolutionBouncerType("Honey Bee")
     skyland,
     type =>
       [tulipSeed.id, roseSeed.id, lilySeed.id, carnationSeed.id].includes(
-        type.meta.evolution_base ?? -1
+        type.meta.evolution?.base ?? -1
       ),
     earthMystery,
     greenie,
@@ -455,7 +455,7 @@ export const queenBee = new NatureEvolutionBouncerType("Queen Bee")
     skyland,
     type =>
       [tulipSeed.id, roseSeed.id, lilySeed.id, carnationSeed.id].includes(
-        type.meta.evolution_base ?? -1
+        type.meta.evolution?.base ?? -1
       ),
     earthMystery,
     greenie,
@@ -469,7 +469,7 @@ export const wallaBee = new NatureEvolutionBouncerType("WallaBee", 2883)
     skyland,
     type =>
       [tulipSeed.id, roseSeed.id, lilySeed.id, carnationSeed.id].includes(
-        type.meta.evolution_base ?? -1
+        type.meta.evolution?.base ?? -1
       ),
     earthMystery,
     greenie,
@@ -479,4 +479,4 @@ export const wallaBee = new NatureEvolutionBouncerType("WallaBee", 2883)
   .setEvolutionBase(beeEggs);
 export const beeVirtualHost = new TPOBHostType("Bee Virtual Host")
   .virtual()
-  .addHostTypeOf(bee, honeyBee, queenBee, wallaBee);
+  .addBouncerHostType(bee, honeyBee, queenBee, wallaBee);

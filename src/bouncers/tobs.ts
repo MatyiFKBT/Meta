@@ -101,7 +101,7 @@ export const hadavale = new TOBType("Hadavale", 1745)
     shamrock,
     mystery,
     type => type.hasTags(TypeTags.TypeReseller),
-    type => type.meta.evolution_stage === 1,
+    type => type.meta.evolution?.stage === 1,
     airMystery
   );
 export const gorgon = new TOBType("Gorgon", 1929)

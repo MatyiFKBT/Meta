@@ -1,4 +1,5 @@
-import { Group, GroupAccessoryType } from "../common/group";
+import { Group } from "../common/group";
+import { LegacyAccessoryType } from "../common/legacy";
 import { Type, TypeHidden, TypeTags } from "../common/type";
 
 export class CreditType extends Type {
@@ -19,23 +20,23 @@ export class RedeemableType extends CreditType {
 }
 
 export const creditGroup = new Group({ name: "Credits" });
-export const redeemableGroup = new Group({ name: "Redeemables" }).addAccessories([
+export const redeemableGroup = new Group({ name: "Redeemables" }).addLegacyAccessories([
   {
-    type: GroupAccessoryType.Button,
+    type: LegacyAccessoryType.Button,
     link: "~https://munzee.page.link/store",
     label: "ZEDS Store",
     translation_key: "zeds_store",
     color: "primary",
   },
   {
-    type: GroupAccessoryType.Button,
+    type: LegacyAccessoryType.Button,
     link: "https://www.munzee.com/redeem",
     label: "Redeem Page",
     translation_key: "redeem_store",
     color: "primary",
   },
   {
-    type: GroupAccessoryType.Button,
+    type: LegacyAccessoryType.Button,
     link: "https://store.freezetag.com/",
     label: "FT Store",
     translation_key: "ft_store",

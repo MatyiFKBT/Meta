@@ -37,7 +37,7 @@ export const trojanUnicorn = new TPOBType("Trojan Unicorn", 2502)
 
 export const tempBouncerVirtualHost = new TPOBHostType("Temp Bouncer Virtual Host")
   .virtual()
-  .addHostTypeOf(spyderbot);
+  .addBouncerHostType(spyderbot);
 export const tempBouncerHost = new TPOBHostType("Temp Bouncer Host")
   .physical()
-  .addHostTypeOf(squashedSpyderbot);
+  .addBouncerHostType(squashedSpyderbot);

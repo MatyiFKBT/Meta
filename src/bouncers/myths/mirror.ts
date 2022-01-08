@@ -61,10 +61,10 @@ export const melusineMermaid = new MirrorMythType("Melusine Mermaid", 1649)
 export const merryMermaid = new MirrorMythType("Merry Mermaid").addTag(TypeTags.BouncerMythVariant);
 export const mermaidHost = new MirrorMythHostType("Mermaid Host", 1379)
   .physical()
-  .addHostTypeOf(mermaid, hotSpringMermaid, melusineMermaid, merryMermaid);
+  .addBouncerHostType(mermaid, hotSpringMermaid, melusineMermaid, merryMermaid);
 export const mermaidVirtualHost = new MirrorMythHostType("Mermaid Virtual Host", 1650)
   .virtual()
-  .addHostTypeOf(mermaid, hotSpringMermaid, melusineMermaid, merryMermaid);
+  .addBouncerHostType(mermaid, hotSpringMermaid, melusineMermaid, merryMermaid);
 
 // Fairy
 export const fairy = new MirrorMythType("Fairy", 1544).addBouncerLandsOn(
@@ -85,10 +85,10 @@ export const sugarPlumFairy = new MirrorMythType("Sugar Plum Fairy")
   .addBouncerLandsOn(skyland, treehouse, greenie, airMystery, iceMystery, amethyst);
 export const fairyHost = new MirrorMythHostType("Fairy Host", 1545)
   .physical()
-  .addHostTypeOf(fairy, dryadFairy, wildfireFairy, sugarPlumFairy);
+  .addBouncerHostType(fairy, dryadFairy, wildfireFairy, sugarPlumFairy);
 export const fairyVirtualHost = new MirrorMythHostType("Fairy Virtual Host", 1546)
   .virtual()
-  .addHostTypeOf(fairy, dryadFairy, wildfireFairy, sugarPlumFairy);
+  .addBouncerHostType(fairy, dryadFairy, wildfireFairy, sugarPlumFairy);
 
 // Banshee
 export const banshee = new MirrorMythType("Banshee", 1827).addBouncerLandsOn(
@@ -120,7 +120,7 @@ export const witchBanshee = new MirrorMythType("Witch Banshee", 2255)
       roseSeed.id,
       lilySeed.id,
       carnationSeed.id,
-    ].includes(type.meta.evolution_base ?? -1)
+    ].includes(type.meta.evolution?.base ?? -1)
   );
 export const ghostOfChristmasFuture = new MirrorMythType("Ghost of Christmas Future")
   .addTag(TypeTags.BouncerMythVariant)
@@ -137,10 +137,10 @@ export const ghostOfChristmasFuture = new MirrorMythType("Ghost of Christmas Fut
   );
 export const bansheeHost = new MirrorMythHostType("Banshee Host", 1828)
   .physical()
-  .addHostTypeOf(banshee, harpyBanshee, witchBanshee, ghostOfChristmasFuture);
+  .addBouncerHostType(banshee, harpyBanshee, witchBanshee, ghostOfChristmasFuture);
 export const bansheeVirtualHost = new MirrorMythHostType("Banshee Virtual Host", 1829)
   .virtual()
-  .addHostTypeOf(banshee, harpyBanshee, witchBanshee, ghostOfChristmasFuture);
+  .addBouncerHostType(banshee, harpyBanshee, witchBanshee, ghostOfChristmasFuture);
 
 // Nymph
 export const nymph = new MirrorMythType("Nymph", 2118).addBouncerLandsOn(
@@ -163,7 +163,7 @@ export const vampireNymph = new MirrorMythType("Vampire Nymph", 2479)
     type => type.hasTags(TypeTags.VirtualColourRed),
     type => type.hasTags(TypeTags.VirtualColourGreen),
     tomato,
-    type => type.meta.evolution_base === farmer.id
+    type => type.meta.evolution?.base === farmer.id
   );
 export const elfNymph = new MirrorMythType("Elf Nymph", 2480)
   .addTag(TypeTags.BouncerMythVariant)
@@ -178,7 +178,7 @@ export const elfNymph = new MirrorMythType("Elf Nymph", 2480)
 export const snowQueen = new MirrorMythType("Snow Queen").addTag(TypeTags.BouncerMythVariant);
 export const nymphHost = new MirrorMythHostType("Nymph Host", 2119)
   .physical()
-  .addHostTypeOf(nymph, vampireNymph, elfNymph, snowQueen);
+  .addBouncerHostType(nymph, vampireNymph, elfNymph, snowQueen);
 export const nymphVirtualHost = new MirrorMythHostType("Nymph Virtual Host", 2120)
   .virtual()
-  .addHostTypeOf(nymph, vampireNymph, elfNymph, snowQueen);
+  .addBouncerHostType(nymph, vampireNymph, elfNymph, snowQueen);

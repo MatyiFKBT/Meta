@@ -80,7 +80,7 @@ export const tuliferno = new S1PouchCreatureType("Tuliferno", 1242)
 export const tuliSet = new EvolutionTypeSet().add(tuli).add(tulimber).add(tuliferno);
 export const firePouchCreatureHost = new PouchCreatureHostType("Fire Pouch Creature Host")
   .physical()
-  .addHostTypeOf(tuliSet);
+  .addBouncerHostType(tuliSet);
 
 export const vesi = new S1PouchCreatureType("Vesi", 1370)
   .addBouncerLandsOn(treehouse, greenie, waterMystery)
@@ -94,7 +94,7 @@ export const vesisaur = new S1PouchCreatureType("Vesisaur", 1372)
 export const vesiSet = new EvolutionTypeSet().add(vesi).add(vesial).add(vesisaur);
 export const waterPouchCreatureHost = new PouchCreatureHostType("Water Pouch Creature Host", 1373)
   .physical()
-  .addHostTypeOf(vesiSet);
+  .addBouncerHostType(vesiSet);
 
 export const muru = new S1PouchCreatureType("Muru", 1638)
   .addBouncerLandsOn(treehouse, greenie, earthMystery)
@@ -108,7 +108,7 @@ export const murutain = new S1PouchCreatureType("Murutain", 1640)
 export const muruSet = new EvolutionTypeSet().add(muru).add(muruchi).add(murutain);
 export const earthPouchCreatureHost = new PouchCreatureHostType("Earth Pouch Creature Host", 1641)
   .physical()
-  .addHostTypeOf(muruSet);
+  .addBouncerHostType(muruSet);
 
 export const mitmegu = new S1PouchCreatureType("Mitmegu", 1752)
   .addBouncerLandsOn(
@@ -154,12 +154,12 @@ export const mitmeguPouchCreatureHost = new PouchCreatureHostType(
   1756
 )
   .physical()
-  .addHostTypeOf(mitmeguSet);
+  .addBouncerHostType(mitmeguSet);
 export const mitmeguPouchCreatureVirtualHost = new PouchCreatureHostType(
   "Mitmegu Pouch Creature Virtual Host"
 )
   .virtual()
-  .addHostTypeOf(mitmeguSet);
+  .addBouncerHostType(mitmeguSet);
 
 export const gleamingMuru = new S1PouchCreatureType("Gleaming Muru", 1850)
   .addTag(TypeTags.BouncerPCGleaming)
@@ -238,10 +238,10 @@ export const pimedus = new S1PouchCreatureType("Pimedus", 1919)
   .addTag(TypeTags.BouncerPCStageless);
 export const pimedusHost = new PouchCreatureHostType("Pimedus Host", 1920)
   .physical()
-  .addHostTypeOf(pimedus);
+  .addBouncerHostType(pimedus);
 export const pimedusVirtualHost = new PouchCreatureHostType("Pimedus Virtual Host", 1921)
   .virtual()
-  .addHostTypeOf(pimedus);
+  .addBouncerHostType(pimedus);
 
 export const puffle = new S2PouchCreatureType("Puffle", 2240)
   .addBouncerLandsOn(skyland, type => type.hasTags(TypeTags.TypeVirtual), airMystery)
@@ -255,7 +255,7 @@ export const puflawn = new S2PouchCreatureType("Puflawn", 2242)
 export const puffleSet = new EvolutionTypeSet().add(puffle).add(pufrain).add(puflawn);
 export const airPouchCreatureHost = new PouchCreatureHostType("Air Pouch Creature Host", 2243)
   .virtual()
-  .addHostTypeOf(puffleSet);
+  .addBouncerHostType(puffleSet);
 
 export const magnetus = new S2PouchCreatureType("Magnetus", 2306)
   .addBouncerLandsOn(
@@ -275,10 +275,10 @@ export const magnetus = new S2PouchCreatureType("Magnetus", 2306)
   .addTag(TypeTags.BouncerPCStageless);
 export const magnetusVirtualHost = new PouchCreatureHostType("Magnetus Virtual Host")
   .virtual()
-  .addHostTypeOf(magnetus);
+  .addBouncerHostType(magnetus);
 export const magnetusHost = new PouchCreatureHostType("Magnetus Host")
   .physical()
-  .addHostTypeOf(magnetus);
+  .addBouncerHostType(magnetus);
 
 export const elekter = new S2PouchCreatureType("Elekter", 2407)
   .addBouncerLandsOn(skyland, type => type.hasTags(TypeTags.TypeVirtual), electricMystery)
@@ -292,7 +292,7 @@ export const elektrivool = new S2PouchCreatureType("Elektrivool", 2409)
 export const elekterSet = new EvolutionTypeSet().add(elekter).add(elekjoud).add(elektrivool);
 export const electricPouchCreatureHost = new PouchCreatureHostType("Electric Pouch Creature Host")
   .virtual()
-  .addHostTypeOf(elekterSet);
+  .addBouncerHostType(elekterSet);
 
 export const topaas = new FunfinityPouchCreatureType("Topaas", 2366)
   .addBouncerLandsOn(treehouse, greenie, earthMystery, topaz, treehouse)
@@ -355,10 +355,10 @@ export const funfinitySet = new TypeSet()
   .add(tsitriin);
 export const funfinityHost = new PouchCreatureHostType("Funfinity Host")
   .physical()
-  .addHostTypeOf(funfinitySet);
+  .addBouncerHostType(funfinitySet);
 export const funfinityVirtualHost = new PouchCreatureHostType("Funfinity Virtual Host")
   .virtual()
-  .addHostTypeOf(funfinitySet);
+  .addBouncerHostType(funfinitySet);
 
 export const koobas = new S2PouchCreatureType("Koobas", 3363).setEvolutionStage(
   1
@@ -372,4 +372,4 @@ export const kabuhirm = new S2PouchCreatureType("Kabuhirm").setEvolutionStage(
 export const koobasSet = new EvolutionTypeSet().add(koobas).add(kartus).add(kabuhirm);
 export const voidPouchCreatureHost = new PouchCreatureHostType("Void Pouch Creature Host")
   .virtual()
-  .addHostTypeOf(koobasSet);
+  .addBouncerHostType(koobasSet);

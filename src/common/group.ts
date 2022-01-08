@@ -1,8 +1,10 @@
+import { XMLBuilder } from "xmlbuilder2/lib/interfaces";
 import { LegacyAccessory, LegacyCategory } from "./legacy";
 
 export interface GroupOptions {
   name: string;
   human_id?: string;
+  icons?: string[];
 }
 
 export interface GroupData {
@@ -20,20 +22,6 @@ export interface GroupSeasonalProperties {
   ends: string;
 }
 
-export enum GroupAccessoryType {
-  Button = 1,
-}
-
-export interface GroupButton {
-  type: GroupAccessoryType.Button;
-  label: string;
-  translation_key?: string;
-  link: string;
-  color: string;
-}
-
-export type GroupAccessory = GroupButton;
-
 export class Group {
   static latestId = 0;
   static nextId() {
@@ -45,11 +33,12 @@ export class Group {
   human_id: string;
   parents: Group[] = [];
   seasonal?: GroupSeasonalProperties;
-  accessories: GroupAccessory[] = [];
+  legacyAccessories: LegacyAccessory[] = [];
 
   constructor(options: GroupOptions) {
     this.name = options.name;
     this.human_id = options.human_id?.toString() ?? options.name.replace(/\s+/g, "_").toLowerCase();
+    if (options.icons) this.icons = options.icons;
     this.template();
   }
 
@@ -60,6 +49,26 @@ export class Group {
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   template(): void {}
+
+  toCZM(compact?: boolean): string {
+    const data = [`d${this.id.toString(36)}`, `n${this.name}`];
+
+    data.push(`o${this.icons.join(".")}`);
+
+    if (!compact || this.human_id !== this.name.toLowerCase().replace(/\s/g, "_"))
+      data.push(`i${this.human_id}`);
+
+    if (this.seasonal) {
+      data.push(`sy${this.seasonal.year.toString(36)}`);
+      data.push(`ss${new Date(this.seasonal.starts).valueOf().toString(36)}`);
+      data.push(`se${new Date(this.seasonal.starts).valueOf().toString(36)}`);
+    }
+
+    if (this.parents.length > 0)
+      data.push(`p${this.parents.map(i => i.id.toString(36)).join(".")}`);
+
+    return data.join("|");
+  }
 
   toJSON(): GroupData {
     return {
@@ -85,13 +94,31 @@ export class Group {
           }
         : undefined,
       parents: this.parents.map(i => i.human_id),
-      accessories:
-        this.accessories.length > 0 ? (this.accessories as LegacyAccessory[]) : undefined,
+      accessories: this.legacyAccessories.length > 0 ? this.legacyAccessories : undefined,
     };
   }
 
-  addAccessories(accessories: (GroupAccessory | GroupAccessory[])[]): this {
-    this.accessories.push(...accessories.flat());
+  addToXML(xml: XMLBuilder): void {
+    const group = xml.ele("group", { att: "val" });
+    group.att("id", this.id.toString());
+    group.att("human_id", this.human_id);
+    group.ele("name").txt(this.name);
+    for (const icon of this.icons) {
+      group.ele("icon").txt(icon);
+    }
+    if (this.seasonal) {
+      const seasonal = group.ele("seasonal");
+      seasonal.ele("year").txt(this.seasonal.year?.toString());
+      seasonal.ele("start").txt(this.seasonal.starts);
+      seasonal.ele("end").txt(this.seasonal.ends);
+    }
+    for (const parent of this.parents) {
+      group.ele("parent").txt(parent.id.toString());
+    }
+  }
+
+  addLegacyAccessories(accessories: (LegacyAccessory | LegacyAccessory[])[]): this {
+    this.legacyAccessories.push(...accessories.flat());
     return this;
   }
 }

@@ -26,7 +26,7 @@ export const fridaKahlo = new Year2021SeasonalBouncerType("Frida Kahlo")
     greenie,
     type =>
       type.hasTags(TypeTags.EvolutionNature) &&
-      [roseSeed.id, tulipSeed.id, lilySeed.id].includes(type.meta.evolution_base ?? 0)
+      [roseSeed.id, tulipSeed.id, lilySeed.id].includes(type.meta.evolution?.base ?? 0)
   );
 export const hedyLamarr = new Year2021SeasonalBouncerType("Hedy Lamarr")
   .addGroup(womensHistoryMonthGroup)
@@ -42,7 +42,7 @@ export const janeGoodall = new Year2021SeasonalBouncerType("Jane Goodall")
   .addBouncerLandsOn(
     type => type.hasTags(TypeTags.TypeVirtual),
     poiWildlife,
-    type => type.meta.evolution_base === safariTruck.id
+    type => type.meta.evolution?.base === safariTruck.id
   );
 export const margaretHamilton = new Year2021SeasonalBouncerType("Margaret Hamilton")
   .addGroup(womensHistoryMonthGroup)

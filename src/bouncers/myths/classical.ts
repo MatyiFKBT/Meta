@@ -57,14 +57,14 @@ export const krampusFaun = new ClassicalMythType("Krampus Faun", 1998)
     greenie,
     earthMystery,
     iceMystery,
-    type => type.meta.evolution_base === farmer.id
+    type => type.meta.evolution?.base === farmer.id
   );
 export const faunHost = new ClassicalMythHostType("Faun Host", 854)
   .physical()
-  .addHostTypeOf(faun, centaurFaun, krampusFaun);
+  .addBouncerHostType(faun, centaurFaun, krampusFaun);
 export const faunVirtualHost = new ClassicalMythHostType("Faun Virtual Host", 2000)
   .virtual()
-  .addHostTypeOf(faun, centaurFaun, krampusFaun);
+  .addBouncerHostType(faun, centaurFaun, krampusFaun);
 
 // Hydra
 export const hydra = new ClassicalMythType("Hydra", 953).addBouncerLandsOn(
@@ -80,10 +80,10 @@ export const cthulhuHydra = new ClassicalMythType("Cthulhu Hydra", 2253)
   .addBouncerLandsOn(skyland, treehouse, greenie, waterMystery, airMystery, voidMystery);
 export const hydraHost = new ClassicalMythHostType("Hydra Host", 954)
   .physical()
-  .addHostTypeOf(hydra, cerberusHydra, cthulhuHydra);
+  .addBouncerHostType(hydra, cerberusHydra, cthulhuHydra);
 export const hydraVirtualHost = new ClassicalMythHostType("Hydra Virtual Host")
   .virtual()
-  .addHostTypeOf(hydra, cerberusHydra, cthulhuHydra);
+  .addBouncerHostType(hydra, cerberusHydra, cthulhuHydra);
 
 // Pegasus
 export const pegasus = new ClassicalMythType("Pegasus", 1100).addBouncerLandsOn(
@@ -101,7 +101,7 @@ export const griffinPegasus = new ClassicalMythType("Griffin Pegasus", 1995)
     greenie,
     type => type.hasTags(TypeTags.TypeJewel),
     airMystery,
-    type => type.meta.evolution_base === lionCub.id
+    type => type.meta.evolution?.base === lionCub.id
   );
 export const alicornPegasus = new ClassicalMythType("Alicorn Pegasus", 1996)
   .addTag(TypeTags.BouncerMythVariant)
@@ -117,10 +117,10 @@ export const nightmarePegasus = new ClassicalMythType("Nightmare Pegasus").addTa
 );
 export const pegasusHost = new ClassicalMythHostType("Pegasus Host", 1101)
   .virtual()
-  .addHostTypeOf(pegasus, griffinPegasus, alicornPegasus, nightmarePegasus);
+  .addBouncerHostType(pegasus, griffinPegasus, alicornPegasus, nightmarePegasus);
 export const pegasusPhysicalHost = new ClassicalMythHostType("Pegasus Physical Host", 1999)
   .physical()
-  .addHostTypeOf(pegasus, griffinPegasus, alicornPegasus, nightmarePegasus);
+  .addBouncerHostType(pegasus, griffinPegasus, alicornPegasus, nightmarePegasus);
 
 // Cyclops
 export const cyclops = new ClassicalMythType("Cyclops", 1168).addBouncerLandsOn(
@@ -142,7 +142,7 @@ export const balorCyclops = new ClassicalMythType("Balor Cyclops", 2478)
   .addBouncerLandsOn(treehouse, greenie, shamrock, electricMystery);
 export const cyclopsHost = new ClassicalMythHostType("Cyclops Host", 1169)
   .physical()
-  .addHostTypeOf(cyclops, minotaurCyclops, balorCyclops);
+  .addBouncerHostType(cyclops, minotaurCyclops, balorCyclops);
 export const cyclopsVirtualHost = new ClassicalMythHostType("Cyclops Virtual Host", 1170)
   .virtual()
-  .addHostTypeOf(cyclops, minotaurCyclops, balorCyclops);
+  .addBouncerHostType(cyclops, minotaurCyclops, balorCyclops);

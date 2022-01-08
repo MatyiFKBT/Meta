@@ -15,8 +15,11 @@ export interface LegacyCategory {
   seasonal?: LegacySeasonal;
 }
 
+export enum LegacyAccessoryType {
+  Button = 1,
+}
 export interface LegacyAccessory {
-  type: number;
+  type: LegacyAccessoryType;
   link: string;
   label: string;
   translation_key: string;

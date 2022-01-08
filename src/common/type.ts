@@ -1,4 +1,5 @@
 import chalk from "chalk";
+import { XMLBuilder } from "xmlbuilder2/lib/interfaces";
 import { Group } from "./group";
 import { LegacyType } from "./legacy";
 
@@ -182,30 +183,51 @@ export enum TypeTags {
 }
 // Latest: BouncerSeasonal2022 = 0x79,
 
+export interface TypeVirtualMeta {
+  captureRadius?: number;
+}
+export interface TypeEvolutionMeta {
+  stage?: number;
+  base?: number;
+}
+export interface TypeDestinationMeta {
+  size?: number;
+  starLevel?: number;
+  roomOf?: number;
+  temporary?: boolean;
+}
+export interface TypeBouncerMeta {
+  duration?: number;
+  landsOn?: TypeReference[];
+  base?: TypeReference;
+}
+export interface TypeBouncerHostMeta {
+  types?: TypeReference[];
+}
+export interface TypeScatterMeta {
+  duration?: number;
+  landsOn?: TypeReference[];
+}
+export interface TypeScattererMeta {
+  types?: TypeReference[];
+  min?: number;
+  max?: number;
+  radius?: number;
+}
 export interface TypeMeta {
-  capture_radius?: number;
+  virtual?: TypeVirtualMeta;
 
-  evolution_stage?: number;
-  evolution_base?: number;
+  evolution?: TypeEvolutionMeta;
 
-  destination_size?: number;
-  destination_star_level?: number;
-  destination_room_of?: number;
-  destination_temporary?: boolean;
+  destination?: TypeDestinationMeta;
 
-  bouncer_duration?: number;
-  bouncer_lands_on?: TypeReference[];
-  bouncer_base?: string;
+  bouncer?: TypeBouncerMeta;
 
-  host_types?: TypeReference[];
+  bouncerHost?: TypeBouncerHostMeta;
 
-  scatter_duration?: number;
-  scatter_lands_on?: TypeReference[];
+  scatter?: TypeScatterMeta;
 
-  scatterer_types?: TypeReference[];
-  scatterer_min?: number;
-  scatterer_max?: number;
-  scatterer_radius?: number;
+  scatterer?: TypeScattererMeta;
 }
 
 export interface TypePoints {
@@ -442,44 +464,52 @@ export class Type {
   }
 
   scattererDistance(distance: number): this {
-    this.data_meta.scatterer_radius = distance;
+    this.data_meta.scatterer ??= {};
+    this.data_meta.scatterer.radius = distance;
     return this;
   }
 
   scattererScatters(...types: (TypeReference | TypeReference[])[]): this {
-    this.meta.scatterer_types ??= [];
-    this.meta.scatterer_types.push(...types.flat());
+    this.data_meta.scatterer ??= {};
+    this.data_meta.scatterer.types ??= [];
+    this.data_meta.scatterer.types.push(...types.flat());
     return this;
   }
 
   destinationSize(size: number): this {
-    this.meta.destination_size = size;
+    this.data_meta.destination ??= {};
+    this.data_meta.destination.size = size;
     return this;
   }
 
   destinationStarLevel(starLevel: number): this {
-    this.meta.destination_star_level = starLevel;
+    this.data_meta.destination ??= {};
+    this.data_meta.destination.starLevel = starLevel;
     return this;
   }
 
   destinationRoomOf(type: Type): this {
-    this.meta.destination_room_of = type.id;
+    this.data_meta.destination ??= {};
+    this.data_meta.destination.roomOf = type.id;
     return this;
   }
 
   addBouncerLandsOn(...types: (TypeReference | TypeReference[])[]): this {
-    this.meta.bouncer_lands_on ??= [];
-    this.meta.bouncer_lands_on.push(...types.flat());
+    this.data_meta.bouncer ??= {};
+    this.data_meta.bouncer.landsOn ??= [];
+    this.data_meta.bouncer.landsOn.push(...types.flat());
     return this;
   }
 
   setBouncerLandsOn(...types: (TypeReference | TypeReference[])[]): this {
-    this.meta.bouncer_lands_on = types.flat();
+    this.data_meta.bouncer ??= {};
+    this.data_meta.bouncer.landsOn = types.flat();
     return this;
   }
 
   setEvolutionStage(stage: number): this {
-    this.meta.evolution_stage = stage;
+    this.data_meta.evolution ??= {};
+    this.data_meta.evolution.stage = stage;
     if (stage > 1) {
       this.addHidden(TypeHidden.Deploy);
     }
@@ -487,18 +517,21 @@ export class Type {
   }
 
   setEvolutionBase(base: Type): this {
-    this.meta.evolution_base = base.id;
+    this.data_meta.evolution ??= {};
+    this.data_meta.evolution.base = base.id;
     return this;
   }
 
-  addHostTypeOf(...types: (TypeReference | TypeReference[])[]): this {
-    this.meta.host_types ??= [];
-    this.meta.host_types.push(...types.flat());
+  addBouncerHostType(...types: (TypeReference | TypeReference[])[]): this {
+    this.data_meta.bouncerHost ??= {};
+    this.data_meta.bouncerHost.types ??= [];
+    this.data_meta.bouncerHost.types.push(...types.flat());
     return this;
   }
 
-  setHostTypeOf(...types: (TypeReference | TypeReference[])[]): this {
-    this.meta.host_types = types.flat();
+  setBouncerHostType(...types: (TypeReference | TypeReference[])[]): this {
+    this.data_meta.bouncerHost ??= {};
+    this.data_meta.bouncerHost.types = types.flat();
     return this;
   }
 
@@ -507,17 +540,6 @@ export class Type {
 
   toCZM(compact?: boolean): string {
     const data = [`d${this.data_id.toString(36)}`, `n${this.data_name}`];
-
-    const metaCompress: { [K in keyof TypeMeta]?: (value: NonNullable<TypeMeta[K]>) => string } = {
-      scatterer_types: v => `mst${v.map(t => t.toString(36)).join(",")}`,
-      bouncer_lands_on: v => `mbl${v.map(t => t.toString(36)).join(",")}`,
-      destination_room_of: v => `mdr${v.toString(36)}`,
-      destination_star_level: v => `mdl${v.toString(36)}`,
-      destination_size: v => `mds${v.toString(36)}`,
-      evolution_base: v => `meb${v.toString(36)}`,
-      evolution_stage: v => `mes${v.toString(36)}`,
-      host_types: v => `mht${v.map(t => t.toString(36)).join(",")}`,
-    };
 
     const icons = this.data_icons.join(".");
     if (!compact || icons !== this.data_name.toLowerCase().replace(/\s+/g, ""))
@@ -540,19 +562,63 @@ export class Type {
     if (this.data_hidden.size > 0)
       data.push(`h${[...this.data_hidden].map(i => i.toString(36)).join(".")}`);
 
-    const meta: Partial<TypeMeta> = {};
+    if (Object.keys(this.data_meta).length > 0) {
+      if (this.data_meta.bouncer) {
+        if (this.data_meta.bouncer.base)
+          data.push(`mbb${this.data_meta.bouncer.base.toString(36)}`);
+        if (this.data_meta.bouncer.duration)
+          data.push(`mbd${this.data_meta.bouncer.duration.toString(36)}`);
+        if (this.data_meta.bouncer.landsOn)
+          data.push(`mbl${[...this.data_meta.bouncer.landsOn].map(i => i.toString(36)).join(".")}`);
+      }
 
-    for (const key of Object.keys(this.data_meta) as (keyof TypeMeta)[]) {
-      if (metaCompress[key]) {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        data.push((metaCompress[key] as any)(this.data_meta[key]));
-      } else {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        meta[key] = this.data_meta[key] as any;
+      if (this.data_meta.bouncerHost) {
+        if (this.data_meta.bouncerHost.types)
+          data.push(
+            `mht${[...this.data_meta.bouncerHost.types].map(i => i.toString(36)).join(".")}`
+          );
+      }
+
+      if (this.data_meta.destination) {
+        if (this.data_meta.destination.roomOf)
+          data.push(`mdr${this.data_meta.destination.roomOf.toString(36)}`);
+        if (this.data_meta.destination.size)
+          data.push(`mds${this.data_meta.destination.size.toString(36)}`);
+        if (this.data_meta.destination.starLevel)
+          data.push(`mdl${this.data_meta.destination.starLevel.toString(36)}`);
+        if (this.data_meta.destination.temporary) data.push(`mdt`);
+      }
+
+      if (this.data_meta.evolution) {
+        if (this.data_meta.evolution.base)
+          data.push(`meb${this.data_meta.evolution.base.toString(36)}`);
+        if (this.data_meta.evolution.stage)
+          data.push(`mes${this.data_meta.evolution.stage.toString(36)}`);
+      }
+
+      if (this.data_meta.scatter) {
+        if (this.data_meta.scatter.duration)
+          data.push(`msd${this.data_meta.scatter.duration.toString(36)}`);
+        if (this.data_meta.scatter.landsOn)
+          data.push(`msl${this.data_meta.scatter.landsOn.map(i => i.toString(36)).join(".")}`);
+      }
+
+      if (this.data_meta.scatterer) {
+        if (this.data_meta.scatterer.min)
+          data.push(`mrm${this.data_meta.scatterer.min.toString(36)}`);
+        if (this.data_meta.scatterer.max)
+          data.push(`mrx${this.data_meta.scatterer.max.toString(36)}`);
+        if (this.data_meta.scatterer.radius)
+          data.push(`mrr${this.data_meta.scatterer.radius.toString(36)}`);
+        if (this.data_meta.scatterer.types)
+          data.push(`mrt${this.data_meta.scatterer.types.map(i => i.toString(36)).join(".")}`);
+      }
+
+      if (this.data_meta.virtual) {
+        if (this.data_meta.virtual.captureRadius)
+          data.push(`mcr${this.data_meta.virtual.captureRadius.toString(36)}`);
       }
     }
-
-    if (Object.keys(meta).length > 0) data.push(`x${JSON.stringify(meta)}`);
 
     return data.join("|");
   }
@@ -588,6 +654,105 @@ export class Type {
     return data;
   }
 
+  addToXML(xml: XMLBuilder, compact?: boolean): void {
+    const type = xml.ele("type");
+    type.ele("name").txt(this.data_name).up();
+    type.att("id", this.data_id.toString());
+
+    if (!compact || this.data_icons.join(".") !== this.data_name.toLowerCase().replace(/\s+/g, ""))
+      for (const icon of this.data_icons) type.ele("icon").txt(icon).up();
+
+    if (!compact || this.data_human_id !== this.data_name.toLowerCase().replace(/\s/g, "_"))
+      type.att("human_id", this.data_human_id);
+
+    if (this.data_munzee_id !== undefined) type.att("munzee_id", this.data_munzee_id.toString());
+
+    if (this.data_state) type.ele("state").txt(this.data_state.toString()).up();
+
+    if (this.data_groups)
+      for (const group of this.data_groups) type.ele("group").txt(group.id.toString()).up();
+
+    if (this.data_points) type.ele("points").txt(JSON.stringify(this.data_points)).up();
+
+    if (this.data_tags.size > 0)
+      for (const tag of this.data_tags) type.ele("tag").txt(tag.toString()).up();
+
+    if (this.data_hidden.size > 0)
+      for (const hidden of this.data_hidden) type.ele("hidden").txt(hidden.toString()).up();
+
+    if (Object.keys(this.data_meta).length > 0) {
+      const meta = type.ele("meta");
+      if (this.data_meta.bouncer) {
+        const bouncer = meta.ele("bouncer");
+        if (this.data_meta.bouncer.base)
+          bouncer.ele("base").txt(this.data_meta.bouncer.base.toString()).up();
+        if (this.data_meta.bouncer.duration)
+          bouncer.ele("duration").txt(this.data_meta.bouncer.duration.toString()).up();
+        if (this.data_meta.bouncer.landsOn) {
+          for (const land of this.data_meta.bouncer.landsOn)
+            bouncer.ele("lands_on").txt(land.toString()).up();
+        }
+      }
+
+      if (this.data_meta.bouncerHost) {
+        const bouncerHost = meta.ele("bouncer_host");
+        if (this.data_meta.bouncerHost.types) {
+          for (const land of this.data_meta.bouncerHost.types)
+            bouncerHost.ele("type").txt(land.toString()).up();
+        }
+      }
+
+      if (this.data_meta.destination) {
+        const destination = meta.ele("destination");
+        if (this.data_meta.destination.roomOf)
+          destination.ele("room_of").txt(this.data_meta.destination.roomOf.toString()).up();
+        if (this.data_meta.destination.size)
+          destination.ele("size").txt(this.data_meta.destination.size.toString()).up();
+        if (this.data_meta.destination.starLevel)
+          destination.ele("star_level").txt(this.data_meta.destination.starLevel.toString()).up();
+        if (this.data_meta.destination.temporary) destination.ele("temporary").up();
+      }
+
+      if (this.data_meta.evolution) {
+        const evolution = meta.ele("evolution");
+        if (this.data_meta.evolution.base)
+          evolution.ele("base").txt(this.data_meta.evolution.base.toString()).up();
+        if (this.data_meta.evolution.stage)
+          evolution.ele("stage").txt(this.data_meta.evolution.stage.toString()).up();
+      }
+
+      if (this.data_meta.scatter) {
+        const scatter = meta.ele("scatter");
+        if (this.data_meta.scatter.duration)
+          scatter.ele("duration").txt(this.data_meta.scatter.duration.toString()).up();
+        if (this.data_meta.scatter.landsOn) {
+          for (const land of this.data_meta.scatter.landsOn)
+            scatter.ele("lands_on").txt(land.toString()).up();
+        }
+      }
+
+      if (this.data_meta.scatterer) {
+        const scatterer = meta.ele("scatterer");
+        if (this.data_meta.scatterer.min)
+          scatterer.ele("min").txt(this.data_meta.scatterer.min.toString()).up();
+        if (this.data_meta.scatterer.max)
+          scatterer.ele("max").txt(this.data_meta.scatterer.max.toString()).up();
+        if (this.data_meta.scatterer.radius)
+          scatterer.ele("radius").txt(this.data_meta.scatterer.radius.toString()).up();
+        if (this.data_meta.scatterer.types) {
+          for (const type of this.data_meta.scatterer.types)
+            scatterer.ele("type").txt(type.toString()).up();
+        }
+      }
+
+      if (this.data_meta.virtual) {
+        const virtual = meta.ele("virtual");
+        if (this.data_meta.virtual.captureRadius)
+          virtual.ele("capture_radius").txt(this.data_meta.virtual.captureRadius.toString()).up();
+      }
+    }
+  }
+
   toLegacyJSON(): LegacyType {
     return {
       name: this.data_name,
@@ -600,20 +765,20 @@ export class Type {
       meta:
         Object.keys(this.meta).length > 0
           ? {
-              bouncer_duration: this.meta.bouncer_duration,
-              bouncer_lands_on: this.meta.bouncer_lands_on?.map(i => i.toString()),
-              evolution_base: this.meta.evolution_base?.toString(),
-              scatterer_radius: this.meta.scatterer_radius,
-              scatterer_types: this.meta.scatterer_types?.map(i => i.toString()),
-              scatterer_min: this.meta.scatterer_min,
-              scatterer_max: this.meta.scatterer_max,
-              host_types: this.meta.host_types?.map(i => i.toString()),
-              destination_size: this.meta.destination_size,
-              destination_star_level: this.meta.destination_star_level,
-              destination_room_of: this.meta.destination_room_of?.toString(),
-              destination_temporary: this.meta.destination_temporary,
-              scatter_duration: this.meta.scatter_duration,
-              evolution_stage: this.meta.evolution_stage,
+              bouncer_duration: this.meta.bouncer?.duration,
+              bouncer_lands_on: this.meta.bouncer?.landsOn?.map(i => i.toString()),
+              evolution_base: this.meta.evolution?.base?.toString(),
+              evolution_stage: this.meta.evolution?.stage,
+              scatterer_radius: this.meta.scatterer?.radius,
+              scatterer_types: this.meta.scatterer?.types?.map(i => i.toString()),
+              scatterer_min: this.meta.scatterer?.min,
+              scatterer_max: this.meta.scatterer?.max,
+              host_types: this.meta.bouncerHost?.types?.map(i => i.toString()),
+              destination_size: this.meta.destination?.size,
+              destination_star_level: this.meta.destination?.starLevel,
+              destination_room_of: this.meta.destination?.roomOf?.toString(),
+              destination_temporary: this.meta.destination?.temporary,
+              scatter_duration: this.meta.scatter?.duration,
             }
           : undefined,
       munzee_id: this.data_munzee_id,
@@ -708,23 +873,25 @@ export class TypeDatabase {
     if (this.referencesResolved) throw new Error("References have already been resolved");
     this.referencesResolved = true;
     for (const type of this.types) {
-      if (type.meta.scatterer_types) {
-        type.meta.scatterer_types = type.meta.scatterer_types
+      if (type.meta.scatterer?.types) {
+        type.meta.scatterer.types = type.meta.scatterer.types
           .map(i => this.resolveReference(type, i))
           .flat();
       }
-      if (type.meta.scatter_lands_on) {
-        type.meta.scatter_lands_on = type.meta.scatter_lands_on
+      if (type.meta.scatter?.landsOn) {
+        type.meta.scatter.landsOn = type.meta.scatter.landsOn
           .map(i => this.resolveReference(type, i))
           .flat();
       }
-      if (type.meta.bouncer_lands_on) {
-        type.meta.bouncer_lands_on = type.meta.bouncer_lands_on
+      if (type.meta.bouncer?.landsOn) {
+        type.meta.bouncer.landsOn = type.meta.bouncer.landsOn
           .map(i => this.resolveReference(type, i))
           .flat();
       }
-      if (type.meta.host_types) {
-        type.meta.host_types = type.meta.host_types.map(i => this.resolveReference(type, i)).flat();
+      if (type.meta.bouncerHost?.types) {
+        type.meta.bouncerHost.types = type.meta.bouncerHost.types
+          .map(i => this.resolveReference(type, i))
+          .flat();
       }
       delete type.file;
     }
@@ -758,7 +925,7 @@ export class EvolutionTypeSet<T extends Type = Type> extends TypeSet<T> {
   public add(...types: (T[] | T)[]): this {
     super.add(...types);
     if (this.length > 0) {
-      this.sort((a, b) => (a.meta.evolution_stage ?? 0) - (b.meta.evolution_stage ?? 0));
+      this.sort((a, b) => (a.meta.evolution?.stage ?? 0) - (b.meta.evolution?.stage ?? 0));
       this.forEach(i => {
         i.setEvolutionBase(this[0]);
       });

@@ -71,10 +71,10 @@ export const poseidon = new ModernMythType("Poseidon", 2524)
   .scattererScatters(trident, lifebuoy);
 export const poseidonHost = new ModernMythHostType("Poseidon Host")
   .physical()
-  .addHostTypeOf(poseidon);
+  .addBouncerHostType(poseidon);
 export const poseidonVirtualHost = new ModernMythHostType("Poseidon Virtual Host")
   .virtual()
-  .addHostTypeOf(poseidon);
+  .addBouncerHostType(poseidon);
 
 // Aphrodite
 export const glasses = new ModernMythScatterType("Glasses", 2579).standalone();
@@ -91,11 +91,11 @@ export const aphrodite = new ModernMythType("Aphrodite", 2576)
   .scattererScatters(glasses, shellPhone);
 export const aphroditeHost = new ModernMythHostType("Aphrodite Host")
   .physical()
-  .addHostTypeOf(aphrodite);
+  .addBouncerHostType(aphrodite);
 export const aphroditeVirtualHost = new ModernMythHostType("Aphrodite Virtual Host")
   .setIcons("aphrodite_virtual_host", "aphroditevirtualhost")
   .virtual()
-  .addHostTypeOf(aphrodite);
+  .addBouncerHostType(aphrodite);
 
 // Hades
 export const bident = new ModernMythScatterType("Bident").standalone();
@@ -120,10 +120,10 @@ export const hades = new ModernMythType("Hades", 2994)
     citrine
   )
   .scattererScatters(bident, firestarter);
-export const hadesHost = new ModernMythHostType("Hades Host").physical().addHostTypeOf(hades);
+export const hadesHost = new ModernMythHostType("Hades Host").physical().addBouncerHostType(hades);
 export const hadesVirtualHost = new ModernMythHostType("Hades Virtual Host")
   .virtual()
-  .addHostTypeOf(hades);
+  .addBouncerHostType(hades);
 
 // Zeus
 export const lightningBolt = new ModernMythScatterType("Lightning Bolt").standalone();
@@ -148,7 +148,7 @@ export const zeus = new ModernMythType("Zeus", 3421)
     virtualBurntOrange
   )
   .scattererScatters(lightningBolt, multimeter);
-export const zeusHost = new ModernMythHostType("Zeus Host").physical().addHostTypeOf(zeus);
+export const zeusHost = new ModernMythHostType("Zeus Host").physical().addBouncerHostType(zeus);
 export const zeusVirtualHost = new ModernMythHostType("Zeus Virtual Host")
   .virtual()
-  .addHostTypeOf(zeus);
+  .addBouncerHostType(zeus);

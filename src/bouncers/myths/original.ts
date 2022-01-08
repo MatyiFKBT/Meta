@@ -54,7 +54,7 @@ export const candyCornUnicorn = new OriginalMythType("Candy Corn Unicorn").addTa
 );
 export const unicornHost = new OriginalMythHostType("Unicorn Host", 506)
   .physical()
-  .addHostTypeOf(theUnicorn, battleUnicorn, hippocampUnicorn, candyCornUnicorn);
+  .addBouncerHostType(theUnicorn, battleUnicorn, hippocampUnicorn, candyCornUnicorn);
 
 // Leprechaun
 export const leprechaun = new OriginalMythType("Leprechaun", 508).addBouncerLandsOn(
@@ -76,10 +76,10 @@ export const goblinLeprechaun = new OriginalMythType("Goblin Leprechaun", 1647)
 export const lepreCorn = new OriginalMythType("LepreCorn").addTag(TypeTags.BouncerMythVariant);
 export const leprechaunHost = new OriginalMythHostType("Leprechaun Host", 509)
   .physical()
-  .addHostTypeOf(leprechaun, dwarfLeprechaun, goblinLeprechaun, lepreCorn);
+  .addBouncerHostType(leprechaun, dwarfLeprechaun, goblinLeprechaun, lepreCorn);
 export const leprechaunVirtualHost = new OriginalMythHostType("Leprechaun Virtual Host", 1651)
   .virtual()
-  .addHostTypeOf(leprechaun, dwarfLeprechaun, goblinLeprechaun, lepreCorn);
+  .addBouncerHostType(leprechaun, dwarfLeprechaun, goblinLeprechaun, lepreCorn);
 
 // Dragon
 export const dragon = new OriginalMythType("Dragon", 573).addBouncerLandsOn(
@@ -100,7 +100,7 @@ export const wyvernDragon = new OriginalMythType("Wyvern Dragon", 1875)
     greenie,
     airMystery,
     amethyst,
-    type => type.meta.evolution_base === coin.id
+    type => type.meta.evolution?.base === coin.id
   );
 export const midnightDragon = new OriginalMythType("Midnight Dragon").addTag(
   TypeTags.BouncerMythVariant

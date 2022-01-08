@@ -1,6 +1,8 @@
+import { create } from "xmlbuilder2";
+import { XMLBuilder } from "xmlbuilder2/lib/interfaces";
 import { Group, GroupData, GroupDatabase } from "./common/group";
 import { LegacyData } from "./common/legacy";
-import { TypeData, TypeDatabase } from "./common/type";
+import { TypeData, TypeDatabase, TypeTags } from "./common/type";
 
 export interface DatabaseData {
   types: (TypeData & { icons: string[]; id: string })[];
@@ -22,7 +24,14 @@ export class Database {
   }
 
   generateGroupIcon(group: Group): string[] {
-    const types = this.types.types.filter(i => i.groups.includes(group));
+    const allTypes = this.types.types.filter(i => i.groups.includes(group));
+
+    let types = allTypes.filter(i => !i.hasTags(TypeTags.BouncerHost));
+
+    if (types.length < 3) {
+      types = allTypes;
+    }
+
     const groups = this.groups.groups.filter(i => i.parents.includes(group));
 
     if (types.length && groups.length) {
@@ -100,9 +109,22 @@ export class Database {
     };
   }
 
+  toXML(compact?: boolean): XMLBuilder {
+    const root = create().ele("meta");
+    const typesRoot = root.ele("types");
+    for (const type of this.types.types) {
+      type.addToXML(typesRoot, compact);
+    }
+    const groupsRoot = root.ele("groups");
+    for (const group of this.groups.groups) {
+      group.addToXML(groupsRoot);
+    }
+    return root;
+  }
+
   toCZM(compact?: boolean): string {
     return `-t\n${this.types.types.map(i => i.toCZM(compact)).join("\n")}\n-g\n${this.groups.groups
-      .map(i => i.name)
+      .map(i => i.toCZM(compact))
       .join("\n")}`;
   }
 
