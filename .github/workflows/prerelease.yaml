@@ -1,0 +1,40 @@
+---
+name: "Pre-release"
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  pre-release:
+    name: "Release"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: "Install Dependencies"
+        run: |
+          yarn install
+      - name: "Build Database"
+        run: |
+          yarn build
+      - name: "Zip Output"
+        run: |
+          cp LICENSE output/LICENSE
+          cd output
+          zip output.zip **
+          cd ..
+          rm output/LICENSE
+
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Pre-release"
+          files: |
+            output/*
