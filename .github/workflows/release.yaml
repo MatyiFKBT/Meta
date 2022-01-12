@@ -13,15 +13,22 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+        
+      - name: Cache pnpm modules
+        uses: actions/cache@v2
         with:
-          node-version: '16'
-      - name: "Install Dependencies"
-        run: |
-          yarn install
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.0.2
+          run_install: true
+
       - name: "Build Database"
         run: |
-          yarn build
+          pnpm build
       - name: "Zip Output"
         run: |
           cp LICENSE output/LICENSE
