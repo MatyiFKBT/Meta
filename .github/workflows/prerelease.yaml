@@ -45,3 +45,5 @@ jobs:
           title: "Pre-release"
           files: |
             output/*
+        
+      - run: curl https://db.cuppazee.app/reloaddb2
