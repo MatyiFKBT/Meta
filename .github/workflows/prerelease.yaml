@@ -12,6 +12,8 @@ jobs:
     runs-on: "ubuntu-latest"
 
     steps:
+      - uses: actions/checkout@v2
+
       - name: Cache pnpm modules
         uses: actions/cache@v2
         with:
@@ -21,7 +23,7 @@ jobs:
             ${{ runner.os }}-
       - uses: pnpm/action-setup@v2.0.1
         with:
-          version: ^6.24.1
+          version: ^6.26.0
           run_install: true
 
       - name: "Build Database"
