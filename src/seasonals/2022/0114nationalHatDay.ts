@@ -16,7 +16,7 @@ export const chefHat = new Year2022SeasonalBouncerType("Chef Hat")
     type => type.hasTags(TypeTags.TypeVirtual),
     type => type.hasTags(TypeTags.TypeFlat)
   );
-export const beretHat = new Year2022SeasonalBouncerType("Beret Hat")
+export const beret = new Year2022SeasonalBouncerType("Beret")
   .addGroup(nationalHatDayGroup)
   .addBouncerLandsOn(
     greenie,
