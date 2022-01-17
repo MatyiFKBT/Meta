@@ -117,3 +117,9 @@ export const gWRENCHCombusted = new MechType("GWRENCH Combusted");
 export const n1NJ4ST4R = new MechScatterType("N1NJ4 ST4R").standalone();
 export const tR33T0PP3R = new MechType("TR33 T0PP3R").scattererScatters(n1NJ4ST4R);
 export const tR33T0PP3RTakeoff = new MechType("TR33 T0PP3R Takeoff");
+
+export const sn0wBomb = new MechScatterType("SN0W Bomb").standalone();
+export const abominableSN0WMachine = new MechType("Abominable SN0W Machine").scattererScatters(
+  sn0wBomb
+);
+export const abominableSN0WMachineFrostbitten = new MechType("Abominable SN0W Machine Frostbitten");
