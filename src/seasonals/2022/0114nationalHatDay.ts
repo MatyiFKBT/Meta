@@ -40,3 +40,35 @@ export const cowboyHat = new Year2022SeasonalBouncerType("Cowboy Hat")
     type => type.hasTags(TypeTags.TypeVirtual),
     type => type.hasTags(TypeTags.TypeFlat)
   );
+export const deerStalkerHat = new Year2022SeasonalBouncerType("Deer Stalker Hat")
+  .addGroup(nationalHatDayGroup)
+  .addBouncerLandsOn(
+    greenie,
+    type => type.hasTags(TypeTags.TypeReseller) && !type.hasTags(TypeTags.Scatter),
+    type => type.hasTags(TypeTags.TypeVirtual),
+    type => type.hasTags(TypeTags.TypeFlat)
+  );
+export const pinWheelHat = new Year2022SeasonalBouncerType("Pin Wheel Hat")
+  .addGroup(nationalHatDayGroup)
+  .addBouncerLandsOn(
+    greenie,
+    type => type.hasTags(TypeTags.TypeReseller) && !type.hasTags(TypeTags.Scatter),
+    type => type.hasTags(TypeTags.TypeVirtual),
+    type => type.hasTags(TypeTags.TypeFlat)
+  );
+export const snowTrapperHat = new Year2022SeasonalBouncerType("Snow Trapper Hat")
+  .addGroup(nationalHatDayGroup)
+  .addBouncerLandsOn(
+    greenie,
+    type => type.hasTags(TypeTags.TypeReseller) && !type.hasTags(TypeTags.Scatter),
+    type => type.hasTags(TypeTags.TypeVirtual),
+    type => type.hasTags(TypeTags.TypeFlat)
+  );
+export const topHat = new Year2022SeasonalBouncerType("Top Hat")
+  .addGroup(nationalHatDayGroup)
+  .addBouncerLandsOn(
+    greenie,
+    type => type.hasTags(TypeTags.TypeReseller) && !type.hasTags(TypeTags.Scatter),
+    type => type.hasTags(TypeTags.TypeVirtual),
+    type => type.hasTags(TypeTags.TypeFlat)
+  );
