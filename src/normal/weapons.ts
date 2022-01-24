@@ -52,7 +52,7 @@ export class ZeecretWeaponScatterType extends ScatterType {
   }
 }
 
-export const zeecretWeaponGroup = new Group({ name: "ZeeCret Weapons" });
+export const zeecretWeaponGroup = new Group({ name: "ZeeCret Weapons" }).addParent(normalGroup);
 
 export const dossier = new ZeecretWeaponScatterType("Dossier", 1247).physical();
 export const briefcase = new ZeecretWeaponType("Briefcase", 1246)
