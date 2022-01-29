@@ -100,7 +100,7 @@ export const sleepZee = new MiscType("SleepZee", 2744)
   .virtual()
   .addHidden(TypeHidden.Inventory, TypeHidden.Deploy);
 
-export const goldenFourLeafClover = new MiscScatterType("Golden Four Leaf Clover")
+export const goldenFourLeafClover = new MiscScatterType("Golden Four Leaf Clover", 2943)
   .addIcon("goldenclover")
   .standalone();
 export const cloverLeaf = new MiscScatterType("Clover Leaf", 2942)

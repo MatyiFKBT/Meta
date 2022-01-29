@@ -20,7 +20,7 @@ export class GamingScatterType extends ScatterType {
 
 // [Gaming] Misc
 export const surprise = new GamingType("Surprise", 400).virtual();
-export const prizeWheel = new GamingType("Prize Wheel", 401).physical();
+export const prizeWheel = new GamingType("Prize Wheel", 444).physical();
 export const rps = new GamingType("Rock Paper Scissors", 522).physical();
 
 export const legacyBowlingScatters = new TypeSet()
@@ -68,10 +68,14 @@ export const chessPieces = new TypeSet()
       new GamingScatterType(`Maple ${piece}`, pieceIndex + 3282).standalone()
     )
   )
-  .add(chessPieceNames.map(piece => new GamingScatterType(`Walnut ${piece}`, 2004).standalone()));
+  .add(
+    chessPieceNames.map((piece, pieceIndex) =>
+      new GamingScatterType(`Walnut ${piece}`, pieceIndex + 3275).standalone()
+    )
+  );
 export const mapleChestSet = new GamingType("Maple Chess Set", 3281)
   .virtual()
   .scattererScatters(chessPieces);
-export const walnutChestSet = new GamingType("Walnut Chess Set")
+export const walnutChestSet = new GamingType("Walnut Chess Set", 3274)
   .virtual()
   .scattererScatters(chessPieces);

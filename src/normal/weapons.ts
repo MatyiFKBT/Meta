@@ -75,7 +75,7 @@ export const laserPen = new ZeecretWeaponType("Laser Pen", 2607)
   .scattererScatters(laserTrailScatters);
 
 export const liaisonAgent = new ZeecretWeaponScatterType("Liaison Agent", 2826).standalone();
-export const undercoverAgent = new ZeecretWeaponScatterType("Undercover Agent", 3418)
+export const undercoverAgent = new ZeecretWeaponScatterType("Undercover Agent", 2825)
   .standalone()
   .scattererScatters(liaisonAgent);
 export const walkieTalkieWatch = new ZeecretWeaponType("Walkie Talkie Watch", 2824)

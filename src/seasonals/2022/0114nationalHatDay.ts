@@ -11,15 +11,15 @@ export const nationalHatDayGroup = new Year2022SeasonalGroup({
 const hats: [string, number?][] = [
   ["Chef Hat", 3558],
   ["Beret", 3559],
-  ["Safari Hat"],
-  ["Cowboy Hat"],
+  ["Safari Hat", 3564],
+  ["Cowboy Hat", 3565],
   ["Deer Stalker Hat", 3567],
-  ["Pinwheel Hat"],
-  ["Snow Trapper Hat"],
-  ["Top Hat"],
+  ["Pinwheel Hat", 3561],
+  ["Snow Trapper Hat", 3566],
+  ["Top Hat", 3560],
   ["Bee Antennae", 3563],
-  ["Captain Hat"],
-  ["Raccoon Skin Cap"],
+  ["Captain Hat", 3569],
+  ["Raccoon Skin Cap", 3568],
   ["Trucker Cap", 3562],
 ];
 

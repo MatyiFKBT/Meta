@@ -35,9 +35,9 @@ export const trojanUnicorn = new TPOBType("Trojan Unicorn", 2502)
   .addBouncerLandsOn(mace, longsword, battleAxe, theHammer, crossbow, catapult)
   .addTag(TypeTags.TypeWeaponClan);
 
-export const tempBouncerVirtualHost = new TPOBHostType("Temp Bouncer Virtual Host")
+export const tempBouncerVirtualHost = new TPOBHostType("Temp Bouncer Virtual Host", 2336)
   .virtual()
   .addBouncerHostType(spyderbot);
-export const tempBouncerHost = new TPOBHostType("Temp Bouncer Host")
+export const tempBouncerHost = new TPOBHostType("Temp Bouncer Host", 2335)
   .physical()
   .addBouncerHostType(squashedSpyderbot);

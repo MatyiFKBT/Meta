@@ -22,7 +22,9 @@ export class MechScatterType extends ScatterType {
 }
 
 export const spyderbot = new MechType("Spyderbot", 2589);
-export const squashedSpyderbot = new MechType("Squashed Spyderbot").addHidden(TypeHidden.Bouncers);
+export const squashedSpyderbot = new MechType("Squashed Spyderbot", 2590).addHidden(
+  TypeHidden.Bouncers
+);
 export const lASERShark = new MechType("L.A.S.E.R. Shark", 2875)
   .setIcon("lasershark")
   .addBouncerLandsOn(

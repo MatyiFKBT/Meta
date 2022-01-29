@@ -324,10 +324,10 @@ export const pBJellyfish = new NatureEvolutionBouncerType("PB & Jellyfish", 2468
   )
   .setEvolutionStage(5)
   .setEvolutionBase(planulaLarva);
-export const jellyfishHost = new TPOBHostType("Jellyfish Host")
+export const jellyfishHost = new TPOBHostType("Jellyfish Host", 2469)
   .physical()
   .addBouncerHostType(jellyfish, boxJellyfish, goldenJellyfish, pBJellyfish);
-export const jellyfishVirtualHost = new TPOBHostType("Jellyfish Virtual Host")
+export const jellyfishVirtualHost = new TPOBHostType("Jellyfish Virtual Host", 2470)
   .virtual()
   .addBouncerHostType(jellyfish, boxJellyfish, goldenJellyfish, pBJellyfish);
 
@@ -477,7 +477,7 @@ export const wallaBee = new NatureEvolutionBouncerType("WallaBee", 2883)
   )
   .setEvolutionStage(5)
   .setEvolutionBase(beeEggs);
-export const beeVirtualHost = new TPOBHostType("Bee Virtual Host")
+export const beeVirtualHost = new TPOBHostType("Bee Virtual Host", 2885)
   .virtual()
   .addBouncerHostType(bee, honeyBee, queenBee, wallaBee);
 export const beeHost = new TPOBHostType("Bee Host", 2884)

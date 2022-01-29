@@ -102,7 +102,7 @@ export const blackHoleItems = new TypeSet()
     ).map(([name, icon]) => new ElementalMysteryScatterType(name, icon).standalone())
   )
   .add(new ElementalMysteryScatterType("Lost Sock").physical());
-export const blackHole = new ElementalMysteryScatterType("Black Hole")
+export const blackHole = new ElementalMysteryScatterType("Black Hole", 3296)
   .virtual()
   .scattererScatters(blackHoleItems);
 export const voidMystery = new ElementalMysteryType("Void Mystery", 3295)

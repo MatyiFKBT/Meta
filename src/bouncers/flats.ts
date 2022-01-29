@@ -85,9 +85,9 @@ export const polkaDotFlatLou = new FancyFlatType("Polka Dot Flat Lou", 2627)
   .addBouncerLandsOn(pinkDiamond, flatRob, poiAirport, poiTransportation, treehouse, skyland)
   .addBouncerLandsOn(flatLou);
 
-export const fancyFlatLouHost = new FancyFlatHostType("Fancy Flat Lou Host")
+export const fancyFlatLouHost = new FancyFlatHostType("Fancy Flat Lou Host", 2628)
   .physical()
   .addBouncerHostType(internationEllesFlatLou, teamGBFlatLou, polkaDotFlatLou);
-export const fancyFlatLouVirtualHost = new FancyFlatHostType("Fancy Flat Lou Virtual Host")
+export const fancyFlatLouVirtualHost = new FancyFlatHostType("Fancy Flat Lou Virtual Host", 2629)
   .virtual()
   .addBouncerHostType(internationEllesFlatLou, teamGBFlatLou, polkaDotFlatLou);

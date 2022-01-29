@@ -81,7 +81,7 @@ export const cthulhuHydra = new ClassicalMythType("Cthulhu Hydra", 2253)
 export const hydraHost = new ClassicalMythHostType("Hydra Host", 954)
   .physical()
   .addBouncerHostType(hydra, cerberusHydra, cthulhuHydra);
-export const hydraVirtualHost = new ClassicalMythHostType("Hydra Virtual Host")
+export const hydraVirtualHost = new ClassicalMythHostType("Hydra Virtual Host", 2273)
   .virtual()
   .addBouncerHostType(hydra, cerberusHydra, cthulhuHydra);
 
