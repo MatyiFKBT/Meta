@@ -8,7 +8,14 @@ export const flatRobScattersGroup = new Year2022SeasonalGroup({
 });
 
 export const flatRobScatters = new TypeSet(
-  ["Munzee Cap", "Bucket Hat", "Fedora", "Snow Hat"].map(name =>
-    new Year2022SeasonalScatterType(name).addGroup(flatRobScattersGroup).standalone()
+  (
+    [
+      ["Munzee Cap", 3554],
+      ["Bucket Hat", 3555],
+      ["Fedora", 3556],
+      ["Snow Hat", 3557],
+    ] as const
+  ).map(([name, id]) =>
+    new Year2022SeasonalScatterType(name, id).addGroup(flatRobScattersGroup).standalone()
   )
 );

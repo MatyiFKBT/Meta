@@ -17,5 +17,5 @@ export const flatLou = new FlatType("Flat Lou", 1338);
 export const flatHammock = new FlatType("Flat Hammock", 1581);
 export const flatDHS = new FlatType("Flat DHS", 2903);
 export const flatDiscGolfBasket = new FlatType("Flat Disc Golf Basket", 2904);
-export const flatFlashlight = new FlatType("Flat Flashlight");
-export const flatTypewriter = new FlatType("Flat Typewriter");
+export const flatFlashlight = new FlatType("Flat Flashlight", 2905);
+export const flatTypewriter = new FlatType("Flat Typewriter", 2906);

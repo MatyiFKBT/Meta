@@ -8,25 +8,25 @@ export const nationalHatDayGroup = new Year2022SeasonalGroup({
   ends: "2022-02-06T23:59:00-05:00",
 });
 
-const hats = [
-  "Chef Hat",
-  "Beret",
-  "Safari Hat",
-  "Cowboy Hat",
-  "Deer Stalker Hat",
-  "Pinwheel Hat",
-  "Snow Trapper Hat",
-  "Top Hat",
-  "Bee Antennae",
-  "Captain Hat",
-  "Raccoon Skin Cap",
-  "Trucker Cap",
+const hats: [string, number?][] = [
+  ["Chef Hat", 3558],
+  ["Beret", 3559],
+  ["Safari Hat"],
+  ["Cowboy Hat"],
+  ["Deer Stalker Hat", 3567],
+  ["Pinwheel Hat"],
+  ["Snow Trapper Hat"],
+  ["Top Hat"],
+  ["Bee Antennae", 3563],
+  ["Captain Hat"],
+  ["Raccoon Skin Cap"],
+  ["Trucker Cap", 3562],
 ];
 
 export const hatSet = new TypeSet();
-for (const hatName of hats) {
+for (const [hatName, hatId] of hats) {
   hatSet.add(
-    new Year2022SeasonalBouncerType(hatName).addGroup(nationalHatDayGroup).addBouncerLandsOn(
+    new Year2022SeasonalBouncerType(hatName, hatId).addGroup(nationalHatDayGroup).addBouncerLandsOn(
       greenie,
       type => type.hasTags(TypeTags.TypeReseller) && !type.hasTags(TypeTags.Scatter),
       type => type.hasTags(TypeTags.TypeVirtual),

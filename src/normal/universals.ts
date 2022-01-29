@@ -18,7 +18,7 @@ export const universalBash = new UniversalType("Universal Bash", 2588).setIcons(
   "universal_bash",
   "universalbash"
 );
-export const n10thBirthdayUniversal = new UniversalType("10th Birthday Universal").setIcons(
+export const n10thBirthdayUniversal = new UniversalType("10th Birthday Universal", 3092).setIcons(
   "universal_10th_birthday",
   "10thbirthdayuniversal"
 );

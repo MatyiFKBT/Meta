@@ -67,7 +67,7 @@ export const n2StarHotel = new DestinationRoomsType("2 Star Hotel", 170)
   .physical()
   .addIcon("hotel")
   .destinationSize(10);
-export const n3StarHotel = new DestinationRoomsType("3 Star Hotel")
+export const n3StarHotel = new DestinationRoomsType("3 Star Hotel", 3341)
   .physical()
   .destinationSize(15)
   .addHidden(TypeHidden.Inventory);
@@ -80,7 +80,7 @@ export const n2StarHotelRoom = new DestinationRoomType("2 Star Hotel Room", 171)
   .physical()
   .addIcon("hotelroom")
   .destinationRoomOf(n2StarHotel);
-export const n3StarHotelRoom = new DestinationRoomType("3 Star Hotel Room")
+export const n3StarHotelRoom = new DestinationRoomType("3 Star Hotel Room", 3342)
   .physical()
   .destinationRoomOf(n3StarHotel);
 export const n4StarHotelRoom = new DestinationRoomType("4 Star Hotel Room")

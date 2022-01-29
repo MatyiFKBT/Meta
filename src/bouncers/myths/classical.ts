@@ -112,7 +112,7 @@ export const alicornPegasus = new ClassicalMythType("Alicorn Pegasus", 1996)
     airMystery,
     shamrock
   );
-export const nightmarePegasus = new ClassicalMythType("Nightmare Pegasus").addTag(
+export const nightmarePegasus = new ClassicalMythType("Nightmare Pegasus", 3369).addTag(
   TypeTags.BouncerMythVariant
 );
 export const pegasusHost = new ClassicalMythHostType("Pegasus Host", 1101)

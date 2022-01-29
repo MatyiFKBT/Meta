@@ -48,25 +48,33 @@ export const laupeReseller = new ResellerType("Laupe Reseller", 601)
   .addHidden(TypeHidden.Inventory);
 export const scgsReseller = new ResellerType("SCGS Reseller", 696).physical();
 
-export const scgsResellerPackage = new ResellerScatterType("SCGS Reseller Package").standalone();
+export const scgsResellerPackage = new ResellerScatterType(
+  "SCGS Reseller Package",
+  2893
+).standalone();
 export const virtualSCGSReseller = new ResellerType("Virtual SCGS Reseller", 2889)
   .virtual()
   .scattererScatters(scgsResellerPackage);
 
 export const goldNCoinResellerPackage = new ResellerScatterType(
-  "Gold'n Coins Reseller Package"
+  "Gold'n Coins Reseller Package",
+  2890
 ).standalone();
 export const virtualGoldNCoinsReseller = new ResellerType("Virtual Gold'n Coins Reseller", 2886)
   .virtual()
   .scattererScatters(goldNCoinResellerPackage);
 
-export const negsResellerPackage = new ResellerScatterType("NEGS Reseller Package").standalone();
+export const negsResellerPackage = new ResellerScatterType(
+  "NEGS Reseller Package",
+  2891
+).standalone();
 export const virtualNEGSReseller = new ResellerType("Virtual NEGS Reseller", 2887)
   .virtual()
   .scattererScatters(negsResellerPackage);
 
 export const geoLoggersResellerPackage = new ResellerScatterType(
-  "GeoLoggers Reseller Package"
+  "GeoLoggers Reseller Package",
+  2892
 ).standalone();
 export const virtualGeoLoggersReseller = new ResellerType("Virtual GeoLoggers Reseller", 2888)
   .virtual()

@@ -7,7 +7,7 @@ export const timeCapzuleGroup = new Year2021SeasonalGroup({
   ends: "2022-05-31T23:59:00-05:00",
 });
 
-export const timeCapzule = new Year2021SeasonalType("Time Capzule")
+export const timeCapzule = new Year2021SeasonalType("Time Capzule", 2653)
   .addGroup(timeCapzuleGroup)
   .virtual()
   .addHidden(TypeHidden.Deploy, TypeHidden.Bouncers);
@@ -40,7 +40,8 @@ export const n2015MunzeeMemoreezFriendz = new Year2021SeasonalScatterType(
   .standalone()
   .addHidden(TypeHidden.Deploy);
 export const n2016MunzeeMemoreezRootz = new Year2021SeasonalScatterType(
-  "2016 Munzee Memoreez: Rootz"
+  "2016 Munzee Memoreez: Rootz",
+  3215
 )
   .addGroup(timeCapzuleGroup)
   .standalone()

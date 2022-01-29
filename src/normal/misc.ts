@@ -103,12 +103,14 @@ export const sleepZee = new MiscType("SleepZee", 2744)
 export const goldenFourLeafClover = new MiscScatterType("Golden Four Leaf Clover")
   .addIcon("goldenclover")
   .standalone();
-export const cloverLeaf = new MiscScatterType("Clover Leaf")
+export const cloverLeaf = new MiscScatterType("Clover Leaf", 2942)
   .standalone()
   .scattererScatters(goldenFourLeafClover);
 export const virtualShamrock = new MiscType("Virtual Shamrock", 2941)
   .virtual()
   .scattererScatters(cloverLeaf);
 
-export const sweetTreats = new MiscScatterType("Sweet Treats").standalone();
-export const goldenTicket = new MiscType("Golden Ticket").physical().scattererScatters(sweetTreats);
+export const sweetTreats = new MiscScatterType("Sweet Treats", 3306).standalone();
+export const goldenTicket = new MiscType("Golden Ticket", 3303)
+  .physical()
+  .scattererScatters(sweetTreats);

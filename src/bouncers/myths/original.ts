@@ -49,7 +49,7 @@ export const battleUnicorn = new OriginalMythType("Battle Unicorn", 1604)
 export const hippocampUnicorn = new OriginalMythType("Hippocamp Unicorn", 1605)
   .addTag(TypeTags.BouncerMythVariant)
   .addBouncerLandsOn(treehouse, greenie, waterMystery, iceMystery);
-export const candyCornUnicorn = new OriginalMythType("Candy Corn Unicorn").addTag(
+export const candyCornUnicorn = new OriginalMythType("Candy Corn Unicorn", 3349).addTag(
   TypeTags.BouncerMythVariant
 );
 export const unicornHost = new OriginalMythHostType("Unicorn Host", 506)
@@ -73,7 +73,9 @@ export const goblinLeprechaun = new OriginalMythType("Goblin Leprechaun", 1647)
     greenie,
     type => type.hasTags(TypeTags.TypeJewel) && type.munzee_id !== 148
   );
-export const lepreCorn = new OriginalMythType("LepreCorn").addTag(TypeTags.BouncerMythVariant);
+export const lepreCorn = new OriginalMythType("LepreCorn", 3367).addTag(
+  TypeTags.BouncerMythVariant
+);
 export const leprechaunHost = new OriginalMythHostType("Leprechaun Host", 509)
   .physical()
   .addBouncerHostType(leprechaun, dwarfLeprechaun, goblinLeprechaun, lepreCorn);
@@ -102,7 +104,7 @@ export const wyvernDragon = new OriginalMythType("Wyvern Dragon", 1875)
     amethyst,
     type => type.meta.evolution?.base === coin.id
   );
-export const midnightDragon = new OriginalMythType("Midnight Dragon").addTag(
+export const midnightDragon = new OriginalMythType("Midnight Dragon", 3370).addTag(
   TypeTags.BouncerMythVariant
 );
 export const dragonHost = new OriginalMythHostType("Dragon Host", 574)
@@ -126,7 +128,9 @@ export const lycanthropeYeti = new OriginalMythType("Lycanthrope Yeti", 1876)
 export const reptoidYeti = new OriginalMythType("Reptoid Yeti", 1877)
   .addTag(TypeTags.BouncerMythVariant)
   .addBouncerLandsOn(treehouse, greenie, earthMystery, waterMystery);
-export const monsterYeti = new OriginalMythType("Monster Yeti").addTag(TypeTags.BouncerMythVariant);
+export const monsterYeti = new OriginalMythType("Monster Yeti", 3368).addTag(
+  TypeTags.BouncerMythVariant
+);
 export const yetiHost = new OriginalMythHostType("Yeti Host", 726)
   .physical()
   .addBouncerLandsOn(yeti, lycanthropeYeti, reptoidYeti, monsterYeti);

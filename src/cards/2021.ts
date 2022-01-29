@@ -42,12 +42,12 @@ export const wishIWasHereCard = new Year2021CardType("Wish I Was Here Card", 300
 export const lifeIsGoodCard = new Year2021CardType("Life Is Good Card", 3004);
 export const stayHome2021Card = new Year2021CardType("Stay Home 2021 Card", 3009);
 export const picturePerfectCard = new Year2021CardType("Picture Perfect Card", 3010);
-export const goodLuckCard = new Year2021CardType("Good Luck Card");
-export const luckyRabbitsFootCard = new Year2021CardType("Lucky Rabbit's Foot Card");
-export const breakaLegCard = new Year2021CardType("Break a Leg Card");
-export const badLuckCard = new Year2021CardType("Bad Luck Card");
-export const halloween2021Card = new Year2021CardType("Halloween 2021 Card");
-export const sweetTreatsCard = new Year2021CardType("Sweet Treats Card");
+export const goodLuckCard = new Year2021CardType("Good Luck Card", 3231);
+export const luckyRabbitsFootCard = new Year2021CardType("Lucky Rabbit's Foot Card", 3232);
+export const breakaLegCard = new Year2021CardType("Break a Leg Card", 3234);
+export const badLuckCard = new Year2021CardType("Bad Luck Card", 3233);
+export const halloween2021Card = new Year2021CardType("Halloween 2021 Card", 3304);
+export const sweetTreatsCard = new Year2021CardType("Sweet Treats Card", 3305);
 
 export const trick = new Year2021CardScatterType("Trick")
   .standalone()
@@ -58,26 +58,29 @@ export const treat = new Year2021CardScatterType("Treat")
 export const trickorTreat = new Year2021CardScatterType("Trick or Treat")
   .standalone()
   .addHidden(TypeHidden.Capture);
-export const trickorTreatCard = new Year2021CardType("Trick or Treat Card").scattererScatters(
+export const trickorTreatCard = new Year2021CardType("Trick or Treat Card", 3326).scattererScatters(
   trickorTreat
 );
 
-export const frankensteinCard = new Year2021CardType("Frankenstein Card");
-export const mummyCard = new Year2021CardType("Mummy Card");
-export const vampireCard = new Year2021CardType("Vampire Card");
-export const werewolfCard = new Year2021CardType("Werewolf Card");
-export const shortStoryCard = new Year2021CardType("Short Story Card");
-export const songaboutYouCard = new Year2021CardType("Song about You Card");
-export const thankfulforYouCard = new Year2021CardType("Thankful for You Card");
-export const lettertoSantaCard = new Year2021CardType("Letter to Santa Card");
+export const frankensteinCard = new Year2021CardType("Frankenstein Card", 3330);
+export const mummyCard = new Year2021CardType("Mummy Card", 3331);
+export const vampireCard = new Year2021CardType("Vampire Card", 3332);
+export const werewolfCard = new Year2021CardType("Werewolf Card", 3333);
+export const shortStoryCard = new Year2021CardType("Short Story Card", 3403);
+export const songaboutYouCard = new Year2021CardType("Song about You Card", 3404);
+export const thankfulforYouCard = new Year2021CardType("Thankful for You Card", 3410);
+export const lettertoSantaCard = new Year2021CardType("Letter to Santa Card", 3411);
 export const christmasEvent2021Card = new Year2021CardType("Christmas Event 2021 Card");
-export const christmasCrackerCard = new Year2021CardType("Christmas Cracker Card");
+export const christmasCrackerCard = new Year2021CardType("Christmas Cracker Card", 3454);
 
 export const daysOfChristmasCards = new TypeSet(
   new Array(12)
     .fill(0)
     .map(
       (_, i) =>
-        new Year2021CardType(`${i + 1}${["st", "nd", "rd"][i] ?? "th"} Day of Christmas Card`)
+        new Year2021CardType(
+          `${i + 1}${["st", "nd", "rd"][i] ?? "th"} Day of Christmas Card`,
+          i + 3531
+        )
     )
 );

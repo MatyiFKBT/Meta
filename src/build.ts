@@ -107,6 +107,13 @@ async function output(database: Database): Promise<void> {
     JSON.stringify(database.toLegacyJSON())
   );
 
+  console.info(
+    chalk.gray`delete from cz.missing_types where capture_type_id in (${database.types.types
+      .filter(i => i.munzee_id)
+      .map(i => i.munzee_id)
+      .join(",")});`
+  );
+
   console.info(chalk.green`Output generated successfully.`);
   console.info(chalk.blue`Output directory: ${outDir}`);
   console.info(chalk.blue`Files:`);

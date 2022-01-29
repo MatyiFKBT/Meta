@@ -54,8 +54,8 @@ export const earthMysteryScatters = new TypeSet()
   .add(new ElementalMysteryScatterType("Pear", 2531).standalone())
   .add(new ElementalMysteryScatterType("Pecan", 2603).standalone())
   .add(new ElementalMysteryScatterType("Acorn", 2604).standalone())
-  .add(new ElementalMysteryScatterType("Dead Branch").standalone())
-  .add(new ElementalMysteryScatterType("Cardinal Feather").standalone());
+  .add(new ElementalMysteryScatterType("Dead Branch", 2848).standalone())
+  .add(new ElementalMysteryScatterType("Cardinal Feather", 2849).standalone());
 export const tree = new ElementalMysteryScatterType("Tree", 2403)
   .physical()
   .scattererScatters(earthMysteryScatters);
@@ -91,15 +91,21 @@ export const electricMystery = new ElementalMysteryType("Electric Mystery", 2391
 
 export const blackHoleItems = new TypeSet()
   .add(
-    ["Planet", "Spaceship", "Meteor", "Satellite", "Lost Key"].map(name =>
-      new ElementalMysteryScatterType(name).standalone()
-    )
+    (
+      [
+        ["Planet"],
+        ["Spaceship"],
+        ["Meteor", 3300],
+        ["Satellite", 3301],
+        ["Lost Key", 3302],
+      ] as const
+    ).map(([name, icon]) => new ElementalMysteryScatterType(name, icon).standalone())
   )
   .add(new ElementalMysteryScatterType("Lost Sock").physical());
 export const blackHole = new ElementalMysteryScatterType("Black Hole")
   .virtual()
   .scattererScatters(blackHoleItems);
-export const voidMystery = new ElementalMysteryType("Void Mystery")
+export const voidMystery = new ElementalMysteryType("Void Mystery", 3295)
   .virtual()
   .scattererScatters(
     blackHole

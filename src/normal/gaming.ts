@@ -63,9 +63,13 @@ export const joystickPhysical = new GamingType("Joystick Physical", 1976)
 // [Gaming] Chess
 const chessPieceNames = ["Pawn", "Knight", "Bishop", "Rook", "Queen", "King"];
 export const chessPieces = new TypeSet()
-  .add(chessPieceNames.map(piece => new GamingScatterType(`Maple ${piece}`).standalone()))
+  .add(
+    chessPieceNames.map((piece, pieceIndex) =>
+      new GamingScatterType(`Maple ${piece}`, pieceIndex + 3282).standalone()
+    )
+  )
   .add(chessPieceNames.map(piece => new GamingScatterType(`Walnut ${piece}`, 2004).standalone()));
-export const mapleChestSet = new GamingType("Maple Chess Set")
+export const mapleChestSet = new GamingType("Maple Chess Set", 3281)
   .virtual()
   .scattererScatters(chessPieces);
 export const walnutChestSet = new GamingType("Walnut Chess Set")

@@ -10,7 +10,9 @@ export const giraffeCalf = new Year2021SeasonalPOBType("Giraffe Calf").addGroup(
   finalBabyAnimalsGroup
 );
 export const foal = new Year2021SeasonalPOBType("Foal").addGroup(finalBabyAnimalsGroup);
-export const otterPup = new Year2021SeasonalPOBType("Otter Pup").addGroup(finalBabyAnimalsGroup);
+export const otterPup = new Year2021SeasonalPOBType("Otter Pup", 3378).addGroup(
+  finalBabyAnimalsGroup
+);
 export const candyCornPiglet = new Year2021SeasonalPOBType("Candy Corn Piglet").addGroup(
   finalBabyAnimalsGroup
 );

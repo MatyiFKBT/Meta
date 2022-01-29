@@ -18,4 +18,4 @@ export class Year2022CardScatterType extends ScatterType {
   }
 }
 
-export const year2022EventCard = new Year2022CardType("2022 Event Card");
+export const year2022EventCard = new Year2022CardType("2022 Event Card", 3552);

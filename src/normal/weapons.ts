@@ -30,7 +30,7 @@ export const boulder = new ClanWeaponScatterType("Boulder", 1255).physical();
 export const catapult = new ClanWeaponType("Catapult", 1248)
   .virtual()
   .scattererScatters(boulder); /*.points({"deploy":30,"capture":35,"capon":35})*/
-export const shield = new ClanWeaponType("Shield").virtual();
+export const shield = new ClanWeaponType("Shield", 3244).virtual();
 export const brokenShield = new ClanWeaponType("Broken Shield").virtual();
 
 export class ZeecretWeaponType extends Type {
@@ -74,11 +74,11 @@ export const laserPen = new ZeecretWeaponType("Laser Pen", 2607)
   .addHidden(TypeHidden.Deploy, TypeHidden.Inventory)
   .scattererScatters(laserTrailScatters);
 
-export const liaisonAgent = new ZeecretWeaponScatterType("Liaison Agent").standalone();
-export const undercoverAgent = new ZeecretWeaponScatterType("Undercover Agent")
+export const liaisonAgent = new ZeecretWeaponScatterType("Liaison Agent", 2826).standalone();
+export const undercoverAgent = new ZeecretWeaponScatterType("Undercover Agent", 3418)
   .standalone()
   .scattererScatters(liaisonAgent);
-export const walkieTalkieWatch = new ZeecretWeaponType("Walkie Talkie Watch")
+export const walkieTalkieWatch = new ZeecretWeaponType("Walkie Talkie Watch", 2824)
   .physical()
   .scattererScatters(undercoverAgent);
 

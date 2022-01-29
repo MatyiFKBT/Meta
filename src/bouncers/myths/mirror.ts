@@ -58,7 +58,9 @@ export const hotSpringMermaid = new MirrorMythType("Hot Spring Mermaid", 1648)
 export const melusineMermaid = new MirrorMythType("Melusine Mermaid", 1649)
   .addTag(TypeTags.BouncerMythVariant)
   .addBouncerLandsOn(skyland, treehouse, greenie, waterMystery, airMystery);
-export const merryMermaid = new MirrorMythType("Merry Mermaid").addTag(TypeTags.BouncerMythVariant);
+export const merryMermaid = new MirrorMythType("Merry Mermaid", 3412).addTag(
+  TypeTags.BouncerMythVariant
+);
 export const mermaidHost = new MirrorMythHostType("Mermaid Host", 1379)
   .physical()
   .addBouncerHostType(mermaid, hotSpringMermaid, melusineMermaid, merryMermaid);
@@ -80,7 +82,7 @@ export const dryadFairy = new MirrorMythType("Dryad Fairy", 1602)
 export const wildfireFairy = new MirrorMythType("Wildfire Fairy", 1603)
   .addTag(TypeTags.BouncerMythVariant)
   .addBouncerLandsOn(skyland, treehouse, greenie, airMystery, fireMystery);
-export const sugarPlumFairy = new MirrorMythType("Sugar Plum Fairy")
+export const sugarPlumFairy = new MirrorMythType("Sugar Plum Fairy", 3457)
   .addTag(TypeTags.BouncerMythVariant)
   .addBouncerLandsOn(skyland, treehouse, greenie, airMystery, iceMystery, amethyst);
 export const fairyHost = new MirrorMythHostType("Fairy Host", 1545)
@@ -122,7 +124,7 @@ export const witchBanshee = new MirrorMythType("Witch Banshee", 2255)
       carnationSeed.id,
     ].includes(type.meta.evolution?.base ?? -1)
   );
-export const ghostOfChristmasFuture = new MirrorMythType("Ghost of Christmas Future")
+export const ghostOfChristmasFuture = new MirrorMythType("Ghost of Christmas Future", 3456)
   .addTag(TypeTags.BouncerMythVariant)
   .addBouncerLandsOn(
     skyland,
@@ -175,7 +177,7 @@ export const elfNymph = new MirrorMythType("Elf Nymph", 2480)
     type => type.hasTags(TypeTags.VirtualColourGreen),
     virtual
   );
-export const snowQueen = new MirrorMythType("Snow Queen").addTag(TypeTags.BouncerMythVariant);
+export const snowQueen = new MirrorMythType("Snow Queen", 3455).addTag(TypeTags.BouncerMythVariant);
 export const nymphHost = new MirrorMythHostType("Nymph Host", 2119)
   .physical()
   .addBouncerHostType(nymph, vampireNymph, elfNymph, snowQueen);

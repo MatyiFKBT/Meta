@@ -93,7 +93,7 @@ export const virtualBellhopNomad = new NomadType("Virtual Bellhop Nomad").addBou
   type => type.hasTags(TypeTags.TypeDestination) && type.state === TypeState.Virtual
 );
 
-export const killerMask = new NomadScatterType("Killer Mask").standalone();
-export const jason4ZeesNomad = new NomadType("Jason 4Zees Nomad")
+export const killerMask = new NomadScatterType("Killer Mask", 3242).standalone();
+export const jason4ZeesNomad = new NomadType("Jason 4Zees Nomad", 3241)
   .addIcon("jason4zees")
   .addBouncerLandsOn(type => type.hasTags(TypeTags.TypeFlat) && type.state === TypeState.Virtual);

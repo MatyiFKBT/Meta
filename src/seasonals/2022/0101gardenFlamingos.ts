@@ -30,7 +30,7 @@ class FlamingoFeathers extends Year2022SeasonalScatterType {
   }
 }
 
-export const gardenFlamingo = new GardenFlamingo("Garden Flamingo");
+export const gardenFlamingo = new GardenFlamingo("Garden Flamingo", 3477);
 export const festiveFeather = new FlamingoFeathers("Festive Feathers");
 export const newYearGardenFlamingo = new GardenFlamingo("New Year Garden Flamingo")
   .addBouncerLandsOn(electricMystery, treehouse, skyland)

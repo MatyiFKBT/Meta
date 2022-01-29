@@ -42,5 +42,5 @@ export const scgsResellerCard = new OpenCardType("SCGS Reseller Card", 3014)
   .setIcon("scgsresellergreetingcard")
   .addTag(TypeTags.TypeReseller);
 
-export const roadWarriorsCard = new OpenCardType("Road Warriors Card");
-export const adventureSeekersCard = new OpenCardType("Adventure Seekers Card");
+export const roadWarriorsCard = new OpenCardType("Road Warriors Card", 3518);
+export const adventureSeekersCard = new OpenCardType("Adventure Seekers Card", 3519);

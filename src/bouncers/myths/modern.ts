@@ -98,8 +98,8 @@ export const aphroditeVirtualHost = new ModernMythHostType("Aphrodite Virtual Ho
   .addBouncerHostType(aphrodite);
 
 // Hades
-export const bident = new ModernMythScatterType("Bident").standalone();
-export const firestarter = new ModernMythScatterType("Firestarter").standalone();
+export const bident = new ModernMythScatterType("Bident", 2997).standalone();
+export const firestarter = new ModernMythScatterType("Firestarter", 2998).standalone();
 export const hades = new ModernMythType("Hades", 2994)
   .addBouncerLandsOn(
     skyland,
@@ -120,14 +120,16 @@ export const hades = new ModernMythType("Hades", 2994)
     citrine
   )
   .scattererScatters(bident, firestarter);
-export const hadesHost = new ModernMythHostType("Hades Host").physical().addBouncerHostType(hades);
+export const hadesHost = new ModernMythHostType("Hades Host", 2995)
+  .physical()
+  .addBouncerHostType(hades);
 export const hadesVirtualHost = new ModernMythHostType("Hades Virtual Host")
   .virtual()
   .addBouncerHostType(hades);
 
 // Zeus
-export const lightningBolt = new ModernMythScatterType("Lightning Bolt").standalone();
-export const multimeter = new ModernMythScatterType("Multimeter").standalone();
+export const lightningBolt = new ModernMythScatterType("Lightning Bolt", 3422).standalone();
+export const multimeter = new ModernMythScatterType("Multimeter", 3423).standalone();
 export const zeus = new ModernMythType("Zeus", 3421)
   .addBouncerLandsOn(
     skyland,

@@ -401,7 +401,7 @@ export const taekwondoTortoise = new NatureEvolutionBouncerType("Taekwondo Torto
 export const turtleHost = new TPOBHostType("Turtle Host")
   .physical()
   .addBouncerHostType(turtle, seaTurtle, snappingTurtle, taekwondoTortoise);
-export const turtleVirtualHost = new TPOBHostType("Turtle Virtual Host")
+export const turtleVirtualHost = new TPOBHostType("Turtle Virtual Host", 2460)
   .virtual()
   .addBouncerHostType(turtle, seaTurtle, snappingTurtle, taekwondoTortoise);
 
@@ -435,7 +435,7 @@ export const bee = new NatureEvolutionBouncerType("Bee")
   )
   .setEvolutionStage(5)
   .setEvolutionBase(beeEggs);
-export const honeyBee = new NatureEvolutionBouncerType("Honey Bee")
+export const honeyBee = new NatureEvolutionBouncerType("Honey Bee", 2881)
   .addBouncerLandsOn(
     treehouse,
     skyland,
@@ -449,7 +449,7 @@ export const honeyBee = new NatureEvolutionBouncerType("Honey Bee")
   )
   .setEvolutionStage(5)
   .setEvolutionBase(beeEggs);
-export const queenBee = new NatureEvolutionBouncerType("Queen Bee")
+export const queenBee = new NatureEvolutionBouncerType("Queen Bee", 2882)
   .addBouncerLandsOn(
     treehouse,
     skyland,
@@ -480,6 +480,6 @@ export const wallaBee = new NatureEvolutionBouncerType("WallaBee", 2883)
 export const beeVirtualHost = new TPOBHostType("Bee Virtual Host")
   .virtual()
   .addBouncerHostType(bee, honeyBee, queenBee, wallaBee);
-export const beeHost = new TPOBHostType("Bee Host")
+export const beeHost = new TPOBHostType("Bee Host", 2884)
   .physical()
   .addBouncerHostType(bee, honeyBee, queenBee, wallaBee);

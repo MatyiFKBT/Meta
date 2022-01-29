@@ -100,7 +100,7 @@ export const queensGuardsmanGardenGnome = new Year2021SeasonalPOBType(
     treehouse,
     skyland
   );
-export const astronautGardenGnome = new Year2021SeasonalPOBType("Astronaut Garden Gnome")
+export const astronautGardenGnome = new Year2021SeasonalPOBType("Astronaut Garden Gnome", 2894)
   .addGroup(gardenGnomesGroup)
   .addBouncerLandsOn(
     type => type.hasTags(TypeTags.TypeVirtual),
@@ -195,10 +195,13 @@ export const skiingGardenGnome = new Year2021SeasonalPOBType("Skiing Garden Gnom
     treehouse,
     skyland
   );
-export const stoneGardenGnome = new Year2021SeasonalPOBType("Stone Garden Gnome")
+export const stoneGardenGnome = new Year2021SeasonalPOBType("Stone Garden Gnome", 3429)
   .addGroup(gardenGnomesGroup)
   .addBouncerLandsOn(type => type.hasTags(TypeTags.TypeVirtual), greenie);
-export const newYearsEveGardenGnome = new Year2021SeasonalPOBType("New Years Eve Garden Gnome")
+export const newYearsEveGardenGnome = new Year2021SeasonalPOBType(
+  "New Years Eve Garden Gnome",
+  3427
+)
   .addGroup(gardenGnomesGroup)
   .addBouncerLandsOn(
     type => type.hasTags(TypeTags.TypeVirtual),
@@ -225,7 +228,7 @@ export const gnomeExplorerHat = new Year2021SeasonalScatterType("Gnome Explorer 
 export const gnomeBearSkinHat = new Year2021SeasonalScatterType("Gnome Bear Skin Hat")
   .addGroup(gardenGnomesGroup)
   .standalone();
-export const gnomeAstronautHelmet = new Year2021SeasonalScatterType("Gnome Astronaut Helmet")
+export const gnomeAstronautHelmet = new Year2021SeasonalScatterType("Gnome Astronaut Helmet", 2895)
   .addGroup(gardenGnomesGroup)
   .standalone();
 export const gnomeHeadphones = new Year2021SeasonalScatterType("Gnome Headphones", 2805)
@@ -240,7 +243,10 @@ export const gnomeHeelflipHat = new Year2021SeasonalScatterType("Gnome Heelflip 
 export const gnomeCatchersCap = new Year2021SeasonalScatterType("Gnome Catcher's Cap", 2808)
   .addGroup(gardenGnomesGroup)
   .standalone();
-export const n10thMunzeeBirthdayHat = new Year2021SeasonalScatterType("10th Munzee Birthday Hat")
+export const n10thMunzeeBirthdayHat = new Year2021SeasonalScatterType(
+  "10th Munzee Birthday Hat",
+  3091
+)
   .addGroup(gardenGnomesGroup)
   .standalone();
 export const gnomeClubCap = new Year2021SeasonalScatterType("Gnome Club Cap")
@@ -249,7 +255,7 @@ export const gnomeClubCap = new Year2021SeasonalScatterType("Gnome Club Cap")
 export const gnomeTouchdownTopper = new Year2021SeasonalScatterType("Gnome Touchdown Topper")
   .addGroup(gardenGnomesGroup)
   .standalone();
-export const cyclingCasquette = new Year2021SeasonalScatterType("Cycling Casquette")
+export const cyclingCasquette = new Year2021SeasonalScatterType("Cycling Casquette", 2811)
   .addGroup(gardenGnomesGroup)
   .standalone();
 export const gnomeGamingHeadset = new Year2021SeasonalScatterType("Gnome Gaming Headset")
@@ -258,6 +264,6 @@ export const gnomeGamingHeadset = new Year2021SeasonalScatterType("Gnome Gaming 
 export const gnomeToqueTopper = new Year2021SeasonalScatterType("Gnome Toque Topper")
   .addGroup(gardenGnomesGroup)
   .standalone();
-export const gnomeCountdownCap = new Year2021SeasonalScatterType("Gnome Countdown Cap")
+export const gnomeCountdownCap = new Year2021SeasonalScatterType("Gnome Countdown Cap", 3428)
   .addGroup(gardenGnomesGroup)
   .standalone();

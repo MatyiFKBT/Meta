@@ -135,7 +135,7 @@ export const lokemegu = new S1PouchCreatureType("Lokemegu", 1755)
 export const ohkmegu = new S2PouchCreatureType("Ohkmegu")
   .addBouncerLandsOn(airMystery)
   .setEvolutionStage(2); /*.points({"capture":400,"capon":100})*/
-export const murinmegu = new S2PouchCreatureType("Murinmegu")
+export const murinmegu = new S2PouchCreatureType("Murinmegu", 3315)
   .addBouncerLandsOn(electricMystery)
   .setEvolutionStage(2); /*.points({"capture":400,"capon":100})*/
 export const urgasmegu = new S2PouchCreatureType("Urgasmegu")
@@ -156,7 +156,8 @@ export const mitmeguPouchCreatureHost = new PouchCreatureHostType(
   .physical()
   .addBouncerHostType(mitmeguSet);
 export const mitmeguPouchCreatureVirtualHost = new PouchCreatureHostType(
-  "Mitmegu Pouch Creature Virtual Host"
+  "Mitmegu Pouch Creature Virtual Host",
+  3313
 )
   .virtual()
   .addBouncerHostType(mitmeguSet);
@@ -366,7 +367,7 @@ export const koobas = new S2PouchCreatureType("Koobas", 3363).setEvolutionStage(
 export const kartus = new S2PouchCreatureType("Kartus").setEvolutionStage(
   2
 ); /*.points({"capture":300,"capon":200})*/
-export const kabuhirm = new S2PouchCreatureType("Kabuhirm").setEvolutionStage(
+export const kabuhirm = new S2PouchCreatureType("Kabuhirm", 3363).setEvolutionStage(
   3
 ); /*.points({"capture":500,"capon":300})*/
 export const koobasSet = new EvolutionTypeSet().add(koobas).add(kartus).add(kabuhirm);
