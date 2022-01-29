@@ -112,7 +112,7 @@ export const smashedH3ADL3SSH0RS3MAN = new MechType("Smashed H3ADL3SS H0RS3MAN",
   .addHidden(TypeHidden.Bouncers);
 
 export const lOC04LMOTIVE = new MechType("LOC04LMOTIVE", 3419);
-export const lOC04LMOTIVEOverheated = new MechType("LOC04LMOTIVE Overheated");
+export const lOC04LMOTIVEOverheated = new MechType("LOC04LMOTIVE Overheated", 3420);
 
 export const wR3NCH = new MechScatterType("WR3NCH", 3522).standalone();
 export const gWRENCH = new MechType("GWRENCH", 3520).scattererScatters(wR3NCH);

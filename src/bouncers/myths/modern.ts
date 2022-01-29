@@ -153,6 +153,6 @@ export const zeus = new ModernMythType("Zeus", 3421)
 export const zeusHost = new ModernMythHostType("Zeus Host", 3424)
   .physical()
   .addBouncerHostType(zeus);
-export const zeusVirtualHost = new ModernMythHostType("Zeus Virtual Host")
+export const zeusVirtualHost = new ModernMythHostType("Zeus Virtual Host", 3425)
   .virtual()
   .addBouncerHostType(zeus);

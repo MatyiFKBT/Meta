@@ -132,7 +132,7 @@ export const rohimegu = new S1PouchCreatureType("Rohimegu", 1754)
 export const lokemegu = new S1PouchCreatureType("Lokemegu", 1755)
   .addBouncerLandsOn(fireMystery)
   .setEvolutionStage(2); /*.points({"capture":400,"capon":100})*/
-export const ohkmegu = new S2PouchCreatureType("Ohkmegu")
+export const ohkmegu = new S2PouchCreatureType("Ohkmegu", 3314)
   .addBouncerLandsOn(airMystery)
   .setEvolutionStage(2); /*.points({"capture":400,"capon":100})*/
 export const murinmegu = new S2PouchCreatureType("Murinmegu", 3315)

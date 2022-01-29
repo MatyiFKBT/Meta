@@ -87,5 +87,6 @@ export const physicalMasterOfDisguise = new ZeecretWeaponType(
 ).physical();
 
 export const virtualMasterOfDisguise = new ZeecretWeaponType(
-  "Virtual Master of Disguise"
+  "Virtual Master of Disguise",
+  3418
 ).virtual();

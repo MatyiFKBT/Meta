@@ -77,7 +77,7 @@ export const aussieExplorerGardenGnome = new Year2021SeasonalPOBType("Aussie Exp
     treehouse,
     skyland
   );
-export const goldMinerGardenGnome = new Year2021SeasonalPOBType("Gold Miner Garden Gnome")
+export const goldMinerGardenGnome = new Year2021SeasonalPOBType("Gold Miner Garden Gnome", 2898)
   .addGroup(gardenGnomesGroup)
   .addBouncerLandsOn(
     type => type.hasTags(TypeTags.TypeVirtual),
@@ -90,7 +90,8 @@ export const goldMinerGardenGnome = new Year2021SeasonalPOBType("Gold Miner Gard
     treasureChest
   );
 export const queensGuardsmanGardenGnome = new Year2021SeasonalPOBType(
-  "Queen's Guardsman Garden Gnome"
+  "Queen's Guardsman Garden Gnome",
+  2900
 )
   .addGroup(gardenGnomesGroup)
   .addBouncerLandsOn(
@@ -219,13 +220,13 @@ export const gnomeArcheryHood = new Year2021SeasonalScatterType("Gnome Archery H
 export const gnomeNogginNet = new Year2021SeasonalScatterType("Gnome Noggin Net", 2804)
   .addGroup(gardenGnomesGroup)
   .standalone();
-export const gnomeMinerHat = new Year2021SeasonalScatterType("Gnome Miner Hat")
+export const gnomeMinerHat = new Year2021SeasonalScatterType("Gnome Miner Hat", 2899)
   .addGroup(gardenGnomesGroup)
   .standalone();
 export const gnomeExplorerHat = new Year2021SeasonalScatterType("Gnome Explorer Hat")
   .addGroup(gardenGnomesGroup)
   .standalone();
-export const gnomeBearSkinHat = new Year2021SeasonalScatterType("Gnome Bear Skin Hat")
+export const gnomeBearSkinHat = new Year2021SeasonalScatterType("Gnome Bear Skin Hat", 2901)
   .addGroup(gardenGnomesGroup)
   .standalone();
 export const gnomeAstronautHelmet = new Year2021SeasonalScatterType("Gnome Astronaut Helmet", 2895)

@@ -398,7 +398,7 @@ export const taekwondoTortoise = new NatureEvolutionBouncerType("Taekwondo Torto
   )
   .setEvolutionStage(5)
   .setEvolutionBase(turtleEgg);
-export const turtleHost = new TPOBHostType("Turtle Host")
+export const turtleHost = new TPOBHostType("Turtle Host", 2459)
   .physical()
   .addBouncerHostType(turtle, seaTurtle, snappingTurtle, taekwondoTortoise);
 export const turtleVirtualHost = new TPOBHostType("Turtle Virtual Host", 2460)
