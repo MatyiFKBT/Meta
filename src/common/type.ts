@@ -144,6 +144,7 @@ export enum TypeTags {
   Card2021 = 0x5e,
   Card2021VCCC = 0x5f,
   Card2021BCCC = 0x77,
+  Card2022 = 0x7a,
 
   // Evolution
   Evolution = 0x60,
@@ -181,7 +182,7 @@ export enum TypeTags {
   FunctionSwap = 0x71,
   FunctionBlast = 0x72,
 }
-// Latest: BouncerSeasonal2022 = 0x79,
+// Latest: Card2022 = 0x7a,
 
 export interface TypeVirtualMeta {
   captureRadius?: number;

@@ -480,3 +480,6 @@ export const wallaBee = new NatureEvolutionBouncerType("WallaBee", 2883)
 export const beeVirtualHost = new TPOBHostType("Bee Virtual Host")
   .virtual()
   .addBouncerHostType(bee, honeyBee, queenBee, wallaBee);
+export const beeHost = new TPOBHostType("Bee Host")
+  .physical()
+  .addBouncerHostType(bee, honeyBee, queenBee, wallaBee);
