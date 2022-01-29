@@ -261,7 +261,7 @@ export const cyclingCasquette = new Year2021SeasonalScatterType("Cycling Casquet
 export const gnomeGamingHeadset = new Year2021SeasonalScatterType("Gnome Gaming Headset")
   .addGroup(gardenGnomesGroup)
   .standalone();
-export const gnomeToqueTopper = new Year2021SeasonalScatterType("Gnome Toque Topper")
+export const gnomeToqueTopper = new Year2021SeasonalScatterType("Gnome Toque Topper", 2813)
   .addGroup(gardenGnomesGroup)
   .standalone();
 export const gnomeCountdownCap = new Year2021SeasonalScatterType("Gnome Countdown Cap", 3428)

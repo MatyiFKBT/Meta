@@ -31,7 +31,7 @@ export const catapult = new ClanWeaponType("Catapult", 1248)
   .virtual()
   .scattererScatters(boulder); /*.points({"deploy":30,"capture":35,"capon":35})*/
 export const shield = new ClanWeaponType("Shield", 3244).virtual();
-export const brokenShield = new ClanWeaponType("Broken Shield").virtual();
+export const brokenShield = new ClanWeaponType("Broken Shield", 3245).virtual();
 
 export class ZeecretWeaponType extends Type {
   override template(): this {

@@ -93,8 +93,8 @@ export const blackHoleItems = new TypeSet()
   .add(
     (
       [
-        ["Planet"],
-        ["Spaceship"],
+        ["Planet", 3297],
+        ["Spaceship", 3298],
         ["Meteor", 3300],
         ["Satellite", 3301],
         ["Lost Key", 3302],
