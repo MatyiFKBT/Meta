@@ -49,3 +49,6 @@ export const christmaZTree = new Year2020SeasonalScatterType("ChristmaZ Tree", 2
 export const christmaZPickle = new Year2020SeasonalScatterType("ChristmaZ Pickle", 2702)
   .addGroup(christmas2020Group)
   .standalone();
+export const putridPresent = new Year2020SeasonalScatterType("Putrid Present", 2742)
+  .addGroup(christmas2020Group)
+  .standalone();
