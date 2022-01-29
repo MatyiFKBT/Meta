@@ -23,7 +23,7 @@ export const greenie = new MiscType("Greenie", 0)
   .physical(); /*.points({"deploy":19,"capture":20,"capon":11})*/
 export const premium = new MiscType(
   "Premium",
-  13
+  4
 ).physical(); /*.points({"deploy":200,"capon":50,"capture":50})*/
 export const social = new MiscType("Social", 32)
   .locationless()
@@ -114,3 +114,5 @@ export const sweetTreats = new MiscScatterType("Sweet Treats", 3306).standalone(
 export const goldenTicket = new MiscType("Golden Ticket", 3303)
   .physical()
   .scattererScatters(sweetTreats);
+
+export const mulligan = new MiscType("Mulligan", 2827).locationless();

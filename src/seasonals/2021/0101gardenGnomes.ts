@@ -110,7 +110,7 @@ export const astronautGardenGnome = new Year2021SeasonalPOBType("Astronaut Garde
     treehouse,
     skyland
   );
-export const soccerGardenGnome = new Year2021SeasonalPOBType("Soccer Garden Gnome")
+export const soccerGardenGnome = new Year2021SeasonalPOBType("Soccer Garden Gnome", 2780)
   .addGroup(gardenGnomesGroup)
   .addBouncerLandsOn(type => type.hasTags(TypeTags.TypeVirtual), greenie, onyx, treehouse, skyland);
 export const skateboardingGardenGnome = new Year2021SeasonalPOBType("Skateboarding Garden Gnome")

@@ -93,7 +93,7 @@ export const kiNGC0GCrushed = new MechType("KiNG C0G Crushed", 3310);
 
 export const botwurst = new MechScatterType("Botwurst", 3319).standalone();
 export const steinBot = new MechType("SteinBot", 3317).scattererScatters(botwurst);
-export const emptySteinBot = new MechType("Empty SteinBot")
+export const emptySteinBot = new MechType("Empty SteinBot", 3318)
   .setIcon("steinbotempty")
   .addHidden(TypeHidden.Bouncers);
 
