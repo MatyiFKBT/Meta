@@ -123,7 +123,7 @@ export const hades = new ModernMythType("Hades", 2994)
 export const hadesHost = new ModernMythHostType("Hades Host", 2995)
   .physical()
   .addBouncerHostType(hades);
-export const hadesVirtualHost = new ModernMythHostType("Hades Virtual Host")
+export const hadesVirtualHost = new ModernMythHostType("Hades Virtual Host", 2996)
   .virtual()
   .addBouncerHostType(hades);
 

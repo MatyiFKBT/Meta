@@ -89,7 +89,7 @@ export const virtualJewelThiefNomad = new NomadType(
 export const virtualWarriorNomad = new NomadType("Virtual Warrior Nomad", 2656).addBouncerLandsOn(
   type => type.hasTags(TypeTags.TypeWeaponClan) && type.state === TypeState.Virtual
 );
-export const virtualBellhopNomad = new NomadType("Virtual Bellhop Nomad").addBouncerLandsOn(
+export const virtualBellhopNomad = new NomadType("Virtual Bellhop Nomad", 2655).addBouncerLandsOn(
   type => type.hasTags(TypeTags.TypeDestination) && type.state === TypeState.Virtual
 );
 

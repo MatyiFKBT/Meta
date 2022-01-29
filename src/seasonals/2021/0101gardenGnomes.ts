@@ -153,7 +153,7 @@ export const cricketGardenGnome = new Year2021SeasonalPOBType("Cricket Garden Gn
     treehouse,
     skyland
   );
-export const footballGardenGnome = new Year2021SeasonalPOBType("Football Garden Gnome")
+export const footballGardenGnome = new Year2021SeasonalPOBType("Football Garden Gnome", 2784)
   .addGroup(gardenGnomesGroup)
   .addBouncerLandsOn(
     type => type.hasTags(TypeTags.TypeVirtual),
@@ -253,7 +253,7 @@ export const n10thMunzeeBirthdayHat = new Year2021SeasonalScatterType(
 export const gnomeClubCap = new Year2021SeasonalScatterType("Gnome Club Cap")
   .addGroup(gardenGnomesGroup)
   .standalone();
-export const gnomeTouchdownTopper = new Year2021SeasonalScatterType("Gnome Touchdown Topper")
+export const gnomeTouchdownTopper = new Year2021SeasonalScatterType("Gnome Touchdown Topper", 2810)
   .addGroup(gardenGnomesGroup)
   .standalone();
 export const cyclingCasquette = new Year2021SeasonalScatterType("Cycling Casquette", 2811)
