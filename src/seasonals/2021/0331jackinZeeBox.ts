@@ -17,7 +17,7 @@ export const jackinZeeBoxGroup = new Year2021SeasonalGroup({
 export const jackinZeeBox = new Year2021SeasonalPOBType("Jack in Zee Box").addGroup(
   jackinZeeBoxGroup
 );
-export const applejackinZeeBox = new JackInZeeBoxType("Applejack in the Box")
+export const applejackinZeeBox = new JackInZeeBoxType("Applejack in the Box", 2967)
   .addGroup(jackinZeeBoxGroup)
   .addHidden(TypeHidden.Bouncers);
 export const blastinZeeBox = new JackInZeeBoxType("Blast in the Box")

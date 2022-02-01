@@ -83,13 +83,13 @@ export const crumbledMechaniC4K3 = new MechType("Crumbled MechaniC4K3", 3125).ad
   TypeHidden.Bouncers
 );
 
-export const sC4RAB = new MechScatterType("SC4RAB").standalone();
+export const sC4RAB = new MechScatterType("SC4RAB", 3172).standalone();
 export const s4RC0PH4GUS = new MechType("S4RC0PH4GUS", 3170);
 export const mUMM33 = new MechType("MUMM33", 3171).scattererScatters(sC4RAB);
 export const mONK3Y = new MechType("MONK3Y", 3307);
 export const priM8 = new MechType("PriM8", 3308);
 export const kiNGC0G = new MechType("KiNG C0G", 3309);
-export const kiNGC0GCrushed = new MechType("KiNG C0G Crushed", 3310);
+export const kiNGC0GCrushed = new MechType("KiNG C0G Crushed", 3310); //3312
 
 export const botwurst = new MechScatterType("Botwurst", 3319).standalone();
 export const steinBot = new MechType("SteinBot", 3317).scattererScatters(botwurst);
@@ -132,5 +132,9 @@ export const abominableSN0WMachine = new MechType(
   3570
 ).scattererScatters(sn0wBomb);
 export const abominableSN0WMachineFrostbitten = new MechType(
-  "Abominable SN0W Machine Frostbitten"
+  "Abominable SN0W Machine Frostbitten",
+  3571
 ).addHidden(TypeHidden.Bouncers);
+
+export const breadBot = new MechScatterType("Bread Bot", 3575).standalone();
+export const toast33 = new MechType("Toast33", 3577).scattererScatters(breadBot);

@@ -7,7 +7,7 @@ export const holiday2021Group = new Year2021SeasonalGroup({
   ends: "2021-12-31T23:59:00-05:00",
 });
 
-export const sirPrizeSanta = new Year2021SeasonalType("Sir Prize Santa")
+export const sirPrizeSanta = new Year2021SeasonalType("Sir Prize Santa", 2652)
   .addGroup(holiday2021Group)
   .virtual()
   .addHidden(TypeHidden.Deploy, TypeHidden.Bouncers);

@@ -6,16 +6,16 @@ export const finalBabyAnimalsGroup = new Year2021SeasonalGroup({
   ends: "2021-12-31T23:59:00-05:00",
 });
 
-export const giraffeCalf = new Year2021SeasonalPOBType("Giraffe Calf").addGroup(
+export const giraffeCalf = new Year2021SeasonalPOBType("Giraffe Calf", 3382).addGroup(
   finalBabyAnimalsGroup
 );
-export const foal = new Year2021SeasonalPOBType("Foal").addGroup(finalBabyAnimalsGroup);
+export const foal = new Year2021SeasonalPOBType("Foal", 3380).addGroup(finalBabyAnimalsGroup);
 export const otterPup = new Year2021SeasonalPOBType("Otter Pup", 3378).addGroup(
   finalBabyAnimalsGroup
 );
-export const candyCornPiglet = new Year2021SeasonalPOBType("Candy Corn Piglet").addGroup(
+export const candyCornPiglet = new Year2021SeasonalPOBType("Candy Corn Piglet", 3379).addGroup(
   finalBabyAnimalsGroup
 );
-export const babyRaccoon = new Year2021SeasonalPOBType("Baby Raccoon").addGroup(
+export const babyRaccoon = new Year2021SeasonalPOBType("Baby Raccoon", 3381).addGroup(
   finalBabyAnimalsGroup
 );

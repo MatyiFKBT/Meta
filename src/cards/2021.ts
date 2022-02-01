@@ -49,10 +49,10 @@ export const badLuckCard = new Year2021CardType("Bad Luck Card", 3233);
 export const halloween2021Card = new Year2021CardType("Halloween 2021 Card", 3304);
 export const sweetTreatsCard = new Year2021CardType("Sweet Treats Card", 3305);
 
-export const trick = new Year2021CardScatterType("Trick")
+export const trick = new Year2021CardScatterType("Trick", 3329)
   .standalone()
   .addHidden(TypeHidden.Bouncers);
-export const treat = new Year2021CardScatterType("Treat")
+export const treat = new Year2021CardScatterType("Treat", 3328)
   .standalone()
   .addHidden(TypeHidden.Bouncers);
 export const trickorTreat = new Year2021CardScatterType("Trick or Treat")
@@ -70,7 +70,7 @@ export const shortStoryCard = new Year2021CardType("Short Story Card", 3403);
 export const songaboutYouCard = new Year2021CardType("Song about You Card", 3404);
 export const thankfulforYouCard = new Year2021CardType("Thankful for You Card", 3410);
 export const lettertoSantaCard = new Year2021CardType("Letter to Santa Card", 3411);
-export const christmasEvent2021Card = new Year2021CardType("Christmas Event 2021 Card");
+export const christmasEvent2021Card = new Year2021CardType("Christmas Event 2021 Card", 3402);
 export const christmasCrackerCard = new Year2021CardType("Christmas Cracker Card", 3454);
 
 export const daysOfChristmasCards = new TypeSet(

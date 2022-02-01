@@ -29,9 +29,14 @@ export const slovakiaIconicLocation = new TourismType("Slovakia Iconic Location"
 export const washingtonIconicLocation = new TourismType("Washington Iconic Location", 1831);
 export const newHampshireIconicLocation = new TourismType("New Hampshire Iconic Location", 2196);
 export const newMexicoIconicLocation = new TourismType("New Mexico Iconic Location", 2197);
-export const minnesotaIconicLocation = new TourismType("Minnesota Iconic Location");
-export const australiaIconicLocation = new TourismType("Australia Iconic Location");
+export const minnesotaIconicLocation = new TourismType("Minnesota Iconic Location", 2587);
+export const australiaIconicLocation = new TourismType("Australia Iconic Location", 1744);
 export const mHQFlatMatt = new TourismType("MHQ Flat Matt", 1006);
 export const mHQFlatRob = new TourismType("MHQ Flat Rob", 1007);
 export const towerBridgeFlatLou = new TourismType("Tower Bridge Flat Lou", 1343);
 export const gettysburgFlatHammock = new TourismType("Gettysburg Flat Hammock", 1582);
+
+export const getFitMunzeeTrail = new TourismType("Get Fit Munzee Trail", 1115);
+export const garfieldStatue = new TourismType("Garfield Statue", 1019);
+export const coexist = new TourismType("Coexist", 216);
+export const whompNation = new TourismType("Whomp Nation", 47);

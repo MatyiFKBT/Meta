@@ -138,7 +138,7 @@ export const ohkmegu = new S2PouchCreatureType("Ohkmegu", 3314)
 export const murinmegu = new S2PouchCreatureType("Murinmegu", 3315)
   .addBouncerLandsOn(electricMystery)
   .setEvolutionStage(2); /*.points({"capture":400,"capon":100})*/
-export const urgasmegu = new S2PouchCreatureType("Urgasmegu")
+export const urgasmegu = new S2PouchCreatureType("Urgasmegu", 3316)
   .addBouncerLandsOn(voidMystery)
   .setEvolutionStage(2); /*.points({"capture":400,"capon":100})*/
 export const mitmeguSet = new EvolutionTypeSet()

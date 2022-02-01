@@ -34,6 +34,9 @@ export const fleetingRUD01PH = new Year2020SeasonalPOBType("Fleeting RUD01PH", 2
 );
 export const n31F = new Year2020SeasonalPOBType("31F", 2739).addGroup(christmas2020Group);
 export const krampBot = new Year2020SeasonalPOBType("KrampBot", 2740).addGroup(christmas2020Group);
+export const krushedKrampBot = new Year2020SeasonalPOBType("Krushed Krampbot", 2741).addGroup(
+  christmas2020Group
+);
 export const pixelPresent = new Year2020SeasonalScatterType("Pixel Present", 2704)
   .addGroup(christmas2020Group)
   .standalone();

@@ -6,7 +6,7 @@ export const babyPandaGroup = new Year2021SeasonalGroup({
   ends: "2021-07-20T23:59:00-05:00",
 });
 
-export const babyPanda = new Year2021SeasonalPOBType("Baby Panda").addGroup(babyPandaGroup);
-export const albinoBabyPanda = new Year2021SeasonalPOBType("Albino Baby Panda").addGroup(
+export const babyPanda = new Year2021SeasonalPOBType("Baby Panda", 3054).addGroup(babyPandaGroup);
+export const albinoBabyPanda = new Year2021SeasonalPOBType("Albino Baby Panda", 3055).addGroup(
   babyPandaGroup
 );

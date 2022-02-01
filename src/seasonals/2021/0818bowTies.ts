@@ -9,7 +9,9 @@ export const bowTiesGroup = new Year2021SeasonalGroup({
 export const picnicBowTie = new Year2021SeasonalBouncerType("Picnic Bow Tie").addGroup(
   bowTiesGroup
 );
-export const redBowTie = new Year2021SeasonalBouncerType("Red Bow Tie").addGroup(bowTiesGroup);
+export const redBowTie = new Year2021SeasonalBouncerType("Red Bow Tie", 3253).addGroup(
+  bowTiesGroup
+);
 export const starBowTie = new Year2021SeasonalBouncerType("Star Bow Tie").addGroup(bowTiesGroup);
 export const tuxBowTie = new Year2021SeasonalBouncerType("Tux Bow Tie").addGroup(bowTiesGroup);
 export const checkerboardBowTie = new Year2021SeasonalBouncerType("Checkerboard Bow Tie").addGroup(

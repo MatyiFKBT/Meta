@@ -6,8 +6,10 @@ export const babyAnimalsGroup = new Year2021SeasonalGroup({
   ends: "2021-05-31T23:59:00-05:00",
 });
 
-export const dogePup = new Year2021SeasonalPOBType("Doge Pup").addGroup(babyAnimalsGroup);
-export const ittyBittyKitty = new Year2021SeasonalPOBType("Itty Bitty Kitty").addGroup(
+export const dogePup = new Year2021SeasonalPOBType("Doge Pup", 2989).addGroup(babyAnimalsGroup);
+export const ittyBittyKitty = new Year2021SeasonalPOBType("Itty Bitty Kitty", 2990).addGroup(
   babyAnimalsGroup
 );
-export const babyMonkey = new Year2021SeasonalPOBType("Baby Monkey").addGroup(babyAnimalsGroup);
+export const babyMonkey = new Year2021SeasonalPOBType("Baby Monkey", 2988).addGroup(
+  babyAnimalsGroup
+);

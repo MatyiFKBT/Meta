@@ -10,16 +10,16 @@ export const aprilFoolsGroup = new Year2021SeasonalGroup({
   ends: "2021-04-30T23:59:00-05:00",
 });
 
-export const bagofTricks = new Year2021SeasonalBouncerType("Bag of Tricks").addGroup(
+export const bagofTricks = new Year2021SeasonalBouncerType("Bag of Tricks", 2974).addGroup(
   aprilFoolsGroup
 );
 export const sackofSurprises = new Year2021SeasonalBouncerType("Sack of Surprises").addGroup(
   aprilFoolsGroup
 );
-export const squirtingFlower = new Year2021SeasonalScatterType("Squirting Flower")
+export const squirtingFlower = new Year2021SeasonalScatterType("Squirting Flower", 2975)
   .addGroup(aprilFoolsGroup)
   .standalone();
-export const sneezingPowder = new Year2021SeasonalScatterType("Sneezing Powder")
+export const sneezingPowder = new Year2021SeasonalScatterType("Sneezing Powder", 2976)
   .addGroup(aprilFoolsGroup)
   .standalone();
 export const canofSnakes = new Year2021SeasonalScatterType("Can of Snakes")

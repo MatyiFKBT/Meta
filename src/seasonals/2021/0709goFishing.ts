@@ -17,7 +17,10 @@ export const goFishingGroup = new Year2021SeasonalGroup({
   ends: "2021-08-08T23:59:00-05:00",
 });
 
-export const freshwaterFishingPole = new Year2021SeasonalBouncerType("Freshwater Fishing Pole")
+export const freshwaterFishingPole = new Year2021SeasonalBouncerType(
+  "Freshwater Fishing Pole",
+  3173
+)
   .addGroup(goFishingGroup)
   .addBouncerLandsOn(
     greenie,
@@ -30,7 +33,7 @@ export const freshwaterFishingPole = new Year2021SeasonalBouncerType("Freshwater
     shark,
     fish
   );
-export const saltwaterFishingPole = new Year2021SeasonalBouncerType("Saltwater Fishing Pole")
+export const saltwaterFishingPole = new Year2021SeasonalBouncerType("Saltwater Fishing Pole", 3174)
   .addGroup(goFishingGroup)
   .addBouncerLandsOn(
     i => i.hasTags(TypeTags.VirtualColourBlue),
@@ -52,7 +55,7 @@ export const smelt = new Year2021SeasonalScatterType("Smelt")
   .addGroup(goFishingGroup)
   .standalone()
   .addHidden(TypeHidden.Bouncers);
-export const rainbowTrout = new Year2021SeasonalScatterType("Rainbow Trout")
+export const rainbowTrout = new Year2021SeasonalScatterType("Rainbow Trout", 3181)
   .addGroup(goFishingGroup)
   .standalone()
   .addHidden(TypeHidden.Bouncers);
@@ -68,7 +71,7 @@ export const gar = new Year2021SeasonalScatterType("Gar")
   .addGroup(goFishingGroup)
   .standalone()
   .addHidden(TypeHidden.Bouncers);
-export const pike = new Year2021SeasonalScatterType("Pike")
+export const pike = new Year2021SeasonalScatterType("Pike", 3183)
   .addGroup(goFishingGroup)
   .standalone()
   .addHidden(TypeHidden.Bouncers);
@@ -84,7 +87,7 @@ export const nessie = new Year2021SeasonalScatterType("Nessie")
   .addGroup(goFishingGroup)
   .standalone()
   .addHidden(TypeHidden.Bouncers);
-export const kingMackerel = new Year2021SeasonalScatterType("King Mackerel")
+export const kingMackerel = new Year2021SeasonalScatterType("King Mackerel", 3190)
   .addGroup(goFishingGroup)
   .standalone()
   .addHidden(TypeHidden.Bouncers);
@@ -108,7 +111,7 @@ export const messageinaBottle = new Year2021SeasonalScatterType("Message in a Bo
   .addGroup(goFishingGroup)
   .standalone()
   .addHidden(TypeHidden.Bouncers);
-export const redSnapper = new Year2021SeasonalScatterType("Red Snapper")
+export const redSnapper = new Year2021SeasonalScatterType("Red Snapper", 3193)
   .addGroup(goFishingGroup)
   .standalone()
   .addHidden(TypeHidden.Bouncers);
@@ -120,7 +123,7 @@ export const marlin = new Year2021SeasonalScatterType("Marlin")
   .addGroup(goFishingGroup)
   .standalone()
   .addHidden(TypeHidden.Bouncers);
-export const lifePreserver = new Year2021SeasonalScatterType("Life Preserver")
+export const lifePreserver = new Year2021SeasonalScatterType("Life Preserver", 3188)
   .addGroup(goFishingGroup)
   .standalone()
   .addHidden(TypeHidden.Bouncers);

@@ -24,7 +24,7 @@ export const championChopper = new Year2021SeasonalBouncerType("Champion Chopper
 export const unicornUnicycle = new Year2021SeasonalBouncerType("Unicorn Unicycle")
   .addGroup(worldBicycleDay2021Group)
   .addBouncerLandsOn(greenie, shamrock, fireMystery, pinkDiamond, tractor);
-export const toyTrike = new Year2021SeasonalBouncerType("Toy Trike")
+export const toyTrike = new Year2021SeasonalBouncerType("Toy Trike", 3061)
   .addGroup(worldBicycleDay2021Group)
   .addBouncerLandsOn(
     i => i.hasTags(TypeTags.TypeVirtual),
@@ -48,10 +48,10 @@ export const tandemTwins = new Year2021SeasonalBouncerType("Tandem Twins")
     poiTransportation,
     i => i.meta.evolution?.base === firstWheel.id
   );
-export const startingLine = new Year2021SeasonalScatterType("Starting Line")
+export const startingLine = new Year2021SeasonalScatterType("Starting Line", 3063)
   .addGroup(worldBicycleDay2021Group)
   .standalone();
-export const midway = new Year2021SeasonalScatterType("Midway")
+export const midway = new Year2021SeasonalScatterType("Midway", 3064)
   .addGroup(worldBicycleDay2021Group)
   .standalone();
 export const n1stPlaceBicentennialBicycle = new Year2021SeasonalScatterType(
@@ -107,7 +107,7 @@ export const n3rdPlaceBicentennialBicycle = new Year2021SeasonalScatterType(
 )
   .addGroup(worldBicycleDay2021Group)
   .standalone();
-export const n3rdPlaceToyTrike = new Year2021SeasonalScatterType("3rd Place Toy Trike")
+export const n3rdPlaceToyTrike = new Year2021SeasonalScatterType("3rd Place Toy Trike", 3086)
   .addGroup(worldBicycleDay2021Group)
   .standalone();
 export const n3rdPlaceChampionChopper = new Year2021SeasonalScatterType(

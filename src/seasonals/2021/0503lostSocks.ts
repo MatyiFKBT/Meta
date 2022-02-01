@@ -48,7 +48,7 @@ export const leftHoneycombSock = new Year2021SeasonalBouncerType("Left Honeycomb
     i => i.hasTags(TypeTags.TypeGaming) && i.state === TypeState.Physical,
     i => i.hasTags(TypeTags.TypeMysteryElemental) && i.state === TypeState.Physical
   );
-export const leftStripedSock = new Year2021SeasonalBouncerType("Left Striped Sock")
+export const leftStripedSock = new Year2021SeasonalBouncerType("Left Striped Sock", 3023)
   .addGroup(lostSocksGroup)
   .addBouncerLandsOn(
     greenie,
@@ -75,7 +75,7 @@ export const leftTubeSock = new Year2021SeasonalBouncerType("Left Tube Sock")
     i => i.hasTags(TypeTags.TypeGaming) && i.state === TypeState.Physical,
     i => i.hasTags(TypeTags.TypeMysteryElemental) && i.state === TypeState.Physical
   );
-export const leftUnicornSock = new Year2021SeasonalBouncerType("Left Unicorn Sock")
+export const leftUnicornSock = new Year2021SeasonalBouncerType("Left Unicorn Sock", 3021)
   .addGroup(lostSocksGroup)
   .addBouncerLandsOn(
     greenie,
@@ -110,7 +110,7 @@ export const rightArgyleSock = new Year2021SeasonalBouncerType("Right Argyle Soc
     garden,
     field
   );
-export const rightHoleySock = new Year2021SeasonalBouncerType("Right Hole-y Sock")
+export const rightHoleySock = new Year2021SeasonalBouncerType("Right Hole-y Sock", 3028)
   .addGroup(lostSocksGroup)
   .addBouncerLandsOn(
     i => i.hasTags(TypeTags.TypeVirtual),
@@ -136,7 +136,7 @@ export const rightHoneycombSock = new Year2021SeasonalBouncerType("Right Honeyco
     garden,
     field
   );
-export const rightStripedSock = new Year2021SeasonalBouncerType("Right Striped Sock")
+export const rightStripedSock = new Year2021SeasonalBouncerType("Right Striped Sock", 3024)
   .addGroup(lostSocksGroup)
   .addBouncerLandsOn(
     i => i.hasTags(TypeTags.TypeVirtual),

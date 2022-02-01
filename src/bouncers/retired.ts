@@ -84,7 +84,7 @@ export const zombieVesi = new RetiredBouncerType("Zombie Vesi", 2054)
 export const zombieMuru = new RetiredBouncerType("Zombie Muru", 2055)
   .addTags(TypeTags.BouncerPC, TypeTags.BouncerPCZombie, TypeTags.BouncerRetired)
   .addBouncerLandsOn(greenie, earthMystery);
-export const zombieElekter = new RetiredBouncerType("Zombie Elekter")
+export const zombieElekter = new RetiredBouncerType("Zombie Elekter", 2819)
   .addTags(TypeTags.BouncerPC, TypeTags.BouncerPCZombie, TypeTags.BouncerRetired)
   .addBouncerLandsOn(skyland, type => type.hasTags(TypeTags.TypeVirtual), electricMystery);
 export const zombiePuffle = new RetiredBouncerType("Zombie Puffle", 2822)
@@ -106,7 +106,7 @@ export const zombieMagnetus = new RetiredBouncerType("Zombie Magnetus")
     virtualGoldenrod,
     virtualDandelion
   );
-export const zombiePimedus = new RetiredBouncerType("Zombie Pimedus")
+export const zombiePimedus = new RetiredBouncerType("Zombie Pimedus", 2821)
   .addTags(TypeTags.BouncerPC, TypeTags.BouncerPCZombie, TypeTags.BouncerRetired)
   .addBouncerLandsOn(
     skyland,
@@ -120,7 +120,7 @@ export const zombiePimedus = new RetiredBouncerType("Zombie Pimedus")
     crossbow,
     catapult
   );
-export const retiredNymph = new RetiredBouncerType("Retired Nymph")
+export const retiredNymph = new RetiredBouncerType("Retired Nymph", 2818)
   .addTags(TypeTags.BouncerMyth, TypeTags.BouncerRetired)
   .addBouncerLandsOn(
     skyland,
@@ -136,7 +136,7 @@ export const phantomFlatRob = new RetiredBouncerType("Phantom Flat Rob", 2817).a
   TypeTags.BouncerFlatPhantom,
   TypeTags.BouncerRetired
 );
-export const phantomFlatMatt = new RetiredBouncerType("Phantom Flat Matt").addTags(
+export const phantomFlatMatt = new RetiredBouncerType("Phantom Flat Matt", 2816).addTags(
   TypeTags.BouncerPC,
   TypeTags.BouncerFlatPhantom,
   TypeTags.BouncerRetired
