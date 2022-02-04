@@ -82,11 +82,10 @@ export const walkieTalkieWatch = new ZeecretWeaponType("Walkie Talkie Watch", 28
   .physical()
   .scattererScatters(undercoverAgent);
 
-export const physicalMasterOfDisguise = new ZeecretWeaponType(
-  "Physical Master of Disguise"
-).physical();
+export const physicalMasterOfDisguise = new ZeecretWeaponType("Physical Master of Disguise")
+  .physical()
+  .addHidden(TypeHidden.Capture);
 
-export const virtualMasterOfDisguise = new ZeecretWeaponType(
-  "Virtual Master of Disguise",
-  3418
-).virtual();
+export const virtualMasterOfDisguise = new ZeecretWeaponType("Virtual Master of Disguise", 3418)
+  .virtual()
+  .addHidden(TypeHidden.Capture);
