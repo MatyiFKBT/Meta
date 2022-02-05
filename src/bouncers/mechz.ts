@@ -136,5 +136,5 @@ export const abominableSN0WMachineFrostbitten = new MechType(
   3571
 ).addHidden(TypeHidden.Bouncers);
 
-export const breadBot = new MechType("Bread Bot", 3575).scattererScatters(breadBot);
 export const toast33 = new MechScatterType("Toast33", 3577).standalone();
+export const breadBot = new MechType("Bread Bot", 3575).scattererScatters(toast33);
