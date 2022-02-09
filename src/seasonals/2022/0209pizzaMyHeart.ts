@@ -48,7 +48,7 @@ const toppings: [name: string, physical: boolean, munzeeId?: number][] = [
   ["Red Onions", false, 3593],
 ];
 
-export const hatSet = new TypeSet();
+export const toppingSet = new TypeSet();
 for (const [toppingName, toppingPhysical, toppingId] of toppings) {
   const topping = new Year2022SeasonalBouncerType(toppingName, toppingId).addGroup(
     pizzaMyHeartGroup
@@ -89,4 +89,5 @@ for (const [toppingName, toppingPhysical, toppingId] of toppings) {
       chick
     );
   }
+  toppingSet.add(topping);
 }
