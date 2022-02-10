@@ -145,9 +145,11 @@ export const abominableSN0WMachineFrostbitten = new MechType(
 export const toast33 = new MechScatterType("Toast33", 3577).standalone();
 export const breadBot = new MechType("Bread Bot", 3575).scattererScatters(toast33);
 
-export const heartThRobot = new MechScatterType("Heart ThRobot").standalone();
+export const heartThRobot = new MechScatterType("Heart ThRobot")
+  .setIcon("heartthrobots", "heartthrobot")
+  .standalone();
 export const rougeBot = new MechScatterType("Rouge Bot").standalone();
-export const xBot = new MechType("X Bot")
+export const xBot = new MechType("X Bot", 3614)
   .scattererScatters(heartThRobot)
   .addBouncerLandsOn(
     greenie,
