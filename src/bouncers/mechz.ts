@@ -1,9 +1,15 @@
 import { Group } from "../common/group";
 import { BouncerType, ScatterType, TypeHidden, TypeTags } from "../common/type";
+import { tomato, tomatoPlant, tomatoSeed } from "../evolutions/farm";
 import { coin } from "../evolutions/reseller";
 import { skyland, treehouse } from "../normal/destination";
-import { joystickPhysical, joystickVirtual } from "../normal/gaming";
-import { premium, greenie } from "../normal/misc";
+import { flatDiscGolfBasket, flatMatt } from "../normal/flats";
+import { bowling, joystickPhysical, joystickVirtual, prizeWheel, surprise } from "../normal/gaming";
+import { pinkDiamond, ruby } from "../normal/jewels";
+import { premium, greenie, shamrock, virtualShamrock } from "../normal/misc";
+import { mystery } from "../normal/mystery";
+import { poiCampground, poiCinema } from "../normal/places";
+import { crossbow, longsword, mace, shield } from "../normal/weapons";
 import { bouncersGroup } from "./_index";
 
 export const MechGroup = new Group({ name: "MechZ" }).addParent(bouncersGroup);
@@ -138,3 +144,45 @@ export const abominableSN0WMachineFrostbitten = new MechType(
 
 export const toast33 = new MechScatterType("Toast33", 3577).standalone();
 export const breadBot = new MechType("Bread Bot", 3575).scattererScatters(toast33);
+
+export const heartThRobot = new MechScatterType("Heart ThRobot").standalone();
+export const rougeBot = new MechScatterType("Rouge Bot").standalone();
+export const xBot = new MechType("X Bot")
+  .scattererScatters(heartThRobot)
+  .addBouncerLandsOn(
+    greenie,
+    premium,
+    mystery,
+    pinkDiamond,
+    surprise,
+    prizeWheel,
+    shamrock,
+    virtualShamrock,
+    longsword,
+    shield,
+    type => type.hasTags(TypeTags.VirtualColourRed),
+    flatMatt,
+    flatDiscGolfBasket,
+    poiCampground,
+    treehouse,
+    skyland
+  );
+export const oBot = new MechType("O Bot", 3617)
+  .scattererScatters(rougeBot)
+  .addBouncerLandsOn(
+    greenie,
+    premium,
+    mystery,
+    ruby,
+    tomato,
+    tomatoPlant,
+    tomatoSeed,
+    surprise,
+    bowling,
+    mace,
+    crossbow,
+    type => type.hasTags(TypeTags.VirtualColourPink),
+    poiCinema,
+    treehouse,
+    skyland
+  );
