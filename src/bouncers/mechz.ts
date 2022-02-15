@@ -68,7 +68,10 @@ export const geoLoggersRUMBot = new MechType("GeoLoggers RUMBot", 3101).addBounc
   skyland,
   treehouse
 );
-export const brokenGoldnCoinsRUMBot = new BrokenMechType("Broken Gold'n Coins RUMBot", 3628);
+export const brokenGoldnCoinsRUMBot = new BrokenMechType(
+  "Broken Gold'n Coins RUMBot",
+  3628
+).setIcon("brokengoldncoinsrumbot");
 export const goldnCoinsRUMBot = new MechType("Gold'n Coins RUMBot", 3100).addBouncerLandsOn(
   greenie,
   type => type.hasTags(TypeTags.TypeReseller),
