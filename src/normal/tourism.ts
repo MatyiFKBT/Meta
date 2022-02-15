@@ -39,4 +39,6 @@ export const gettysburgFlatHammock = new TourismType("Gettysburg Flat Hammock", 
 export const getFitMunzeeTrail = new TourismType("Get Fit Munzee Trail", 1115);
 export const garfieldStatue = new TourismType("Garfield Statue", 1019);
 export const coexist = new TourismType("Coexist", 216);
+export const waywardNation = new TourismType("Wayward Nation", 46);
 export const whompNation = new TourismType("Whomp Nation", 47);
+export const iceBucket = new TourismType("Ice Bucket", 146);

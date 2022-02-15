@@ -90,7 +90,7 @@ export const zombieElekter = new RetiredBouncerType("Zombie Elekter", 2819)
 export const zombiePuffle = new RetiredBouncerType("Zombie Puffle", 2822)
   .addTags(TypeTags.BouncerPC, TypeTags.BouncerPCZombie, TypeTags.BouncerRetired)
   .addBouncerLandsOn(skyland, type => type.hasTags(TypeTags.TypeVirtual), airMystery);
-export const zombieMagnetus = new RetiredBouncerType("Zombie Magnetus")
+export const zombieMagnetus = new RetiredBouncerType("Zombie Magnetus", 2820)
   .addTags(TypeTags.BouncerPC, TypeTags.BouncerPCZombie, TypeTags.BouncerRetired)
   .addBouncerLandsOn(
     skyland,

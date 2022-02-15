@@ -16,3 +16,4 @@ export class Year2022VMailboxCardType extends CardType {
   }
 }
 export const valentinesMailbox = new Year2022VMailboxCardType("V-Mailbox", 3574);
+export const loveBugCard = new Year2022VMailboxCardType("Love Bug Card", 3595);

@@ -1,3 +1,4 @@
+import { TypeHidden } from "../../common/type";
 import {
   Year2020SeasonalScatterType,
   Year2020SeasonalGroup,
@@ -10,9 +11,15 @@ export const christmas2020Group = new Year2020SeasonalGroup({
   ends: "3020-12-31T23:59:00-05:00",
 });
 
+export const brokenCyborgSanta = new Year2020SeasonalPOBType("Broken Cyborg Santa", 3621)
+  .addGroup(christmas2020Group)
+  .addHidden(TypeHidden.Deploy, TypeHidden.Bouncers);
 export const cyborgSanta = new Year2020SeasonalPOBType("Cyborg Santa", 2695).addGroup(
   christmas2020Group
 );
+export const brokenCybersaurusRex = new Year2020SeasonalPOBType("Broken Cybersaurus Rex", 3621)
+  .addGroup(christmas2020Group)
+  .addHidden(TypeHidden.Deploy, TypeHidden.Bouncers);
 export const cybersaurusRex = new Year2020SeasonalPOBType("Cybersaurus Rex", 2696).addGroup(
   christmas2020Group
 );

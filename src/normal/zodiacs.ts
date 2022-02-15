@@ -85,8 +85,8 @@ export const egyptianZodiacScatters = new TypeSet()
   .add(new EgyptianZodiacScatterType("Sesen Artifact", 2771))
   .add(new EgyptianZodiacScatterType("Was Scepter Artifact", 2770))
   .add(new EgyptianZodiacScatterType("Eye of Horus Artifact", 2772))
-  .add(new EgyptianZodiacScatterType("Tyet Artifact"))
-  .add(new EgyptianZodiacScatterType("Sistrum Artifact", 2773));
+  .add(new EgyptianZodiacScatterType("Tyet Artifact", 2773))
+  .add(new EgyptianZodiacScatterType("Sistrum Artifact", 2774));
 export const theNile = new EgyptianZodiacType("The Nile", 2751).setIcon("nile");
 export const amonRa = new EgyptianZodiacType("Amon-Ra", 2752);
 export const osiris = new EgyptianZodiacType("Osiris", 2753);

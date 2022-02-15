@@ -11,7 +11,7 @@ export const sirPrizeSanta = new Year2021SeasonalType("Sir Prize Santa", 2652)
   .addGroup(holiday2021Group)
   .virtual()
   .addHidden(TypeHidden.Deploy, TypeHidden.Bouncers);
-export const gumDrop = new Year2021SeasonalScatterType("Gum Drop")
+export const gumDrop = new Year2021SeasonalScatterType("Gum Drop", 3430)
   .addGroup(holiday2021Group)
   .standalone()
   .addHidden(TypeHidden.Deploy);
