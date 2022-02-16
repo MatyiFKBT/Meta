@@ -36,20 +36,22 @@ export const newYearGardenFlamingo = new GardenFlamingo("New Year Garden Flaming
   .addBouncerLandsOn(electricMystery, treehouse, skyland)
   .scattererScatters(festiveFeathers);
 
-export const spaceFlightFeathers = new FlamingoFeathers("Space Flight Feathers");
+export const spaceFlightFeathers = new FlamingoFeathers("Space Flight Feathers", 3503);
 export const astronautGardenFlamingo = new GardenFlamingo(
   "Astronaut Garden Flamingo",
-  3504
+  3502
 ).scattererScatters(spaceFlightFeathers);
 
+export const flannelFeathers = new FlamingoFeathers("Flannel Feathers", 3505);
 export const goldMinerGardenFlamingo = new GardenFlamingo("Gold Miner Garden Flamingo", 3506);
 
+export const crikeyFeathers = new FlamingoFeathers("Crikey Feathers", 3507);
 export const aussieExplorerGardenFlamingo = new GardenFlamingo(
   "Aussie Explorer Garden Flamingo",
   3506
 );
 
-export const bearSkinFeathers = new FlamingoFeathers("Bear Skin Feathers");
+export const bearSkinFeathers = new FlamingoFeathers("Bear Skin Feathers", 3509);
 export const queensGuardsmanGardenFlamingo = new GardenFlamingo(
   "Queen's Guardsman Garden Flamingo",
   3508

@@ -11,7 +11,7 @@ export const christmas2020Group = new Year2020SeasonalGroup({
   ends: "3020-12-31T23:59:00-05:00",
 });
 
-export const brokenCyborgSanta = new Year2020SeasonalPOBType("Broken Cyborg Santa", 3621)
+export const brokenCyborgSanta = new Year2020SeasonalPOBType("Broken Cyborg Santa", 3620)
   .addGroup(christmas2020Group)
   .addHidden(TypeHidden.Deploy, TypeHidden.Bouncers);
 export const cyborgSanta = new Year2020SeasonalPOBType("Cyborg Santa", 2695).addGroup(
@@ -40,6 +40,9 @@ export const fleetingRUD01PH = new Year2020SeasonalPOBType("Fleeting RUD01PH", 2
   christmas2020Group
 );
 export const n31F = new Year2020SeasonalPOBType("31F", 2739).addGroup(christmas2020Group);
+export const broken31F = new Year2020SeasonalPOBType("Broken 31F", 3622)
+  .addGroup(christmas2020Group)
+  .addHidden(TypeHidden.Deploy, TypeHidden.Bouncers);
 export const krampBot = new Year2020SeasonalPOBType("KrampBot", 2740).addGroup(christmas2020Group);
 export const krushedKrampBot = new Year2020SeasonalPOBType("Krushed Krampbot", 2741).addGroup(
   christmas2020Group

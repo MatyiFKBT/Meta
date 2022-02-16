@@ -34,15 +34,16 @@ export class MechScatterType extends ScatterType {
 }
 
 export const spyderbot = new MechType("Spyderbot", 2589);
-export const squashedSpyderbot = new MechType("Squashed Spyderbot", 2590).addHidden(
-  TypeHidden.Bouncers
-);
+export const squashedSpyderbot = new BrokenMechType("Squashed Spyderbot", 2590);
+
 export const lASERShark = new MechType("L.A.S.E.R. Shark", 2875)
   .setIcon("lasershark")
   .addBouncerLandsOn(
     type => type.hasTags(TypeTags.TypeMysteryElemental),
     type => type.hasTags(TypeTags.TypeWeaponZeeops)
   );
+export const brokenLASERShark = new BrokenMechType("Broken L.A.S.E.R. Shark", 3624);
+
 export const goldenLASERShark = new MechType("Golden L.A.S.E.R. Shark", 2954)
   .setIcon("goldenlasershark")
   .addBouncerLandsOn(
@@ -70,8 +71,8 @@ export const geoLoggersRUMBot = new MechType("GeoLoggers RUMBot", 3101).addBounc
 );
 export const brokenGoldnCoinsRUMBot = new BrokenMechType(
   "Broken Gold'n Coins RUMBot",
-  3628
-).setIcon("brokengoldncoinsrumbot");
+  3627
+).setIcon("brokengoldncoinsrumbot", "brokengold'ncoinsrumbot");
 export const goldnCoinsRUMBot = new MechType("Gold'n Coins RUMBot", 3100).addBouncerLandsOn(
   greenie,
   type => type.hasTags(TypeTags.TypeReseller),
@@ -155,11 +156,12 @@ export const abominableSN0WMachineFrostbitten = new BrokenMechType(
 
 export const toast33 = new MechScatterType("Toast33", 3577).standalone();
 export const breadBot = new MechType("Bread Bot", 3575).scattererScatters(toast33);
+export const burntBreadBot = new BrokenMechType("Burnt Bread Bot", 3576);
 
-export const heartThRobot = new MechScatterType("Heart ThRobot")
+export const heartThRobot = new MechScatterType("Heart ThRobot", 3616)
   .setIcon("heartthrobots", "heartthrobot")
   .standalone();
-export const rougeBot = new MechScatterType("Rouge Bot").standalone();
+export const rougeBot = new MechScatterType("Rouge Bot", 3619).standalone();
 export const xBot = new MechType("X Bot", 3614)
   .scattererScatters(heartThRobot)
   .addBouncerLandsOn(
@@ -202,5 +204,6 @@ export const oBot = new MechType("O Bot", 3617)
   );
 export const offBalanceOBot = new BrokenMechType("Off Balance O Bot", 3618);
 
-export const eros404 = new MechType("Eros 404", 3611);
+export const l0v3Bug = new MechScatterType("L0v3 Bug", 3613).standalone();
+export const eros404 = new MechType("Eros 404", 3611).scattererScatters(l0v3Bug);
 export const heartbrokenEros404 = new BrokenMechType("Heartbroken Eros 404", 3612);
