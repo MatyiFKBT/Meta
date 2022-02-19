@@ -19,3 +19,4 @@ export const flatDHS = new FlatType("Flat DHS", 2903);
 export const flatDiscGolfBasket = new FlatType("Flat Disc Golf Basket", 2904);
 export const flatFlashlight = new FlatType("Flat Flashlight", 2905);
 export const flatTypewriter = new FlatType("Flat Typewriter", 2906);
+export const flatMurray = new FlatType("Flat Murray");
