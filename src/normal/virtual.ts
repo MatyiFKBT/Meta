@@ -1,14 +1,18 @@
 import { Group } from "../common/group";
-import { TypeTags, Type } from "../common/type";
+import { TypeTags, Type, TypeHidden } from "../common/type";
 import { normalGroup } from "./_index";
 
 export class VirtualType extends Type {
   override template(): this {
     super.template();
-    return this.setIcon(this.name.toLowerCase().replace(/\s/g, "_"))
+    this.setIcon(this.name.toLowerCase().replace(/\s/g, "_"))
       .setGroup([virtualGroup])
       .addTag(TypeTags.TypeVirtual)
       .virtual();
+    if (this.name !== "Virtual") {
+      this.addHidden(TypeHidden.Inventory);
+    }
+    return this;
   }
 }
 

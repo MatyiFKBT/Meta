@@ -70,6 +70,8 @@ export const qRowbar = new CreditType("QRowbar");
 export const cog = new RedeemableType("Cog");
 export const jewelShards = new RedeemableType("Jewel Shards").setIcon("jewel_shards");
 export const weaponShards = new RedeemableType("Weapon Shards").setIcon("weapon_shards");
-export const candyCorn = new RedeemableType("Candy Corn");
-export const c04L = new RedeemableType("C04L");
+export const candyCorn = new RedeemableType("Candy Corn")
+  .setIcon("candy_corn")
+  .addHidden(TypeHidden.Inventory);
+export const c04L = new RedeemableType("C04L").addHidden(TypeHidden.Inventory);
 export const shamRock = new RedeemableType("Sham Rock").setIcons("shamrockcredit", "sham_rock");
