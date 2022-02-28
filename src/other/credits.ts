@@ -72,4 +72,4 @@ export const jewelShards = new RedeemableType("Jewel Shards").setIcon("jewel_sha
 export const weaponShards = new RedeemableType("Weapon Shards").setIcon("weapon_shards");
 export const candyCorn = new RedeemableType("Candy Corn");
 export const c04L = new RedeemableType("C04L");
-export const shamRock = new RedeemableType("Sham Rock").setIcons("sham_rock", "shamrockcredit");
+export const shamRock = new RedeemableType("Sham Rock").setIcons("shamrockcredit", "sham_rock");
