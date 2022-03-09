@@ -76,6 +76,9 @@ export const goblinLeprechaun = new OriginalMythType("Goblin Leprechaun", 1647)
 export const lepreCorn = new OriginalMythType("LepreCorn", 3367).addTag(
   TypeTags.BouncerMythVariant
 );
+export const ladyLeprechaun = new OriginalMythType("Lady Leprechaun").addTag(
+  TypeTags.BouncerMythVariant
+);
 export const leprechaunHost = new OriginalMythHostType("Leprechaun Host", 509)
   .physical()
   .addBouncerHostType(leprechaun, dwarfLeprechaun, goblinLeprechaun, lepreCorn);
