@@ -138,3 +138,5 @@ export const treehouse = new DestinationBouncerType("Treehouse", 2145)
   .destinationSize(6);
 
 export const skyland = new DestinationBouncerType("Skyland", 2426).virtual().destinationSize(6);
+
+export const tPOBPub = new DestinationBouncerType("tPOB Pub").virtual().destinationSize(6);
