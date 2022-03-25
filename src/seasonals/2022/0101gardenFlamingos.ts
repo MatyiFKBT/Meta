@@ -58,3 +58,9 @@ export const queensGuardsmanGardenFlamingo = new GardenFlamingo(
 )
   .addIcon("queensguardsmangardenflamingo")
   .scattererScatters(bearSkinFeathers);
+
+export const lovelyFeathers = new FlamingoFeathers("Lovely Feathers", 3481);
+export const valentinesGardenFlamingo = new GardenFlamingo(
+  "Valentine's Garden Flamingo",
+  3480
+).scattererScatters(lovelyFeathers);
