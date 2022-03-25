@@ -6,12 +6,12 @@ export const babyElephantsGroup = new Year2021SeasonalGroup({
   ends: "2021-09-30T23:59:00-05:00",
 });
 
-export const blueBabyElephant = new Year2021SeasonalPOBType("Blue Baby Elephant").addGroup(
+export const blueBabyElephant = new Year2021SeasonalPOBType("Blue Baby Elephant", 3221).addGroup(
   babyElephantsGroup
 );
-export const pinkBabyElephant = new Year2021SeasonalPOBType("Pink Baby Elephant").addGroup(
+export const pinkBabyElephant = new Year2021SeasonalPOBType("Pink Baby Elephant", 3222).addGroup(
   babyElephantsGroup
 );
-export const grayBabyElephant = new Year2021SeasonalPOBType("Gray Baby Elephant").addGroup(
+export const grayBabyElephant = new Year2021SeasonalPOBType("Gray Baby Elephant", 3220).addGroup(
   babyElephantsGroup
 );

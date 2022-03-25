@@ -118,3 +118,10 @@ export const goldenTicket = new MiscType("Golden Ticket", 3303)
 export const mulligan = new MiscType("Mulligan", 2827).locationless();
 
 export const business = new MiscType("Business", 22).physical();
+export const mapCleanup = new MiscType("Map Cleanup", 571).physical();
+export const virtualMysteryPink = new MiscType("Virtual Mystery Pink", 307).virtual();
+export const accessibility = new MiscType("Accessibility", 250).physical();
+export const nfc = new MiscType("NFC", 25).physical();
+export const quizNormal = new MiscType("Quiz Normal", 72).physical();
+export const quizVirtual = new MiscType("Quiz Virtual", 73).virtual();
+export const eventZeeEventAttendee = new MiscType("EventZee Event Attendee", 210).physical();

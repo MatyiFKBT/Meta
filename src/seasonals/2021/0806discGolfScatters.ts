@@ -6,12 +6,12 @@ export const discGolfScattersGroup = new Year2021SeasonalGroup({
   ends: "2021-08-09T23:59:00-05:00",
 });
 
-export const putterDisc = new Year2021SeasonalScatterType("Putter Disc")
+export const putterDisc = new Year2021SeasonalScatterType("Putter Disc", 3223)
   .addGroup(discGolfScattersGroup)
   .standalone();
-export const midRangeDisc = new Year2021SeasonalScatterType("Mid-Range Disc")
+export const midRangeDisc = new Year2021SeasonalScatterType("Mid-Range Disc", 3224)
   .addGroup(discGolfScattersGroup)
   .standalone();
-export const driverDisc = new Year2021SeasonalScatterType("Driver Disc")
+export const driverDisc = new Year2021SeasonalScatterType("Driver Disc", 3225)
   .addGroup(discGolfScattersGroup)
   .standalone();

@@ -44,6 +44,7 @@ export const lASERShark = new MechType("L.A.S.E.R. Shark", 2875)
   );
 export const brokenLASERShark = new BrokenMechType("Broken L.A.S.E.R. Shark", 3624);
 
+export const brokenGoldenLASERShark = new BrokenMechType("Broken Golden L.A.S.E.R. Shark", 3625);
 export const goldenLASERShark = new MechType("Golden L.A.S.E.R. Shark", 2954)
   .setIcon("goldenlasershark")
   .addBouncerLandsOn(
@@ -207,3 +208,9 @@ export const offBalanceOBot = new BrokenMechType("Off Balance O Bot", 3618);
 export const l0v3Bug = new MechScatterType("L0v3 Bug", 3613).standalone();
 export const eros404 = new MechType("Eros 404", 3611).scattererScatters(l0v3Bug);
 export const heartbrokenEros404 = new BrokenMechType("Heartbroken Eros 404", 3612);
+
+export const blarneyBeats = new MechScatterType("Blarney Beats", 3641).standalone();
+export const shamRockNRolla = new MechType("Sham Rock n Rolla", 3639).scattererScatters(
+  blarneyBeats
+);
+export const shamRockNRollaSmashed = new BrokenMechType("Smashed Sham Rock n Rolla", 3640);

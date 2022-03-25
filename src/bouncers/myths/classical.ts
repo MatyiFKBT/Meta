@@ -59,7 +59,7 @@ export const krampusFaun = new ClassicalMythType("Krampus Faun", 1998)
     iceMystery,
     type => type.meta.evolution?.base === farmer.id
   );
-export const farDarrigFaun = new ClassicalMythType("Far Darrig Faun").addTag(
+export const farDarrigFaun = new ClassicalMythType("Far Darrig Faun", 3656).addTag(
   TypeTags.BouncerMythVariant
 );
 export const faunHost = new ClassicalMythHostType("Faun Host", 854)
@@ -81,7 +81,7 @@ export const cerberusHydra = new ClassicalMythType("Cerberus Hydra", 2252)
 export const cthulhuHydra = new ClassicalMythType("Cthulhu Hydra", 2253)
   .addTag(TypeTags.BouncerMythVariant)
   .addBouncerLandsOn(skyland, treehouse, greenie, waterMystery, airMystery, voidMystery);
-export const oillipheistHydra = new ClassicalMythType("Oillipheist Hydra").addTag(
+export const oillipheistHydra = new ClassicalMythType("Oillipheist Hydra", 3655).addTag(
   TypeTags.BouncerMythVariant
 );
 export const hydraHost = new ClassicalMythHostType("Hydra Host", 954)

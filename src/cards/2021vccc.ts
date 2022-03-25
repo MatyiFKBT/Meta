@@ -1,5 +1,5 @@
 import { Group } from "../common/group";
-import { TypeHidden, TypeTags } from "../common/type";
+import { ScatterType, TypeHidden, TypeTags } from "../common/type";
 import { CardType } from "./index";
 import { cardsGroup } from "./_index";
 
@@ -13,6 +13,13 @@ export class Year2021VCCCCardType extends CardType {
       .addTag(TypeTags.Card2021VCCC);
   }
 }
+export class Year2021VCCCScatterType extends ScatterType {
+  override template(): this {
+    super.template();
+    return this.setGroup([Year2021VCCCCardGroup]);
+  }
+}
+
 export const valentinesMailbox = new Year2021VCCCCardType("Valentines Mailbox", 2650);
 export const valentineCard = new Year2021VCCCCardType("Valentine Card", 2834);
 export const cherubCard = new Year2021VCCCCardType("Cherub Card", 2835);
@@ -28,3 +35,17 @@ export const bFFCard = new Year2021VCCCCardType("BFF Card", 2844);
 export const diamondRingCard = new Year2021VCCCCardType("Diamond Ring Card", 2845);
 export const kissCard = new Year2021VCCCCardType("Kiss Card", 2846);
 export const soulmateCard = new Year2021VCCCCardType("Soulmate Card", 2847);
+
+export const assortedChocolate = new Year2021VCCCScatterType(
+  "Assorted Chocolate",
+  2869
+).standalone();
+export const chocolateCoveredCherry = new Year2021VCCCScatterType(
+  "Chocolate Covered Cherry",
+  2871
+).standalone();
+export const mythicalBandaidz = new Year2021VCCCScatterType("Mythical Bandaidz", 2872).standalone();
+export const rainbowMythicalBandaidz = new Year2021VCCCScatterType(
+  "Rainbow Mythical Bandaidz",
+  2874
+).standalone();

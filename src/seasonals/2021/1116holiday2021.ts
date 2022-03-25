@@ -15,11 +15,11 @@ export const gumDrop = new Year2021SeasonalScatterType("Gum Drop", 3430)
   .addGroup(holiday2021Group)
   .standalone()
   .addHidden(TypeHidden.Deploy);
-export const candyCane = new Year2021SeasonalScatterType("Candy Cane")
+export const candyCane = new Year2021SeasonalScatterType("Candy Cane", 3431)
   .addGroup(holiday2021Group)
   .standalone()
   .addHidden(TypeHidden.Deploy);
-export const marshmallow = new Year2021SeasonalScatterType("Marshmallow")
+export const marshmallow = new Year2021SeasonalScatterType("Marshmallow", 3432)
   .addGroup(holiday2021Group)
   .standalone()
   .addHidden(TypeHidden.Deploy);

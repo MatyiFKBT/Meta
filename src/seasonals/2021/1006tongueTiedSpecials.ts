@@ -22,21 +22,21 @@ export const woodchuckWood = new Year2021SeasonalScatterType("Woodchuck Wood", 3
 export const babyBubbles = new Year2021SeasonalScatterType("Baby Bubbles", 3395)
   .addGroup(tongueTiedSpecialsGroup)
   .standalone();
-export const sheShells = new Year2021SeasonalScatterType("She Shells")
+export const sheShells = new Year2021SeasonalScatterType("She Shells", 3398)
   .addGroup(tongueTiedSpecialsGroup)
   .standalone();
-export const freshFish = new Year2021SeasonalScatterType("Fresh Fish")
+export const freshFish = new Year2021SeasonalScatterType("Fresh Fish", 3399)
   .addGroup(tongueTiedSpecialsGroup)
   .standalone();
-export const pickledPeppers = new Year2021SeasonalScatterType("Pickled Peppers")
+export const pickledPeppers = new Year2021SeasonalScatterType("Pickled Peppers", 3401)
   .addGroup(tongueTiedSpecialsGroup)
   .standalone();
-export const rawGoods = new Year2021SeasonalScatterType("Raw Goods")
+export const rawGoods = new Year2021SeasonalScatterType("Raw Goods", 3397)
   .addGroup(tongueTiedSpecialsGroup)
   .standalone();
 export const irishWristwatch = new Year2021SeasonalScatterType("Irish Wristwatch", 3396)
   .addGroup(tongueTiedSpecialsGroup)
   .standalone();
-export const botterButter = new Year2021SeasonalScatterType("Botter Butter")
+export const botterButter = new Year2021SeasonalScatterType("Botter Butter", 3400)
   .addGroup(tongueTiedSpecialsGroup)
   .standalone();
