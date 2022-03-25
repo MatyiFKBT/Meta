@@ -1,0 +1,49 @@
+---
+name: "Beta"
+
+on:
+  push:
+    branches:
+      - "beta"
+
+jobs:
+  pre-release:
+    name: "Release"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Cache pnpm modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: ^6.26.0
+          run_install: true
+
+      - name: "Build Database"
+        run: |
+          pnpm build
+      - name: "Zip Output"
+        run: |
+          cp LICENSE output/LICENSE
+          cd output
+          zip output.zip **
+          cd ..
+          rm output/LICENSE
+
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "beta"
+          prerelease: true
+          title: "Beta"
+          files: |
+            output/*
+        
+      - run: curl https://db.cuppazee.app/reloaddb3
