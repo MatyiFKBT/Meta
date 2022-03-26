@@ -13,7 +13,6 @@ export class Year2014EventType extends EventType {
 }
 
 export const parisCacheBash = new Year2014EventType("Paris Cache Bash", 93);
-export const australiaDay = new Year2014EventType("Australia Day", 94);
 export const mm3 = new Year2014EventType("MM3", 95);
 export const mm3Event = new Year2014EventType("MM3 event", 96);
 export const dinner = new Year2014EventType("Dinner", 98);

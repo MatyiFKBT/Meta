@@ -333,7 +333,9 @@ export const jellyfishVirtualHost = new TPOBHostType("Jellyfish Virtual Host", 2
 
 // Turtle
 
-export const turtleEgg = new NatureEvolutionType("Turtle Egg", 2453).physical().setEvolutionStage(1);
+export const turtleEgg = new NatureEvolutionType("Turtle Egg", 2453)
+  .physical()
+  .setEvolutionStage(1);
 turtleEgg.setEvolutionBase(turtleEgg);
 export const turtleHatchling = new NatureEvolutionType("Turtle Hatchling", 2454)
   .physical()
