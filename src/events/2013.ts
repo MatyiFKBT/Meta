@@ -15,9 +15,7 @@ export class Year2013EventType extends EventType {
 export const euroAmbassador = new Year2013EventType("Euro Ambassador", 30);
 export const missMichigan = new Year2013EventType("Miss Michigan", 33);
 export const munzeeMadness2 = new Year2013EventType("Munzee Madness 2", 35);
-export const eggHunt = new Year2013EventType("Egg Hunt", 37);
 export const washingtonParks = new Year2013EventType("Washington Parks", 38);
-export const emg = new Year2013EventType("EMG", 39);
 export const europeEvent = new Year2013EventType("Europe Event", 41);
 export const europeEventRobje64 = new Year2013EventType("Europe Event robje64", 42);
 export const europeEventZeusi = new Year2013EventType("Europe Event Zeusi", 43);
