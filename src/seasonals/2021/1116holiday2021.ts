@@ -23,3 +23,7 @@ export const marshmallow = new Year2021SeasonalScatterType("Marshmallow", 3432)
   .addGroup(holiday2021Group)
   .standalone()
   .addHidden(TypeHidden.Deploy);
+export const christmasCookie = new Year2021SeasonalScatterType("Christmas Cookie", 3433)
+  .addGroup(holiday2021Group)
+  .standalone()
+  .addHidden(TypeHidden.Deploy);

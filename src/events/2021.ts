@@ -325,7 +325,6 @@ export const blackFridayErUhSaturdayOnTheSpaceCoast = new Year2021EventType(
   "Black Friday er uh Saturday on the Space Coast",
   3426
 );
-export const christmasCookie = new Year2021EventType("Christmas Cookie", 3433);
 export const armadillosInAz = new Year2021EventType("Armadillo’s in AZ", 3434);
 export const iceCreamAndCoffeeWithSanta = new Year2021EventType(
   "Ice Cream and Coffee With Santa",

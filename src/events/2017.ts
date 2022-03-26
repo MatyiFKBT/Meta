@@ -440,7 +440,6 @@ export const flSmallTownTupperwareParty = new Year2017EventType(
   1142
 );
 export const maMunzfitLakeParkLoop = new Year2017EventType("MA - MunzFit @ Lake Park Loop", 1143);
-export const flatDayThe13th = new Year2017EventType("Flat Day The 13th", 1144);
 export const maRunFromJasonMunzfit = new Year2017EventType("MA - Run from Jason Munzfit", 1145);
 export const aMunzoweenEvent = new Year2017EventType('"A" Munzoween Event', 1146);
 export const munzfit20cologne = new Year2017EventType("MunzFit 2.0 @Cologne", 1147);
@@ -449,7 +448,6 @@ export const flMunzeeInParadiseSanibelIsland = new Year2017EventType(
   "FL - Munzee in Paradise Sanibel Island",
   1149
 );
-export const diabetesAwarenessCharity = new Year2017EventType("Diabetes Awareness Charity", 1150);
 export const aSpooktacularKcHalloween = new Year2017EventType("A Spooktacular KC Halloween", 1152);
 export const kansasCitysGhoulishLastCall = new Year2017EventType(
   "Kansas City's Ghoulish Last Call",

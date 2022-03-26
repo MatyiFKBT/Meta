@@ -70,9 +70,6 @@ export const flGoGreenOnTheSpaceCoast = new Year2018EventType(
 );
 export const goGreenInNorthCarolina = new Year2018EventType("Go Green in North Carolina", 1287);
 export const march2018EquinoxEvent = new Year2018EventType("March 2018 equinox Event", 1288);
-export const earthDay2018Tree = new Year2018EventType("Earth Day 2018 Tree", 1289);
-export const earthDay2018Seed = new Year2018EventType("Earth Day 2018 Seed", 1290);
-export const earthDay2018Seedling = new Year2018EventType("Earth Day 2018 Seedling", 1291);
 export const kokomoGreenInitiative = new Year2018EventType("Kokomo Green Initiative", 1292);
 export const sebringFloridaCoexistGoGreen = new Year2018EventType(
   "Sebring Florida Co-Exist Go Green",
