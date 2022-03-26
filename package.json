@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "build": "ts-node ./src/build.ts",
+    "table_to_events": "ts-node ./tools/table_to_events.ts",
     "lint": "eslint ."
   },
   "repository": {
