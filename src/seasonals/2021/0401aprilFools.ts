@@ -13,7 +13,7 @@ export const aprilFoolsGroup = new Year2021SeasonalGroup({
 export const bagofTricks = new Year2021SeasonalBouncerType("Bag of Tricks", 2974).addGroup(
   aprilFoolsGroup
 );
-export const sackofSurprises = new Year2021SeasonalBouncerType("Sack of Surprises").addGroup(
+export const sackofSurprises = new Year2021SeasonalBouncerType("Sack of Surprises", 2978).addGroup(
   aprilFoolsGroup
 );
 export const squirtingFlower = new Year2021SeasonalScatterType("Squirting Flower", 2975)
@@ -22,15 +22,15 @@ export const squirtingFlower = new Year2021SeasonalScatterType("Squirting Flower
 export const sneezingPowder = new Year2021SeasonalScatterType("Sneezing Powder", 2976)
   .addGroup(aprilFoolsGroup)
   .standalone();
-export const canofSnakes = new Year2021SeasonalScatterType("Can of Snakes")
+export const canofSnakes = new Year2021SeasonalScatterType("Can of Snakes", 2977)
   .addGroup(aprilFoolsGroup)
   .standalone();
-export const spiderGum = new Year2021SeasonalScatterType("Spider Gum")
+export const spiderGum = new Year2021SeasonalScatterType("Spider Gum", 2979)
   .addGroup(aprilFoolsGroup)
   .standalone();
-export const whoopeeCushion = new Year2021SeasonalScatterType("Whoopee Cushion")
+export const whoopeeCushion = new Year2021SeasonalScatterType("Whoopee Cushion", 2980)
   .addGroup(aprilFoolsGroup)
   .standalone();
-export const buzzerRing = new Year2021SeasonalScatterType("Buzzer Ring")
+export const buzzerRing = new Year2021SeasonalScatterType("Buzzer Ring", 2981)
   .addGroup(aprilFoolsGroup)
   .standalone();

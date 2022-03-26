@@ -7,10 +7,10 @@ export const alienDayInvasionGroup = new Year2019SeasonalGroup({
   ends: "2019-00-00T00:00:00-05:00",
 });
 
-export const uFO = new Year2019SeasonalBouncerType("UFO", 1917)
+export const year2019uFO = new Year2019SeasonalBouncerType("2019 UFO", 1917)
   .addGroup(alienDayInvasionGroup)
   .addBouncerLandsOn(greenie);
-export const uFOVirtual = new Year2019SeasonalBouncerType("UFO Virtual", 1918)
+export const year2019uFOVirtual = new Year2019SeasonalBouncerType("2019 UFO Virtual", 1918)
   .addGroup(alienDayInvasionGroup)
   .addBouncerLandsOn(greenie);
 export const alienEgg = new Year2019SeasonalBouncerType("Alien Egg", 1915)

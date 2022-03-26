@@ -43,7 +43,7 @@ export const astronautGardenFlamingo = new GardenFlamingo(
 ).scattererScatters(spaceFlightFeathers);
 
 export const flannelFeathers = new FlamingoFeathers("Flannel Feathers", 3505);
-export const goldMinerGardenFlamingo = new GardenFlamingo("Gold Miner Garden Flamingo", 3506);
+export const goldMinerGardenFlamingo = new GardenFlamingo("Gold Miner Garden Flamingo", 3504);
 
 export const crikeyFeathers = new FlamingoFeathers("Crikey Feathers", 3507);
 export const aussieExplorerGardenFlamingo = new GardenFlamingo(

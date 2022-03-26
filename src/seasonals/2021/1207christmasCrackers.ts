@@ -35,7 +35,7 @@ export const yellowPartyHat = new Year2021SeasonalScatterType("Yellow Party Hat"
 export const redPartyHat = new Year2021SeasonalScatterType("Red Party Hat", 3465)
   .addGroup(christmasCrackersGroup)
   .standalone();
-export const unicornPartyHat = new Year2021SeasonalScatterType("Unicorn Party Hat")
+export const unicornPartyHat = new Year2021SeasonalScatterType("Unicorn Party Hat", 3466)
   .addGroup(christmasCrackersGroup)
   .standalone();
 export const jollyBeans = new Year2021SeasonalScatterType("Jolly Beans", 3468)

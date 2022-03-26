@@ -42,3 +42,17 @@ export const coexist = new TourismType("Coexist", 216);
 export const waywardNation = new TourismType("Wayward Nation", 46);
 export const whompNation = new TourismType("Whomp Nation", 47);
 export const iceBucket = new TourismType("Ice Bucket", 146);
+export const tenMillionthMunzee = new TourismType("10 Millionth Munzee", 2823);
+export const oneMillionth = new TourismType("One Millionth", 101);
+
+// SafarZee
+export const talonPrint = new TourismType("Talon Print", 845);
+export const hoofPrint = new TourismType("Hoof Print", 846);
+export const footPrint = new TourismType("Foot Print", 847);
+export const pawPrint = new TourismType("Paw Print", 848);
+export const clawPrint = new TourismType("Claw Print", 849);
+
+export const bcaGarden = new TourismType("BCA Garden", 686);
+export const pawGarden = new TourismType("Paw Garden", 862);
+
+export const MWTxUSA = new TourismType("MWTxUSA", 251);

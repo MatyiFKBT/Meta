@@ -59,7 +59,7 @@ export const krampusFaun = new ClassicalMythType("Krampus Faun", 1998)
     iceMystery,
     type => type.meta.evolution?.base === farmer.id
   );
-export const farDarrigFaun = new ClassicalMythType("Far Darrig Faun").addTag(
+export const farDarrigFaun = new ClassicalMythType("Far Darrig Faun", 3656).addTag(
   TypeTags.BouncerMythVariant
 );
 export const faunHost = new ClassicalMythHostType("Faun Host", 854)
@@ -81,7 +81,7 @@ export const cerberusHydra = new ClassicalMythType("Cerberus Hydra", 2252)
 export const cthulhuHydra = new ClassicalMythType("Cthulhu Hydra", 2253)
   .addTag(TypeTags.BouncerMythVariant)
   .addBouncerLandsOn(skyland, treehouse, greenie, waterMystery, airMystery, voidMystery);
-export const oillipheistHydra = new ClassicalMythType("Oillipheist Hydra").addTag(
+export const oillipheistHydra = new ClassicalMythType("Oillipheist Hydra", 3655).addTag(
   TypeTags.BouncerMythVariant
 );
 export const hydraHost = new ClassicalMythHostType("Hydra Host", 954)
@@ -146,6 +146,9 @@ export const minotaurCyclops = new ClassicalMythType("Minotaur Cyclops", 2477)
 export const balorCyclops = new ClassicalMythType("Balor Cyclops", 2478)
   .addTag(TypeTags.BouncerMythVariant)
   .addBouncerLandsOn(treehouse, greenie, shamrock, electricMystery);
+export const recyclops = new ClassicalMythType("Recyclops", 3657).addTag(
+  TypeTags.BouncerMythVariant
+);
 export const cyclopsHost = new ClassicalMythHostType("Cyclops Host", 1169)
   .physical()
   .addBouncerHostType(cyclops, minotaurCyclops, balorCyclops);

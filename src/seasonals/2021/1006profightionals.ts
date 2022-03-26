@@ -12,7 +12,7 @@ export const frankEinstein = new Year2021SeasonalPOBType("Frank Einstein", 3345)
 export const fabiOooOooo = new Year2021SeasonalPOBType("FabiOooOooo", 3346)
   .addIcon("fabioooooo")
   .addGroup(profightionalsGroup);
-export const drAcula = new Year2021SeasonalPOBType("Dr. Acula").addGroup(profightionalsGroup);
+export const drAcula = new Year2021SeasonalPOBType("Dr. Acula", 3347).addGroup(profightionalsGroup);
 export const backstitchSisters = new Year2021SeasonalPOBType("Backstitch Sisters", 3348).addGroup(
   profightionalsGroup
 );

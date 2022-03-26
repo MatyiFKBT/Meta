@@ -16,7 +16,8 @@ export const physicalLotterZEEBallMachine = new Year2021SeasonalBouncerType(
   3262
 ).addGroup(lotterZEEGroup);
 export const virtualLotterZEEBallMachine = new Year2021SeasonalBouncerType(
-  "Virtual LotterZEE Ball Machine"
+  "Virtual LotterZEE Ball Machine",
+  3273
 ).addGroup(lotterZEEGroup);
 export const lotterZEEBall1 = new Year2021SeasonalScatterType("LotterZEE Ball 1", 3263)
   .addGroup(lotterZEEGroup)
@@ -26,15 +27,15 @@ export const lotterZEEBall2 = new Year2021SeasonalScatterType("LotterZEE Ball 2"
   .addGroup(lotterZEEGroup)
   .standalone()
   .addHidden(TypeHidden.Bouncers);
-export const lotterZEEBall3 = new Year2021SeasonalScatterType("LotterZEE Ball 3")
+export const lotterZEEBall3 = new Year2021SeasonalScatterType("LotterZEE Ball 3", 3265)
   .addGroup(lotterZEEGroup)
   .standalone()
   .addHidden(TypeHidden.Bouncers);
-export const lotterZEEBall4 = new Year2021SeasonalScatterType("LotterZEE Ball 4")
+export const lotterZEEBall4 = new Year2021SeasonalScatterType("LotterZEE Ball 4", 3266)
   .addGroup(lotterZEEGroup)
   .standalone()
   .addHidden(TypeHidden.Bouncers);
-export const lotterZEEBall5 = new Year2021SeasonalScatterType("LotterZEE Ball 5")
+export const lotterZEEBall5 = new Year2021SeasonalScatterType("LotterZEE Ball 5", 3267)
   .addGroup(lotterZEEGroup)
   .standalone()
   .addHidden(TypeHidden.Bouncers);
@@ -42,15 +43,15 @@ export const lotterZEEBall6 = new Year2021SeasonalScatterType("LotterZEE Ball 6"
   .addGroup(lotterZEEGroup)
   .standalone()
   .addHidden(TypeHidden.Bouncers);
-export const lotterZEEBall7 = new Year2021SeasonalScatterType("LotterZEE Ball 7")
+export const lotterZEEBall7 = new Year2021SeasonalScatterType("LotterZEE Ball 7", 3269)
   .addGroup(lotterZEEGroup)
   .standalone()
   .addHidden(TypeHidden.Bouncers);
-export const lotterZEEBall8 = new Year2021SeasonalScatterType("LotterZEE Ball 8")
+export const lotterZEEBall8 = new Year2021SeasonalScatterType("LotterZEE Ball 8", 3270)
   .addGroup(lotterZEEGroup)
   .standalone()
   .addHidden(TypeHidden.Bouncers);
-export const lotterZEEBall9 = new Year2021SeasonalScatterType("LotterZEE Ball 9")
+export const lotterZEEBall9 = new Year2021SeasonalScatterType("LotterZEE Ball 9", 3271)
   .addGroup(lotterZEEGroup)
   .standalone()
   .addHidden(TypeHidden.Bouncers);
