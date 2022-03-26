@@ -209,6 +209,14 @@ export const l0v3Bug = new MechScatterType("L0v3 Bug", 3613).standalone();
 export const eros404 = new MechType("Eros 404", 3611).scattererScatters(l0v3Bug);
 export const heartbrokenEros404 = new BrokenMechType("Heartbroken Eros 404", 3612);
 
+export const c00k13s = new MechScatterType("C00K13S", 3660).standalone();
+export const m0th3rb04rd = new MechType("M0TH3RB04RD", 3658).scattererScatters(c00k13s);
+export const burntM0th3rb04rd = new BrokenMechType("Burnt M0TH3RB04RD", 3659);
+
+export const hourglass = new MechScatterType("Hourglass", 3663).standalone();
+export const fatherTim3 = new MechType("Father TiM3", 3661).scattererScatters(hourglass);
+export const dizzyFatherTim3 = new BrokenMechType("Dizzy Father TiM3", 3662);
+
 export const blarneyBeats = new MechScatterType("Blarney Beats", 3641).standalone();
 export const shamRockNRolla = new MechType("Sham Rock n Rolla", 3639).scattererScatters(
   blarneyBeats

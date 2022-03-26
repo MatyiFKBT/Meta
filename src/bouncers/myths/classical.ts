@@ -146,6 +146,9 @@ export const minotaurCyclops = new ClassicalMythType("Minotaur Cyclops", 2477)
 export const balorCyclops = new ClassicalMythType("Balor Cyclops", 2478)
   .addTag(TypeTags.BouncerMythVariant)
   .addBouncerLandsOn(treehouse, greenie, shamrock, electricMystery);
+export const recyclops = new ClassicalMythType("Recyclops", 3657).addTag(
+  TypeTags.BouncerMythVariant
+);
 export const cyclopsHost = new ClassicalMythHostType("Cyclops Host", 1169)
   .physical()
   .addBouncerHostType(cyclops, minotaurCyclops, balorCyclops);

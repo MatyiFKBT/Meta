@@ -53,5 +53,6 @@ export const pawPrint = new TourismType("Paw Print", 848);
 export const clawPrint = new TourismType("Claw Print", 849);
 
 export const bcaGarden = new TourismType("BCA Garden", 686);
+export const pawGarden = new TourismType("Paw Garden", 862);
 
 export const MWTxUSA = new TourismType("MWTxUSA", 251);

@@ -125,3 +125,4 @@ export const nfc = new MiscType("NFC", 25).physical();
 export const quizNormal = new MiscType("Quiz Normal", 72).physical();
 export const quizVirtual = new MiscType("Quiz Virtual", 73).virtual();
 export const eventZeeEventAttendee = new MiscType("EventZee Event Attendee", 210).physical();
+export const staff = new MiscType("Staff", 7).locationless();
