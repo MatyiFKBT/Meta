@@ -21,7 +21,7 @@ export class Year2022VMailboxScatterType extends ScatterType {
     return this.addHidden(TypeHidden.Inventory).standalone().setGroup([Year2022VMailboxCardGroup]);
   }
 }
-export const valentinesMailbox = new Year2022VMailboxCardType("V-Mailbox", 3594).addIcon(
+export const valentinesMailbox = new Year2022VMailboxCardType("V-Mailbox", 3574).addIcon(
   "v-mailcard"
 );
 export const loveBugCard = new Year2022VMailboxCardType("Love Bug Card", 3595);

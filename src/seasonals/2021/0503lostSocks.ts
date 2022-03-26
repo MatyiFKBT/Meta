@@ -12,7 +12,7 @@ export const lostSocksGroup = new Year2021SeasonalGroup({
   ends: "2021-05-31T23:59:00-05:00",
 });
 
-export const leftAnkleSock = new Year2021SeasonalBouncerType("Left Ankle Sock")
+export const leftAnkleSock = new Year2021SeasonalBouncerType("Left Ankle Sock", 3029)
   .addGroup(lostSocksGroup)
   .addBouncerLandsOn(
     greenie,
@@ -21,7 +21,7 @@ export const leftAnkleSock = new Year2021SeasonalBouncerType("Left Ankle Sock")
     i => i.hasTags(TypeTags.TypeGaming) && i.state === TypeState.Physical,
     i => i.hasTags(TypeTags.TypeMysteryElemental) && i.state === TypeState.Physical
   );
-export const leftArgyleSock = new Year2021SeasonalBouncerType("Left Argyle Sock")
+export const leftArgyleSock = new Year2021SeasonalBouncerType("Left Argyle Sock", 3017)
   .addGroup(lostSocksGroup)
   .addBouncerLandsOn(
     greenie,
@@ -30,7 +30,7 @@ export const leftArgyleSock = new Year2021SeasonalBouncerType("Left Argyle Sock"
     i => i.hasTags(TypeTags.TypeGaming) && i.state === TypeState.Physical,
     i => i.hasTags(TypeTags.TypeMysteryElemental) && i.state === TypeState.Physical
   );
-export const leftHoleySock = new Year2021SeasonalBouncerType("Left Hole-y Sock")
+export const leftHoleySock = new Year2021SeasonalBouncerType("Left Hole-y Sock", 3027)
   .addGroup(lostSocksGroup)
   .addBouncerLandsOn(
     greenie,
@@ -39,7 +39,7 @@ export const leftHoleySock = new Year2021SeasonalBouncerType("Left Hole-y Sock")
     i => i.hasTags(TypeTags.TypeGaming) && i.state === TypeState.Physical,
     i => i.hasTags(TypeTags.TypeMysteryElemental) && i.state === TypeState.Physical
   );
-export const leftHoneycombSock = new Year2021SeasonalBouncerType("Left Honeycomb Sock")
+export const leftHoneycombSock = new Year2021SeasonalBouncerType("Left Honeycomb Sock", 3031)
   .addGroup(lostSocksGroup)
   .addBouncerLandsOn(
     greenie,
@@ -57,7 +57,7 @@ export const leftStripedSock = new Year2021SeasonalBouncerType("Left Striped Soc
     i => i.hasTags(TypeTags.TypeGaming) && i.state === TypeState.Physical,
     i => i.hasTags(TypeTags.TypeMysteryElemental) && i.state === TypeState.Physical
   );
-export const leftToeSock = new Year2021SeasonalBouncerType("Left Toe Sock")
+export const leftToeSock = new Year2021SeasonalBouncerType("Left Toe Sock", 3025)
   .addGroup(lostSocksGroup)
   .addBouncerLandsOn(
     greenie,
@@ -66,7 +66,7 @@ export const leftToeSock = new Year2021SeasonalBouncerType("Left Toe Sock")
     i => i.hasTags(TypeTags.TypeGaming) && i.state === TypeState.Physical,
     i => i.hasTags(TypeTags.TypeMysteryElemental) && i.state === TypeState.Physical
   );
-export const leftTubeSock = new Year2021SeasonalBouncerType("Left Tube Sock")
+export const leftTubeSock = new Year2021SeasonalBouncerType("Left Tube Sock", 3019)
   .addGroup(lostSocksGroup)
   .addBouncerLandsOn(
     greenie,
@@ -84,7 +84,7 @@ export const leftUnicornSock = new Year2021SeasonalBouncerType("Left Unicorn Soc
     i => i.hasTags(TypeTags.TypeGaming) && i.state === TypeState.Physical,
     i => i.hasTags(TypeTags.TypeMysteryElemental) && i.state === TypeState.Physical
   );
-export const rightAnkleSock = new Year2021SeasonalBouncerType("Right Ankle Sock")
+export const rightAnkleSock = new Year2021SeasonalBouncerType("Right Ankle Sock", 3030)
   .addGroup(lostSocksGroup)
   .addBouncerLandsOn(
     i => i.hasTags(TypeTags.TypeVirtual),
@@ -97,7 +97,7 @@ export const rightAnkleSock = new Year2021SeasonalBouncerType("Right Ankle Sock"
     garden,
     field
   );
-export const rightArgyleSock = new Year2021SeasonalBouncerType("Right Argyle Sock")
+export const rightArgyleSock = new Year2021SeasonalBouncerType("Right Argyle Sock", 3018)
   .addGroup(lostSocksGroup)
   .addBouncerLandsOn(
     i => i.hasTags(TypeTags.TypeVirtual),
@@ -123,7 +123,7 @@ export const rightHoleySock = new Year2021SeasonalBouncerType("Right Hole-y Sock
     garden,
     field
   );
-export const rightHoneycombSock = new Year2021SeasonalBouncerType("Right Honeycomb Sock")
+export const rightHoneycombSock = new Year2021SeasonalBouncerType("Right Honeycomb Sock", 3032)
   .addGroup(lostSocksGroup)
   .addBouncerLandsOn(
     i => i.hasTags(TypeTags.TypeVirtual),
@@ -149,7 +149,7 @@ export const rightStripedSock = new Year2021SeasonalBouncerType("Right Striped S
     garden,
     field
   );
-export const rightToeSock = new Year2021SeasonalBouncerType("Right Toe Sock")
+export const rightToeSock = new Year2021SeasonalBouncerType("Right Toe Sock", 3026)
   .addGroup(lostSocksGroup)
   .addBouncerLandsOn(
     i => i.hasTags(TypeTags.TypeVirtual),
@@ -162,7 +162,7 @@ export const rightToeSock = new Year2021SeasonalBouncerType("Right Toe Sock")
     garden,
     field
   );
-export const rightTubeSock = new Year2021SeasonalBouncerType("Right Tube Sock")
+export const rightTubeSock = new Year2021SeasonalBouncerType("Right Tube Sock", 3020)
   .addGroup(lostSocksGroup)
   .addBouncerLandsOn(
     i => i.hasTags(TypeTags.TypeVirtual),
@@ -175,7 +175,7 @@ export const rightTubeSock = new Year2021SeasonalBouncerType("Right Tube Sock")
     garden,
     field
   );
-export const rightUnicornSock = new Year2021SeasonalBouncerType("Right Unicorn Sock")
+export const rightUnicornSock = new Year2021SeasonalBouncerType("Right Unicorn Sock", 3022)
   .addGroup(lostSocksGroup)
   .addBouncerLandsOn(
     i => i.hasTags(TypeTags.TypeVirtual),

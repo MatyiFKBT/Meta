@@ -6,4 +6,4 @@ export const zeeFolkGroup = new Year2021SeasonalGroup({
   ends: "2021-03-31T23:59:00-05:00",
 });
 
-export const zeeFolk = new Year2021SeasonalBouncerType("Zee Folk").addGroup(zeeFolkGroup);
+export const zeeFolk = new Year2021SeasonalBouncerType("Zee Folk", 2951).addGroup(zeeFolkGroup);

@@ -113,7 +113,7 @@ export const mUMM33 = new MechType("MUMM33", 3171).scattererScatters(sC4RAB);
 export const mONK3Y = new MechType("MONK3Y", 3307);
 export const priM8 = new MechType("PriM8", 3308);
 export const kiNGC0G = new MechType("KiNG C0G", 3309);
-export const kiNGC0GCrushed = new BrokenMechType("KiNG C0G Crushed", 3310); //3312
+export const kiNGC0GCrushed = new BrokenMechType("KiNG C0G Crushed", 3312); //3310
 
 export const botwurst = new MechScatterType("Botwurst", 3319).standalone();
 export const steinBot = new MechType("SteinBot", 3317).scattererScatters(botwurst);

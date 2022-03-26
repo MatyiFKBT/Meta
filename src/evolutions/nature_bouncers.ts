@@ -258,20 +258,20 @@ export const frogVirtualHost = new TPOBHostType("Frog Virtual Host", 2114)
   .addBouncerHostType(frog, treeFrog, poisonDartFrog, tomatoFrog);
 
 // Jellyfish
-export const planulaLarva = new NatureEvolutionType("Planula Larva", 2461)
+export const planulaLarva = new NatureEvolutionType("Planula Larva", 2462)
   .virtual()
   .addHidden()
   .setEvolutionStage(1);
 planulaLarva.setEvolutionBase(planulaLarva);
-export const polyp = new NatureEvolutionType("Polyp", 2462)
+export const polyp = new NatureEvolutionType("Polyp", 2463)
   .virtual()
   .setEvolutionStage(2)
   .setEvolutionBase(planulaLarva);
-export const polypwithBulbs = new NatureEvolutionType("Polyp with Bulbs", 2463)
+export const polypwithBulbs = new NatureEvolutionType("Polyp with Bulbs", 2464)
   .virtual()
   .setEvolutionStage(3)
   .setEvolutionBase(planulaLarva);
-export const ephyraLarva = new NatureEvolutionType("Ephyra Larva", 2464)
+export const ephyraLarva = new NatureEvolutionType("Ephyra Larva", 2465)
   .virtual()
   .setEvolutionStage(4)
   .setEvolutionBase(planulaLarva);
@@ -333,19 +333,17 @@ export const jellyfishVirtualHost = new TPOBHostType("Jellyfish Virtual Host", 2
 
 // Turtle
 
-export const turtleEgg = new NatureEvolutionType("Turtle Egg", 2452)
-  .physical()
-  .setEvolutionStage(1);
+export const turtleEgg = new NatureEvolutionType("Turtle Egg", 2453).physical().setEvolutionStage(1);
 turtleEgg.setEvolutionBase(turtleEgg);
-export const turtleHatchling = new NatureEvolutionType("Turtle Hatchling", 2453)
+export const turtleHatchling = new NatureEvolutionType("Turtle Hatchling", 2454)
   .physical()
   .setEvolutionStage(2)
   .setEvolutionBase(turtleEgg);
-export const juvenileTurtle = new NatureEvolutionType("Juvenile Turtle", 2454)
+export const juvenileTurtle = new NatureEvolutionType("Juvenile Turtle", 2455)
   .physical()
   .setEvolutionStage(3)
   .setEvolutionBase(turtleEgg);
-export const adultTurtle = new NatureEvolutionType("Adult Turtle", 2455)
+export const adultTurtle = new NatureEvolutionType("Adult Turtle", 2456)
   .physical()
   .setEvolutionStage(4)
   .setEvolutionBase(turtleEgg);
@@ -406,17 +404,17 @@ export const turtleVirtualHost = new TPOBHostType("Turtle Virtual Host", 2460)
   .addBouncerHostType(turtle, seaTurtle, snappingTurtle, taekwondoTortoise);
 
 // Bee
-export const beeEggs = new NatureEvolutionType("Bee Eggs").physical().setEvolutionStage(1);
+export const beeEggs = new NatureEvolutionType("Bee Eggs", 2877).physical().setEvolutionStage(1);
 beeEggs.setEvolutionBase(beeEggs);
-export const beeLarvae = new NatureEvolutionType("Bee Larvae")
+export const beeLarvae = new NatureEvolutionType("Bee Larvae", 2878)
   .physical()
   .setEvolutionStage(2)
   .setEvolutionBase(beeEggs);
-export const beePupae = new NatureEvolutionType("Bee Pupae")
+export const beePupae = new NatureEvolutionType("Bee Pupae", 2879)
   .physical()
   .setEvolutionStage(3)
   .setEvolutionBase(beeEggs);
-export const emptyHoneycomb = new NatureEvolutionType("Empty Honeycomb")
+export const emptyHoneycomb = new NatureEvolutionType("Empty Honeycomb", 2880)
   .physical()
   .setEvolutionStage(4)
   .setEvolutionBase(beeEggs);

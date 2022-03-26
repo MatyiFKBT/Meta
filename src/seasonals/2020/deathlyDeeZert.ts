@@ -76,7 +76,7 @@ export const rock = new Year2020SeasonalBouncerType("Rock", 2634)
     flatLou,
     flatHammock
   );
-export const bonbonBat = new Year2020SeasonalBouncerType("Bonbon Bat")
+export const bonbonBat = new Year2020SeasonalBouncerType("Bonbon Bat", 2636)
   .addGroup(deathlyDeeZertGroup)
   .addBouncerLandsOn(greenie, mystery, fireMystery, earthMystery, waterMystery, iceMystery);
 export const frappenstein = new Year2020SeasonalBouncerType("Frappenstein", 2637)

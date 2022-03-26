@@ -39,10 +39,10 @@ export const jokeGlasses = new N2020VisionType("Joke Glasses", 2288)
 export const n3DGlasses = new N2020VisionType("3D Glasses", 2289)
   .addGroup(n2020VisionGroup)
   .addBouncerLandsOn(type => type.hasTags(TypeTags.TypeVirtual));
-export const viewfinder = new N2020VisionType("Viewfinder", 2290)
+export const viewfinder = new N2020VisionType("Viewfinder", 2291)
   .addGroup(n2020VisionGroup)
   .addBouncerLandsOn(greenie);
-export const vRGoggles = new N2020VisionType("VR Goggles", 2291)
+export const vRGoggles = new N2020VisionType("VR Goggles", 2290)
   .addGroup(n2020VisionGroup)
   .addBouncerLandsOn(type => type.hasTags(TypeTags.TypeVirtual));
 export const jewelerLoupe = new N2020VisionType("Jeweler Loupe", 2292)
