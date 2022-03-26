@@ -1,3 +1,4 @@
+import { bouncersGroup } from "../../bouncers/_index";
 import { TypeHidden } from "../../common/type";
 import {
   Year2020SeasonalScatterType,
@@ -9,7 +10,7 @@ export const christmas2020Group = new Year2020SeasonalGroup({
   name: "Christmas 2020",
   starts: "2020-12-01T00:00:00-05:00",
   ends: "3020-12-31T23:59:00-05:00",
-});
+}).addParent(bouncersGroup);
 
 export const brokenCyborgSanta = new Year2020SeasonalPOBType("Broken Cyborg Santa", 3620)
   .addGroup(christmas2020Group)
