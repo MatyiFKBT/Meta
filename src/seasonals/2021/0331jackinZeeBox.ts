@@ -44,6 +44,6 @@ export const rOBblehead = new JackInZeeBoxType("ROBblehead", 2971)
 export const unicorn = new JackInZeeBoxType("Unicorn", 2973)
   .addGroup(jackinZeeBoxGroup)
   .addHidden(TypeHidden.Bouncers);
-export const zackinTheBox = new JackInZeeBoxType("Zack in The Box")
+export const zackinTheBox = new JackInZeeBoxType("Zack in The Box", 2972)
   .addGroup(jackinZeeBoxGroup)
   .addHidden(TypeHidden.Bouncers);
