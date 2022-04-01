@@ -8,6 +8,7 @@ export const magic8BallGroup = new Year2019SeasonalGroup({
 });
 
 export const magic8BallU00BF = new Year2019SeasonalBouncerType("Magic 8 Ball - ???\\U00BF??", 2014)
+  .setIcons("magic8ball-???u00bf??", "magic8ball-???\\u00bf??")
   .addGroup(magic8BallGroup)
   .addBouncerLandsOn(greenie);
 export const magic8BallExpecttheUnexpected = new Year2019SeasonalBouncerType(

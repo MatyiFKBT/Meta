@@ -61,6 +61,7 @@ export const goldNCoinResellerPackage = new ResellerScatterType(
   2890
 ).standalone();
 export const virtualGoldNCoinsReseller = new ResellerType("Virtual Gold'n Coins Reseller", 2886)
+  .addIcon("virtual_gold'n_coins_reseller")
   .virtual()
   .scattererScatters(goldNCoinResellerPackage);
 
