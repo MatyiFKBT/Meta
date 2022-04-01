@@ -23,3 +23,5 @@ export const shamRockinCard = new Year2022CardType("Sham-Rockin Card", 3638);
 
 export const fantasticFatherCard = new Year2022CardType("Fantastic Father Card", 3667);
 export const magnificentMotherCard = new Year2022CardType("Magnificent Mother Card", 3668);
+
+export const gardenFlamingoCard = new Year2022CardType("Garden Flamingo Card", 3669);
