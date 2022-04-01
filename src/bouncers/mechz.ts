@@ -42,9 +42,14 @@ export const lASERShark = new MechType("L.A.S.E.R. Shark", 2875)
     type => type.hasTags(TypeTags.TypeMysteryElemental),
     type => type.hasTags(TypeTags.TypeWeaponZeeops)
   );
-export const brokenLASERShark = new BrokenMechType("Broken L.A.S.E.R. Shark", 3624);
+export const brokenLASERShark = new BrokenMechType("Broken L.A.S.E.R. Shark", 3624).setIcon(
+  "brokenlasershark"
+);
 
-export const brokenGoldenLASERShark = new BrokenMechType("Broken Golden L.A.S.E.R. Shark", 3625);
+export const brokenGoldenLASERShark = new BrokenMechType(
+  "Broken Golden L.A.S.E.R. Shark",
+  3625
+).setIcon("brokengoldenlasershark");
 export const goldenLASERShark = new MechType("Golden L.A.S.E.R. Shark", 2954)
   .setIcon("goldenlasershark")
   .addBouncerLandsOn(
@@ -52,7 +57,10 @@ export const goldenLASERShark = new MechType("Golden L.A.S.E.R. Shark", 2954)
     type => type.hasTags(TypeTags.TypeWeaponZeeops),
     premium
   );
-export const brokenArcticLASERShark = new BrokenMechType("Broken Arctic L.A.S.E.R. Shark", 3626);
+export const brokenArcticLASERShark = new BrokenMechType(
+  "Broken Arctic L.A.S.E.R. Shark",
+  3626
+).setIcon("brokenarcticlasershark");
 export const arcticLASERShark = new MechType("Arctic L.A.S.E.R. Shark", 3051)
   .setIcon("arcticlasershark")
   .addBouncerLandsOn(

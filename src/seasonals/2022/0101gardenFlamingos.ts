@@ -60,7 +60,12 @@ export const queensGuardsmanGardenFlamingo = new GardenFlamingo(
   .scattererScatters(bearSkinFeathers);
 
 export const lovelyFeathers = new FlamingoFeathers("Lovely Feathers", 3481);
-export const valentinesGardenFlamingo = new GardenFlamingo(
-  "Valentine's Garden Flamingo",
-  3480
-).scattererScatters(lovelyFeathers);
+export const valentinesGardenFlamingo = new GardenFlamingo("Valentine's Garden Flamingo", 3480)
+  .setIcon("valentinesgardenflamingo")
+  .scattererScatters(lovelyFeathers);
+
+export const fortuneFeathers = new FlamingoFeathers("Fortune Feathers", 3482);
+export const luckyGardenFlamingo = new GardenFlamingo(
+  "Lucky Garden Flamingo",
+  3483
+).scattererScatters(fortuneFeathers);

@@ -21,11 +21,11 @@ export const sorryCard = new OpenCardType("Sorry Card", 2496);
 export const sorryCard1 = new OpenCardType("Sorry Card 1", 2497);
 export const sorryCard2 = new OpenCardType("Sorry Card 2", 2498);
 export const sorryCard3 = new OpenCardType("Sorry Card 3", 2499);
-export const summerCard = new OpenCardType("Summer Card", 2532).setIcon("summer_card");
-export const winterCard = new OpenCardType("Winter Card", 2533).setIcon("winter_card");
+export const summerCard = new OpenCardType("Summer Card", 2532).addIcon("summer_card");
+export const winterCard = new OpenCardType("Winter Card", 2533).addIcon("winter_card");
 export const eventCard = new OpenCardType("Event Card", 2542);
-export const fallCard = new OpenCardType("Fall Card", 2602).setIcon("fall_card");
-export const springCard = new OpenCardType("Spring Card", 2601).setIcon("spring_card");
+export const fallCard = new OpenCardType("Fall Card", 2602).addIcon("fall_card");
+export const springCard = new OpenCardType("Spring Card", 2601).addIcon("spring_card");
 export const techIssuesCard = new OpenCardType("Tech Issues Card", 2622);
 
 // Reseller Cards
