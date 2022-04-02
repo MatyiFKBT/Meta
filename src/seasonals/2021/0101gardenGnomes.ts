@@ -248,6 +248,7 @@ export const gnomeHeelflipHat = new Year2021SeasonalScatterType("Gnome Heelflip 
   .addGroup(gardenGnomesGroup)
   .standalone();
 export const gnomeCatchersCap = new Year2021SeasonalScatterType("Gnome Catcher's Cap", 2808)
+  .addIcon("gnomecatcherscap")
   .addGroup(gardenGnomesGroup)
   .standalone();
 export const n10thMunzeeBirthdayHat = new Year2021SeasonalScatterType(

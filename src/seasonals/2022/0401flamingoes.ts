@@ -19,3 +19,9 @@ export const anotherPlasticGardenFlamingo = new Year2022SeasonalScatterType(
 )
   .virtual()
   .addGroup(flamingoesGroup);
+
+export const hiddenPlasticGardenFlamingo = new Year2022SeasonalScatterType(
+  "Hidden Plastic Garden Flamingo"
+)
+  .virtual()
+  .addGroup(flamingoesGroup);

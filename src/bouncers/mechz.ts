@@ -230,3 +230,7 @@ export const shamRockNRolla = new MechType("Sham Rock n Rolla", 3639).scattererS
   blarneyBeats
 );
 export const shamRockNRollaSmashed = new BrokenMechType("Smashed Sham Rock n Rolla", 3640);
+
+export const p33l = new MechScatterType("P33L", 3676).standalone();
+export const bananaBorg = new MechType("BananaBorg", 3674).scattererScatters(p33l);
+// export const bananaBorgCrushed = new BrokenMechType("Crushed BananaBorg", 3675);
