@@ -49,7 +49,10 @@ export const lifeIsGoodCard = new Year2021CardType("Life Is Good Card", 3004);
 export const stayHome2021Card = new Year2021CardType("Stay Home 2021 Card", 3009);
 export const picturePerfectCard = new Year2021CardType("Picture Perfect Card", 3010);
 export const goodLuckCard = new Year2021CardType("Good Luck Card", 3231);
-export const luckyRabbitsFootCard = new Year2021CardType("Lucky Rabbit's Foot Card", 3232);
+export const luckyRabbitsFootCard = new Year2021CardType("Lucky Rabbit's Foot Card", 3232).addIcons(
+  "lucky_rabbits_foot_card",
+  "luckyrabbitsfootcard"
+);
 export const breakaLegCard = new Year2021CardType("Break a Leg Card", 3234);
 export const badLuckCard = new Year2021CardType("Bad Luck Card", 3233);
 export const halloween2021Card = new Year2021CardType("Halloween 2021 Card", 3304);

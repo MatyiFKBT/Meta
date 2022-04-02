@@ -34,6 +34,7 @@ export const geoLoggersResellerCard = new OpenCardType("GeoLoggers Reseller Card
   .addTag(TypeTags.TypeReseller);
 export const goldNCoinsResellerCard = new OpenCardType("Gold'n Coins Reseller Card", 3012)
   .setIcon("gold'ncoinsresellergreetingcard")
+  .addIcon("goldncoinsresellergreetingcard")
   .addTag(TypeTags.TypeReseller);
 export const negsResellerCard = new OpenCardType("NEGS Reseller Card", 3013)
   .setIcon("negsresellergreetingcard")

@@ -47,6 +47,7 @@ export const fancyFlatRobVirtualHost = new FancyFlatHostType("Fancy Flat Rob Vir
   .addBouncerHostType(beachFlatRob, coldFlatRob, tuxFlatRob);
 
 export const matterUpFlatMatt = new FancyFlatType("Matt'er Up Flat Matt", 1985)
+  .addIcon("matterupflatmatt")
   .addTag(TypeTags.VirtualColourRed)
   .addBouncerLandsOn(type => type.hasTags(TypeTags.VirtualColourRed))
   .addBouncerLandsOn(poiSports, diamond)

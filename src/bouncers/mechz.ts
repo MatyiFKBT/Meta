@@ -82,14 +82,16 @@ export const brokenGoldnCoinsRUMBot = new BrokenMechType(
   "Broken Gold'n Coins RUMBot",
   3627
 ).setIcon("brokengoldncoinsrumbot", "brokengold'ncoinsrumbot");
-export const goldnCoinsRUMBot = new MechType("Gold'n Coins RUMBot", 3100).addBouncerLandsOn(
-  greenie,
-  type => type.hasTags(TypeTags.TypeReseller),
-  type => type.meta.evolution?.base === coin.id,
-  type => type.hasTags(TypeTags.TypeVirtual),
-  skyland,
-  treehouse
-);
+export const goldnCoinsRUMBot = new MechType("Gold'n Coins RUMBot", 3100)
+  .addIcon("goldncoinsrumbot")
+  .addBouncerLandsOn(
+    greenie,
+    type => type.hasTags(TypeTags.TypeReseller),
+    type => type.meta.evolution?.base === coin.id,
+    type => type.hasTags(TypeTags.TypeVirtual),
+    skyland,
+    treehouse
+  );
 export const brokenNEGSRUMBot = new BrokenMechType("Broken NEGS RUMBot", 3629);
 export const nEGSRUMBot = new MechType("NEGS RUMBot", 3102).addBouncerLandsOn(
   greenie,
