@@ -151,7 +151,10 @@ export const mayMunzeeMeetgreetcapeatAtBarbersCrossing = new Year2016EventType(
   "May Munzee Meet/Greet/Cap/Eat at Barbers Crossing",
   551
 );
-export const mikesCelebrationOfLife = new Year2016EventType("Mike's Celebration of Life", 552);
+export const mikesCelebrationOfLife = new Year2016EventType(
+  "Mike's Celebration of Life",
+  552
+).addIcon("mikescelebrationoflife");
 export const munzfitCelleI = new Year2016EventType("Munzfit Celle I", 553);
 export const munzfitCelleIi = new Year2016EventType("Munzfit Celle II", 554);
 export const stammtischCelle = new Year2016EventType("Stammtisch Celle", 555);
@@ -162,7 +165,9 @@ export const dkMunzeePaaFur = new Year2016EventType("DK: Munzee paa Fur", 559);
 export const munzfitLondon = new Year2016EventType("MunzFit London", 561);
 export const mwmbFridayNightHangout = new Year2016EventType("MWMB Friday Night Hangout", 562);
 export const lommelEvent2016Belgium = new Year2016EventType("Lommel Event 2016 @ Belgium", 563);
-export const midwestMunzeeBash16 = new Year2016EventType("Midwest Munzee Bash '16", 564);
+export const midwestMunzeeBash16 = new Year2016EventType("Midwest Munzee Bash '16", 564).addIcon(
+  "midwestmunzeebash16"
+);
 export const voteForGof = new Year2016EventType("Vote for GOF", 565);
 export const munzeeMarketplaceCbRibbonCutting = new Year2016EventType(
   "Munzee Marketplace CB Ribbon Cutting",
@@ -221,7 +226,7 @@ export const wiBirthdayLuau = new Year2016EventType("WI Birthday Luau", 604);
 export const munzees5thBirthdayEventOc = new Year2016EventType(
   "Munzee's 5th Birthday Event OC",
   605
-);
+).addIcon("munzees5thbirthdayeventoc");
 export const birthdayInThePark = new Year2016EventType("Birthday in the Park", 606);
 export const xMarksTheSpot = new Year2016EventType("X Marks the Spot", 607);
 export const dkMunzee5thBirthdayDinner = new Year2016EventType(
@@ -236,7 +241,7 @@ export const hannoverBirthdayPartyAfternoon = new Year2016EventType(
 export const munzees5thBirthdayInLeeds = new Year2016EventType(
   "Munzee's 5th Birthday in Leeds",
   611
-);
+).addIcon("munzees5thbirthdayinleeds");
 export const dkMunzee5thBirthday = new Year2016EventType("DK Munzee 5th Birthday", 612);
 export const london5thBirthdayEvent = new Year2016EventType("London 5th Birthday Event", 613);
 export const aKickStart = new Year2016EventType("A Kick Start", 614);
@@ -250,7 +255,7 @@ export const anuncommonBirthday = new Year2016EventType('An "Uncommon" Birthday'
 export const melbournesMidwinterMunzfest2 = new Year2016EventType(
   "Melbourne's Midwinter Munzfest 2",
   619
-);
+).addIcon("melbournesmidwintermunzfest2");
 export const birthdayBashByDrvClan = new Year2016EventType("Birthday Bash by DRV Clan", 620);
 export const kent5thBirthdayBash = new Year2016EventType("Kent 5th Birthday Bash", 621);
 export const paHappyBirthdayMunzee = new Year2016EventType("PA - Happy Birthday Munzee", 622);
@@ -267,7 +272,10 @@ export const kansasCityMunzeeBirthdayBash2016 = new Year2016EventType(
 );
 export const sydneyDinner = new Year2016EventType("Sydney Dinner", 628);
 export const warriorsBirthday = new Year2016EventType("Warriors Birthday", 629);
-export const theweirdHattersTeaParty = new Year2016EventType("The 'Weir\"d Hatters Tea Party", 630);
+export const theweirdHattersTeaParty = new Year2016EventType(
+  "The 'Weir\"d Hatters Tea Party",
+  630
+).addIcon("theweirdhattersteaparty");
 export const munzeeTurns5Sydney2016 = new Year2016EventType("Munzee Turns 5 Sydney 2016", 631);
 export const wnyBirthdayGathering = new Year2016EventType("WNY Birthday Gathering", 632);
 export const adelaide5thBirthdayEvent = new Year2016EventType("Adelaide 5th Birthday Event", 633);
@@ -281,7 +289,7 @@ export const pinellasFatCatBirthdayBash = new Year2016EventType(
 export const spartanburgCelebratesMunzees5th = new Year2016EventType(
   "Spartanburg Celebrates Munzee's 5th",
   638
-);
+).addIcon("spartanburgcelebratesmunzees5th");
 export const stammtischHalberstadt = new Year2016EventType("Stammtisch Halberstadt", 639);
 export const floridasFlipFlopToTheBeach = new Year2016EventType(
   "Florida's Flip Flop to the beach",
