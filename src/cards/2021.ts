@@ -27,7 +27,10 @@ export const marchintoMayEventCard = new Year2021CardType(
   2936
 ).setIcons("march_into_may_event_card", "marchintomayeventcard");
 export const greenCheersCard = new Year2021CardType("Green Cheers Card", 2944);
-export const kissMeImIrishCard = new Year2021CardType("Kiss Me I'm Irish Card", 2945);
+export const kissMeImIrishCard = new Year2021CardType("Kiss Me I'm Irish Card", 2945).addIcons(
+  "kiss_me_im_irish_card",
+  "kissmeimirishcard"
+);
 export const luckyCharmCard = new Year2021CardType("Lucky Charm Card", 2946);
 export const easterBasketCard = new Year2021CardType("Easter Basket Card", 2982);
 export const pinkEasterEggCard = new Year2021CardType("Pink Easter Egg Card", 2985);
@@ -40,7 +43,7 @@ export const knockKnockJokeCard = new Year2021CardType("Knock Knock Joke Card", 
 export const its5OClockSomewhereCard = new Year2021CardType(
   "It's 5 O' Clock Somewhere Card",
   3003
-).addIcon("its_5_oclock_somewhere_card", "its5oclocksomewherecard");
+).addIcons("its_5_oclock_somewhere_card", "its5oclocksomewherecard");
 export const wishIWasHereCard = new Year2021CardType("Wish I Was Here Card", 3002);
 export const lifeIsGoodCard = new Year2021CardType("Life Is Good Card", 3004);
 export const stayHome2021Card = new Year2021CardType("Stay Home 2021 Card", 3009);
