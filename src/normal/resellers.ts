@@ -59,7 +59,9 @@ export const virtualSCGSReseller = new ResellerType("Virtual SCGS Reseller", 288
 export const goldNCoinResellerPackage = new ResellerScatterType(
   "Gold'n Coins Reseller Package",
   2890
-).standalone();
+)
+  .addIcon("goldncoinsresellerpackage")
+  .standalone();
 export const virtualGoldNCoinsReseller = new ResellerType("Virtual Gold'n Coins Reseller", 2886)
   .addIcon("virtual_gold'n_coins_reseller")
   .virtual()

@@ -266,4 +266,4 @@ export const nachweihnachtsfeierInSpbg = new Year2020EventType("Nachweihnachtsfe
 export const nachweihnachtsfeierInSpbg2 = new Year2020EventType(
   "Nachweihnachtsfeier in SPBG.",
   2800
-);
+).setIcon("nachweihnachtsfeierinspbg.");

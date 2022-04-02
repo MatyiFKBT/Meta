@@ -46,3 +46,5 @@ export const munzeeMadness11SaturdayMorningEvent = new Year2022EventType(
   3637
 );
 export const txAfterTheChallenge = new Year2022EventType("TX - After the Challenge", 3664);
+export const azAfternoon = new Year2022EventType("Arizona Triple Play - Afternoon (Out #3)", 3665);
+export const azLunch = new Year2022EventType("Arizona Triple Play - Lunch (Out #2)", 3666);

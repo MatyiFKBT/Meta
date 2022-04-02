@@ -25,3 +25,5 @@ export const fantasticFatherCard = new Year2022CardType("Fantastic Father Card",
 export const magnificentMotherCard = new Year2022CardType("Magnificent Mother Card", 3668);
 
 export const gardenFlamingoCard = new Year2022CardType("Garden Flamingo Card", 3669);
+
+export const munzPakApril2022Card = new Year2022CardType("MunzPak April 2022 Card", 3672);

@@ -64,8 +64,8 @@ export const valentinesGardenFlamingo = new GardenFlamingo("Valentine's Garden F
   .setIcon("valentinesgardenflamingo")
   .scattererScatters(lovelyFeathers);
 
-export const fortuneFeathers = new FlamingoFeathers("Fortune Feathers", 3482);
+export const fortuneFeathers = new FlamingoFeathers("Fortune Feathers", 3483);
 export const luckyGardenFlamingo = new GardenFlamingo(
   "Lucky Garden Flamingo",
-  3483
+  3482
 ).scattererScatters(fortuneFeathers);
