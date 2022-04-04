@@ -26,7 +26,7 @@ export const poiHospital = new PlacesType("POI Hospital", 1486);
 export const poiPostOffice = new PlacesType("POI Post Office", 1487);
 export const poiCemetery = new PlacesType("POI Cemetery", 1488);
 export const poiUniqueAttraction = new PlacesType("POI Unique Attraction", 1551);
-export const poiVirtualGarden = new PlacesType("POI Virtual Garden", 1631).setIcon(
+export const poiVirtualGarden = new PlacesType("POI Virtual Garden", 1631).addIcon(
   "poi_virtual_garden"
 );
 export const poiCinema = new PlacesType("POI Cinema", 1770);
