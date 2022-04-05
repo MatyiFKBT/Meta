@@ -1,4 +1,3 @@
-import { TypeHidden } from "../../common/type";
 import {
   Year2022SeasonalGroup,
   Year2022SeasonalBouncerType,
@@ -27,20 +26,16 @@ export const darkWoodPaintbrush = new Year2022SeasonalScatterType("Dark Wood Pai
 
 export const greenPaintBucket = new Year2022SeasonalScatterType("Green Paint Bucket")
   .standalone()
-  .addGroup(petRocksGroup)
-  .addHidden(TypeHidden.Capture);
+  .addGroup(petRocksGroup);
 export const orangePaintBucket = new Year2022SeasonalScatterType("Orange Paint Bucket")
   .standalone()
-  .addGroup(petRocksGroup)
-  .addHidden(TypeHidden.Capture);
+  .addGroup(petRocksGroup);
 export const purplePaintBucket = new Year2022SeasonalScatterType("Purple Paint Bucket")
   .standalone()
-  .addGroup(petRocksGroup)
-  .addHidden(TypeHidden.Capture);
+  .addGroup(petRocksGroup);
 export const aquamarinePaintBucket = new Year2022SeasonalScatterType("Aquamarine Paint Bucket")
   .standalone()
-  .addGroup(petRocksGroup)
-  .addHidden(TypeHidden.Capture);
+  .addGroup(petRocksGroup);
 
 // export const petRockResultSet = new TypeSet();
 
