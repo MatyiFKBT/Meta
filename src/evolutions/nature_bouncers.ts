@@ -483,3 +483,30 @@ export const beeVirtualHost = new TPOBHostType("Bee Virtual Host", 2885)
 export const beeHost = new TPOBHostType("Bee Host", 2884)
   .physical()
   .addBouncerHostType(bee, honeyBee, queenBee, wallaBee);
+
+// Duck
+export const duckNest = new NatureEvolutionType("Duck Nest").virtual().setEvolutionStage(1);
+duckNest.setEvolutionBase(duckNest);
+export const duckEgg = new NatureEvolutionType("Duck Egg")
+  .virtual()
+  .setEvolutionStage(2)
+  .setEvolutionBase(duckNest);
+export const duckling = new NatureEvolutionType("Duckling")
+  .virtual()
+  .setEvolutionStage(3)
+  .setEvolutionBase(duckNest);
+export const mallard = new NatureEvolutionBouncerType("Mallard")
+  .setEvolutionStage(4)
+  .setEvolutionBase(beeEggs);
+export const quack = new NatureEvolutionBouncerType("Quack")
+  .setEvolutionStage(4)
+  .setEvolutionBase(duckNest);
+export const swan = new NatureEvolutionBouncerType("Swan")
+  .setEvolutionStage(4)
+  .setEvolutionBase(duckNest);
+export const duckVirtualHost = new TPOBHostType("Duck Virtual Host")
+  .virtual()
+  .addBouncerHostType(mallard, quack, swan);
+export const duckHost = new TPOBHostType("Duck Host")
+  .physical()
+  .addBouncerHostType(mallard, quack, swan);
