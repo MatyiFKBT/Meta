@@ -18,23 +18,27 @@ export const sandstonePetRock = new Year2022SeasonalBouncerType("Sandstone Pet R
   petRocksGroup
 );
 
-export const lightWoodPaintbrush = new Year2022SeasonalScatterType(
-  "Light Wood Paintbrush"
-).addGroup(petRocksGroup);
-export const darkWoodPaintbrush = new Year2022SeasonalScatterType("Dark Wood Paintbrush").addGroup(
-  petRocksGroup
-);
+export const lightWoodPaintbrush = new Year2022SeasonalScatterType("Light Wood Paintbrush")
+  .standalone()
+  .addGroup(petRocksGroup);
+export const darkWoodPaintbrush = new Year2022SeasonalScatterType("Dark Wood Paintbrush")
+  .addGroup(petRocksGroup)
+  .standalone();
 
 export const greenPaintBucket = new Year2022SeasonalScatterType("Green Paint Bucket")
+  .standalone()
   .addGroup(petRocksGroup)
   .addHidden(TypeHidden.Capture);
 export const orangePaintBucket = new Year2022SeasonalScatterType("Orange Paint Bucket")
+  .standalone()
   .addGroup(petRocksGroup)
   .addHidden(TypeHidden.Capture);
 export const purplePaintBucket = new Year2022SeasonalScatterType("Purple Paint Bucket")
+  .standalone()
   .addGroup(petRocksGroup)
   .addHidden(TypeHidden.Capture);
 export const aquamarinePaintBucket = new Year2022SeasonalScatterType("Aquamarine Paint Bucket")
+  .standalone()
   .addGroup(petRocksGroup)
   .addHidden(TypeHidden.Capture);
 
