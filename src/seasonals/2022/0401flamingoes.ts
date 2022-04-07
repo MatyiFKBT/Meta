@@ -1,3 +1,4 @@
+import { TypeHidden } from "../../common/type";
 import { Year2022SeasonalGroup, Year2022SeasonalScatterType } from "./_index";
 
 export const flamingoesGroup = new Year2022SeasonalGroup({
@@ -24,4 +25,5 @@ export const hiddenPlasticGardenFlamingo = new Year2022SeasonalScatterType(
   "Hidden Plastic Garden Flamingo"
 )
   .virtual()
-  .addGroup(flamingoesGroup);
+  .addGroup(flamingoesGroup)
+  .addHidden(TypeHidden.Capture);
