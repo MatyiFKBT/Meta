@@ -28,9 +28,9 @@ import {
   virtualYellow,
   virtualYellowGreen,
 } from "../../normal/virtual";
-import { bouncersGroup } from "../_index";
+import { mythsGroup } from "../_index";
 
-export const ModernMythGroup = new Group({ name: "Modern Myths" }).addParent(bouncersGroup);
+export const ModernMythGroup = new Group({ name: "Modern Myths" }).addParent(mythsGroup);
 
 export class ModernMythType extends BouncerType {
   override template(): this {

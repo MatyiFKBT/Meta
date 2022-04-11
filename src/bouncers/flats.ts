@@ -6,9 +6,9 @@ import { diamond, pinkDiamond } from "../normal/jewels";
 import { shamrock } from "../normal/misc";
 import { earthMystery, fireMystery, iceMystery, waterMystery } from "../normal/mystery";
 import { poiAirport, poiSports, poiTransportation } from "../normal/places";
-import { bouncersGroup } from "./_index";
+import { otherBouncersGroup } from "./_index";
 
-export const FancyFlatGroup = new Group({ name: "Fancy Flats" }).addParent(bouncersGroup);
+export const FancyFlatGroup = new Group({ name: "Fancy Flats" }).addParent(otherBouncersGroup);
 
 export class FancyFlatType extends BouncerType {
   override template(): this {

@@ -10,9 +10,9 @@ import { premium, greenie, shamrock, virtualShamrock } from "../normal/misc";
 import { mystery } from "../normal/mystery";
 import { poiCampground, poiCinema } from "../normal/places";
 import { crossbow, longsword, mace, shield } from "../normal/weapons";
-import { bouncersGroup } from "./_index";
+import { mechzGroup } from "./_index";
 
-export const MechGroup = new Group({ name: "MechZ" }).addParent(bouncersGroup);
+export const MechGroup = new Group({ name: "MechZ" }).addParent(mechzGroup);
 
 export class MechType extends BouncerType {
   override template(): this {

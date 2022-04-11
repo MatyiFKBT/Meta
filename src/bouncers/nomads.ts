@@ -3,9 +3,9 @@ import { BouncerType, ScatterType, TypeHidden, TypeSet, TypeState, TypeTags } fr
 import { greenie } from "../normal/misc";
 import { mystery } from "../normal/mystery";
 import { briefcase, nightVisionGoggles } from "../normal/weapons";
-import { bouncersGroup } from "./_index";
+import { otherBouncersGroup } from "./_index";
 
-export const NomadGroup = new Group({ name: "Nomads" }).addParent(bouncersGroup);
+export const NomadGroup = new Group({ name: "Nomads" }).addParent(otherBouncersGroup);
 
 export class NomadType extends BouncerType {
   override template(): this {
