@@ -21,3 +21,4 @@ export const flatFlashlight = new FlatType("Flat Flashlight", 2905);
 export const flatTypewriter = new FlatType("Flat Typewriter", 2906);
 export const flatMurray = new FlatType("Flat Murray", 2907);
 export const flatRUM = new FlatType("Flat RUM", 2908).addTag(TypeTags.TypeReseller);
+export const flatCats = new FlatType("Flat Cats", 2909);
