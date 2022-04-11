@@ -34,39 +34,57 @@ import { virtualYellow, virtualGoldenrod, virtualDandelion } from "../normal/vir
 import { briefcase, catapult, crossbow, theHammer } from "../normal/weapons";
 import { pouchCreaturesGroup } from "./_index";
 
-export const PouchCreatureGroup = new Group({ name: "Pouch Creatures" }).addParent(
+export const S1PouchCreatureGroup = new Group({ name: "Season 1 Pouch Creatures" }).addParent(
   pouchCreaturesGroup
 );
+export const S2PouchCreatureGroup = new Group({ name: "Season 2 Pouch Creatures" }).addParent(
+  pouchCreaturesGroup
+);
+export const FunfinityPouchCreatureGroup = new Group({
+  name: "Funfinity Pouch Creatures",
+}).addParent(pouchCreaturesGroup);
 
 export abstract class PouchCreatureType extends BouncerType {
   override template(): this {
     super.template();
-    return this.setGroup(PouchCreatureGroup).addTag(TypeTags.BouncerPC);
+    return this.addTag(TypeTags.BouncerPC);
   }
 }
 export class S1PouchCreatureType extends PouchCreatureType {
   override template(): this {
     super.template();
-    return this.addTag(TypeTags.BouncerPCS1);
+    return this.setGroup(S1PouchCreatureGroup).addTag(TypeTags.BouncerPCS1);
   }
 }
 export class S2PouchCreatureType extends PouchCreatureType {
   override template(): this {
     super.template();
-    return this.addTag(TypeTags.BouncerPCS1);
+    return this.setGroup(S2PouchCreatureGroup).addTag(TypeTags.BouncerPCS1);
   }
 }
 export class FunfinityPouchCreatureType extends PouchCreatureType {
   override template(): this {
     super.template();
-    return this.addTag(TypeTags.BouncerPCFunfinity);
+    return this.setGroup(FunfinityPouchCreatureGroup).addTag(TypeTags.BouncerPCFunfinity);
   }
 }
 
-export class PouchCreatureHostType extends BouncerHostType {
+export class S1PouchCreatureHostType extends BouncerHostType {
   override template(): this {
     super.template();
-    return this.setGroup(PouchCreatureGroup).addTag(TypeTags.BouncerHostPC);
+    return this.setGroup(S1PouchCreatureGroup).addTag(TypeTags.BouncerHostPC);
+  }
+}
+export class S2PouchCreatureHostType extends BouncerHostType {
+  override template(): this {
+    super.template();
+    return this.setGroup(S2PouchCreatureGroup).addTag(TypeTags.BouncerHostPC);
+  }
+}
+export class FunfinityPouchCreatureHostType extends BouncerHostType {
+  override template(): this {
+    super.template();
+    return this.setGroup(FunfinityPouchCreatureGroup).addTag(TypeTags.BouncerHostPC);
   }
 }
 
@@ -80,7 +98,7 @@ export const tuliferno = new S1PouchCreatureType("Tuliferno", 1242)
   .addBouncerLandsOn(greenie, fireMystery)
   .setEvolutionStage(3); /*.points({"capture":500,"capon":300})*/
 export const tuliSet = new EvolutionTypeSet().add(tuli).add(tulimber).add(tuliferno);
-export const firePouchCreatureHost = new PouchCreatureHostType("Fire Pouch Creature Host", 1243)
+export const firePouchCreatureHost = new S1PouchCreatureHostType("Fire Pouch Creature Host", 1243)
   .physical()
   .addBouncerHostType(tuliSet);
 
@@ -94,7 +112,7 @@ export const vesisaur = new S1PouchCreatureType("Vesisaur", 1372)
   .addBouncerLandsOn(greenie, waterMystery)
   .setEvolutionStage(3); /*.points({"capture":500,"capon":300})*/
 export const vesiSet = new EvolutionTypeSet().add(vesi).add(vesial).add(vesisaur);
-export const waterPouchCreatureHost = new PouchCreatureHostType("Water Pouch Creature Host", 1373)
+export const waterPouchCreatureHost = new S1PouchCreatureHostType("Water Pouch Creature Host", 1373)
   .physical()
   .addBouncerHostType(vesiSet);
 
@@ -108,7 +126,7 @@ export const murutain = new S1PouchCreatureType("Murutain", 1640)
   .addBouncerLandsOn(greenie, earthMystery)
   .setEvolutionStage(3); /*.points({"capture":500,"capon":300})*/
 export const muruSet = new EvolutionTypeSet().add(muru).add(muruchi).add(murutain);
-export const earthPouchCreatureHost = new PouchCreatureHostType("Earth Pouch Creature Host", 1641)
+export const earthPouchCreatureHost = new S1PouchCreatureHostType("Earth Pouch Creature Host", 1641)
   .physical()
   .addBouncerHostType(muruSet);
 
@@ -151,13 +169,13 @@ export const mitmeguSet = new EvolutionTypeSet()
   .add(ohkmegu)
   .add(murinmegu)
   .add(urgasmegu);
-export const mitmeguPouchCreatureHost = new PouchCreatureHostType(
+export const mitmeguPouchCreatureHost = new S1PouchCreatureHostType(
   "Mitmegu Pouch Creature Host",
   1756
 )
   .physical()
   .addBouncerHostType(mitmeguSet);
-export const mitmeguPouchCreatureVirtualHost = new PouchCreatureHostType(
+export const mitmeguPouchCreatureVirtualHost = new S1PouchCreatureHostType(
   "Mitmegu Pouch Creature Virtual Host",
   3313
 )
@@ -239,10 +257,10 @@ export const pimedus = new S1PouchCreatureType("Pimedus", 1919)
     voidMystery
   )
   .addTag(TypeTags.BouncerPCStageless);
-export const pimedusHost = new PouchCreatureHostType("Pimedus Host", 1920)
+export const pimedusHost = new S1PouchCreatureHostType("Pimedus Host", 1920)
   .physical()
   .addBouncerHostType(pimedus);
-export const pimedusVirtualHost = new PouchCreatureHostType("Pimedus Virtual Host", 1921)
+export const pimedusVirtualHost = new S1PouchCreatureHostType("Pimedus Virtual Host", 1921)
   .virtual()
   .addBouncerHostType(pimedus);
 
@@ -256,7 +274,7 @@ export const puflawn = new S2PouchCreatureType("Puflawn", 2242)
   .addBouncerLandsOn(type => type.hasTags(TypeTags.TypeVirtual), airMystery)
   .setEvolutionStage(3); /*.points({"capture":500,"capon":300})*/
 export const puffleSet = new EvolutionTypeSet().add(puffle).add(pufrain).add(puflawn);
-export const airPouchCreatureHost = new PouchCreatureHostType("Air Pouch Creature Host", 2243)
+export const airPouchCreatureHost = new S2PouchCreatureHostType("Air Pouch Creature Host", 2243)
   .virtual()
   .addBouncerHostType(puffleSet);
 
@@ -276,10 +294,10 @@ export const magnetus = new S2PouchCreatureType("Magnetus", 2306)
     virtualDandelion
   )
   .addTag(TypeTags.BouncerPCStageless);
-export const magnetusVirtualHost = new PouchCreatureHostType("Magnetus Virtual Host", 2308)
+export const magnetusVirtualHost = new S2PouchCreatureHostType("Magnetus Virtual Host", 2308)
   .virtual()
   .addBouncerHostType(magnetus);
-export const magnetusHost = new PouchCreatureHostType("Magnetus Host", 2307)
+export const magnetusHost = new S2PouchCreatureHostType("Magnetus Host", 2307)
   .physical()
   .addBouncerHostType(magnetus);
 
@@ -293,7 +311,7 @@ export const elektrivool = new S2PouchCreatureType("Elektrivool", 2409)
   .addBouncerLandsOn(type => type.hasTags(TypeTags.TypeVirtual), electricMystery)
   .setEvolutionStage(3);
 export const elekterSet = new EvolutionTypeSet().add(elekter).add(elekjoud).add(elektrivool);
-export const electricPouchCreatureHost = new PouchCreatureHostType(
+export const electricPouchCreatureHost = new S2PouchCreatureHostType(
   "Electric Pouch Creature Host",
   2410
 )
@@ -359,10 +377,13 @@ export const funfinitySet = new TypeSet()
   .add(safiir)
   .add(roosa)
   .add(tsitriin);
-export const funfinityHost = new PouchCreatureHostType("Funfinity Host", 2376)
+export const funfinityHost = new FunfinityPouchCreatureHostType("Funfinity Host", 2376)
   .physical()
   .addBouncerHostType(funfinitySet);
-export const funfinityVirtualHost = new PouchCreatureHostType("Funfinity Virtual Host", 2377)
+export const funfinityVirtualHost = new FunfinityPouchCreatureHostType(
+  "Funfinity Virtual Host",
+  2377
+)
   .virtual()
   .addBouncerHostType(funfinitySet);
 
@@ -376,6 +397,6 @@ export const kabuhirm = new S2PouchCreatureType("Kabuhirm", 3365).setEvolutionSt
   3
 ); /*.points({"capture":500,"capon":300})*/
 export const koobasSet = new EvolutionTypeSet().add(koobas).add(kartus).add(kabuhirm);
-export const voidPouchCreatureHost = new PouchCreatureHostType("Void Pouch Creature Host", 3366)
+export const voidPouchCreatureHost = new S2PouchCreatureHostType("Void Pouch Creature Host", 3366)
   .virtual()
   .addBouncerHostType(koobasSet);
