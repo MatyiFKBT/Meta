@@ -7,12 +7,13 @@ import { TypeTags } from "../../common/type";
 import { greenie } from "../../normal/misc";
 import { electricMystery } from "../../normal/mystery";
 import { skyland, treehouse } from "../../normal/destination";
+import { gardenItemsGroup } from "../../bouncers/_index";
 
 export const gardenFlamingosGroup = new Year2022SeasonalGroup({
   name: "Garden Flamingos",
   starts: "2022-01-01T00:00:00-06:00",
   ends: "2022-12-31T23:59:00-06:00",
-});
+}).addParent(gardenItemsGroup);
 
 class GardenFlamingo extends Year2022SeasonalPOBType {
   template(): this {

@@ -16,9 +16,11 @@ import {
 } from "../normal/mystery";
 import { virtualYellow, virtualGoldenrod, virtualDandelion } from "../normal/virtual";
 import { briefcase, catapult, crossbow, theHammer } from "../normal/weapons";
-import { bouncersGroup } from "./_index";
+import { otherBouncersGroup } from "./_index";
 
-export const RetiredBouncerGroup = new Group({ name: "Retired Bouncers" }).addParent(bouncersGroup);
+export const RetiredBouncerGroup = new Group({ name: "Retired Bouncers" }).addParent(
+  otherBouncersGroup
+);
 
 export class RetiredBouncerType extends BouncerType {
   override template(): this {

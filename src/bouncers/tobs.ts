@@ -24,9 +24,9 @@ import {
 } from "../normal/mystery";
 import { virtualGold, virtualYellow, virtualDandelion, virtualGoldenrod } from "../normal/virtual";
 import { mace, longsword, crossbow, battleAxe, theHammer } from "../normal/weapons";
-import { bouncersGroup } from "./_index";
+import { otherBouncersGroup } from "./_index";
 
-export const TOBGroup = new Group({ name: "Team Owned Bouncers" }).addParent(bouncersGroup);
+export const TOBGroup = new Group({ name: "Team Owned Bouncers" }).addParent(otherBouncersGroup);
 
 export class TOBType extends BouncerType {
   override template(): this {

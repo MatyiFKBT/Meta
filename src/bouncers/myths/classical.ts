@@ -14,9 +14,9 @@ import {
   iceMystery,
   fireMystery,
 } from "../../normal/mystery";
-import { bouncersGroup } from "../_index";
+import { mythsGroup } from "../_index";
 
-export const ClassicalMythGroup = new Group({ name: "Classical Myths" }).addParent(bouncersGroup);
+export const ClassicalMythGroup = new Group({ name: "Classical Myths" }).addParent(mythsGroup);
 
 export class ClassicalMythType extends BouncerType {
   override template(): this {

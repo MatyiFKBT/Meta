@@ -32,9 +32,11 @@ import {
 } from "../normal/mystery";
 import { virtualYellow, virtualGoldenrod, virtualDandelion } from "../normal/virtual";
 import { briefcase, catapult, crossbow, theHammer } from "../normal/weapons";
-import { bouncersGroup } from "./_index";
+import { pouchCreaturesGroup } from "./_index";
 
-export const PouchCreatureGroup = new Group({ name: "Pouch Creatures" }).addParent(bouncersGroup);
+export const PouchCreatureGroup = new Group({ name: "Pouch Creatures" }).addParent(
+  pouchCreaturesGroup
+);
 
 export abstract class PouchCreatureType extends BouncerType {
   override template(): this {

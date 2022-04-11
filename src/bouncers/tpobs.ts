@@ -2,9 +2,9 @@ import { Group } from "../common/group";
 import { BouncerHostType, BouncerType, ScatterType, TypeTags } from "../common/type";
 import { battleAxe, catapult, crossbow, longsword, mace, theHammer } from "../normal/weapons";
 import { spyderbot, squashedSpyderbot } from "./mechz";
-import { bouncersGroup } from "./_index";
+import { mechzGroup } from "./_index";
 
-export const TPOBGroup = new Group({ name: "TPOB" }).addParent(bouncersGroup);
+export const TPOBGroup = new Group({ name: "TPOB" }).addParent(mechzGroup);
 
 export class TPOBType extends BouncerType {
   override template(): this {

@@ -24,9 +24,9 @@ import {
 } from "../../normal/mystery";
 import { poiCemetery } from "../../normal/places";
 import { virtual } from "../../normal/virtual";
-import { bouncersGroup } from "../_index";
+import { mythsGroup } from "../_index";
 
-export const MirrorMythGroup = new Group({ name: "Mirror Myths" }).addParent(bouncersGroup);
+export const MirrorMythGroup = new Group({ name: "Mirror Myths" }).addParent(mythsGroup);
 
 export class MirrorMythType extends BouncerType {
   override template(): this {

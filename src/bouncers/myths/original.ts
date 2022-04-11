@@ -13,9 +13,9 @@ import {
   voidMystery,
 } from "../../normal/mystery";
 import { mace, longsword, theHammer, battleAxe } from "../../normal/weapons";
-import { bouncersGroup } from "../_index";
+import { mythsGroup } from "../_index";
 
-export const OriginalMythGroup = new Group({ name: "Original Myths" }).addParent(bouncersGroup);
+export const OriginalMythGroup = new Group({ name: "Original Myths" }).addParent(mythsGroup);
 
 export class OriginalMythType extends BouncerType {
   override template(): this {
