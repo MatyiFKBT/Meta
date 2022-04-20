@@ -49,3 +49,4 @@ export const txAfterTheChallenge = new Year2022EventType("TX - After the Challen
 export const azAfternoon = new Year2022EventType("Arizona Triple Play - Afternoon (Out #3)", 3665);
 export const azLunch = new Year2022EventType("Arizona Triple Play - Lunch (Out #2)", 3666);
 export const sunlightInSpring = new Year2022EventType("Sunlight in Spring", 3695);
+export const weSurvivedTaxDay2022 = new Year2022EventType("We Survived Tax Day 2022", 3713);
