@@ -283,7 +283,7 @@ export class Type {
     for (let i = 0; i < 5; i++) {
       const sha = createHash("sha1");
       sha.update(`${human_id}${i}`);
-      const id = parseInt(sha.digest("hex").slice(0, 8), 16);
+      const id = parseInt(sha.digest("hex").slice(0, i + 2), 16);
       if (!this.ids.has(id)) {
         this.ids.add(id);
         return id;
