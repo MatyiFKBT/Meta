@@ -4,13 +4,18 @@ import { Group, GroupData, GroupDatabase } from "./common/group";
 import { LegacyData } from "./common/legacy";
 import { TypeData, TypeDatabase, TypeTags } from "./common/type";
 
-export interface DatabaseData {
+export interface FullDatabaseData {
   types: (TypeData & { icons: string[]; id: string })[];
   groups: GroupData[];
 }
 
+export interface DatabaseData {
+  types: (Omit<TypeData, "details"> & { icons: string[]; id: string })[];
+  groups: GroupData[];
+}
+
 export interface CompactDatabaseData {
-  types: TypeData[];
+  types: Omit<TypeData, "details">[];
   groups: GroupData[];
 }
 
@@ -94,12 +99,21 @@ export class Database {
     }
   }
 
-  toJSON(compact?: false): DatabaseData;
-  toJSON(compact: true): CompactDatabaseData;
-  toJSON(compact?: boolean): CompactDatabaseData | DatabaseData {
-    if (compact) {
+  toJSON(variant?: "regular"): DatabaseData;
+  toJSON(variant: "compact"): CompactDatabaseData;
+  toJSON(variant: "full"): FullDatabaseData;
+  toJSON(
+    variant?: "compact" | "regular" | "full"
+  ): CompactDatabaseData | DatabaseData | FullDatabaseData {
+    if (variant === "full") {
       return {
-        types: this.types.types.map(i => i.toJSON(true)),
+        types: this.types.types.map(i => i.toJSON("full")),
+        groups: this.groups.groups.map(i => i.toJSON("full")),
+      };
+    }
+    if (variant === "compact") {
+      return {
+        types: this.types.types.map(i => i.toJSON("compact")),
         groups: this.groups.groups.map(i => i.toJSON()),
       };
     }

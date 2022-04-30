@@ -1,5 +1,6 @@
 import { XMLBuilder } from "xmlbuilder2/lib/interfaces";
 import { LegacyAccessory, LegacyCategory } from "./legacy";
+import { createHash } from "node:crypto";
 
 export interface GroupOptions {
   name: string;
@@ -21,25 +22,65 @@ export interface GroupSeasonalProperties {
   starts: string;
   ends: string;
 }
+export interface GroupDetails {
+  related?: {
+    blog?: string[];
+  };
+  description?: string;
+}
 
 export class Group {
-  static latestId = 0;
-  static nextId() {
-    return this.latestId++;
+  static ids = new Set<number>();
+  static humanIds = new Set<string>();
+  static generateId(human_id: string) {
+    if (this.humanIds.has(human_id)) {
+      throw new Error(`Duplicate human_id: ${human_id}`);
+    }
+    this.humanIds.add(human_id);
+    for (let i = 0; i < 5; i++) {
+      const sha = createHash("sha1");
+      sha.update(`${human_id}${i}`);
+      const id = parseInt(sha.digest("hex").slice(0, i + 2), 16);
+      if (!this.ids.has(id)) {
+        this.ids.add(id);
+        return id;
+      }
+    }
+    throw new Error(`Could not find a unique ID for ${human_id}`);
   }
-  id: number = Group.nextId();
+  id: number;
   icons: string[] = null!;
   name: string;
   human_id: string;
   parents: Group[] = [];
   seasonal?: GroupSeasonalProperties;
   legacyAccessories: LegacyAccessory[] = [];
+  details: GroupDetails = {};
 
   constructor(options: GroupOptions) {
     this.name = options.name;
     this.human_id = options.human_id?.toString() ?? options.name.replace(/\s+/g, "_").toLowerCase();
+    this.id = Group.generateId(this.human_id);
     if (options.icons) this.icons = options.icons;
     this.template();
+  }
+
+  addRelatedBlog(...blogs: (string | string[])[]): this {
+    this.details.related ??= {};
+    this.details.related.blog ??= [];
+    this.details.related.blog.push(...blogs.flat());
+    return this;
+  }
+
+  setRelatedBlog(...blogs: (string | string[])[]): this {
+    this.details.related ??= {};
+    this.details.related.blog = blogs.flat();
+    return this;
+  }
+
+  setDescription(description: string): this {
+    this.details.description = description;
+    return this;
   }
 
   addParent(parent: Group) {
@@ -70,8 +111,10 @@ export class Group {
     return data.join("|");
   }
 
-  toJSON(): GroupData {
-    return {
+  toJSON(variant?: "regular"): Omit<GroupData, "details">;
+  toJSON(variant: "full"): GroupData;
+  toJSON(variant?: "full" | "regular") {
+    const data: Omit<GroupData, "details"> = {
       id: this.id,
       human_id: this.human_id,
       icons: this.icons,
@@ -79,6 +122,13 @@ export class Group {
       seasonal: this.seasonal,
       parents: this.parents.map(i => i.id),
     };
+    if (variant === "full") {
+      return {
+        ...data,
+        details: Object.keys(this.details).length > 0 ? this.details : undefined,
+      };
+    }
+    return data;
   }
 
   toLegacyJSON(): LegacyCategory {

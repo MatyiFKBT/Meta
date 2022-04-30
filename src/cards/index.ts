@@ -1,11 +1,12 @@
+import { homeGroup } from "../base";
 import { Group } from "../common/group";
 import { Type, TypeTags } from "../common/type";
 
-export const CardGroup = new Group({ name: "Cards" });
+export const cardsGroup = new Group({ name: "Cards" }).addParent(homeGroup);
 
 export class CardType extends Type {
   override template() {
     super.template();
-    return this.virtual().addTag(TypeTags.Card).addGroup(CardGroup);
+    return this.virtual().addTag(TypeTags.Card).addGroup(cardsGroup);
   }
 }
