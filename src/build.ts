@@ -73,11 +73,19 @@ async function output(database: Database): Promise<void> {
   await fs.writeFile(join(outDir, "database.min.json"), JSON.stringify(database.toJSON()));
   await fs.writeFile(
     join(outDir, "database.compact.json"),
-    JSON.stringify(database.toJSON(true), null, 2)
+    JSON.stringify(database.toJSON("compact"), null, 2)
   );
   await fs.writeFile(
     join(outDir, "database.compact.min.json"),
-    JSON.stringify(database.toJSON(true))
+    JSON.stringify(database.toJSON("compact"))
+  );
+  await fs.writeFile(
+    join(outDir, "database.full.json"),
+    JSON.stringify(database.toJSON("full"), null, 2)
+  );
+  await fs.writeFile(
+    join(outDir, "database.full.min.json"),
+    JSON.stringify(database.toJSON("full"))
   );
   await fs.writeFile(join(outDir, "database.czm"), database.toCZM());
   await fs.writeFile(join(outDir, "database.compact.czm"), database.toCZM(true));

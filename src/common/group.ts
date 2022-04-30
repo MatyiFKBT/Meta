@@ -22,6 +22,12 @@ export interface GroupSeasonalProperties {
   starts: string;
   ends: string;
 }
+export interface GroupDetails {
+  related?: {
+    blog?: string[];
+  };
+  description?: string;
+}
 
 export class Group {
   static ids = new Set<number>();
@@ -49,6 +55,7 @@ export class Group {
   parents: Group[] = [];
   seasonal?: GroupSeasonalProperties;
   legacyAccessories: LegacyAccessory[] = [];
+  details: GroupDetails = {};
 
   constructor(options: GroupOptions) {
     this.name = options.name;
@@ -56,6 +63,24 @@ export class Group {
     this.id = Group.generateId(this.human_id);
     if (options.icons) this.icons = options.icons;
     this.template();
+  }
+
+  addRelatedBlog(...blogs: (string | string[])[]): this {
+    this.details.related ??= {};
+    this.details.related.blog ??= [];
+    this.details.related.blog.push(...blogs.flat());
+    return this;
+  }
+
+  setRelatedBlog(...blogs: (string | string[])[]): this {
+    this.details.related ??= {};
+    this.details.related.blog = blogs.flat();
+    return this;
+  }
+
+  setDescription(description: string): this {
+    this.details.description = description;
+    return this;
   }
 
   addParent(parent: Group) {
@@ -86,8 +111,10 @@ export class Group {
     return data.join("|");
   }
 
-  toJSON(): GroupData {
-    return {
+  toJSON(variant?: "regular"): Omit<GroupData, "details">;
+  toJSON(variant: "full"): GroupData;
+  toJSON(variant?: "full" | "regular") {
+    const data: Omit<GroupData, "details"> = {
       id: this.id,
       human_id: this.human_id,
       icons: this.icons,
@@ -95,6 +122,13 @@ export class Group {
       seasonal: this.seasonal,
       parents: this.parents.map(i => i.id),
     };
+    if (variant === "full") {
+      return {
+        ...data,
+        details: Object.keys(this.details).length > 0 ? this.details : undefined,
+      };
+    }
+    return data;
   }
 
   toLegacyJSON(): LegacyCategory {

@@ -232,6 +232,12 @@ export interface TypeMeta {
 
   scatterer?: TypeScattererMeta;
 }
+export interface TypeDetails {
+  related?: {
+    blog?: string[];
+  };
+  description?: string;
+}
 
 export interface TypePoints {
   deploy?: number;
@@ -254,6 +260,7 @@ export interface TypeOptions {
   tags?: TypeTags[];
   hidden?: TypeHidden[];
   meta?: TypeMeta;
+  details?: TypeDetails;
 }
 
 export interface TypeData {
@@ -268,6 +275,7 @@ export interface TypeData {
   tags?: TypeTags[];
   hidden?: TypeHidden[];
   meta?: TypeMeta;
+  details?: TypeDetails;
 }
 
 export type TypeReference = number | Type | ((type: Type) => boolean);
@@ -314,6 +322,8 @@ export class Type {
   private data_hidden: Set<TypeHidden>;
   // Type Meta
   private data_meta: TypeMeta;
+  // Type Meta
+  private data_details: TypeDetails;
 
   constructor(name: string, munzee_id?: number);
   constructor(parameters: TypeOptions);
@@ -330,6 +340,7 @@ export class Type {
     this.data_tags = new Set(options.tags ?? []);
     this.data_hidden = new Set(options.hidden ?? []);
     this.data_meta = options.meta ?? {};
+    this.data_details = options.details ?? {};
     this.template();
   }
 
@@ -552,6 +563,24 @@ export class Type {
     return this;
   }
 
+  addRelatedBlog(...blogs: (string | string[])[]): this {
+    this.data_details.related ??= {};
+    this.data_details.related.blog ??= [];
+    this.data_details.related.blog.push(...blogs.flat());
+    return this;
+  }
+
+  setRelatedBlog(...blogs: (string | string[])[]): this {
+    this.data_details.related ??= {};
+    this.data_details.related.blog = blogs.flat();
+    return this;
+  }
+
+  setDescription(description: string): this {
+    this.data_details.description = description;
+    return this;
+  }
+
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   template(): void {}
 
@@ -640,18 +669,25 @@ export class Type {
     return data.join("|");
   }
 
-  toJSON(compact?: false): TypeData & { icons: string[]; human_id: string };
-  toJSON(compact: true): TypeData;
-  toJSON(compact?: boolean): TypeData {
+  toJSON(variant?: "regular"): Omit<TypeData, "details"> & { icons: string[]; human_id: string };
+  toJSON(variant: "compact"): Omit<TypeData, "details">;
+  toJSON(variant: "full"): TypeData & { icons: string[]; human_id: string };
+  toJSON(variant?: "compact" | "regular" | "full") {
     const data: TypeData = {
       name: this.data_name,
       id: this.data_id,
     };
 
-    if (!compact || this.data_icons.join(".") !== this.data_name.toLowerCase().replace(/\s+/g, ""))
+    if (
+      variant !== "compact" ||
+      this.data_icons.join(".") !== this.data_name.toLowerCase().replace(/\s+/g, "")
+    )
       data.icons = this.data_icons;
 
-    if (!compact || this.data_human_id !== this.data_name.toLowerCase().replace(/\s/g, "_"))
+    if (
+      variant !== "compact" ||
+      this.data_human_id !== this.data_name.toLowerCase().replace(/\s/g, "_")
+    )
       data.human_id = this.data_human_id;
 
     if (this.data_munzee_id !== undefined) data.munzee_id = this.data_munzee_id;
@@ -667,6 +703,10 @@ export class Type {
     if (this.data_hidden.size > 0) data.hidden = [...this.data_hidden];
 
     if (Object.keys(this.data_meta).length > 0) data.meta = this.data_meta;
+
+    if (variant === "full" && Object.keys(this.data_details).length > 0) {
+      data.details = this.data_details;
+    }
 
     return data;
   }
