@@ -1,5 +1,6 @@
 import { XMLBuilder } from "xmlbuilder2/lib/interfaces";
 import { LegacyAccessory, LegacyCategory } from "./legacy";
+import { createHash } from "node:crypto";
 
 export interface GroupOptions {
   name: string;
@@ -23,11 +24,25 @@ export interface GroupSeasonalProperties {
 }
 
 export class Group {
-  static latestId = 0;
-  static nextId() {
-    return this.latestId++;
+  static ids = new Set<number>();
+  static humanIds = new Set<string>();
+  static generateId(human_id: string) {
+    if (this.humanIds.has(human_id)) {
+      throw new Error(`Duplicate human_id: ${human_id}`);
+    }
+    this.humanIds.add(human_id);
+    for (let i = 0; i < 5; i++) {
+      const sha = createHash("sha1");
+      sha.update(`${human_id}${i}`);
+      const id = parseInt(sha.digest("hex").slice(0, i + 2), 16);
+      if (!this.ids.has(id)) {
+        this.ids.add(id);
+        return id;
+      }
+    }
+    throw new Error(`Could not find a unique ID for ${human_id}`);
   }
-  id: number = Group.nextId();
+  id: number;
   icons: string[] = null!;
   name: string;
   human_id: string;
@@ -38,6 +53,7 @@ export class Group {
   constructor(options: GroupOptions) {
     this.name = options.name;
     this.human_id = options.human_id?.toString() ?? options.name.replace(/\s+/g, "_").toLowerCase();
+    this.id = Group.generateId(this.human_id);
     if (options.icons) this.icons = options.icons;
     this.template();
   }

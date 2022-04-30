@@ -1,7 +1,7 @@
 import { Year2021SeasonalPOBType, Year2021SeasonalGroup } from "./_index";
 
 export const babyAnimalsGroup = new Year2021SeasonalGroup({
-  name: "Baby Animals",
+  name: "April 2021 Baby Animals",
   starts: "2021-04-01T00:00:00-05:00",
   ends: "2021-05-31T23:59:00-05:00",
 });

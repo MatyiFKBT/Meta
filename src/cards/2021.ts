@@ -1,7 +1,6 @@
 import { Group } from "../common/group";
 import { ScatterType, TypeHidden, TypeSet, TypeTags } from "../common/type";
-import { CardType } from "./index";
-import { cardsGroup } from "./_index";
+import { cardsGroup, CardType } from "./index";
 
 export const Year2021CardGroup = new Group({ name: "2021 Cards" }).addParent(cardsGroup);
 

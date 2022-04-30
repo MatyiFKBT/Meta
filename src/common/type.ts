@@ -1,4 +1,5 @@
 import chalk from "chalk";
+import { createHash } from "node:crypto";
 import { XMLBuilder } from "xmlbuilder2/lib/interfaces";
 import { Group } from "./group";
 import { LegacyType } from "./legacy";
@@ -272,9 +273,23 @@ export interface TypeData {
 export type TypeReference = number | Type | ((type: Type) => boolean);
 
 export class Type {
-  static latestId = 0;
-  static nextId() {
-    return this.latestId++;
+  static ids = new Set<number>();
+  static humanIds = new Set<string>();
+  static generateId(human_id: string) {
+    if (this.humanIds.has(human_id)) {
+      throw new Error(`Duplicate human_id: ${human_id}`);
+    }
+    this.humanIds.add(human_id);
+    for (let i = 0; i < 5; i++) {
+      const sha = createHash("sha1");
+      sha.update(`${human_id}${i}`);
+      const id = parseInt(sha.digest("hex").slice(0, 8), 16);
+      if (!this.ids.has(id)) {
+        this.ids.add(id);
+        return id;
+      }
+    }
+    throw new Error(`Could not find a unique ID for ${human_id}`);
   }
   public file: string | undefined;
   // Munzee Name
@@ -306,8 +321,8 @@ export class Type {
     const options = typeof parameters === "string" ? { name: parameters, munzee_id } : parameters;
     this.data_name = options.name;
     this.data_icons = options.icons ?? [options.name.toLowerCase().replace(/\s+/g, "")];
-    this.data_id = Type.nextId();
     this.data_human_id = options.human_id ?? options.name.toLowerCase().replace(/\s/g, "_");
+    this.data_id = Type.generateId(this.data_human_id);
     this.data_munzee_id = options.munzee_id;
     this.data_state = options.state!;
     this.data_groups = new Set(options.groups ?? []);

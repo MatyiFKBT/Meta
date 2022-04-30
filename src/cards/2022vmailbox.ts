@@ -1,7 +1,6 @@
 import { Group } from "../common/group";
 import { ScatterType, TypeHidden, TypeTags } from "../common/type";
-import { CardType } from "./index";
-import { cardsGroup } from "./_index";
+import { cardsGroup, CardType } from "./index";
 
 export const Year2022VMailboxCardGroup = new Group({ name: "2022 V-Mailbox Cards" }).addParent(
   cardsGroup
@@ -24,7 +23,6 @@ export class Year2022VMailboxScatterType extends ScatterType {
 export const valentinesMailbox = new Year2022VMailboxCardType("V-Mailbox", 3574);
 export const vMailCard = new Year2022VMailboxCardType("V-Mail Card", 3594);
 export const loveBugCard = new Year2022VMailboxCardType("Love Bug Card", 3595);
-export const loveBug = new Year2022VMailboxScatterType("L0v3 Bug", 3613);
 export const youGiveMeLifeCard = new Year2022VMailboxCardType("You Give Me Life Card", 3596);
 export const pokeCard = new Year2022VMailboxCardType("Poke Card", 3597);
 export const cuteCodeCard = new Year2022VMailboxCardType("Cute Code Card", 3598);

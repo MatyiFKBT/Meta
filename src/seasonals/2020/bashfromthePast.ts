@@ -33,7 +33,7 @@ export const playingCards = new Year2020SeasonalBouncerType("Playing Cards", 259
   .setIcon("all-inbash-playingcards")
   .addGroup(bashfromthePastGroup)
   .addBouncerLandsOn(greenie, fireMystery, mystery, iceMystery, waterMystery, earthMystery);
-export const ghost = new Year2020SeasonalBouncerType("Ghost", 2598)
+export const ghost = new Year2020SeasonalBouncerType("Bash Ghost", 2598)
   .setIcon("mh-boobash-ghost")
   .addGroup(bashfromthePastGroup)
   .addBouncerLandsOn(type => type.hasTags(TypeTags.TypeVirtual), airMystery, electricMystery);
