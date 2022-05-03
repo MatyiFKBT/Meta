@@ -20,12 +20,14 @@ export class MechType extends BouncerType {
     return this.setGroup(MechGroup).addTag(TypeTags.BouncerTPOB);
   }
 }
+
 export class BrokenMechType extends BouncerType {
   override template(): this {
     super.template();
     return this.setGroup(MechGroup).addTag(TypeTags.BouncerTPOB).addHidden(TypeHidden.Bouncers);
   }
 }
+
 export class MechScatterType extends ScatterType {
   override template(): this {
     super.template();
@@ -235,4 +237,15 @@ export const shamRockNRollaSmashed = new BrokenMechType("Smashed Sham Rock n Rol
 
 export const p33l = new MechScatterType("P33L", 3676).standalone();
 export const bananaBorg = new MechType("BananaBorg", 3674).scattererScatters(p33l);
-// export const bananaBorgCrushed = new BrokenMechType("Crushed BananaBorg", 3675);
+export const bananaBorgBrown = new BrokenMechType("Brown BananaBorg", 3675).scattererScatters(p33l);
+
+export const m4ck3rel = new MechScatterType("M4CK3REL", 3718).standalone();
+export const p3n9u1n = new MechType("P3N9U1N", 3716).scattererScatters(m4ck3rel);
+export const p3n9u1nFrozen = new BrokenMechType("Frozen P3N9U1N", 3717).scattererScatters(m4ck3rel);
+
+export const kingM4ck3rel = new MechScatterType("KiNG M4CK3REL", 3721).standalone();
+export const emperorP3n9u1n = new MechType("Emperor P3N9U1N", 3719).scattererScatters(kingM4ck3rel);
+export const emperorP3n9u1nFrozen = new BrokenMechType(
+  "Frozen Emperor P3N9U1N",
+  3720
+).scattererScatters(kingM4ck3rel);

@@ -10,8 +10,7 @@ import fileSize from "filesize";
 import { compareWithOldDB } from "./compare";
 
 function checkType(file: string, type: Type) {
-  const relativeFilePath = file.replace(__dirname, "");
-  type.file = relativeFilePath;
+  type.file = file.replace(__dirname, "");
   if (!type.munzee_id) {
     console.warn(chalk`{gray [{yellow WARN}] ${type.file}: }{gray ${type.name} has no munzee_id}`);
   }
