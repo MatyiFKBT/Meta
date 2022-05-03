@@ -47,3 +47,4 @@ jobs:
             output/*
         
       - run: curl https://db.cuppazee.app/reloaddb3
+      - run: curl https://api.cuppazee.app/database/reload
