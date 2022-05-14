@@ -48,5 +48,14 @@ export const munzeeMadness11SaturdayMorningEvent = new Year2022EventType(
 export const txAfterTheChallenge = new Year2022EventType("TX - After the Challenge", 3664);
 export const azAfternoon = new Year2022EventType("Arizona Triple Play - Afternoon (Out #3)", 3665);
 export const azLunch = new Year2022EventType("Arizona Triple Play - Lunch (Out #2)", 3666);
+export const flGolfVsMunzees = new Year2022EventType("FL - Golf vs Munzee", 3694);
 export const sunlightInSpring = new Year2022EventType("Sunlight in Spring", 3695);
+export const palmurannanAlla = new Year2022EventType("Palmurannan Alla", 3696);
 export const weSurvivedTaxDay2022 = new Year2022EventType("We Survived Tax Day 2022", 3713);
+export const curiosiTea6 = new Year2022EventType("CuriosiTea 6", 3722);
+export const prattvillePopUpEvent = new Year2022EventType("Prattville Pop Up Event", 3723);
+export const munzeeMania2022Friday = new Year2022EventType("Munzee Mania 2022 - Friday", 3738);
+export const munzeeMania2022SaturdayMorning = new Year2022EventType(
+  "Munzee Mania 2022 - Saturday Morning",
+  3740
+);

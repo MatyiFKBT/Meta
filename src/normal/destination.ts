@@ -11,6 +11,7 @@ export class DestinationRoomsType extends Type {
     );
   }
 }
+
 export class DestinationBouncerType extends Type {
   override template(): this {
     super.template();
@@ -140,3 +141,6 @@ export const treehouse = new DestinationBouncerType("Treehouse", 2145)
 export const skyland = new DestinationBouncerType("Skyland", 2426).virtual().destinationSize(6);
 
 export const tPOBPub = new DestinationBouncerType("tPOB Pub", 3580).virtual().destinationSize(6);
+export const scrapStar = new DestinationBouncerType("Scrap Star", 3724)
+  .virtual()
+  .destinationSize(6);
