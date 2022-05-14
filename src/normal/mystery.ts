@@ -55,7 +55,8 @@ export const earthMysteryScatters = new TypeSet()
   .add(new ElementalMysteryScatterType("Pecan", 2603).standalone())
   .add(new ElementalMysteryScatterType("Acorn", 2604).standalone())
   .add(new ElementalMysteryScatterType("Dead Branch", 2848).standalone())
-  .add(new ElementalMysteryScatterType("Cardinal Feather", 2849).standalone());
+  .add(new ElementalMysteryScatterType("Cardinal Feather", 2849).standalone())
+  .add(new ElementalMysteryScatterType("Can", 3715).standalone());
 export const tree = new ElementalMysteryScatterType("Tree", 2403)
   .physical()
   .scattererScatters(earthMysteryScatters);
