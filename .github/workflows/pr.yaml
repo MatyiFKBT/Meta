@@ -28,7 +28,7 @@ jobs:
 
       - name: "Lint Code"
         run: |
-          pnpm lint --fix
+          pnpm lint -- --fix --max-warnings=0
 
       - name: "Build Database"
         run: |
