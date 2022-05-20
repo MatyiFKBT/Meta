@@ -10,6 +10,7 @@ jobs:
   prlink:
     name: "PR - Lint"
     runs-on: "ubuntu-latest"
+    permissions: read-all|write-all
 
     steps:
       - uses: actions/checkout@v2
