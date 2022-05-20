@@ -5,12 +5,12 @@ on:
   pull_request:
     paths:
       - '**.ts'
+permissions: read-all|write-all
 
 jobs:
   prlink:
     name: "PR - Lint"
     runs-on: "ubuntu-latest"
-    permissions: read-all|write-all
 
     steps:
       - uses: actions/checkout@v2
