@@ -59,3 +59,8 @@ export const munzeeMania2022SaturdayMorning = new Year2022EventType(
   "Munzee Mania 2022 - Saturday Morning",
   3740
 );
+export const munzeeMania2022MainEvent = new Year2022EventType(
+  "Munzee Mania 2022 - Main Event",
+  3739
+);
+export const munzeeMania2022Sunday = new Year2022EventType("Munzee Mania 2022 - Sunday", 3741);
