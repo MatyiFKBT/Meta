@@ -93,29 +93,29 @@ export const safariVan = new EducationEvolutionType("Safari Van", 841)
   .setEvolutionBase(safariTruck);
 
 export const phoneEvos = new EvolutionTypeSet([
-  new EducationEvolutionType("Antique Phone"),
-  new EducationEvolutionType("Rotary Dial Phone"),
-  new EducationEvolutionType("Brick Phone"),
-  new EducationEvolutionType("Z Phone"),
+  new EducationEvolutionType("Antique Phone").setEvolutionStage(1),
+  new EducationEvolutionType("Rotary Dial Phone").setEvolutionStage(2),
+  new EducationEvolutionType("Brick Phone").setEvolutionStage(3),
+  new EducationEvolutionType("Z Phone").setEvolutionStage(4),
 ]).each(i => i.physical());
 
 export const computerEvos = new EvolutionTypeSet([
-  new EducationEvolutionType("Mainframe"),
-  new EducationEvolutionType("PC"),
-  new EducationEvolutionType("Laptop"),
-  new EducationEvolutionType("Tablet"),
+  new EducationEvolutionType("Mainframe").setEvolutionStage(1),
+  new EducationEvolutionType("PC").setEvolutionStage(2),
+  new EducationEvolutionType("Laptop").setEvolutionStage(3),
+  new EducationEvolutionType("Tablet").setEvolutionStage(4),
 ]).each(i => i.physical());
 
 export const currencyEvos = new EvolutionTypeSet([
-  new EducationEvolutionType("Cowry Shell"),
-  new EducationEvolutionType("Gold Nuggets"),
-  new EducationEvolutionType("Paper Money"),
-  new EducationEvolutionType("Credit Card"),
+  new EducationEvolutionType("Cowry Shell").setEvolutionStage(1),
+  new EducationEvolutionType("Gold Nuggets").setEvolutionStage(2),
+  new EducationEvolutionType("Paper Money").setEvolutionStage(3),
+  new EducationEvolutionType("Credit Card").setEvolutionStage(4),
 ]).each(i => i.virtual());
 
 export const communicationEvos = new EvolutionTypeSet([
-  new EducationEvolutionType("Handwritten Letter"),
-  new EducationEvolutionType("Carrier Pigeon"),
-  new EducationEvolutionType("Telegram"),
-  new EducationEvolutionType("Email"),
+  new EducationEvolutionType("Handwritten Letter").setEvolutionStage(1),
+  new EducationEvolutionType("Carrier Pigeon").setEvolutionStage(2),
+  new EducationEvolutionType("Telegram").setEvolutionStage(3),
+  new EducationEvolutionType("Email").setEvolutionStage(4),
 ]).each(i => i.virtual());
