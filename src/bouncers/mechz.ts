@@ -259,3 +259,7 @@ export const shippedR3x0skeleton = new BrokenMechType(
 
 export const cappi = new MechType("CAPPi", 3746);
 export const sleepModeCappi = new MechType("Sleep Mode CAPPi", 3747);
+
+export const pitt = new MechScatterType("PiTT", 3754).standalone();
+export const robocado = new MechType("Robocado", 3752).scattererScatters(pitt);
+export const brownRobocado = new BrokenMechType("Brown Robocado", 3753).scattererScatters(pitt);

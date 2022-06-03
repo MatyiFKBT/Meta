@@ -1,4 +1,4 @@
-import { Type, TypeTags } from "../common/type";
+import { EvolutionTypeSet, Type, TypeTags } from "../common/type";
 import { Group } from "../common/group";
 import { evoGroup } from "./_index";
 
@@ -91,3 +91,31 @@ export const safariVan = new EducationEvolutionType("Safari Van", 841)
   .virtual()
   .setEvolutionStage(2)
   .setEvolutionBase(safariTruck);
+
+export const phoneEvos = new EvolutionTypeSet([
+  new EducationEvolutionType("Antique Phone"),
+  new EducationEvolutionType("Rotary Dial Phone"),
+  new EducationEvolutionType("Brick Phone"),
+  new EducationEvolutionType("Z Phone"),
+]).each(i => i.physical());
+
+export const computerEvos = new EvolutionTypeSet([
+  new EducationEvolutionType("Mainframe"),
+  new EducationEvolutionType("PC"),
+  new EducationEvolutionType("Laptop"),
+  new EducationEvolutionType("Tablet"),
+]).each(i => i.physical());
+
+export const currencyEvos = new EvolutionTypeSet([
+  new EducationEvolutionType("Cowry Shell"),
+  new EducationEvolutionType("Gold Nuggets"),
+  new EducationEvolutionType("Paper Money"),
+  new EducationEvolutionType("Credit Card"),
+]).each(i => i.virtual());
+
+export const communicationEvos = new EvolutionTypeSet([
+  new EducationEvolutionType("Handwritten Letter"),
+  new EducationEvolutionType("Carrier Pigeon"),
+  new EducationEvolutionType("Telegram"),
+  new EducationEvolutionType("Email"),
+]).each(i => i.virtual());
