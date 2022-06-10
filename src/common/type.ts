@@ -1012,7 +1012,9 @@ export class EvolutionTypeSet<T extends Type = Type> extends TypeSet<T> {
     if (this.length > 0) {
       for (const item of this) {
         if (!item.meta.evolution?.stage) {
-          item.setEvolutionStage(Math.max(0, ...this.map(i => i.meta.evolution?.stage ?? 0)) + 1);
+          item.setEvolutionStage(
+            Math.max(0, ...[...this].map(i => i.meta.evolution?.stage ?? 0)) + 1
+          );
         }
       }
       this.sort((a, b) => (a.meta.evolution?.stage ?? 0) - (b.meta.evolution?.stage ?? 0));
