@@ -1,4 +1,4 @@
-import { Type, TypeTags } from "../common/type";
+import { EvolutionTypeSet, Type, TypeTags } from "../common/type";
 import { Group } from "../common/group";
 import { evoGroup } from "./_index";
 
@@ -23,6 +23,8 @@ export const tomato = new FarmEvolutionType("Tomato", 658)
   .setEvolutionStage(3)
   .setEvolutionBase(tomatoSeed);
 
+export const tomatoEvos = new EvolutionTypeSet([tomatoSeed, tomatoPlant, tomato], 3);
+
 export const cornSeed = new FarmEvolutionType("Corn Seed", 663).physical().setEvolutionStage(1);
 cornSeed.setEvolutionBase(cornSeed);
 export const cornStalk = new FarmEvolutionType("Corn Stalk", 667)
@@ -34,6 +36,8 @@ export const earofCorn = new FarmEvolutionType("Ear of Corn", 659)
   .addHidden()
   .setEvolutionStage(3)
   .setEvolutionBase(cornSeed);
+
+export const cornEvos = new EvolutionTypeSet([cornSeed, cornStalk, earofCorn], 3);
 
 export const carrotSeed = new FarmEvolutionType("Carrot Seed", 664).virtual().setEvolutionStage(1);
 carrotSeed.setEvolutionBase(carrotSeed);
@@ -47,6 +51,8 @@ export const carrot = new FarmEvolutionType("Carrot", 660)
   .setEvolutionStage(3)
   .setEvolutionBase(carrotSeed);
 
+export const carrotEvos = new EvolutionTypeSet([carrotSeed, carrotPlant, carrot], 3);
+
 export const peasSeed = new FarmEvolutionType("Peas Seed", 665).virtual().setEvolutionStage(1);
 peasSeed.setEvolutionBase(peasSeed);
 export const peasPlant = new FarmEvolutionType("Peas Plant", 669)
@@ -58,6 +64,8 @@ export const peas = new FarmEvolutionType("Peas", 661)
   .addHidden()
   .setEvolutionStage(3)
   .setEvolutionBase(peasSeed);
+
+export const peasEvos = new EvolutionTypeSet([peasSeed, peasPlant, peas], 3);
 
 export const goldenCarrotSeed = new FarmEvolutionType("Golden Carrot Seed", 679)
   .physical()
@@ -73,6 +81,11 @@ export const goldenCarrot = new FarmEvolutionType("Golden Carrot", 678)
   .setEvolutionStage(3)
   .setEvolutionBase(goldenCarrotSeed);
 
+export const goldenCarrotEvos = new EvolutionTypeSet(
+  [goldenCarrotSeed, goldenCarrotPlant, goldenCarrot],
+  3
+);
+
 export const piglet = new FarmEvolutionType("Piglet", 699).physical().setEvolutionStage(1);
 piglet.setEvolutionBase(piglet);
 export const pig = new FarmEvolutionType("Pig", 701)
@@ -85,6 +98,8 @@ export const bacon = new FarmEvolutionType("Bacon", 685)
   .setEvolutionStage(3)
   .setEvolutionBase(piglet);
 
+export const pigEvos = new EvolutionTypeSet([piglet, pig, bacon], 3);
+
 export const calf = new FarmEvolutionType("Calf", 698).physical().setEvolutionStage(1);
 calf.setEvolutionBase(calf);
 export const cow = new FarmEvolutionType("Cow", 700)
@@ -96,6 +111,8 @@ export const milk = new FarmEvolutionType("Milk", 684)
   .addHidden()
   .setEvolutionStage(3)
   .setEvolutionBase(calf);
+
+export const cowEvos = new EvolutionTypeSet([calf, cow, milk], 3);
 
 export const colt = new FarmEvolutionType("Colt", 704).virtual().setEvolutionStage(1);
 colt.setEvolutionBase(colt);
@@ -110,6 +127,8 @@ export const championshipHorse = new FarmEvolutionType("Championship Horse", 702
   .setEvolutionStage(3)
   .setEvolutionBase(colt);
 
+export const horseEvos = new EvolutionTypeSet([colt, racehorse, championshipHorse], 3);
+
 export const chick = new FarmEvolutionType("Chick", 705).virtual().setEvolutionStage(1);
 chick.setEvolutionBase(chick);
 export const chicken = new FarmEvolutionType("Chicken", 707)
@@ -121,6 +140,8 @@ export const eggs = new FarmEvolutionType("Eggs", 703)
   .addHidden()
   .setEvolutionStage(3)
   .setEvolutionBase(chick);
+
+export const chickenEvos = new EvolutionTypeSet([chick, chicken, eggs], 3);
 
 export const leanToShed = new FarmEvolutionType("Lean-To Shed", 729)
   .physical()
@@ -136,6 +157,8 @@ export const barn = new FarmEvolutionType("Barn", 708)
   .setEvolutionStage(3)
   .setEvolutionBase(leanToShed);
 
+export const shedEvos = new EvolutionTypeSet([leanToShed, gardenShed, barn], 3);
+
 export const hoe = new FarmEvolutionType("Hoe", 731).physical().setEvolutionStage(1);
 hoe.setEvolutionBase(hoe);
 export const plow = new FarmEvolutionType("Plow", 732)
@@ -148,6 +171,8 @@ export const tractor = new FarmEvolutionType("Tractor", 709)
   .setEvolutionStage(3)
   .setEvolutionBase(hoe);
 
+export const tractorEvos = new EvolutionTypeSet([hoe, plow, tractor], 3);
+
 export const farmer = new FarmEvolutionType("Farmer", 737).virtual().setEvolutionStage(1);
 farmer.setEvolutionBase(farmer);
 export const farmerandWife = new FarmEvolutionType("Farmer and Wife", 738)
@@ -159,6 +184,8 @@ export const family = new FarmEvolutionType("Family", 735)
   .addHidden()
   .setEvolutionStage(3)
   .setEvolutionBase(farmer);
+
+export const farmerEvos = new EvolutionTypeSet([farmer, farmerandWife, family], 3);
 
 export const pottedPlant = new FarmEvolutionType("Potted Plant", 739)
   .virtual()
@@ -173,3 +200,5 @@ export const field = new FarmEvolutionType("Field", 736)
   .addHidden()
   .setEvolutionStage(3)
   .setEvolutionBase(pottedPlant);
+
+export const plantEvos = new EvolutionTypeSet([pottedPlant, garden, field], 3);

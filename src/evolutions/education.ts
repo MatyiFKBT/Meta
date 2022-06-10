@@ -28,6 +28,8 @@ export const fish = new EducationEvolutionType("Fish", 743)
   .setEvolutionStage(2)
   .setEvolutionBase(seaweed);
 
+export const fishEvos = new EvolutionTypeSet([seaweed, shark, fish], 3);
+
 export const canoe = new EducationEvolutionType("Canoe", 745).virtual().setEvolutionStage(1);
 canoe.setEvolutionBase(canoe);
 export const submarine = new EducationEvolutionType("Submarine", 744)
@@ -40,6 +42,8 @@ export const motorboat = new EducationEvolutionType("Motorboat", 746)
   .setEvolutionStage(2)
   .setEvolutionBase(canoe);
 
+export const boatEvos = new EvolutionTypeSet([canoe, submarine, motorboat], 3);
+
 export const egg = new EducationEvolutionType("Egg", 800).physical().setEvolutionStage(1);
 egg.setEvolutionBase(egg);
 export const dinosaur = new EducationEvolutionType("Dinosaur", 801)
@@ -51,6 +55,8 @@ export const bones = new EducationEvolutionType("Bones", 802)
   .addHidden()
   .setEvolutionStage(3)
   .setEvolutionBase(egg);
+
+export const dinoEvos = new EvolutionTypeSet([egg, dinosaur, bones], 3);
 
 export const firstWheel = new EducationEvolutionType("First Wheel", 808)
   .virtual()
@@ -66,6 +72,8 @@ export const pennyFarthingBike = new EducationEvolutionType("Penny-Farthing Bike
   .setEvolutionStage(2)
   .setEvolutionBase(firstWheel);
 
+export const bikeEvos = new EvolutionTypeSet([firstWheel, muscleCar, pennyFarthingBike], 3);
+
 export const lionCub = new EducationEvolutionType("Lion Cub", 837).physical().setEvolutionStage(1);
 lionCub.setEvolutionBase(lionCub);
 export const kingoftheJungle = new EducationEvolutionType("King of the Jungle", 835)
@@ -77,6 +85,8 @@ export const lion = new EducationEvolutionType("Lion", 838)
   .physical()
   .setEvolutionStage(2)
   .setEvolutionBase(lionCub);
+
+export const lionEvos = new EvolutionTypeSet([lionCub, lion, kingoftheJungle], 3);
 
 export const safariTruck = new EducationEvolutionType("Safari Truck", 840)
   .virtual()
@@ -91,6 +101,8 @@ export const safariVan = new EducationEvolutionType("Safari Van", 841)
   .virtual()
   .setEvolutionStage(2)
   .setEvolutionBase(safariTruck);
+
+export const safariVehicleEvos = new EvolutionTypeSet([safariTruck, safariVan, safariBus], 3);
 
 export const phoneEvos = new EvolutionTypeSet(
   [

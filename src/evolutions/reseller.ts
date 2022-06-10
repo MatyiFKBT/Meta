@@ -1,4 +1,4 @@
-import { Type, TypeTags } from "../common/type";
+import { EvolutionTypeSet, Type, TypeTags } from "../common/type";
 import { Group } from "../common/group";
 import { evoGroup } from "./_index";
 
@@ -26,3 +26,5 @@ export const treasureChest = new ResellerEvolutionType("Treasure Chest", 1057)
   .physical()
   .setEvolutionStage(3)
   .setEvolutionBase(coin);
+
+export const coinEvos = new EvolutionTypeSet([coin, bagofCoins, treasureChest], 3);

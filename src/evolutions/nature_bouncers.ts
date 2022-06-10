@@ -1,4 +1,10 @@
-import { BouncerHostType, BouncerType, TypeHidden, TypeTags } from "../common/type";
+import {
+  BouncerHostType,
+  BouncerType,
+  EvolutionTypeSet,
+  TypeHidden,
+  TypeTags,
+} from "../common/type";
 import { treehouse, skyland } from "../normal/destination";
 import { greenie, trailMunzee } from "../normal/misc";
 import { earthMystery, waterMystery } from "../normal/mystery";
@@ -38,6 +44,7 @@ export class NatureEvolutionBouncerHostType extends BouncerHostType {
     );
   }
 }
+
 export class NatureEvolutionBouncerType extends BouncerType {
   override template(): this {
     super.template();
@@ -168,6 +175,19 @@ export const limeButterfly = new NatureEvolutionBouncerType("Lime Butterfly", 18
   )
   .setEvolutionStage(5)
   .setEvolutionBase(butterflyEgg);
+export const butterflyEvos = new EvolutionTypeSet(
+  [
+    butterflyEgg,
+    caterpillar,
+    chrysalis,
+    hatchedChrysalis,
+    butterfly,
+    morphoButterfly,
+    monarchButterfly,
+    limeButterfly,
+  ],
+  5
+);
 export const butterflyHost = new TPOBHostType("Butterfly Host", 1843)
   .physical()
   .addBouncerHostType(butterfly, morphoButterfly, monarchButterfly, limeButterfly);
@@ -250,6 +270,10 @@ export const tomatoFrog = new NatureEvolutionBouncerType("Tomato Frog", 2112)
   )
   .setEvolutionStage(5)
   .setEvolutionBase(frogEgg);
+export const frogEvos = new EvolutionTypeSet(
+  [frogEgg, tadpole, pollywog, froglet, frog, treeFrog, poisonDartFrog, tomatoFrog],
+  5
+);
 export const frogHost = new TPOBHostType("Frog Host", 2113)
   .physical()
   .addBouncerHostType(frog, treeFrog, poisonDartFrog, tomatoFrog);
@@ -324,6 +348,10 @@ export const pBJellyfish = new NatureEvolutionBouncerType("PB & Jellyfish", 2468
   )
   .setEvolutionStage(5)
   .setEvolutionBase(planulaLarva);
+export const jellyfishEvos = new EvolutionTypeSet(
+  [polyp, polypwithBulbs, ephyraLarva, jellyfish, boxJellyfish, goldenJellyfish, pBJellyfish],
+  1
+);
 export const jellyfishHost = new TPOBHostType("Jellyfish Host", 2469)
   .physical()
   .addBouncerHostType(jellyfish, boxJellyfish, goldenJellyfish, pBJellyfish);
@@ -398,6 +426,19 @@ export const taekwondoTortoise = new NatureEvolutionBouncerType("Taekwondo Torto
   )
   .setEvolutionStage(5)
   .setEvolutionBase(turtleEgg);
+export const turtleEvos = new EvolutionTypeSet(
+  [
+    turtleEgg,
+    turtleHatchling,
+    juvenileTurtle,
+    adultTurtle,
+    turtle,
+    seaTurtle,
+    snappingTurtle,
+    taekwondoTortoise,
+  ],
+  5
+);
 export const turtleHost = new TPOBHostType("Turtle Host", 2459)
   .physical()
   .addBouncerHostType(turtle, seaTurtle, snappingTurtle, taekwondoTortoise);
@@ -477,6 +518,10 @@ export const wallaBee = new NatureEvolutionBouncerType("WallaBee", 2883)
   )
   .setEvolutionStage(5)
   .setEvolutionBase(beeEggs);
+export const beeEvos = new EvolutionTypeSet(
+  [beeEggs, beeLarvae, beePupae, emptyHoneycomb, bee, honeyBee, queenBee, wallaBee],
+  5
+);
 export const beeVirtualHost = new TPOBHostType("Bee Virtual Host", 2885)
   .virtual()
   .addBouncerHostType(bee, honeyBee, queenBee, wallaBee);
@@ -504,6 +549,10 @@ export const quack = new NatureEvolutionBouncerType("Quack")
 export const swan = new NatureEvolutionBouncerType("Swan")
   .setEvolutionStage(4)
   .setEvolutionBase(duckNest);
+export const duckEvos = new EvolutionTypeSet(
+  [duckNest, duckEgg, duckling, mallard, quack, swan],
+  1
+);
 export const duckVirtualHost = new TPOBHostType("Duck Virtual Host")
   .virtual()
   .addBouncerHostType(mallard, quack, swan);

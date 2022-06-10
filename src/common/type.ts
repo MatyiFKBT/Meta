@@ -1018,9 +1018,11 @@ export class EvolutionTypeSet<T extends Type = Type> extends TypeSet<T> {
         }
       }
       this.sort((a, b) => (a.meta.evolution?.stage ?? 0) - (b.meta.evolution?.stage ?? 0));
-      this.forEach(i => {
+      let found = false;
+      for (const i of this) {
         i.setEvolutionBase(this[0]);
-        if (i.meta.evolution?.stage === this.deployableStage) {
+        if (i.meta.evolution?.stage === this.deployableStage && !found) {
+          found = true;
           // @ts-expect-error Need to access private method
           i.data_hidden.delete(TypeHidden.Deploy);
           // @ts-expect-error Need to access private method
@@ -1028,7 +1030,7 @@ export class EvolutionTypeSet<T extends Type = Type> extends TypeSet<T> {
         } else {
           i.addHidden(TypeHidden.Deploy, TypeHidden.Inventory);
         }
-      });
+      }
     }
   }
 }

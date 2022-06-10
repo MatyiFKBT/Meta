@@ -1,4 +1,4 @@
-import { Type, TypeHidden, TypeTags } from "../common/type";
+import { EvolutionTypeSet, Type, TypeHidden, TypeTags } from "../common/type";
 import { Group } from "../common/group";
 import { evoGroup } from "./_index";
 
@@ -48,6 +48,20 @@ export const whiteTulipBlossom = new NatureEvolutionType("White Tulip Blossom", 
   .setEvolutionStage(5)
   .setEvolutionBase(tulipSeed);
 
+export const tulipEvos = new EvolutionTypeSet(
+  [
+    tulipSeed,
+    tulipGermination,
+    tulipGrowth,
+    tulipBud,
+    tulip,
+    blueTulipBlossom,
+    pinkTulipBlossom,
+    whiteTulipBlossom,
+  ],
+  1
+);
+
 export const roseSeed = new NatureEvolutionType("Rose Seed", 1782).physical().setEvolutionStage(1);
 roseSeed.setEvolutionBase(roseSeed);
 export const roseGermination = new NatureEvolutionType("Rose Germination", 1783)
@@ -84,6 +98,21 @@ export const yellowRoseBlossom = new NatureEvolutionType("Yellow Rose Blossom", 
   .setEvolutionStage(5)
   .setEvolutionBase(roseSeed);
 
+export const roseEvos = new EvolutionTypeSet(
+  [
+    roseSeed,
+    roseGermination,
+    roseGrowth,
+    roseBud,
+    rose,
+    redRoseBlossom,
+    violetRoseBlossom,
+    whiteRoseBlossom,
+    yellowRoseBlossom,
+  ],
+  1
+);
+
 export const lilySeed = new NatureEvolutionType("Lily Seed", 1790).physical().setEvolutionStage(1);
 lilySeed.setEvolutionBase(lilySeed);
 export const lilyGermination = new NatureEvolutionType("Lily Germination", 1791)
@@ -115,6 +144,20 @@ export const whiteLilyBlossom = new NatureEvolutionType("White Lily Blossom", 17
   .physical()
   .setEvolutionStage(5)
   .setEvolutionBase(lilySeed);
+
+export const lilyEvos = new EvolutionTypeSet(
+  [
+    lilySeed,
+    lilyGermination,
+    lilyGrowth,
+    lilyBud,
+    lily,
+    pinkLilyBlossom,
+    violetLilyBlossom,
+    whiteLilyBlossom,
+  ],
+  1
+);
 
 export const carnationSeed = new NatureEvolutionType("Carnation Seed", 1798)
   .virtual()
@@ -158,3 +201,19 @@ export const yellowCarnationBlossom = new NatureEvolutionType("Yellow Carnation 
   .virtual()
   .setEvolutionStage(5)
   .setEvolutionBase(carnationSeed);
+
+export const carnationEvos = new EvolutionTypeSet(
+  [
+    carnationSeed,
+    carnationGermination,
+    carnationGrowth,
+    carnationBud,
+    carnation,
+    pinkCarnationBlossom,
+    redCarnationBlossom,
+    violetCarnationBlossom,
+    whiteCarnationBlossom,
+    yellowCarnationBlossom,
+  ],
+  1
+);
