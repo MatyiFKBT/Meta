@@ -997,6 +997,7 @@ export class EvolutionTypeSet<T extends Type = Type> extends TypeSet<T> {
   constructor(array?: T[], deployableStage = 1) {
     super(array);
     this.deployableStage = deployableStage;
+    this.update();
   }
 
   private deployableStage: number;
