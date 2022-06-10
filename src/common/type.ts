@@ -184,39 +184,47 @@ export enum TypeTags {
   FunctionSwap = 0x71,
   FunctionBlast = 0x72,
 }
+
 // Latest: Card2022VMailbox = 0x7b,
 
 export interface TypeVirtualMeta {
   captureRadius?: number;
 }
+
 export interface TypeEvolutionMeta {
   stage?: number;
   base?: number;
 }
+
 export interface TypeDestinationMeta {
   size?: number;
   starLevel?: number;
   roomOf?: number;
   temporary?: boolean;
 }
+
 export interface TypeBouncerMeta {
   duration?: number;
   landsOn?: TypeReference[];
   base?: TypeReference;
 }
+
 export interface TypeBouncerHostMeta {
   types?: TypeReference[];
 }
+
 export interface TypeScatterMeta {
   duration?: number;
   landsOn?: TypeReference[];
 }
+
 export interface TypeScattererMeta {
   types?: TypeReference[];
   min?: number;
   max?: number;
   radius?: number;
 }
+
 export interface TypeMeta {
   virtual?: TypeVirtualMeta;
 
@@ -232,6 +240,7 @@ export interface TypeMeta {
 
   scatterer?: TypeScattererMeta;
 }
+
 export interface TypeDetails {
   related?: {
     blog?: string[];
@@ -283,6 +292,7 @@ export type TypeReference = number | Type | ((type: Type) => boolean);
 export class Type {
   static ids = new Set<number>();
   static humanIds = new Set<string>();
+
   static generateId(human_id: string) {
     if (this.humanIds.has(human_id)) {
       throw new Error(`Duplicate human_id: ${human_id}`);
@@ -299,6 +309,7 @@ export class Type {
     }
     throw new Error(`Could not find a unique ID for ${human_id}`);
   }
+
   public file: string | undefined;
   // Munzee Name
   private data_name: string;
@@ -397,12 +408,14 @@ export class Type {
     this.data_icons.push(...icons.flat());
     return this;
   }
+
   addIcon = this.addIcons;
 
   setIcons(...icons: (string | string[])[]): this {
     this.data_icons = icons.flat();
     return this;
   }
+
   setIcon = this.setIcons;
 
   setHumanId(humanId: string): this {
@@ -421,12 +434,14 @@ export class Type {
     }
     return this;
   }
+
   addGroup = this.addGroups;
 
   setGroups(...groups: (Group | Group[])[]): this {
     this.data_groups = new Set(groups.flat());
     return this;
   }
+
   setGroup = this.setGroups;
 
   setState(state: TypeState): this {
@@ -437,9 +452,11 @@ export class Type {
   physical() {
     return this.setState(TypeState.Physical);
   }
+
   virtual() {
     return this.setState(TypeState.Virtual);
   }
+
   locationless() {
     return this.setState(TypeState.Locationless);
   }
@@ -462,6 +479,7 @@ export class Type {
     }
     return this;
   }
+
   addTag = this.addTags;
 
   hasTags(...tags: (TypeTags | TypeTags[])[]): boolean {
@@ -472,6 +490,7 @@ export class Type {
     this.data_tags = new Set(tags.flat());
     return this;
   }
+
   setTag = this.setTags;
 
   addHidden(...hiddenList: (TypeHidden | TypeHidden[])[]): this {
@@ -975,18 +994,38 @@ export class TypeSet<T extends Type = Type> extends Array<T> {
 }
 
 export class EvolutionTypeSet<T extends Type = Type> extends TypeSet<T> {
-  constructor(array?: T[]) {
+  constructor(array?: T[], deployableStage = 1) {
     super(array);
+    this.deployableStage = deployableStage;
   }
+
+  private deployableStage: number;
 
   public add(...types: (T[] | T)[]): this {
     super.add(...types);
+    this.update();
+    return this;
+  }
+
+  private update() {
     if (this.length > 0) {
+      for (const item of this) {
+        if (!item.meta.evolution?.stage) {
+          item.setEvolutionStage(Math.max(0, ...this.map(i => i.meta.evolution?.stage ?? 0)) + 1);
+        }
+      }
       this.sort((a, b) => (a.meta.evolution?.stage ?? 0) - (b.meta.evolution?.stage ?? 0));
       this.forEach(i => {
         i.setEvolutionBase(this[0]);
+        if (i.meta.evolution?.stage === this.deployableStage) {
+          // @ts-expect-error Need to access private method
+          i.data_hidden.delete(TypeHidden.Deploy);
+          // @ts-expect-error Need to access private method
+          i.data_hidden.delete(TypeHidden.Inventory);
+        } else {
+          i.addHidden(TypeHidden.Deploy, TypeHidden.Inventory);
+        }
       });
     }
-    return this;
   }
 }
