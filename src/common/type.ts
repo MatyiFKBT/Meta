@@ -147,6 +147,7 @@ export enum TypeTags {
   Card2021BCCC = 0x77,
   Card2022 = 0x7a,
   Card2022VMailbox = 0x7b,
+  Card2022UnBirthdayMailbox = 0x7c,
 
   // Evolution
   Evolution = 0x60,
@@ -185,7 +186,7 @@ export enum TypeTags {
   FunctionBlast = 0x72,
 }
 
-// Latest: Card2022VMailbox = 0x7b,
+// Latest: Card2022UnBirthdayMailbox = 0x7c,
 
 export interface TypeVirtualMeta {
   captureRadius?: number;
