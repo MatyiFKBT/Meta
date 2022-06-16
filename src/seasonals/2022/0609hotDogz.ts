@@ -13,7 +13,7 @@ for (const type of [
   ["Hot Dogs", 3777],
   ["Ketchup", 3778],
   ["Cheese", 3780],
-  ["Brown Sos", 3782],
+  ["Broon Sos", 3782],
   ["Bratwurst", 3783],
   ["Mustard", 3784],
   ["Vegan Banger", 3785],
