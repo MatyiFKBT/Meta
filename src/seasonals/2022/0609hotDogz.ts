@@ -12,13 +12,13 @@ for (const type of [
   ["Hot Dog Buns", 3776],
   ["Hot Dogs", 3777],
   ["Ketchup", 3778],
+  ["Pickles", 3779],
   ["Cheese", 3780],
   ["Broon Sos", 3782],
   ["Bratwurst", 3783],
   ["Mustard", 3784],
   ["Vegan Banger", 3785],
-  ["Chili"],
-  ["Pickles"],
+  ["Chili", 3786],
 ] as const) {
   hotDogIngredientsSet.add(
     new Year2022SeasonalBouncerType(type[0], type[1]).addGroup(hotDogzGroup)
