@@ -264,8 +264,8 @@ export const pitt = new MechScatterType("PiTT", 3754).standalone();
 export const robocado = new MechType("Robocado", 3752).scattererScatters(pitt);
 export const brownRobocado = new BrokenMechType("Brown Robocado", 3753).scattererScatters(pitt);
 
-export const pinkPetal = new MechScatterType("Pink Petal");
-export const purplePetal = new MechScatterType("Purple Petal");
+export const pinkPetal = new MechScatterType("Pink PETAL").standalone();
+export const purplePetal = new MechScatterType("Purple PETAL").standalone();
 export const s33dl1n9 = new MechType("S33DL1N9");
 export const spr0u7 = new MechType("SPR0U7");
 export const wiltedSpr0u7 = new BrokenMechType("Wilted SPR0U7").scattererScatters(pinkPetal, purplePetal);
