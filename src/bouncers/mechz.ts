@@ -268,14 +268,12 @@ export const pinkPetal = new MechScatterType("Pink PETAL").standalone();
 export const purplePetal = new MechScatterType("Purple PETAL").standalone();
 export const s33dl1n9 = new MechType("S33DL1N9");
 export const spr0u7 = new MechType("SPR0U7");
-export const wiltedSpr0u7 = new BrokenMechType("Wilted SPR0U7").scattererScatters(pinkPetal, purplePetal);
 export const n7ul1p = new MechType("7UL1P").scattererScatters(pinkPetal, purplePetal);
-export const wilted7ul1p = new BrokenMechType("Wilted 7UL1P").scattererScatters(pinkPetal, purplePetal);
+export const wiltedFl0w3r = new BrokenMechType("Wilted FL0W3R").scattererScatters(
+  pinkPetal,
+  purplePetal
+);
 export const bl0ss0m = new MechType("BL0SS0M").scattererScatters(pinkPetal, purplePetal);
-export const wiltedBl0ss0m = new BrokenMechType("Wilted BL0SS0M").scattererScatters(pinkPetal, purplePetal);
 export const sun = new MechType("SUN").scattererScatters(pinkPetal, purplePetal);
-export const wiltedSun = new BrokenMechType("Wilted SUN").scattererScatters(pinkPetal, purplePetal);
 export const r053 = new MechType("R053").scattererScatters(pinkPetal, purplePetal);
-export const wiltedR053 = new BrokenMechType("Wilted R053").scattererScatters(pinkPetal, purplePetal);
 export const paintedR053 = new MechType("Painted R053").scattererScatters(pinkPetal, purplePetal);
-export const wiltedPaintedR053 = new BrokenMechType("Wilted Painted R053").scattererScatters(pinkPetal, purplePetal);
