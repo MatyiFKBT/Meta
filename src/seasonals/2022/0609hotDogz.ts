@@ -14,11 +14,13 @@ for (const type of [
   ["Ketchup", 3778],
   ["Pickles", 3779],
   ["Cheese", 3780],
+  ["Caramelized Onions", 3781],
   ["Broon Sos", 3782],
   ["Bratwurst", 3783],
   ["Mustard", 3784],
   ["Vegan Banger", 3785],
   ["Chili", 3786],
+  ["Sauerkraut", 3787],
 ] as const) {
   hotDogIngredientsSet.add(
     new Year2022SeasonalBouncerType(type[0], type[1]).addGroup(hotDogzGroup)
