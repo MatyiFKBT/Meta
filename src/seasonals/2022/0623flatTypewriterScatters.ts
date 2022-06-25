@@ -9,10 +9,12 @@ export const flatTypewriterScattersGroup = new Year2022SeasonalGroup({
 
 export const flatTypewriterScatters = new TypeSet(
   (
-    [["Red Hat"], ["Body of Knowledge"], ["Love is a Crocodile"], ["The Crows Nest"]] as [
-      string,
-      number?
-    ][]
+    [
+      ["Red Hat", 3790],
+      ["Body of Knowledge", 3791],
+      ["Love is a Crocodile", 3792],
+      ["The Crows Nest", 3793],
+    ] as [string, number?][]
   ).map(([name, id]) =>
     new Year2022SeasonalScatterType(name, id).addGroup(flatTypewriterScattersGroup).standalone()
   )

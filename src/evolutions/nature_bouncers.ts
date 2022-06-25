@@ -530,32 +530,32 @@ export const beeHost = new TPOBHostType("Bee Host", 2884)
   .addBouncerHostType(bee, honeyBee, queenBee, wallaBee);
 
 // Duck
-export const duckNest = new NatureEvolutionType("Duck Nest").virtual().setEvolutionStage(1);
+export const duckNest = new NatureEvolutionType("Duck Nest", 3686).virtual().setEvolutionStage(1);
 duckNest.setEvolutionBase(duckNest);
-export const duckEgg = new NatureEvolutionType("Duck Egg")
+export const duckEgg = new NatureEvolutionType("Duck Egg", 3687)
   .virtual()
   .setEvolutionStage(2)
   .setEvolutionBase(duckNest);
-export const duckling = new NatureEvolutionType("Duckling")
+export const duckling = new NatureEvolutionType("Duckling", 3688)
   .virtual()
   .setEvolutionStage(3)
   .setEvolutionBase(duckNest);
-export const mallard = new NatureEvolutionBouncerType("Mallard")
+export const mallard = new NatureEvolutionBouncerType("Mallard", 3689)
   .setEvolutionStage(4)
   .setEvolutionBase(beeEggs);
-export const quack = new NatureEvolutionBouncerType("Quack")
+export const quack = new NatureEvolutionBouncerType("Quack", 3690)
   .setEvolutionStage(4)
   .setEvolutionBase(duckNest);
-export const swan = new NatureEvolutionBouncerType("Swan")
+export const swan = new NatureEvolutionBouncerType("Swan", 3691)
   .setEvolutionStage(4)
   .setEvolutionBase(duckNest);
 export const duckEvos = new EvolutionTypeSet(
   [duckNest, duckEgg, duckling, mallard, quack, swan],
   1
 );
-export const duckVirtualHost = new TPOBHostType("Duck Virtual Host")
+export const duckVirtualHost = new TPOBHostType("Duck Virtual Host", 3693)
   .virtual()
   .addBouncerHostType(mallard, quack, swan);
-export const duckHost = new TPOBHostType("Duck Host")
+export const duckHost = new TPOBHostType("Duck Host", 3692)
   .physical()
   .addBouncerHostType(mallard, quack, swan);

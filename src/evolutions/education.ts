@@ -106,40 +106,40 @@ export const safariVehicleEvos = new EvolutionTypeSet([safariTruck, safariVan, s
 
 export const phoneEvos = new EvolutionTypeSet(
   [
-    new EducationEvolutionType("Antique Phone"),
-    new EducationEvolutionType("Rotary Dial Phone"),
-    new EducationEvolutionType("Brick Phone"),
-    new EducationEvolutionType("Z Phone"),
+    new EducationEvolutionType("Antique Phone", 3760),
+    new EducationEvolutionType("Rotary Dial Phone", 3761),
+    new EducationEvolutionType("Brick Phone", 3762),
+    new EducationEvolutionType("Z Phone", 3763),
   ],
   4
 ).each(i => i.physical());
 
 export const computerEvos = new EvolutionTypeSet(
   [
-    new EducationEvolutionType("Mainframe"),
-    new EducationEvolutionType("PC"),
-    new EducationEvolutionType("Laptop"),
-    new EducationEvolutionType("Tablet"),
+    new EducationEvolutionType("Mainframe", 3764),
+    new EducationEvolutionType("PC", 3765),
+    new EducationEvolutionType("Laptop", 3766),
+    new EducationEvolutionType("Tablet", 3767),
   ],
   4
 ).each(i => i.physical());
 
 export const currencyEvos = new EvolutionTypeSet(
   [
-    new EducationEvolutionType("Cowry Shell"),
-    new EducationEvolutionType("Gold Nuggets"),
-    new EducationEvolutionType("Paper Money"),
-    new EducationEvolutionType("Credit Card"),
+    new EducationEvolutionType("Cowry Shell", 3768),
+    new EducationEvolutionType("Gold Nuggets", 3769),
+    new EducationEvolutionType("Paper Money", 3770),
+    new EducationEvolutionType("Credit Card", 3771),
   ],
   4
 ).each(i => i.virtual());
 
 export const communicationEvos = new EvolutionTypeSet(
   [
-    new EducationEvolutionType("Handwritten Letter"),
-    new EducationEvolutionType("Carrier Pigeon"),
-    new EducationEvolutionType("Telegram"),
-    new EducationEvolutionType("Email"),
+    new EducationEvolutionType("Handwritten Letter", 3772),
+    new EducationEvolutionType("Carrier Pigeon", 3773),
+    new EducationEvolutionType("Telegram", 3774),
+    new EducationEvolutionType("Email", 3775),
   ],
   4
 ).each(i => i.virtual());

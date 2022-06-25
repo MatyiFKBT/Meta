@@ -10,43 +10,34 @@ export const petRocksGroup = new Year2022SeasonalGroup({
   ends: "2022-04-17T23:59:00-05:00",
 });
 
-export const limestonePetRock = new Year2022SeasonalBouncerType("Limestone Pet Rock").addGroup(
-  petRocksGroup
-);
-export const sandstonePetRock = new Year2022SeasonalBouncerType("Sandstone Pet Rock").addGroup(
-  petRocksGroup
-);
+export const limestonePetRock = new Year2022SeasonalBouncerType(
+  "Limestone Pet Rock",
+  3677
+).addGroup(petRocksGroup);
+export const sandstonePetRock = new Year2022SeasonalBouncerType(
+  "Sandstone Pet Rock",
+  3678
+).addGroup(petRocksGroup);
 
-export const lightWoodPaintbrush = new Year2022SeasonalScatterType("Light Wood Paintbrush")
+export const lightWoodPaintbrush = new Year2022SeasonalScatterType("Light Wood Paintbrush", 3679)
   .standalone()
   .addGroup(petRocksGroup);
-export const darkWoodPaintbrush = new Year2022SeasonalScatterType("Dark Wood Paintbrush")
+export const darkWoodPaintbrush = new Year2022SeasonalScatterType("Dark Wood Paintbrush", 3680)
   .addGroup(petRocksGroup)
   .standalone();
 
-export const greenPaintBucket = new Year2022SeasonalScatterType("Green Paint Bucket")
+export const greenPaintBucket = new Year2022SeasonalScatterType("Green Paint Bucket", 3681)
   .standalone()
   .addGroup(petRocksGroup);
-export const orangePaintBucket = new Year2022SeasonalScatterType("Orange Paint Bucket")
+export const orangePaintBucket = new Year2022SeasonalScatterType("Orange Paint Bucket", 3682)
   .standalone()
   .addGroup(petRocksGroup);
-export const purplePaintBucket = new Year2022SeasonalScatterType("Purple Paint Bucket")
+export const purplePaintBucket = new Year2022SeasonalScatterType("Purple Paint Bucket", 3683)
   .standalone()
   .addGroup(petRocksGroup);
-export const aquamarinePaintBucket = new Year2022SeasonalScatterType("Aquamarine Paint Bucket")
+export const aquamarinePaintBucket = new Year2022SeasonalScatterType(
+  "Aquamarine Paint Bucket",
+  3684
+)
   .standalone()
   .addGroup(petRocksGroup);
-
-// export const petRockResultSet = new TypeSet();
-
-// const petRockResults: [string, number?, string?][] = [];
-
-// for (const result of petRockResults) {
-//   const type = new Year2022SeasonalScatterType(result[0], result[1])
-//     .addGroup(petRocksGroup)
-//     .addHidden(TypeHidden.Bouncers);
-//   if (result[2]) {
-//     type.setIcon(result[2]);
-//   }
-//   petRockResultSet.add(type);
-// }
