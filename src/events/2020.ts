@@ -268,4 +268,4 @@ export const nachweihnachtsfeierInSpbg2 = new Year2020EventType(
   2800
 )
   .setIcon("nachweihnachtsfeierinspbg.")
-  .setHumanId("nachweihnachtsfeierinspbg.");
+  .setHumanId("nachweihnachtsfeierinspbg2");

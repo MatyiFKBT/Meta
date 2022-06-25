@@ -12,7 +12,7 @@ export const mayThe4th2022Group = new Year2022SeasonalGroup({
 });
 
 export const zee3p0 = new Year2022SeasonalBouncerType("ZEE-3P0", 3725).addGroup(mayThe4th2022Group);
-export const zee3p0Scraps = new Year2022SeasonalBouncerType("ZEE-3P0 Scraps", 3725)
+export const zee3p0Scraps = new Year2022SeasonalBouncerType("ZEE-3P0 Scraps", 3726)
   .addGroup(mayThe4th2022Group)
   .addHidden(TypeHidden.Bouncers);
 export const tinTopper = new Year2022SeasonalScatterType("Tin Topper", 3727)
