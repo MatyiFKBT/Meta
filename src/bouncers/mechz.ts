@@ -1,5 +1,5 @@
 import { Group } from "../common/group";
-import { BouncerType, ScatterType, TypeHidden, TypeTags } from "../common/type";
+import { BouncerType, EvolutionTypeSet, ScatterType, TypeHidden, TypeTags } from "../common/type";
 import { tomato, tomatoPlant, tomatoSeed } from "../evolutions/farm";
 import { coin } from "../evolutions/reseller";
 import { skyland, treehouse } from "../normal/destination";
@@ -122,10 +122,15 @@ export const brokenMumm33 = new MechType("Broken MUMM33", 3631).addHidden(
   TypeHidden.Bouncers
 );
 export const mUMM33 = new MechType("MUMM33", 3171).scattererScatters(sC4RAB);
+
+export const mumm33Set = new EvolutionTypeSet([s4RC0PH4GUS, mUMM33]);
+
 export const mONK3Y = new MechType("MONK3Y", 3307);
 export const priM8 = new MechType("PriM8", 3308);
 export const kiNGC0G = new MechType("KiNG C0G", 3309);
 export const kiNGC0GCrushed = new BrokenMechType("KiNG C0G Crushed", 3312); //3310
+
+export const monk3ySet = new EvolutionTypeSet([mONK3Y, priM8, kiNGC0G]);
 
 export const botwurst = new MechScatterType("Botwurst", 3319).standalone();
 export const steinBot = new MechType("SteinBot", 3317).scattererScatters(botwurst);

@@ -1024,10 +1024,12 @@ export class EvolutionTypeSet<T extends Type = Type> extends TypeSet<T> {
         i.setEvolutionBase(this[0]);
         if (i.meta.evolution?.stage === this.deployableStage && !found) {
           found = true;
-          // @ts-expect-error Need to access private method
-          i.data_hidden.delete(TypeHidden.Deploy);
-          // @ts-expect-error Need to access private method
-          i.data_hidden.delete(TypeHidden.Inventory);
+          if (i.state !== TypeState.Bouncer) {
+            // @ts-expect-error Need to access private method
+            i.data_hidden.delete(TypeHidden.Deploy);
+            // @ts-expect-error Need to access private method
+            i.data_hidden.delete(TypeHidden.Inventory);
+          }
         } else {
           i.addHidden(TypeHidden.Deploy, TypeHidden.Inventory);
         }
