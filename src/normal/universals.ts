@@ -22,3 +22,7 @@ export const n10thBirthdayUniversal = new UniversalType("10th Birthday Universal
   "universal_10th_birthday",
   "10thbirthdayuniversal"
 );
+export const wonder11andUniversal = new UniversalType("Wonder11and Universal").setIcons(
+  "universal_wonder11and",
+  "wonder11anduniversal"
+);
