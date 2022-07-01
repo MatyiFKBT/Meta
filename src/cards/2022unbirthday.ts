@@ -14,6 +14,7 @@ export class Year2022UnBirthdayMailboxCardType extends CardType {
       .addTag(TypeTags.Card2022UnBirthdayMailbox);
   }
 }
+
 export class Year2022UnBirthdayScatterType extends ScatterType {
   override template(): this {
     super.template();
@@ -24,3 +25,7 @@ export class Year2022UnBirthdayScatterType extends ScatterType {
 }
 
 export const unbirthdayMailbox = new Year2022UnBirthdayMailboxCardType("UnBirthday Mailbox", 3745);
+export const unbirthdayPartyInvitationCard = new Year2022UnBirthdayMailboxCardType(
+  "UnBirthday Party Invitation Card",
+  3864
+);

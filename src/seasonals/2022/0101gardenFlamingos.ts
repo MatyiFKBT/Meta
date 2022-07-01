@@ -82,3 +82,8 @@ export const graduateGardenFlamingo = new GardenFlamingo(
   "Graduate Garden Flamingo",
   3486
 ).scattererScatters(goldSealFeathers);
+
+export const madFeathers = new FlamingoFeathers("Mad Feathers");
+export const marchHareGardenFlamingo = new GardenFlamingo(
+  "March Hare Garden Flamingo"
+).scattererScatters(madFeathers);
