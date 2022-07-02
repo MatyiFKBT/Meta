@@ -175,6 +175,7 @@ export enum TypeTags {
   DestinationRoom = 0x74,
   DestinationBouncer = 0x75,
   DestinationTemporary = 0x76,
+  DestinationBouncerTemporary = 0x7d,
 
   // Other Tags
   Credit = 0x6f,
@@ -186,7 +187,7 @@ export enum TypeTags {
   FunctionBlast = 0x72,
 }
 
-// Latest: Card2022UnBirthdayMailbox = 0x7c,
+// Latest: DestinationBouncerTemporary = 0x7d,
 
 export interface TypeVirtualMeta {
   captureRadius?: number;
