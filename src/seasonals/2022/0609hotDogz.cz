@@ -1,0 +1,23 @@
+group Seasonal2022 {
+    name = Hot Dogs
+    start = 2022-06-09T12:00:00-05:00
+    end = 2022-07-04T23:59:00-05:00
+}
+
+type Seasonal2022Bouncer {
+    name = $1
+    id = $2
+} for [
+    Hot Dog Buns, 3776
+    Hot Dogs, 3777
+    Ketchup, 3778
+    Pickles, 3779
+    Cheese, 3780
+    Caramelized Onions, 3781
+    Broon Sos, 3782
+    Bratwurst, 3783
+    Mustard, 3784
+    Vegan Banger, 3785
+    Chili, 3786
+    Sauerkraut, 3787
+]

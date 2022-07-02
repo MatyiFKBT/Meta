@@ -125,3 +125,7 @@ output/
 compareOutput/
 
 olddb.*
+
+/src/grammar.ts
+
+.idea/

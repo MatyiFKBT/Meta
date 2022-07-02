@@ -16,5 +16,5 @@
     "@typescript-eslint/no-non-null-assertion": 0,
     "@typescript-eslint/no-var-requires": 0
   },
-  "ignorePatterns": ["node_modules/", "lib/", ".prisma/", ".coverage/"]
+  "ignorePatterns": ["node_modules/", "lib/", ".prisma/", ".coverage/", "src/grammar.ts"]
 }

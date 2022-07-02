@@ -88,6 +88,36 @@ export class Group {
     return this;
   }
 
+  setSeasonalStart(date: string): this {
+    this.seasonal ??= {
+      starts: "",
+      ends: "",
+      year: 0,
+    };
+    this.seasonal.starts = date;
+    return this;
+  }
+
+  setSeasonalEnd(date: string): this {
+    this.seasonal ??= {
+      starts: "",
+      ends: "",
+      year: 0,
+    };
+    this.seasonal.ends = date;
+    return this;
+  }
+
+  setSeasonalYear(year: number): this {
+    this.seasonal ??= {
+      starts: "",
+      ends: "",
+      year: 0,
+    };
+    this.seasonal.year = year;
+    return this;
+  }
+
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   template(): void {}
 

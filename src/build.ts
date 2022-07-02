@@ -8,8 +8,9 @@ import { Type, TypeSet } from "./common/type";
 import { Group } from "./common/group";
 import fileSize from "filesize";
 import { compareWithOldDB } from "./compare";
+import { parseCZFile } from "./parse";
 
-function checkType(file: string, type: Type) {
+export function checkType(file: string, type: Type) {
   type.file = file.replace(__dirname, "");
   if (!type.munzee_id) {
     console.warn(chalk`{gray [{yellow WARN}] ${type.file}: }{gray ${type.name} has no munzee_id}`);
@@ -18,25 +19,31 @@ function checkType(file: string, type: Type) {
 
 async function generate(): Promise<Database> {
   console.info(chalk.gray`Generating...`);
-  const path = join(__dirname, "./**/*/*.[tj]s");
-  const files = (await promisify(glob)(path)).filter(i => !i.startsWith(join(__dirname, "common")));
+  const path = join(__dirname, "./**/*/*.*");
+  const files = (await promisify(glob)(path))
+    .filter(i => !i.startsWith(join(__dirname, "common")))
+    .filter(i => i.endsWith(".ts") || i.endsWith(".cz"));
   console.info(chalk.gray`Found ${files.length} file${files.length === 1 ? "" : "s"}`);
 
   const database = new Database();
 
   for (const file of files.slice().reverse()) {
-    const items: unknown[] = Object.values(await import(file));
-    for (const item of items) {
-      if (item instanceof Type) {
-        database.types.add(item);
-        checkType(file, item);
-      } else if (item instanceof TypeSet) {
-        database.types.add(item);
-        for (const type of item) {
-          checkType(file, type);
+    if (file.endsWith(".cz")) {
+      parseCZFile(database, file);
+    } else if (file.endsWith(".ts")) {
+      const items: unknown[] = Object.values(await import(file));
+      for (const item of items) {
+        if (item instanceof Type) {
+          database.types.add(item);
+          checkType(file, item);
+        } else if (item instanceof TypeSet) {
+          database.types.add(item);
+          for (const type of item) {
+            checkType(file, type);
+          }
+        } else if (item instanceof Group) {
+          database.groups.add(item);
         }
-      } else if (item instanceof Group) {
-        database.groups.add(item);
       }
     }
   }
