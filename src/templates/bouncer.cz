@@ -1,0 +1,5 @@
+template Bouncer from Base {
+    tags + Bouncer
+    hidden + Inventory
+    state = Bouncer
+}

@@ -1,0 +1,21 @@
+Group {
+    name = 2022 UnBirthday Mailbox Cards
+    parents + Cards
+}
+
+template UnBirthdayMailboxCard from Card {
+    groups = 2022 UnBirthday Mailbox Cards
+    tags + Card2022UnBirthdayMailbox
+    hidden + Inventory
+}
+
+UnBirthdayMailboxCard {
+    name = $1
+    id = $2
+} for [
+    UnBirthday Mailbox, 3745
+    UnBirthday Party Invitation Card, 3864
+    Tea Time Card, 3865
+    Cheshire Smile Card, 3866
+    Dandy Lion Card, 3867
+]

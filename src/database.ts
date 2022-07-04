@@ -25,6 +25,7 @@ export class Database {
 
   constructor() {
     this.types = new TypeDatabase();
+    this.types._db = this;
     this.groups = new GroupDatabase();
   }
 

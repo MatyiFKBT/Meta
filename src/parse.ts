@@ -2,164 +2,190 @@ import nearley from "nearley";
 import grammar from "./grammar";
 import fs from "node:fs";
 import { Database } from "./database";
-import { Type } from "./common/type";
-import { Year2022SeasonalBouncerType, Year2022SeasonalGroup } from "./seasonals/2022/_index";
+import { Type, TypeState } from "./common/type";
 import { Group } from "./common/group";
-import { checkType } from "./build";
 
-export enum ItemType {
-  Type = "type",
-  Group = "group",
-}
-
-export interface Item {
-  item: ItemType;
+export type NewItem = {
+  item: "new";
   type: string;
   properties: Property[];
   for?: For[];
-}
+};
+
+export type TemplateItem = {
+  item: "template";
+  type: string;
+  items: NewItem[];
+};
+
+export type Item = NewItem | TemplateItem;
 
 export interface For {
   values: string[];
   properties?: Property[];
 }
 
+export enum Operation {
+  Equals = "=",
+  Plus = "+",
+  Minus = "-",
+}
+
 export interface Property {
   key: string;
   value: string[];
-  operation: string;
+  operation: Operation;
 }
+
+export class PropertyItem {
+  key: string;
+  value: string[];
+  operation: Operation;
+
+  constructor(key: string, value: string[], operation: Operation) {
+    this.key = key;
+    this.value = value;
+    this.operation = operation;
+  }
+
+  withProperties(properties: PropertySet) {
+    const value = this.value.map(v => {
+      if (v.startsWith("$")) {
+        const property = properties.get(v.slice(1), Operation.Equals)[0];
+        if (!property) {
+          throw new Error(`Property ${v} not found`);
+        }
+        return property.value[0];
+      }
+      return v.replace(/\$\([^)]+\)/g, i => {
+        const property = properties.get(i.slice(2, -1), Operation.Equals)[0];
+        if (!property) {
+          throw new Error(`Property ${i} not found`);
+        }
+        return property.value[0];
+      });
+    });
+    return new PropertyItem(this.key, value, this.operation);
+  }
+
+  get string() {
+    return this.value[0];
+  }
+
+  get number() {
+    return this.value[0] ? Number(this.value[0]) : undefined;
+  }
+}
+
+export class PropertySet {
+  properties: PropertyItem[];
+
+  constructor(properties: Property[]) {
+    this.properties = properties.map(i => new PropertyItem(i.key, i.value, i.operation));
+  }
+
+  withProperties(properties: PropertySet) {
+    return new PropertySet(this.properties.map(i => i.withProperties(properties)));
+  }
+
+  get(key: string, operation: Operation = Operation.Equals): PropertyItem[] {
+    return this.properties.filter(i => i.key === key && i.operation === operation);
+  }
+
+  has(key: string, operation: Operation = Operation.Equals): boolean {
+    return this.properties.some(i => i.key === key && i.operation === operation);
+  }
+}
+
+export type BuilderFunction = (database: Database, properties: PropertySet) => void;
 
 const grammarInstance = nearley.Grammar.fromCompiled(grammar);
 
-const typeMap: { [key: string]: typeof Type } = {
-  Seasonal2022Bouncer: Year2022SeasonalBouncerType,
-};
+export function createTemplateMap(): Map<string, BuilderFunction> {
+  const map = new Map<string, BuilderFunction>();
+  map.set("Base", (database, properties) => {
+    const type = new Type(
+      properties.get("name")[0].value[0],
+      properties.has("id") ? Number(properties.get("id")[0].value[0]) : undefined
+    );
 
-const typePropertyMap: { [key: string]: (this: Type, value: string[]) => void } = {};
+    for (const property of properties.properties) {
+      switch (property.key) {
+        case "name":
+          break;
+        case "state":
+          type.setState(TypeState.Bouncer);
+          break;
+      }
+    }
 
-const groupMap: { [key: string]: typeof Group } = {
-  Seasonal2022: Year2022SeasonalGroup,
-};
+    database.types.add(type);
+  });
+  map.set("Group", (database, properties) => {
+    const nameProperty = properties.get("name")[0];
+    if (!nameProperty) {
+      throw new Error("Missing parameter $name");
+    }
+    const group = new Group({
+      name: nameProperty.value[0],
+    });
 
-const groupPropertyMap: { [key: string]: (this: Group, value: string[]) => void } = {
-  start([start]) {
-    this.setSeasonalStart(start);
-  },
-  end([end]) {
-    this.setSeasonalEnd(end);
-  },
-  year([year]) {
-    this.setSeasonalYear(Number(year));
-  },
-};
-
-function optionalNumber(value: string | undefined): number | undefined {
-  if (!value) {
-    return undefined;
-  }
-  return Number(value);
+    for (const property of properties.properties) {
+      switch (property.key) {
+        case "name":
+          break;
+        case "seasonalYear":
+          group.setSeasonalYear(property.number!);
+          break;
+        case "seasonalStart":
+          group.setSeasonalStart(property.string);
+          break;
+        case "seasonalEnd":
+          group.setSeasonalEnd(property.string);
+          break;
+      }
+    }
+    database.groups.add(group);
+  });
+  return map;
 }
 
-function getPropertyValue(property: Property, values: string[]): string[];
-function getPropertyValue(property: Property | undefined, values: string[]): string[] | undefined;
-function getPropertyValue(property: Property | undefined, values: string[]): string[] | undefined {
-  if (!property) {
-    return undefined;
-  }
-  return property.value.map(i => (i.startsWith("$") ? values[Number(i.slice(1)) - 1] : i));
-}
-
-export function parseCZFile(database: Database, file: string) {
+export function parseCZFile(file: string): Item[] {
   const parser = new nearley.Parser(grammarInstance);
   parser.feed(fs.readFileSync(file, "utf8"));
-  const items = parser.results[0] as Item[];
+  return parser.results[0] as Item[];
+}
 
-  let latestGroup: Group | null = null;
-
-  for (const item of items) {
-    if (item.item === ItemType.Type) {
-      if (!typeMap[item.type]) {
-        console.error(`Unknown type: ${item.type}`);
-        process.exit(1);
-      }
-      for (const f of item.for ?? [
-        {
-          values: [],
-        },
-      ]) {
-        const properties = [...item.properties, ...(f.properties ?? [])];
-        const type = new typeMap[item.type](
-          getPropertyValue(
-            properties
-              .slice()
-              .reverse()
-              .find(i => i.key === "name")!,
-            f.values
-          )[0],
-          optionalNumber(
-            getPropertyValue(
-              properties
-                .slice()
-                .reverse()
-                .find(i => i.key === "id"),
-              f.values
-            )?.[0]
-          )
-        );
-        for (const property of properties) {
-          if (property.key === "name" || property.key === "id") continue;
-          const key = `${property.operation === "=" ? "" : property.operation}${property.key}`;
-          if (typePropertyMap[key]) {
-            typePropertyMap[key].bind(type)(property.value);
-          } else {
-            console.error(`Unknown property: ${key}`);
-            process.exit(1);
+export function loadTemplates(templateMap: Map<string, BuilderFunction>, templates: Item[]) {
+  for (const template of templates) {
+    if (template.type === "new") continue;
+    if (template.item === "template") {
+      templateMap.set(template.type, (database, properties) => {
+        for (const item of template.items) {
+          const typeTemplate = templateMap.get(item.type);
+          if (!typeTemplate) {
+            throw new Error(`Could not find template ${item.type}`);
+          }
+          for (const f of item.for ?? [{ values: [] }]) {
+            const itemProperties = [
+              ...(f.properties?.some(i => i.key === "...rest") ? item.properties : []),
+              ...(f.properties?.some(i => i.key === "...rest") ? properties.properties : []),
+              ...(f.properties ?? []).filter(i => i.key !== "...rest"),
+              ...f.values.map((v, n) => ({
+                key: (n + 1).toString(),
+                value: [v],
+                operation: Operation.Equals,
+              })),
+            ];
+            typeTemplate(
+              database,
+              new PropertySet(
+                itemProperties.map(i => new PropertyItem(i.key, i.value, i.operation))
+              ).withProperties(properties)
+            );
           }
         }
-        if (type.groups.length === 0) {
-          if (!latestGroup) {
-            console.error(`No group specified for type: ${type.name}`);
-            process.exit(1);
-          }
-          type.addGroup(latestGroup);
-        }
-        database.types.add(type);
-        checkType(file, type);
-      }
-    } else if (item.item === ItemType.Group) {
-      if (!groupMap[item.type]) {
-        console.error(`Unknown group type: ${item.type}`);
-        process.exit(1);
-      }
-      for (const f of item.for ?? [
-        {
-          values: [],
-        },
-      ]) {
-        const properties = [...item.properties, ...(f.properties ?? [])];
-        const group = new groupMap[item.type]({
-          name: getPropertyValue(
-            properties
-              .slice()
-              .reverse()
-              .find(i => i.key === "name")!,
-            f.values
-          )[0],
-        });
-        for (const property of properties) {
-          if (property.key === "name") continue;
-          const key = `${property.operation === "=" ? "" : property.operation}${property.key}`;
-          if (groupPropertyMap[key]) {
-            groupPropertyMap[key].bind(group)(property.value);
-          } else {
-            console.error(`Unknown group property: ${key}`);
-            process.exit(1);
-          }
-        }
-        database.groups.add(group);
-        latestGroup = group;
-      }
+      });
     }
   }
 }

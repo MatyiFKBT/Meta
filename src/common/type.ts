@@ -3,6 +3,8 @@ import { createHash } from "node:crypto";
 import { XMLBuilder } from "xmlbuilder2/lib/interfaces";
 import { Group } from "./group";
 import { LegacyType } from "./legacy";
+import { Database } from "../database";
+import { CZReference } from "../czProperties";
 
 export enum TypeState {
   Physical = 0x01,
@@ -312,6 +314,8 @@ export class Type {
     throw new Error(`Could not find a unique ID for ${human_id}`);
   }
 
+  _db!: Database;
+
   public file: string | undefined;
   // Munzee Name
   private data_name: string;
@@ -326,7 +330,7 @@ export class Type {
   // State - `physical`/`virtual`/`bouncer`/`locationless`
   private data_state: TypeState;
   // Groups
-  private data_groups: Set<Group>;
+  private data_groups: Set<Group | CZReference>;
   // Points Data
   private data_points?: TypePoints;
   // Type Tags
@@ -377,8 +381,12 @@ export class Type {
     return this.data_munzee_id;
   }
 
-  get groups(): Group[] {
+  get refed_groups(): (Group | CZReference)[] {
     return [...this.data_groups];
+  }
+
+  get groups(): Group[] {
+    return [...this.data_groups].map(v => this._db.groups.deref(v));
   }
 
   get state(): TypeState {
@@ -439,7 +447,7 @@ export class Type {
 
   addGroup = this.addGroups;
 
-  setGroups(...groups: (Group | Group[])[]): this {
+  setGroups(...groups: (Group | CZReference | Group[] | CZReference[])[]): this {
     this.data_groups = new Set(groups.flat());
     return this;
   }
@@ -619,7 +627,13 @@ export class Type {
 
     if (this.data_state) data.push(`s${this.data_state.toString(36)}`);
 
-    if (this.data_groups) data.push(`g${[...this.data_groups].map(i => i.id).join(".")}`);
+    if (this.data_groups)
+      data.push(
+        `g${[...this.data_groups]
+          .map(v => this._db.groups.deref(v))
+          .map(i => i.id)
+          .join(".")}`
+      );
 
     if (this.data_points) data.push(`p${JSON.stringify(this.data_points)}`);
 
@@ -715,7 +729,8 @@ export class Type {
 
     if (this.data_state) data.state = this.data_state;
 
-    if (this.data_groups) data.groups = [...this.data_groups].map(i => i.id);
+    if (this.data_groups)
+      data.groups = [...this.data_groups].map(v => this._db.groups.deref(v)).map(i => i.id);
 
     if (this.data_points) data.points = this.data_points;
 
@@ -748,7 +763,8 @@ export class Type {
     if (this.data_state) type.ele("state").txt(this.data_state.toString()).up();
 
     if (this.data_groups)
-      for (const group of this.data_groups) type.ele("group").txt(group.id.toString()).up();
+      for (const group of this.data_groups)
+        type.ele("group").txt(this._db.groups.deref(group).id.toString()).up();
 
     if (this.data_points) type.ele("points").txt(JSON.stringify(this.data_points)).up();
 
@@ -909,6 +925,8 @@ export class TypeDatabase {
   private data: Set<Type>;
   private referencesResolved = false;
 
+  _db!: Database;
+
   constructor() {
     this.data = new Set();
   }
@@ -916,11 +934,10 @@ export class TypeDatabase {
   public add(...types: (Type[] | Type)[]): this {
     if (this.referencesResolved)
       throw new Error("Cannot add types after references have been resolved");
-    for (const type of types.flat().map(i => {
-      if (!i.name) throw new Error(`Type ${JSON.stringify(i)} must have a name`);
-      if (!i.state) throw new Error(`Type ${i.name} must have a state`);
-      return i;
-    })) {
+    for (const type of types.flat()) {
+      if (!type.name) throw new Error(`Type ${JSON.stringify(type)} must have a name`);
+      if (!type.state) throw new Error(`Type ${type.name} must have a state`);
+      type._db = this._db;
       this.data.add(type);
     }
     return this;

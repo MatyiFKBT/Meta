@@ -1,0 +1,5 @@
+template Card from Base {
+    state = Virtual
+    tags + Card
+    groups + Cards
+}

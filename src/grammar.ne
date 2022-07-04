@@ -3,7 +3,8 @@ import moo from "moo";
 
 const lexer = moo.compile({
     ws: /[ \t]+/,
-    keyword: /\b(?:group|type)\b/,
+    template: /\b(?:template)\b/,
+    from: /\b(?:from)\b/,
     for_keyword: /\b(?:for)\b/,
     bracket: /[\[\]\(\)\{\}]/,
     colon: /:/,
@@ -22,18 +23,45 @@ const lexer = moo.compile({
 @preprocessor typescript
 
 # Helpers
-main -> _ lines _ {% d => d[1] %}
+main -> _ (lines _):? {% d => d[1]?.[0] ?? [] %}
 
 lines -> lines _ statement {% d => ([...d[0], d[2]]) %} | statement
 
 # Statement
 
-statement -> %keyword _ [^\s]:+ _ properties (_ for_entry):? {%
+statement -> template_from_statement {% d => d[0] %} | template_statement {% d => d[0] %} | builder_statement {% d => d[0] %}
+
+template_from_statement -> %template _ [^\s]:+ _ %from _ [^\s]:+ _ properties (_ for_entry):? {%
     d => ({
-        item: d[0].value,
+        item: "template",
         type: d[2].map((i: any) => i.value).join(""),
-        properties: d[4],
-        for: d[5]?.[1] ?? undefined,
+        items: [
+            {
+                item: "new",
+                type: d[6].map((i: any) => i.value).join(""),
+                properties: [...d[8], {key: "...rest", value: ["true"], operation: "="}],
+                for: d[9]?.[1] ?? undefined,
+            }
+        ]
+    })
+%}
+
+template_statement -> %template _ [^\s]:+ _ "{" _ template_internal_list _ "}" {%
+    d => ({
+        item: "template",
+        type: d[2].map((i: any) => i.value).join(""),
+        items: d[6],
+    })
+%}
+
+template_internal_list -> template_internal_list _nll "\n" _ builder_statement {% d => ([...d[0], d[4]]) %} | builder_statement
+
+builder_statement -> [^\s]:+ _ properties (_ for_entry):? {%
+    d => ({
+        item: "builder",
+        type: d[0].map((i: any) => i.value).join(""),
+        properties: d[2],
+        for: d[3]?.[1] ?? undefined,
     })
 %}
 

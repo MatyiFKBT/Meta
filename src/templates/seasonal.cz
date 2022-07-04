@@ -1,0 +1,10 @@
+template SeasonalBouncer from Bouncer {
+    tags + BouncerSeasonal, BouncerSeasonal$(year)
+    hidden + Deploy
+}
+
+template SeasonalGroup from Group {
+    seasonalYear = $year
+    seasonalStart = $start
+    seasonalEnd = $end
+}

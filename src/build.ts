@@ -8,7 +8,16 @@ import { Type, TypeSet } from "./common/type";
 import { Group } from "./common/group";
 import fileSize from "filesize";
 import { compareWithOldDB } from "./compare";
-import { parseCZFile } from "./parse";
+// import {
+//   createTemplateMap,
+//   Item,
+//   loadTemplates,
+//   Operation,
+//   parseCZFile,
+//   PropertyItem,
+//   PropertySet,
+// } from "./parse";
+import { CZParser } from "./czParser";
 
 export function checkType(file: string, type: Type) {
   type.file = file.replace(__dirname, "");
@@ -27,9 +36,45 @@ async function generate(): Promise<Database> {
 
   const database = new Database();
 
+  // const czFileContents = new Map<string, Item[]>();
+  // const templateMap = createTemplateMap();
+
+  const czParser = new CZParser(files.filter(i => i.endsWith(".cz")));
+
+  // for (const czFile of files.filter(i => i.endsWith(".cz"))) {
+  //   czParser.
+  //   const items = parseCZFile(czFile);
+  //   czFileContents.set(czFile, items);
+  //   loadTemplates(templateMap, items);
+  // }
+
   for (const file of files.slice().reverse()) {
     if (file.endsWith(".cz")) {
-      parseCZFile(database, file);
+      czParser.runFileBuilders(file, database);
+      // for (const item of czFileContents.get(file)!) {
+      //   if (item.item !== "new") continue;
+      //   const template = templateMap.get(item.type);
+      //   if (!template) {
+      //     throw new Error(`Could not find template for ${item.type}`);
+      //   }
+      //   for (const f of item.for ?? [{ values: [] }]) {
+      //     template(
+      //       database,
+      //       new PropertySet(
+      //         item.properties.map(i => new PropertyItem(i.key, i.value, i.operation))
+      //       ).withProperties(
+      //         new PropertySet([
+      //           ...(f.properties ?? []),
+      //           ...f.values.map((v, n) => ({
+      //             key: (n + 1).toString(),
+      //             value: [v],
+      //             operation: Operation.Equals,
+      //           })),
+      //         ])
+      //       )
+      //     );
+      //   }
+      // }
     } else if (file.endsWith(".ts")) {
       const items: unknown[] = Object.values(await import(file));
       for (const item of items) {
@@ -152,4 +197,5 @@ async function build() {
 
   await output(database);
 }
+
 build();

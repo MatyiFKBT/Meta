@@ -1,6 +1,7 @@
 import { XMLBuilder } from "xmlbuilder2/lib/interfaces";
 import { LegacyAccessory, LegacyCategory } from "./legacy";
 import { createHash } from "node:crypto";
+import { CZReference } from "../czProperties";
 
 export interface GroupOptions {
   name: string;
@@ -48,11 +49,15 @@ export class Group {
     }
     throw new Error(`Could not find a unique ID for ${human_id}`);
   }
+  _db!: GroupDatabase;
   id: number;
   icons: string[] = null!;
   name: string;
   human_id: string;
-  parents: Group[] = [];
+  private _parents: (Group | CZReference)[] = [];
+  get parents() {
+    return this._parents.map(v => this._db.deref(v));
+  }
   seasonal?: GroupSeasonalProperties;
   legacyAccessories: LegacyAccessory[] = [];
   details: GroupDetails = {};
@@ -83,8 +88,13 @@ export class Group {
     return this;
   }
 
+  setParents(parents: (Group | CZReference)[]) {
+    this._parents = parents;
+    return this;
+  }
+
   addParent(parent: Group) {
-    this.parents.push(parent);
+    this._parents.push(parent);
     return this;
   }
 
@@ -206,12 +216,23 @@ export class Group {
 export class GroupDatabase {
   private data: Group[];
 
+  public deref(group: CZReference | Group): Group {
+    if (group instanceof Group) return group;
+    const g = this.data.find(i => i.name === group.value);
+    if (!g) throw new Error(`Group ${group.value} not found`);
+    return g;
+  }
+
   constructor() {
     this.data = [];
   }
 
   public add(...groups: (Group[] | Group)[]): this {
-    this.data.push(...groups.flat());
+    const g = groups.flat();
+    g.forEach(g => {
+      g._db = this;
+    });
+    this.data.push(...g);
     return this;
   }
 
