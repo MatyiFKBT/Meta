@@ -1,0 +1,4 @@
+template Scatter from Base {
+    tags + Scatter
+    hidden + Inventory, Deploy
+}

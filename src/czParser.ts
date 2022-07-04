@@ -2,7 +2,7 @@ import nearley from "nearley";
 import grammar from "./grammar";
 import fs from "node:fs";
 import { Database } from "./database";
-import { Type, TypeHidden, TypeState, TypeTags } from "./common/type";
+import { ScatterType, Type, TypeHidden, TypeState, TypeTags } from "./common/type";
 import { Group } from "./common/group";
 import { CZPropertySet } from "./czProperties";
 
@@ -96,6 +96,9 @@ class CZFileParser {
           break;
         case "groups":
           type.setGroups(property.references);
+          break;
+        case "standalone":
+          ScatterType.prototype.standalone.bind(type)();
           break;
         default:
           throw new Error(`Unknown Base property ${property.key}`);

@@ -1,0 +1,47 @@
+template MechBouncer from Bouncer {
+    groups = MechZ
+    tags + BouncerTPOB
+}
+
+template BrokenMechBouncer from MechBouncer {
+    hidden + Bouncers
+}
+
+template MechScatter from Scatter {
+    groups = MechZ
+    standalone
+}
+
+template MechWithoutScatter {
+    MechBouncer {
+        name = $name
+        id = $id
+    }
+    BrokenMechBouncer {
+        name = $brokenName
+        id = $brokenId
+    }
+}
+
+template Mech {
+    MechWithoutScatter {
+        name = $name
+        id = $id
+        brokenName = $brokenName
+        brokenId = $brokenId
+        scatters + $scatterName
+    }
+    MechScatter {
+        name = $scatterName
+        id = $scatterId
+    }
+}
+
+Mech {
+    name = Ch3shire Cat
+    id = 3900
+    brokenName = Floating Ch3shire Cat
+    brokenId = 3901
+    scatterName = Floating Head
+    scatterId = 3902
+}
