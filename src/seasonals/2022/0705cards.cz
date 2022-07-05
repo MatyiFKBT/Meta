@@ -1,0 +1,54 @@
+SeasonalGroup {
+    name = Wonder11and Playing Cards
+    year = 2022
+    start = 2022-07-05T12:00:00-05:00
+    end = 2022-08-07T23:59:00-05:00
+}
+
+template CardSuit {
+    SeasonalBouncer {
+        year = 2022
+        name = $(1) of $(card)
+    } for [
+        Ace
+        Two
+        Three
+        Four
+        Five
+        Six
+        Seven
+        Eight
+        Nine
+        Ten
+    ]
+    SeasonalBouncer {
+        year = 2022
+        name = $(jackName) of $(card)
+    }
+    SeasonalBouncer {
+        year = 2022
+        name = $(1) of $(card)
+    } for [
+        Queen
+        King
+    ]
+}
+
+CardSuit {
+    card = $1
+    jackName = $2
+} for [
+    Spades, Jack
+    Hearts, Knave
+    Diamonds, Jack
+    Clubs, Jack
+]
+
+SeasonalBouncer {
+    year = 2022
+    name = Joker
+}
+SeasonalBouncer {
+    year = 2022
+    name = Jester
+}

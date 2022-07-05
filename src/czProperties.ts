@@ -82,7 +82,7 @@ export class CZPropertySet {
 
   private resolveValuesAndApply(key: string, values: string[], inverse: boolean) {
     for (const value of values) {
-      if (value.startsWith("$")) {
+      if (value.startsWith("$") && !value.startsWith("$(")) {
         const property = this.mergeFrom?.getProperty(value.slice(1));
         if (!property) {
           throw new Error(`Property ${value} not found`);
