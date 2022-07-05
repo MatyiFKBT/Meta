@@ -128,7 +128,7 @@ class CZFileParser {
           group.setSeasonalStart(property.string);
           break;
         case "seasonalEnd":
-          group.setSeasonalStart(property.string);
+          group.setSeasonalEnd(property.string);
           break;
         case "parents":
           group.setParents(property.references);
