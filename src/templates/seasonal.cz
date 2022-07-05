@@ -4,8 +4,10 @@ template SeasonalBouncer from Bouncer {
 }
 
 template SeasonalGroup from Group {
-    seasonalYear = $year
-    seasonalStart = $start
-    seasonalEnd = $end
+    seasonal {
+        year = $year
+        start = $start
+        end = $end
+    }
     parents + $(year) Seasonal Specials
 }

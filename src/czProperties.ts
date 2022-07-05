@@ -1,4 +1,5 @@
 import { Operation, Property } from "./czParser";
+import * as mathjs from "mathjs";
 
 type CZPropertyValue = string;
 
@@ -61,7 +62,7 @@ export class CZPropertySet {
     return [...this.propertiesMap.values()];
   }
 
-  constructor(properties: Property[] | CZPropertyItem[], mergeFrom?: CZPropertySet) {
+  constructor(properties: Property[] | CZPropertyItem[], mergeFrom?: CZPropertySet, index = 0) {
     if (properties[0] instanceof CZPropertyItem) {
       for (const property of properties) {
         this.propertiesMap.set(property.key, property as CZPropertyItem);
@@ -71,6 +72,7 @@ export class CZPropertySet {
 
     this.mergeFrom = mergeFrom;
     this.unusedProperties = new Set(mergeFrom?.properties);
+    this.index = index;
 
     for (const property of properties) {
       this.addProperty(property as Property);
@@ -79,6 +81,7 @@ export class CZPropertySet {
 
   private mergeFrom?: CZPropertySet;
   private readonly unusedProperties!: Set<CZPropertyItem>;
+  private readonly index: number = 0;
 
   private resolveValuesAndApply(key: string, values: string[], inverse: boolean) {
     for (const value of values) {
@@ -93,14 +96,40 @@ export class CZPropertySet {
         this.getProperty(key)[inverse ? "remove" : "add"](...property.include);
         return;
       }
-      const updatedValue = value.replace(/\$\([^)]+\)/g, i => {
-        const property = this.mergeFrom?.getProperty(i.slice(2, -1));
-        if (!property) {
-          throw new Error(`Property ${i} not found`);
-        }
-        this.unusedProperties.delete(property);
-        return property.include[0];
-      });
+      const updatedValue = value
+        .replace(/\$\(\([^)]+\)\)/g, i => {
+          const expression = i.slice(3, -2);
+          const properties = {
+            get: (key: string) => {
+              if (key === "_index") return this.index;
+              const property = this.mergeFrom?.getProperty(key);
+              if (!property) {
+                throw new Error(`Property ${i} not found`);
+              }
+              this.unusedProperties.delete(property);
+              return property.number;
+            },
+            set: (key: string) => {
+              throw new Error(`Cannot set property ${key}`);
+            },
+            has: (key: string) => {
+              if (key === "end") return false;
+              return this.mergeFrom?.getProperty(key) !== undefined;
+            },
+            keys: () => {
+              return this.mergeFrom?.properties.map(p => p.key).filter(i => i !== "end");
+            },
+          };
+          return mathjs.evaluate(expression, properties).toString();
+        })
+        .replace(/\$\([^)]+\)/g, i => {
+          const property = this.mergeFrom?.getProperty(i.slice(2, -1));
+          if (!property) {
+            throw new Error(`Property ${i} not found`);
+          }
+          this.unusedProperties.delete(property);
+          return property.include[0];
+        });
       this.getProperty(key)[inverse ? "remove" : "add"](updatedValue);
     }
   }

@@ -121,13 +121,13 @@ class CZFileParser {
       switch (property.key) {
         case "name":
           break;
-        case "seasonalYear":
+        case "seasonal.year":
           group.setSeasonalYear(property.number);
           break;
-        case "seasonalStart":
+        case "seasonal.start":
           group.setSeasonalStart(property.string);
           break;
-        case "seasonalEnd":
+        case "seasonal.end":
           group.setSeasonalEnd(property.string);
           break;
         case "parents":
@@ -189,6 +189,7 @@ export class CZParser {
     withProperties?: CZPropertySet
   ) {
     const propertiesList = [];
+    let i = 0;
     for (const f of item.for ?? [{ values: [] }]) {
       propertiesList.push(
         new CZPropertySet(
@@ -201,12 +202,16 @@ export class CZParser {
                 key: `${n + 1}`,
                 value: [i],
                 operation: Operation.Equals,
-              }))
+              })),
+              new CZPropertySet([...(withProperties?.properties ?? [])]),
+              i
             ).properties,
             ...(withProperties?.properties ?? []),
-          ])
+          ]),
+          i
         )
       );
+      i++;
     }
     return propertiesList;
   }

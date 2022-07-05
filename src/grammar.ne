@@ -69,9 +69,22 @@ properties -> "{" _ property_list _ "}" {%
     d => d[2]
 %}
 
-property_list -> property_list _nll "\n" _ property {% d => ([...d[0], d[4]]) %} | property
+property_list -> property_list _nll "\n" _ property {% d => ([...d[0], ...d[4]]) %} | property {% d => d[0] %}
 
-property -> [^\s=\+\-]:+ _ property_operation _ comma_separated_item {%
+property -> item_property | group_property {% d => d[0] %}
+
+group_property -> [^\s=\+\-{]:+ _ properties {%
+    d => {
+        const key = d[0].map((i: any) => i.value).join("") + ".";
+        return d[2].map((i: any) => ({
+            key: key + i.key,
+            value: i.value,
+            operation: i.operation,
+        }))
+    }
+%}
+
+item_property -> [^\s=\+\-]:+ _ property_operation _ comma_separated_item {%
     d => ({
         key: d[0].map((i: any) => i.value).join(""),
         value: d[4],
