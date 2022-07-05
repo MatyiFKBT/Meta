@@ -31,3 +31,5 @@ export const munzPakJune2022Card = new Year2022CardType("MunzPak June 2022 Card"
 export const munzPakJuly2022Card = new Year2022CardType("MunzPak July 2022 Card", 3863);
 
 export const crystalBallCard = new Year2022CardType("Crystal Ball Card", 3235);
+
+export const unBirthdayEventCard = new Year2022CardType("UnBirthday Event Card", 3788);
