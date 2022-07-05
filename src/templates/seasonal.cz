@@ -7,4 +7,5 @@ template SeasonalGroup from Group {
     seasonalYear = $year
     seasonalStart = $start
     seasonalEnd = $end
+    parents + $(year) Seasonal Specials
 }
