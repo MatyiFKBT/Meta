@@ -4,7 +4,7 @@ import fs from "node:fs";
 import { Database } from "./database";
 import { ScatterType, Type, TypeHidden, TypeState, TypeTags } from "./common/type";
 import { Group } from "./common/group";
-import { CZPropertySet } from "./czProperties";
+import { CZPropertyItem, CZPropertySet } from "./czProperties";
 
 type BuilderItem = {
   item: "builder";
@@ -189,29 +189,47 @@ export class CZParser {
     withProperties?: CZPropertySet
   ) {
     const propertiesList = [];
-    let i = 0;
+    let index = 0;
+    let usedProperties: Set<CZPropertyItem> | undefined = undefined;
+
+    const forItems: [Property[], CZPropertySet][] = [];
+
     for (const f of item.for ?? [{ values: [] }]) {
+      const used = usedProperties as Set<CZPropertyItem> | undefined;
+      const forProperties = new CZPropertySet(
+        f.values.map((i, n) => ({
+          key: `${n + 1}`,
+          value: [i],
+          operation: Operation.Equals,
+        })),
+        new CZPropertySet(withProperties?.properties ?? []),
+        index,
+        used
+      );
+      usedProperties = forProperties.usedProperties;
+
+      forItems.push([
+        f.properties ?? [],
+        new CZPropertySet([...forProperties.properties, ...(withProperties?.properties ?? [])]),
+      ]);
+      index++;
+    }
+
+    index = 0;
+
+    for (const forItem of forItems) {
       propertiesList.push(
         new CZPropertySet(
           // Base Properties
-          [...item.properties, ...(f.properties ?? [])],
+          [...item.properties, ...forItem[0]],
           // Applied Properties
-          new CZPropertySet([
-            ...new CZPropertySet(
-              f.values.map((i, n) => ({
-                key: `${n + 1}`,
-                value: [i],
-                operation: Operation.Equals,
-              })),
-              new CZPropertySet([...(withProperties?.properties ?? [])]),
-              i
-            ).properties,
-            ...(withProperties?.properties ?? []),
-          ]),
-          i
+          forItem[1],
+          index,
+          usedProperties
         )
       );
-      i++;
+      usedProperties = propertiesList[propertiesList.length - 1].usedProperties;
+      index++;
     }
     return propertiesList;
   }

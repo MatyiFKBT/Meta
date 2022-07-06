@@ -7,7 +7,7 @@ export class CZReference {
   constructor(public readonly value: string) {}
 }
 
-class CZPropertyItem {
+export class CZPropertyItem {
   key: string;
 
   excludeAll = false;
@@ -62,7 +62,14 @@ export class CZPropertySet {
     return [...this.propertiesMap.values()];
   }
 
-  constructor(properties: Property[] | CZPropertyItem[], mergeFrom?: CZPropertySet, index = 0) {
+  constructor(
+    properties: Property[] | CZPropertyItem[],
+    mergeFrom?: CZPropertySet,
+    index = 0,
+    usedProperties = new Set<CZPropertyItem>()
+  ) {
+    this.usedProperties = usedProperties;
+
     if (properties[0] instanceof CZPropertyItem) {
       for (const property of properties) {
         this.propertiesMap.set(property.key, property as CZPropertyItem);
@@ -74,6 +81,10 @@ export class CZPropertySet {
     this.unusedProperties = new Set(mergeFrom?.properties);
     this.index = index;
 
+    for (const property of usedProperties) {
+      this.unusedProperties.delete(property);
+    }
+
     for (const property of properties) {
       this.addProperty(property as Property);
     }
@@ -81,6 +92,12 @@ export class CZPropertySet {
 
   private mergeFrom?: CZPropertySet;
   private readonly unusedProperties!: Set<CZPropertyItem>;
+  public readonly usedProperties: Set<CZPropertyItem>;
+
+  private used(property: CZPropertyItem) {
+    this.usedProperties.add(property);
+    this.unusedProperties.delete(property);
+  }
   private readonly index: number = 0;
 
   private resolveValuesAndApply(key: string, values: string[], inverse: boolean) {
@@ -90,7 +107,7 @@ export class CZPropertySet {
         if (!property) {
           throw new Error(`Property ${value} not found`);
         }
-        this.unusedProperties.delete(property);
+        this.used(property);
         if (!inverse && property.excludeAll) this.getProperty(key).reset();
         this.getProperty(key)[inverse ? "add" : "remove"](...property.exclude);
         this.getProperty(key)[inverse ? "remove" : "add"](...property.include);
@@ -106,7 +123,7 @@ export class CZPropertySet {
               if (!property) {
                 throw new Error(`Property ${i} not found`);
               }
-              this.unusedProperties.delete(property);
+              this.used(property);
               return property.number;
             },
             set: (key: string) => {
@@ -127,7 +144,7 @@ export class CZPropertySet {
           if (!property) {
             throw new Error(`Property ${i} not found`);
           }
-          this.unusedProperties.delete(property);
+          this.used(property);
           return property.include[0];
         });
       this.getProperty(key)[inverse ? "remove" : "add"](updatedValue);
