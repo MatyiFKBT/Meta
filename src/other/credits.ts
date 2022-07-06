@@ -74,4 +74,7 @@ export const candyCorn = new RedeemableType("Candy Corn")
   .setIcon("candy_corn")
   .addHidden(TypeHidden.Inventory);
 export const c04L = new RedeemableType("C04L").addHidden(TypeHidden.Inventory);
-export const shamRock = new RedeemableType("Sham Rock").setIcons("shamrockcredit", "sham_rock");
+export const shamRock = new RedeemableType("Sham Rock")
+  .setIcons("shamrockcredit", "sham_rock")
+  .addHidden(TypeHidden.Inventory);
+export const paintedRose = new RedeemableType("Painted Rose").setIcon("painted_rose");
