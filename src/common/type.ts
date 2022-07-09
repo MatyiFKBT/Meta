@@ -730,15 +730,55 @@ export class Type {
     if (this.data_state) data.state = this.data_state;
 
     if (this.data_groups)
-      data.groups = [...this.data_groups].map(v => this._db.groups.deref(v)).map(i => i.id);
+      data.groups = [...this.data_groups]
+        .map(v => this._db.groups.deref(v))
+        .map(i => i.id)
+        .sort();
 
     if (this.data_points) data.points = this.data_points;
 
-    if (this.data_tags.size > 0) data.tags = [...this.data_tags];
+    if (this.data_tags.size > 0) data.tags = [...this.data_tags].sort();
 
-    if (this.data_hidden.size > 0) data.hidden = [...this.data_hidden];
+    if (this.data_hidden.size > 0) data.hidden = [...this.data_hidden].sort();
 
-    if (Object.keys(this.data_meta).length > 0) data.meta = this.data_meta;
+    if (Object.keys(this.data_meta).length > 0)
+      data.meta = {
+        virtual: this.data_meta.virtual,
+
+        evolution: this.data_meta.evolution,
+
+        destination: this.data_meta.destination,
+
+        bouncer: this.data_meta.bouncer
+          ? {
+              duration: this.data_meta.bouncer.duration,
+              landsOn: this.data_meta.bouncer.landsOn?.slice().sort(),
+              base: this.data_meta.bouncer.base,
+            }
+          : undefined,
+
+        bouncerHost: this.data_meta.bouncerHost
+          ? {
+              types: this.data_meta.bouncerHost.types?.slice().sort(),
+            }
+          : undefined,
+
+        scatter: this.data_meta.scatter
+          ? {
+              duration: this.data_meta.scatter.duration,
+              landsOn: this.data_meta.scatter.landsOn?.slice().sort(),
+            }
+          : undefined,
+
+        scatterer: this.data_meta.scatterer
+          ? {
+              types: this.data_meta.scatterer.types?.slice().sort(),
+              min: this.data_meta.scatterer.min,
+              max: this.data_meta.scatterer.max,
+              radius: this.data_meta.scatterer.radius,
+            }
+          : undefined,
+      };
 
     if (variant === "full" && Object.keys(this.data_details).length > 0) {
       data.details = this.data_details;

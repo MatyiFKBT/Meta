@@ -28,7 +28,7 @@ jobs:
 
       - name: "Build Database"
         run: |
-          pnpm build
+          pnpm build-check
       - name: "Zip Output"
         run: |
           cp LICENSE output/LICENSE
@@ -45,6 +45,6 @@ jobs:
           title: "Beta"
           files: |
             output/*
-        
+
       - run: curl https://db.cuppazee.app/reloaddb3
       - run: curl https://api.cuppazee.app/database/reload

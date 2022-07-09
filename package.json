@@ -4,10 +4,11 @@
   "description": "",
   "scripts": {
     "generate-nearley": "nearleyc src/grammar.ne -o src/grammar.ts",
-    "build": "pnpm generate-nearley && ts-node ./src/build.ts",
-    "table_to_events": "ts-node ./tools/table_to_events.ts",
-    "new-compare": "ts-node ./src/newCompare.ts",
-    "grammar-test": "pnpm generate-nearley && ts-node ./tools/grammar-test.ts",
+    "build": "pnpm generate-nearley && tsx ./src/build.ts",
+    "build-check": "pnpm build && pnpm check-images && pnpm compare",
+    "compare": "tsx ./src/compare.ts",
+    "check-images": "tsx ./src/checkImages.ts",
+    "grammar-test": "pnpm generate-nearley && tsx ./tools/grammar-test.ts",
     "lint": "eslint .",
     "lint-fix": "eslint . --fix"
   },
@@ -33,9 +34,8 @@
     "eslint": "^8.5.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "node-fetch": "^2",
     "prettier": "^2.5.1",
-    "ts-node": "^10.4.0",
+    "tsx": "^3.7.1",
     "typescript": "^4.5.4"
   },
   "dependencies": {
@@ -48,6 +48,7 @@
     "mathjs": "^10.6.4",
     "moo": "^0.5.1",
     "nearley": "^2.20.1",
+    "node-fetch": "^2",
     "tslib": "^2.3.1",
     "xmlbuilder2": "^3.0.2"
   }

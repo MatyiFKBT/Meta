@@ -1,26 +1,18 @@
 import fs from "fs-extra";
 import chalk from "chalk";
 import glob from "glob";
-import { join } from "node:path";
+import { resolve, join } from "node:path";
 import { promisify } from "node:util";
 import { Database } from "./database";
 import { Type, TypeSet } from "./common/type";
 import { Group } from "./common/group";
 import fileSize from "filesize";
-import { compareWithOldDB } from "./compare";
-// import {
-//   createTemplateMap,
-//   Item,
-//   loadTemplates,
-//   Operation,
-//   parseCZFile,
-//   PropertyItem,
-//   PropertySet,
-// } from "./parse";
 import { CZParser } from "./czParser";
 
+const itemsDir = resolve(__dirname, "../items");
+
 export function checkType(file: string, type: Type) {
-  type.file = file.replace(__dirname, "");
+  type.file = file.replace(itemsDir, "");
   if (!type.munzee_id) {
     console.warn(chalk`{gray [{yellow WARN}] ${type.file}: }{gray ${type.name} has no munzee_id}`);
   }
@@ -28,10 +20,8 @@ export function checkType(file: string, type: Type) {
 
 async function generate(): Promise<Database> {
   console.info(chalk.gray`Generating...`);
-  const path = join(__dirname, "./**/*/*.*");
-  const files = (await promisify(glob)(path))
-    .filter(i => !i.startsWith(join(__dirname, "common")))
-    .filter(i => i.endsWith(".ts") || i.endsWith(".cz"));
+  const path = join(itemsDir, "./**/*/*.*");
+  const files = (await promisify(glob)(path)).filter(i => i.endsWith(".ts") || i.endsWith(".cz"));
   console.info(chalk.gray`Found ${files.length} file${files.length === 1 ? "" : "s"}`);
 
   const database = new Database();
@@ -154,8 +144,6 @@ async function output(database: Database): Promise<void> {
   for (const [file, size] of filesWithSizes) {
     console.info(chalk.blue`  ${file} - ${fileSize(size)}`);
   }
-
-  await compareWithOldDB(database);
 }
 
 async function build() {

@@ -5,6 +5,7 @@ import { Database } from "./database";
 import { ScatterType, Type, TypeHidden, TypeState, TypeTags } from "./common/type";
 import { Group } from "./common/group";
 import { CZPropertyItem, CZPropertySet } from "./czProperties";
+import { checkType } from "./build";
 
 type BuilderItem = {
   item: "builder";
@@ -39,10 +40,12 @@ export interface Property {
 }
 
 class CZFileParser {
+  private fileName: string;
   private lastGroup: Group | null = null;
   private database: Database;
 
-  constructor(database: Database) {
+  constructor(fileName: string, database: Database) {
+    this.fileName = fileName;
     this.database = database;
   }
 
@@ -108,6 +111,7 @@ class CZFileParser {
       type.addGroup(this.lastGroup);
     }
     this.database.types.add(type);
+    checkType(this.fileName, type);
   }
 
   runGroupTemplate(properties: CZPropertySet) {
@@ -178,7 +182,7 @@ export class CZParser {
     if (!builderItems) {
       throw new Error(`CZ File has not been loaded: ${file}`);
     }
-    const fileParser = new CZFileParser(database);
+    const fileParser = new CZFileParser(file, database);
     for (const builderItem of builderItems) {
       this.runBuilder(builderItem, fileParser);
     }

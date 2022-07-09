@@ -28,7 +28,7 @@ jobs:
 
       - name: "Build Database"
         run: |
-          pnpm build
+          pnpm build-check
       - name: "Zip Output"
         run: |
           cp LICENSE output/LICENSE
