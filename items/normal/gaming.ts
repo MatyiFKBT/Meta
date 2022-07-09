@@ -1,5 +1,5 @@
-import { Group } from "../../src/common/group";
-import { ScatterType, Type, TypeSet, TypeTags } from "../../src/common/type";
+import { Group } from "../../src/items/group";
+import { ScatterType, Type, TypeSet, TypeTags } from "../../src/items/type";
 import { normalGroup } from "./_index";
 
 export const GamingGroup = new Group({ name: "Gaming" }).addParent(normalGroup);

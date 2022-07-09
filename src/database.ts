@@ -1,8 +1,8 @@
 import { create } from "xmlbuilder2";
 import { XMLBuilder } from "xmlbuilder2/lib/interfaces";
-import { Group, GroupData, GroupDatabase } from "./common/group";
-import { LegacyData } from "./common/legacy";
-import { TypeData, TypeDatabase, TypeTags } from "./common/type";
+import { Group, GroupData, GroupDatabase } from "./items/group";
+import { LegacyData } from "./items/legacy";
+import { TypeData, TypeDatabase, TypeTags } from "./items/type";
 
 export interface FullDatabaseData {
   types: (TypeData & { icons: string[]; id: string })[];
@@ -135,12 +135,6 @@ export class Database {
       group.addToXML(groupsRoot);
     }
     return root;
-  }
-
-  toCZM(compact?: boolean): string {
-    return `-t\n${this.types.types.map(i => i.toCZM(compact)).join("\n")}\n-g\n${this.groups.groups
-      .map(i => i.toCZM(compact))
-      .join("\n")}`;
   }
 
   toLegacyJSON(): LegacyData {

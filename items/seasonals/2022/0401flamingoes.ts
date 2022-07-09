@@ -1,4 +1,4 @@
-import { TypeHidden } from "../../../src/common/type";
+import { TypeHidden } from "../../../src/items/type";
 import { Year2022SeasonalGroup, Year2022SeasonalScatterType } from "./_index";
 
 export const flamingoesGroup = new Year2022SeasonalGroup({

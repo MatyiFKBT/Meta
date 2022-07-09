@@ -1,5 +1,5 @@
 import { Year2021SeasonalGroup, Year2021SeasonalScatterType } from "./_index";
-import { TypeHidden } from "../../../src/common/type";
+import { TypeHidden } from "../../../src/items/type";
 
 export const munzee10thBirthdayGroup = new Year2021SeasonalGroup({
   name: "Munzee 10th Birthday",

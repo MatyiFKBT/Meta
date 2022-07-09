@@ -3,7 +3,7 @@ import {
   Year2021SeasonalScatterType,
   Year2021SeasonalGroup,
 } from "./_index";
-import { TypeHidden } from "../../../src/common/type";
+import { TypeHidden } from "../../../src/items/type";
 
 export const lotterZEEGroup = new Year2021SeasonalGroup({
   name: "LotterZEE",

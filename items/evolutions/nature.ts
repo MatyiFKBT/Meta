@@ -1,5 +1,5 @@
-import { EvolutionTypeSet, Type, TypeHidden, TypeTags } from "../../src/common/type";
-import { Group } from "../../src/common/group";
+import { EvolutionTypeSet, Type, TypeHidden, TypeTags } from "../../src/items/type";
+import { Group } from "../../src/items/group";
 import { evoGroup } from "./_index";
 
 export const NatureEvolutionGroup = new Group({ name: "Nature Evolutions" }).addParent(evoGroup);

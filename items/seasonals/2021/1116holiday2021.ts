@@ -1,5 +1,5 @@
 import { Year2021SeasonalScatterType, Year2021SeasonalGroup, Year2021SeasonalType } from "./_index";
-import { TypeHidden } from "../../../src/common/type";
+import { TypeHidden } from "../../../src/items/type";
 
 export const holiday2021Group = new Year2021SeasonalGroup({
   name: "Holiday 2021",

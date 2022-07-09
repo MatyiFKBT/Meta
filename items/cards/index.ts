@@ -1,6 +1,6 @@
 import { homeGroup } from "../base";
-import { Group } from "../../src/common/group";
-import { Type, TypeTags } from "../../src/common/type";
+import { Group } from "../../src/items/group";
+import { Type, TypeTags } from "../../src/items/type";
 
 export const cardsGroup = new Group({ name: "Cards" }).addParent(homeGroup);
 

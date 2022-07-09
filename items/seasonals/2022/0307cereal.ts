@@ -1,4 +1,4 @@
-import { TypeTags } from "../../../src/common/type";
+import { TypeTags } from "../../../src/items/type";
 import { bones, dinosaur, egg, fish, seaweed, shark } from "../../evolutions/education";
 import {
   calf,

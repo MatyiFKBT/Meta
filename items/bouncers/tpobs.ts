@@ -1,5 +1,5 @@
-import { Group } from "../../src/common/group";
-import { BouncerHostType, BouncerType, ScatterType, TypeTags } from "../../src/common/type";
+import { Group } from "../../src/items/group";
+import { BouncerHostType, BouncerType, ScatterType, TypeTags } from "../../src/items/type";
 import { battleAxe, catapult, crossbow, longsword, mace, theHammer } from "../normal/weapons";
 import { spyderbot, squashedSpyderbot } from "./mechz";
 import { mechzGroup } from "./_index";

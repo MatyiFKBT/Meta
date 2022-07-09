@@ -1,5 +1,5 @@
 import { Year2020SeasonalBouncerType, Year2020SeasonalGroup } from "./_index";
-import { TypeTags } from "../../../src/common/type";
+import { TypeTags } from "../../../src/items/type";
 import { mystery, waterMystery } from "../../normal/mystery";
 import { eggs, farmer, family, farmerandWife } from "../../evolutions/farm";
 import { aquamarine } from "../../normal/jewels";

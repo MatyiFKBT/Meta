@@ -1,5 +1,5 @@
 import { Year2020SeasonalBouncerType, Year2020SeasonalGroup } from "./_index";
-import { TypeTags } from "../../../src/common/type";
+import { TypeTags } from "../../../src/items/type";
 import { seaweed, fish, shark, canoe, motorboat, submarine } from "../../evolutions/education";
 import {
   juvenileTurtle,

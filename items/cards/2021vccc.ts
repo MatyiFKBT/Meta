@@ -1,5 +1,5 @@
-import { Group } from "../../src/common/group";
-import { ScatterType, TypeHidden, TypeTags } from "../../src/common/type";
+import { Group } from "../../src/items/group";
+import { ScatterType, TypeHidden, TypeTags } from "../../src/items/type";
 import { cardsGroup, CardType } from "./index";
 
 export const Year2021VCCCCardGroup = new Group({ name: "2021 VCCC Cards" }).addParent(cardsGroup);

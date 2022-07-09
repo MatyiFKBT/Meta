@@ -1,4 +1,4 @@
-import { TypeHidden } from "../../../src/common/type";
+import { TypeHidden } from "../../../src/items/type";
 import { christmas2020Group } from "./christmas2020";
 import { Year2020SeasonalGroup, Year2020SeasonalPOBType } from "./_index";
 

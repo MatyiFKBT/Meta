@@ -1,5 +1,5 @@
 import { Year2020SeasonalBouncerType, Year2020SeasonalGroup } from "./_index";
-import { TypeTags } from "../../../src/common/type";
+import { TypeTags } from "../../../src/items/type";
 
 export const worldLaughterDay2020Group = new Year2020SeasonalGroup({
   name: "World Laughter Day 2020",

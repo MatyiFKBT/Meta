@@ -1,5 +1,5 @@
 import { Year2020SeasonalBouncerType, Year2020SeasonalGroup } from "./_index";
-import { TypeTags, TypeHidden, TypeState } from "../../../src/common/type";
+import { TypeTags, TypeHidden, TypeState } from "../../../src/items/type";
 import { egg } from "../../evolutions/education";
 import { eggs } from "../../evolutions/farm";
 import { greenie } from "../../normal/misc";

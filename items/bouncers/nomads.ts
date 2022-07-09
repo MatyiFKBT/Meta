@@ -1,4 +1,4 @@
-import { Group } from "../../src/common/group";
+import { Group } from "../../src/items/group";
 import {
   BouncerType,
   ScatterType,
@@ -6,7 +6,7 @@ import {
   TypeSet,
   TypeState,
   TypeTags,
-} from "../../src/common/type";
+} from "../../src/items/type";
 import { greenie } from "../normal/misc";
 import { mystery } from "../normal/mystery";
 import { briefcase, nightVisionGoggles } from "../normal/weapons";

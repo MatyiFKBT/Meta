@@ -1,5 +1,5 @@
 import { Year2021SeasonalPOBType, Year2021SeasonalGroup } from "./_index";
-import { TypeTags } from "../../../src/common/type";
+import { TypeTags } from "../../../src/items/type";
 import { treehouse } from "../../normal/destination";
 import { greenie } from "../../normal/misc";
 import { earthMystery, iceMystery } from "../../normal/mystery";

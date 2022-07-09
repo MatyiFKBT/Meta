@@ -1,5 +1,5 @@
 import { Year2021SeasonalPOBType, Year2021SeasonalGroup } from "./_index";
-import { TypeHidden } from "../../../src/common/type";
+import { TypeHidden } from "../../../src/items/type";
 
 export class JackInZeeBoxType extends Year2021SeasonalPOBType {
   template(): this {

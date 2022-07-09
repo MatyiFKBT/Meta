@@ -1,5 +1,5 @@
-import { Group } from "../../src/common/group";
-import { Type, TypeTags } from "../../src/common/type";
+import { Group } from "../../src/items/group";
+import { Type, TypeTags } from "../../src/items/type";
 import { normalGroup } from "./_index";
 
 export const PlacesGroup = new Group({ name: "Places" }).addParent(normalGroup);

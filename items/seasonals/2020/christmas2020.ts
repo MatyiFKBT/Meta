@@ -1,5 +1,5 @@
 import { mechzGroup } from "../../bouncers/_index";
-import { TypeHidden } from "../../../src/common/type";
+import { TypeHidden } from "../../../src/items/type";
 import {
   Year2020SeasonalScatterType,
   Year2020SeasonalGroup,

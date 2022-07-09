@@ -3,7 +3,7 @@ import {
   Year2021SeasonalScatterType,
   Year2021SeasonalGroup,
 } from "./_index";
-import { TypeState, TypeTags } from "../../../src/common/type";
+import { TypeState, TypeTags } from "../../../src/items/type";
 import { greenie } from "../../normal/misc";
 import { joystickPhysical } from "../../normal/gaming";
 

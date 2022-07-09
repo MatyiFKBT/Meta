@@ -28,12 +28,12 @@ template Mech {
         name = $name
         id = $id
         brokenName = $brokenName
-        brokenId = $brokenId
+        brokenId = $((brokenId ? brokenId : id + 1))
         scatters + $scatterName
     }
     MechScatter {
         name = $scatterName
-        id = $scatterId
+        id = $((scatterId ? scatterId : id + 2))
     }
 }
 
@@ -41,7 +41,5 @@ Mech {
     name = Ch3shire Cat
     id = 3900
     brokenName = Floating Ch3shire Cat
-    brokenId = 3901
     scatterName = Floating Head
-    scatterId = 3902
 }

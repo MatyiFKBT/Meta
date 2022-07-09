@@ -1,5 +1,5 @@
-import { Group } from "../../src/common/group";
-import { TypeHidden, TypeTags } from "../../src/common/type";
+import { Group } from "../../src/items/group";
+import { TypeHidden, TypeTags } from "../../src/items/type";
 import { cardsGroup, CardType } from "./index";
 
 export const Year2020CardGroup = new Group({ name: "2020 Cards" }).addParent(cardsGroup);

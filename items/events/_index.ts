@@ -1,5 +1,5 @@
-import { Type, TypeHidden, TypeTags } from "../../src/common/type";
-import { Group } from "../../src/common/group";
+import { Type, TypeHidden, TypeTags } from "../../src/items/type";
+import { Group } from "../../src/items/group";
 import { homeGroup } from "../base";
 
 export const eventGroup = new Group({

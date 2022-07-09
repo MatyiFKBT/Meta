@@ -3,7 +3,7 @@ import {
   Year2021SeasonalScatterType,
   Year2021SeasonalGroup,
 } from "./_index";
-import { TypeTags } from "../../../src/common/type";
+import { TypeTags } from "../../../src/items/type";
 import { treehouse, skyland } from "../../normal/destination";
 import { greenie } from "../../normal/misc";
 import { fireMystery, airMystery } from "../../normal/mystery";

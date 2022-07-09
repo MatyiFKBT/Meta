@@ -1,11 +1,11 @@
-import { Group } from "../../src/common/group";
+import { Group } from "../../src/items/group";
 import {
   BouncerType,
   EvolutionTypeSet,
   ScatterType,
   TypeHidden,
   TypeTags,
-} from "../../src/common/type";
+} from "../../src/items/type";
 import { tomato, tomatoPlant, tomatoSeed } from "../evolutions/farm";
 import { coin } from "../evolutions/reseller";
 import { skyland, treehouse } from "../normal/destination";

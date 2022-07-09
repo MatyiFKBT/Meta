@@ -4,16 +4,18 @@ import glob from "glob";
 import { resolve, join } from "node:path";
 import { promisify } from "node:util";
 import { Database } from "./database";
-import { Type, TypeSet } from "./common/type";
-import { Group } from "./common/group";
+import { Type, TypeSet, TypeTags } from "./items/type";
+import { Group } from "./items/group";
 import fileSize from "filesize";
 import { CZParser } from "./czParser";
+import { otherGroup } from "../items/other/other";
+import { encode as msgpackEncode } from "msgpack-ts";
 
 const itemsDir = resolve(__dirname, "../items");
 
 export function checkType(file: string, type: Type) {
   type.file = file.replace(itemsDir, "");
-  if (!type.munzee_id) {
+  if (!type.munzee_id && !type.hasTags(TypeTags.Credit) && !type.groups.includes(otherGroup)) {
     console.warn(chalk`{gray [{yellow WARN}] ${type.file}: }{gray ${type.name} has no munzee_id}`);
   }
 }
@@ -94,8 +96,14 @@ async function output(database: Database): Promise<void> {
     join(outDir, "database.full.min.json"),
     JSON.stringify(database.toJSON("full"))
   );
-  await fs.writeFile(join(outDir, "database.czm"), database.toCZM());
-  await fs.writeFile(join(outDir, "database.compact.czm"), database.toCZM(true));
+
+  await fs.writeFile(join(outDir, "database.msgpack"), msgpackEncode(database.toJSON()));
+  await fs.writeFile(
+    join(outDir, "database.compact.msgpack"),
+    msgpackEncode(database.toJSON("compact"))
+  );
+  await fs.writeFile(join(outDir, "database.full.msgpack"), msgpackEncode(database.toJSON("full")));
+
   await fs.writeFile(
     join(outDir, "database.xml"),
     database.toXML().toString({ prettyPrint: true })
@@ -122,12 +130,13 @@ async function output(database: Database): Promise<void> {
     JSON.stringify(database.toLegacyJSON())
   );
 
-  console.info(
-    chalk.gray`delete from cz.missing_types where capture_type_id in (${database.types.types
-      .filter(i => i.munzee_id)
-      .map(i => i.munzee_id)
-      .join(",")});`
-  );
+  if (process.env.EXTRA_OUTPUT)
+    console.info(
+      chalk.gray`delete from cz.missing_types where capture_type_id in (${database.types.types
+        .filter(i => i.munzee_id)
+        .map(i => i.munzee_id)
+        .join(",")});`
+    );
 
   console.info(chalk.green`Output generated successfully.`);
   console.info(chalk.blue`Output directory: ${outDir}`);

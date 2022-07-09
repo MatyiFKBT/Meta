@@ -1,5 +1,5 @@
-import { Group } from "../../../src/common/group";
-import { BouncerHostType, BouncerType, ScatterType, TypeTags } from "../../../src/common/type";
+import { Group } from "../../../src/items/group";
+import { BouncerHostType, BouncerType, ScatterType, TypeTags } from "../../../src/items/type";
 import { skyland, treehouse } from "../../normal/destination";
 import { aquamarine, citrine, pinkDiamond, topaz } from "../../normal/jewels";
 import { greenie } from "../../normal/misc";

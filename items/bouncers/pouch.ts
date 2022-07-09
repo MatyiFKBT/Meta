@@ -1,4 +1,4 @@
-import { Group } from "../../src/common/group";
+import { Group } from "../../src/items/group";
 import {
   BouncerHostType,
   BouncerType,
@@ -6,7 +6,7 @@ import {
   TypeHidden,
   TypeSet,
   TypeTags,
-} from "../../src/common/type";
+} from "../../src/items/type";
 import { treehouse, skyland } from "../normal/destination";
 import { joystickPhysical, joystickVirtual, rps, scatter } from "../normal/gaming";
 import {

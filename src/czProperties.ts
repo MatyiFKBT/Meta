@@ -35,17 +35,21 @@ export class CZPropertyItem {
   }
 
   get string() {
-    if (this.include[0] === undefined) {
-      throw new Error(`Missing value for property ${this.key}`);
-    }
-
     return this.include[0];
   }
 
+  get requiredString() {
+    if (this.include[0] === undefined) throw new Error(`Required string not found for ${this.key}`);
+
+    return this.include[0]!;
+  }
+
   get number() {
-    if (this.include[0] === undefined) {
-      throw new Error(`Missing value for property ${this.key}`);
-    }
+    return this.include[0] === undefined ? undefined : Number(this.include[0]);
+  }
+
+  get requiredNumber() {
+    if (this.include[0] === undefined) throw new Error(`Required number not found for ${this.key}`);
 
     return Number(this.include[0]);
   }
@@ -98,6 +102,7 @@ export class CZPropertySet {
     this.usedProperties.add(property);
     this.unusedProperties.delete(property);
   }
+
   private readonly index: number = 0;
 
   private resolveValuesAndApply(key: string, values: string[], inverse: boolean) {

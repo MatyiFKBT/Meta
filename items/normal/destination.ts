@@ -1,5 +1,5 @@
-import { Group } from "../../src/common/group";
-import { TypeTags, Type, TypeHidden } from "../../src/common/type";
+import { Group } from "../../src/items/group";
+import { TypeTags, Type, TypeHidden } from "../../src/items/type";
 import { normalGroup } from "./_index";
 
 export class DestinationRoomsType extends Type {

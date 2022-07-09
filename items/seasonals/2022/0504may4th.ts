@@ -1,4 +1,4 @@
-import { TypeHidden } from "../../../src/common/type";
+import { TypeHidden } from "../../../src/items/type";
 import {
   Year2022SeasonalGroup,
   Year2022SeasonalBouncerType,

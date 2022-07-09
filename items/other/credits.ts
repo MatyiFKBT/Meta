@@ -1,6 +1,6 @@
-import { Group } from "../../src/common/group";
-import { LegacyAccessoryType } from "../../src/common/legacy";
-import { Type, TypeHidden, TypeTags } from "../../src/common/type";
+import { Group } from "../../src/items/group";
+import { LegacyAccessoryType } from "../../src/items/legacy";
+import { Type, TypeHidden, TypeTags } from "../../src/items/type";
 
 export class CreditType extends Type {
   override template(): this {

@@ -1,5 +1,5 @@
-import { Group } from "../../src/common/group";
-import { Type, TypeHidden } from "../../src/common/type";
+import { Group } from "../../src/items/group";
+import { Type, TypeHidden } from "../../src/items/type";
 
 export class OtherType extends Type {
   override template(): this {

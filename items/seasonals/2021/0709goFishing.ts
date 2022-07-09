@@ -3,7 +3,7 @@ import {
   Year2021SeasonalScatterType,
   Year2021SeasonalGroup,
 } from "./_index";
-import { TypeTags, TypeHidden } from "../../../src/common/type";
+import { TypeTags, TypeHidden } from "../../../src/items/type";
 import { seaweed, shark, fish, submarine, canoe, motorboat } from "../../evolutions/education";
 import { aquamarine, sapphire } from "../../normal/jewels";
 import { greenie } from "../../normal/misc";

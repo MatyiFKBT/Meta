@@ -1,5 +1,5 @@
-import { Group } from "../../src/common/group";
-import { Type, TypeHidden, TypeTags } from "../../src/common/type";
+import { Group } from "../../src/items/group";
+import { Type, TypeHidden, TypeTags } from "../../src/items/type";
 import { normalGroup } from "./_index";
 
 export const UniversalGroup = new Group({ name: "Universals" }).addParent(normalGroup);

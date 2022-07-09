@@ -1,6 +1,6 @@
 import { homeGroup } from "../base";
-import { Group, GroupOptions, GroupSeasonalProperties } from "../../src/common/group";
-import { BouncerType, ScatterType, Type, TypeHidden, TypeTags } from "../../src/common/type";
+import { Group, GroupOptions, GroupSeasonalProperties } from "../../src/items/group";
+import { BouncerType, ScatterType, Type, TypeHidden, TypeTags } from "../../src/items/type";
 
 export const seasonalGroup = new Group({
   name: "Seasonal Specials",

@@ -1,4 +1,4 @@
-import { Group } from "../../src/common/group";
+import { Group } from "../../src/items/group";
 
 export const homeGroup = new Group({
   name: "Home",

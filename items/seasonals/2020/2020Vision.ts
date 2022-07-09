@@ -1,5 +1,5 @@
 import { Year2020SeasonalBouncerType, Year2020SeasonalGroup } from "./_index";
-import { TypeTags } from "../../../src/common/type";
+import { TypeTags } from "../../../src/items/type";
 import { greenie } from "../../normal/misc";
 
 export const n2020VisionGroup = new Year2020SeasonalGroup({

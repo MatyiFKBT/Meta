@@ -1,5 +1,5 @@
 import { Year2020SeasonalBouncerType, Year2020SeasonalGroup } from "./_index";
-import { TypeTags } from "../../../src/common/type";
+import { TypeTags } from "../../../src/items/type";
 import { surprise } from "../../normal/gaming";
 import { electricMystery } from "../../normal/mystery";
 import { citrine, onyx } from "../../normal/jewels";

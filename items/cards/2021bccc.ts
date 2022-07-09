@@ -1,5 +1,5 @@
-import { Group } from "../../src/common/group";
-import { TypeHidden, TypeTags } from "../../src/common/type";
+import { Group } from "../../src/items/group";
+import { TypeHidden, TypeTags } from "../../src/items/type";
 import { cardsGroup, CardType } from "./index";
 
 export const Year2021BCCCCardGroup = new Group({ name: "2021 BCCC Cards" }).addParent(cardsGroup);
@@ -23,7 +23,7 @@ export const swagBagCard = new Year2021BCCCCardType("Swag Bag Card", 3132);
 export const commemorativeNapkinCard = new Year2021BCCCCardType("Commemorative Napkin Card", 3133);
 export const sweetRideCard = new Year2021BCCCCardType("Sweet Ride Card", 3134);
 export const greenCarpetCard = new Year2021BCCCCardType("Green Carpet Card", 3135);
-export const pegasusPiñataCard = new Year2021BCCCCardType("Pegasus Piñata Card", 3136).setIcons(
+export const pegasusPinataCard = new Year2021BCCCCardType("Pegasus Piñata Card", 3136).setIcons(
   "pegasuspinatacard",
   "pegasuspiñatacard"
 );

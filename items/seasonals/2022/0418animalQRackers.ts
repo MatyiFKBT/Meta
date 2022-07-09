@@ -1,4 +1,4 @@
-import { TypeHidden, TypeSet } from "../../../src/common/type";
+import { TypeHidden, TypeSet } from "../../../src/items/type";
 import { Year2022SeasonalGroup, Year2022SeasonalBouncerType } from "./_index";
 
 export const animalQRackersGroup = new Year2022SeasonalGroup({

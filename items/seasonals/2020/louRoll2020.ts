@@ -1,5 +1,5 @@
 import { Year2020SeasonalBouncerType, Year2020SeasonalGroup } from "./_index";
-import { TypeTags } from "../../../src/common/type";
+import { TypeTags } from "../../../src/items/type";
 import { flatLou } from "../../normal/flats";
 
 export const louRoll2020Group = new Year2020SeasonalGroup({

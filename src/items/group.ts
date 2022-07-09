@@ -41,7 +41,7 @@ export class Group {
     for (let i = 0; i < 5; i++) {
       const sha = createHash("sha1");
       sha.update(`${human_id}${i}`);
-      const id = parseInt(sha.digest("hex").slice(0, i + 2), 16);
+      const id = parseInt(sha.digest("hex").slice(0, i + 4), 16);
       if (!this.ids.has(id)) {
         this.ids.add(id);
         return id;
@@ -130,26 +130,6 @@ export class Group {
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   template(): void {}
-
-  toCZM(compact?: boolean): string {
-    const data = [`d${this.id.toString(36)}`, `n${this.name}`];
-
-    data.push(`o${this.icons.join(".")}`);
-
-    if (!compact || this.human_id !== this.name.toLowerCase().replace(/\s/g, "_"))
-      data.push(`i${this.human_id}`);
-
-    if (this.seasonal) {
-      data.push(`sy${this.seasonal.year.toString(36)}`);
-      data.push(`ss${new Date(this.seasonal.starts).valueOf().toString(36)}`);
-      data.push(`se${new Date(this.seasonal.starts).valueOf().toString(36)}`);
-    }
-
-    if (this.parents.length > 0)
-      data.push(`p${this.parents.map(i => i.id.toString(36)).join(".")}`);
-
-    return data.join("|");
-  }
 
   toJSON(variant?: "regular"): Omit<GroupData, "details">;
   toJSON(variant: "full"): GroupData;

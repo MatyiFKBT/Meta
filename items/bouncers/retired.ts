@@ -1,5 +1,5 @@
-import { Group } from "../../src/common/group";
-import { BouncerType, TypeState, TypeTags } from "../../src/common/type";
+import { Group } from "../../src/items/group";
+import { BouncerType, TypeState, TypeTags } from "../../src/items/type";
 import { skyland, treehouse } from "../normal/destination";
 import { joystickPhysical, joystickVirtual } from "../normal/gaming";
 import { sapphire } from "../normal/jewels";

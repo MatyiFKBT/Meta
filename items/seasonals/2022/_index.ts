@@ -1,9 +1,9 @@
-// import { Group } from "../../src/common/group";
-// import { BouncerType, ScatterType, Type, TypeTags } from "../../src/common/type";
+// import { Group } from "../../src/items/group";
+// import { BouncerType, ScatterType, Type, TypeTags } from "../../src/items/type";
 
 import { homeGroup } from "../../base";
-import { Group } from "../../../src/common/group";
-import { TypeTags } from "../../../src/common/type";
+import { Group } from "../../../src/items/group";
+import { TypeTags } from "../../../src/items/type";
 import {
   SeasonalBouncerType,
   SeasonalPOBType,

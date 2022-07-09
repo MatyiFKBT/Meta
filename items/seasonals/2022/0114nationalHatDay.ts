@@ -1,5 +1,5 @@
 import { Year2022SeasonalGroup, Year2022SeasonalBouncerType } from "./_index";
-import { TypeTags, TypeSet } from "../../../src/common/type";
+import { TypeTags, TypeSet } from "../../../src/items/type";
 import { greenie } from "../../normal/misc";
 
 export const nationalHatDayGroup = new Year2022SeasonalGroup({

@@ -3,7 +3,7 @@ import {
   Year2021SeasonalScatterType,
   Year2021SeasonalGroup,
 } from "./_index";
-import { TypeTags } from "../../../src/common/type";
+import { TypeTags } from "../../../src/items/type";
 import { calf, cow, milk, bacon, pig, piglet } from "../../evolutions/farm";
 import { bagofCoins, coin, treasureChest } from "../../evolutions/reseller";
 import { treehouse, skyland } from "../../normal/destination";

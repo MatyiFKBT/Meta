@@ -1,5 +1,5 @@
-import { Group } from "../../src/common/group";
-import { TypeTags } from "../../src/common/type";
+import { Group } from "../../src/items/group";
+import { TypeTags } from "../../src/items/type";
 import { cardsGroup, CardType } from "./index";
 
 export const OpenCardGroup = new Group({ name: "Open Cards" }).addParent(cardsGroup);

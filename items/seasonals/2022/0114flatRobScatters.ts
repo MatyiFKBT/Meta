@@ -1,4 +1,4 @@
-import { TypeSet } from "../../../src/common/type";
+import { TypeSet } from "../../../src/items/type";
 import { Year2022SeasonalScatterType, Year2022SeasonalGroup } from "./_index";
 
 export const flatRobScattersGroup = new Year2022SeasonalGroup({

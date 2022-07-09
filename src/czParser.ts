@@ -2,8 +2,8 @@ import nearley from "nearley";
 import grammar from "./grammar";
 import fs from "node:fs";
 import { Database } from "./database";
-import { ScatterType, Type, TypeHidden, TypeState, TypeTags } from "./common/type";
-import { Group } from "./common/group";
+import { ScatterType, Type, TypeHidden, TypeState, TypeTags } from "./items/type";
+import { Group } from "./items/group";
 import { CZPropertyItem, CZPropertySet } from "./czProperties";
 import { checkType } from "./build";
 
@@ -126,13 +126,13 @@ class CZFileParser {
         case "name":
           break;
         case "seasonal.year":
-          group.setSeasonalYear(property.number);
+          group.setSeasonalYear(property.requiredNumber);
           break;
         case "seasonal.start":
-          group.setSeasonalStart(property.string);
+          group.setSeasonalStart(property.requiredString);
           break;
         case "seasonal.end":
-          group.setSeasonalEnd(property.string);
+          group.setSeasonalEnd(property.requiredString);
           break;
         case "parents":
           group.setParents(property.references);

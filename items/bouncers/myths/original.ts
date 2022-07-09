@@ -1,5 +1,5 @@
-import { Group } from "../../../src/common/group";
-import { BouncerHostType, BouncerType, TypeTags } from "../../../src/common/type";
+import { Group } from "../../../src/items/group";
+import { BouncerHostType, BouncerType, TypeTags } from "../../../src/items/type";
 import { coin } from "../../evolutions/reseller";
 import { skyland, treehouse } from "../../normal/destination";
 import { amethyst } from "../../normal/jewels";

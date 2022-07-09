@@ -1,5 +1,5 @@
 import { Year2021SeasonalBouncerType, Year2021SeasonalGroup } from "./_index";
-import { TypeState, TypeTags } from "../../../src/common/type";
+import { TypeState, TypeTags } from "../../../src/items/type";
 import { farmer, family, garden, field, farmerandWife, pottedPlant } from "../../evolutions/farm";
 import { greenie } from "../../normal/misc";
 import { mystery } from "../../normal/mystery";

@@ -1,5 +1,5 @@
 import { Year2020SeasonalGroup, Year2020SeasonalPOBType } from "./_index";
-import { TypeTags } from "../../../src/common/type";
+import { TypeTags } from "../../../src/items/type";
 import { skyland, treehouse } from "../../normal/destination";
 import { greenie } from "../../normal/misc";
 import { waterMystery, electricMystery, iceMystery } from "../../normal/mystery";

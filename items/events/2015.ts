@@ -1,5 +1,5 @@
 import { eventGroup, EventType } from "./_index";
-import { Group } from "../../src/common/group";
+import { Group } from "../../src/items/group";
 
 export const year2015EventsGroup = new Group({
   name: "2015 Events",

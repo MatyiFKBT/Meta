@@ -4,7 +4,7 @@ import {
   EvolutionTypeSet,
   TypeHidden,
   TypeTags,
-} from "../../src/common/type";
+} from "../../src/items/type";
 import { treehouse, skyland } from "../normal/destination";
 import { greenie, trailMunzee } from "../normal/misc";
 import { earthMystery, waterMystery } from "../normal/mystery";
