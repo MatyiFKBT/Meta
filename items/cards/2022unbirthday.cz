@@ -9,6 +9,11 @@ template UnBirthdayMailboxCard from Card {
     hidden + Inventory
 }
 
+template UnBirthdayMailboxScatter from Scatter {
+    groups = 2022 UnBirthday Mailbox Cards
+    standalone
+}
+
 UnBirthdayMailboxCard {
     name = $1
     id = $2
@@ -24,3 +29,8 @@ UnBirthdayMailboxCard {
     Doorknob Card, 3871
     Oysters Card, 3872
 ]
+
+UnBirthdayMailboxScatter {
+    name = Drink Me Potion
+    id = 3896
+}

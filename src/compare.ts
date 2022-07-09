@@ -4,6 +4,7 @@ import fetch from "node-fetch";
 import fs from "node:fs";
 import path from "node:path";
 import fjss from "fast-json-stable-stringify";
+import chalk from "chalk";
 
 (async function () {
   const newDB = JSON.parse(
@@ -28,18 +29,18 @@ import fjss from "fast-json-stable-stringify";
 
   for (const type of oldDBTypes.keys()) {
     if (!newDBTypes.has(type)) {
-      console.log(`Missing type ${type} in new DB`);
+      console.log(chalk`{gray [}{red Removed}{gray ]} ${type}`);
     }
   }
 
   for (const type of newDBTypes.keys()) {
     if (!oldDBTypes.has(type)) {
-      console.log(`Missing type ${type} in old DB`);
-    }
-    if (oldDBTypes.get(type) !== newDBTypes.get(type)) {
-      console.log(`Type ${type} has changed`);
-      console.log(`Old: ${oldDBTypes.get(type)}`);
-      console.log(`New: ${newDBTypes.get(type)}`);
+      console.log(chalk`{gray [}{green Added}{gray ]} ${type}`);
+      console.log(chalk.italic.gray`${newDBTypes.get(type)}`);
+    } else if (oldDBTypes.get(type) !== newDBTypes.get(type)) {
+      console.log(chalk`{gray [}{blue Edited}{gray ]} ${type}`);
+      console.log(chalk.gray.italic`Previously:\n${oldDBTypes.get(type)}`);
+      console.log(chalk.gray.italic`Now: \n${newDBTypes.get(type)}`);
     }
   }
 })();

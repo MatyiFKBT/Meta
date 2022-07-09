@@ -29,6 +29,8 @@ jobs:
       - name: "Build Database"
         run: |
           pnpm build-check
+        env:
+          FORCE_COLOR: 2
       - name: "Zip Output"
         run: |
           cp LICENSE output/LICENSE
