@@ -113,7 +113,13 @@ for_item -> comma_separated_item (_nll properties):? {%
 
 comma_separated_item -> comma_separated_item _nll comma _nll item {% d => ([...d[0], d[4]]) %} | item
 
-item -> [^\,\n\{\s] ([^\,\n\{]:* [^\,\n\{\s]):? {% d => [d[0].value, d[1]?.[0].map((i:any) => i.value).join(""), d[1]?.[1].value].filter(i => i).join("") %}
+item -> non_ws_char (char:* non_ws_char):? {% d => [d[0], d[1]?.[0].join(""), d[1]?.[1]].filter(i => i).join("") %}
+
+non_ws_char -> [^\,\n\{\s\\] {% d => d[0].value %} | escaped_char
+
+char -> [^\,\n\{\\] {% d => d[0].value %} | escaped_char
+
+escaped_char -> "\\" [^] {% d => d[1].value %}
 
 # Aliases
 property_operation -> %property_operation

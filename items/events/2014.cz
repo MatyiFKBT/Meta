@@ -1,0 +1,67 @@
+Group {
+    name = 2014 Events
+    parents + Events
+}
+
+Event {
+    name = $1
+    id = $2
+} for [
+    Paris Cache Bash, 93
+    MM3, 95
+    MM3 event, 96
+    Dinner, 98
+    Original Unicorn, 100 {
+        icons = unicorn
+    }
+    AWFC 5k, 122
+    Geowoodstock 2014, 124
+    FoodTruckFrenzy, 125
+    MWMB, 126
+    Spacecoast, 128
+    Obi Cal, 129
+    Butte, 130
+    EAA, 132
+    1111 days, 136
+    Rob's Return, 137 {
+        icons = rob'sreturn, robsreturn
+    }
+    2nd Europe Event, 138
+    Munzilla Event, 139
+    SoCal MunzeeCon, 141
+    Worlds Collide Seattle, 142
+    Mass Munzee Mania 2014, 143
+    Kalispell 2014, 144
+    GCHR 2014, 145
+    HHME, 147
+    Rheinischer Stammtisch IV, 149
+    Springtime Scrounge 2014, 150
+    Munzeeween 2014, 151
+    Berlin 2014, 152
+    First Of Many, 153
+    UMMG 2014, 154
+    Owloween, 155
+    Big Little Event 2014, 156
+    Worlds Collide Vegas, 158
+    Camporee 2014, 159
+    Jersey Arts Quest 2014, 160
+    Space Coast MunzeeFest, 163
+    Duck Dynasty 2014, 164
+    Chestnut Ghost Walk, 165
+    Midwest Munzee Madness 2014, 167
+    Turkey Trot 2014, 168
+    Munzeetreffen in Berlin 2014, 169
+    Frisian, 172
+    Kings Bridge, 173
+    Sonoran Desert Showdown, 174
+    Capping The Coast 2014, 175
+    Moojahunt, 176
+    Luxembourg greetz Berlin 2014, 177
+    Cookie Crumbles 2014, 178
+    Merry Munzmas 2014, 179
+    Beary Merry Munzmas 2014, 180
+    Mission Bay 2014, 182
+    WDW 2014, 183
+    Wintertraum Stuttgart, 184
+    Gluehwein am Dom, 185
+]

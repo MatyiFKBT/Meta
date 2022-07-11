@@ -1,0 +1,20 @@
+Group {
+    name = 2012 Events
+    parents + Events
+}
+
+Event {
+    name = $1
+    id = $2
+} for [
+    MOGA, 12
+    Landmachtdagen, 14
+    Meet and Greet Netherlands, 16
+    Minnesota Meetup, 18
+    Canada SWARM, 19
+    H2OKlan 100K, 20
+    Marine Days, 21
+    Hamburg BBQ, 23
+    WA Munzee Event, 24
+    St Louis Car Race, 26
+]

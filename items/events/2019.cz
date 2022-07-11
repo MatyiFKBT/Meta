@@ -1,0 +1,294 @@
+Group {
+    name = 2019 Events
+    parents + Events
+}
+
+Event {
+    name = $1
+    id = $2
+} for [
+    Happy New Year 2019 Space Coast, 1718
+    Bon Voyage KlassicKelly, 1719
+    Let the Sunshine Commence, 1720
+    Suncoast Hello, 1721
+    Suncoast In the Park, 1722
+    Suncoast morning in Dade City, 1723
+    AL Unicorn Watchers Society - 2019, 1748
+    Australia Day 2019, 1749
+    Australia Day 2019 in the West, 1750
+    FL - Eagle Lake Coexisting, 1751
+    Blast in the Park, 1757
+    Groundhog's Day in Texas, 1758
+    Yuma Weekend Meet and Greet, 1759
+    Small Town Event Venice\, FL, 1769
+    FL - Campfire on the Lake, 1771
+    GA - The Devil Went Down To Folkston, 1772
+    GeoBuddies & Burgers - CoExist, 1773
+    FL - Hike n Seek Munzee, 1807
+    San Antonio\, TX St. Patrick's Day early, 1808
+    MM8: Monkzee Madness, 1809
+    MM8: Monkzee Madness Dinner, 1810
+    Leaving on a Jet Plane---Destination: Hawaii, 1811
+    Leaving on a Jet Plane---Destination: Alaska, 1812
+    Leaving on a Jet Plane---Tour de Cape, 1813
+    MM8: Rally Day Breakfast, 1814
+    MM8: Rally Day Dinner, 1815
+    MM8: Stage 1, 1816
+    MM8: Stage 2, 1817
+    MM8: Stage 3, 1818
+    MM8: Stage 4, 1819
+    MM8: Stage 5, 1820
+    Planes\, Trains and Munzeemobiles, 1821
+    TO THE MOON, 1822
+    TX - Small Town Event Seguin, 1823
+    MA - Swing Into Spring, 1832
+    Polk County Munzee Frenzee 1, 1833
+    FL - Port of Call - Munzee, 1834
+    April Event 2019, 1835
+    Jolly Dipper, 1849
+    April in Alabama 2019 Thursday night meet & greet, 1859
+    Activities in the Park - Craigmuir Lake, 1860
+    Birmingham\, Alabama - April Fool's Lunch, 1861
+    April in Alabama 2019 Friday on my mind, 1862
+    (NC) - April in Apex, 1863
+    April in Alabama 2019-Good day sunshine, 1864
+    April in Alabama 2019-Main event, 1865
+    April in Alabama 2019-Saturday night, 1866
+    Budapesti Bolondos Húsvét, 1867
+    April in Alabama 2019-Happy Trails, 1868
+    Aprillia syö silliä!, 1869
+    Berliner Aprilscherz, 1870
+    It's a Trick! A Wholly Foolish Trick!, 1871
+    Munzee April Fools Workum, 1872
+    Weston’s FOOLISH Emerald Gardens, 1873
+    Vodacom Scavenger Hunt!, 1879
+    Is The Snow Gone Yet?, 1881
+    Lost Myth Raid - Capture the BigOrangeTruck, 1882
+    Maryland Jokers Wild, 1883
+    Onion Creek Jamboree, 1884
+    SC: April Fudds Day, 1885
+    Spring Into the Desert, 1886
+    To Spring\, or not to Spring? That is the question, 1887
+    Rock the Ring, 1888
+    Lost Myth Raid, 1889
+    HELLsinki Easter II, 1898
+    CuriosiTea 3 - 2019 Easter Event, 1899
+    FL - Hop Around Rotary Park, 1900
+    prague 2019 easter, 1901
+    Unicorn April Madness, 1902
+    Kvibergs påskevent, 1903
+    Fool me once, 1904
+    Jack in the box, 1905
+    Stop fooling around and have a drink!, 1906
+    P n P, 1907
+    (NC) April Fool event, 1908
+    1. Event in Basel, 1909
+    April in Orlando, 1910
+    ClownZEEvent Kalø Slotsruin, 1911
+    Fooling Around in KC, 1912
+    (PA) Foolish Fun For All, 1913
+    MA - Never Too Late To Be A Fool, 1914
+    Munzee Mania 2019 -- Pizza Party, 1922
+    May the Fourth Be With You - 2019 Star Wars Day, 1923
+    Munzee Mania 2019 -- Main Event, 1924
+    3e Twente Event (2019), 1925
+    Munzee Mania 2019 -- Bagels & Coffee, 1926
+    Fort Madison\, IA Armed Forces Day, 1930
+    Werner Bredebusch vs. James Bond, 1931
+    All Roads Lead to Woodstock, 1932
+    ASP Munzee Bash, 1933
+    IN - Small Town Terre Haute, 1934
+    MO - Tuesday Night at Denny's, 1935
+    KS - Small Town Event Wichita, 1936
+    Fort Worth Rootin’ Tootin’ Munzee Roundup, 1937
+    2nd Plane Spotting Event, 1938
+    Ghostbusters@Kelsterbach, 1939
+    TX - Cheer(s)!, 1940
+    TX - Longhorns Like Chipotle Too\, Right?, 1941
+    Pre-MunzStock 2019, 1946
+    GeoWoodstock 2019, 1947
+    MHQ Open House GWS '19, 1948
+    GeoMunzstock 2019, 1949
+    NC-Greenville Munzee Wind Down, 1974
+    8th Birthday, 1975
+    Bonn 2019 1/2, 1979
+    Bonn 2019 2/2, 1980
+    FL - A Father's Day Celebration, 1981
+    High Ore Line Trail Meet-Up, 1982
+    Menudo & Munzee, 1983
+    2x the Celebration Budapest, 1984
+    Back to the Future 80's Birthday Celebration, 1990
+    David joins the Millionaires Club!, 1991
+    A Munzee Pow Wow, 1992
+    Berliner M8 Geburtstagsevent, 1993
+    Water Works, 1994
+    MWMB 2019, 2001
+    Matt's Munzee Meetup - MHQ, 2009
+    CT - Dogs In The Park, 2019
+    Munzee's birthday in Adelaide - 80s style!, 2020
+    Crossroads USA-1, 2021
+    OH - After the Bash Munzee Event, 2022
+    Crossroads USA 2, 2023
+    Somerset Cider Bash - Taunton 1, 2024
+    Somerset Cider Bash - Taunton 2, 2025
+    Somerset Cider Bash - Burnham on Sea, 2026
+    Somerset Cider Bash - Highbridge, 2027
+    Aarhus 2019, 2028
+    Bowlr's 63rd and Munzee's 8th Birthday, 2029
+    DK: Munzee meets Djursland - Birthday party 1/4, 2030
+    DK: Munzee meets Djursland - Birthday party 2/4, 2031
+    DK: Munzee meets Djursland - Birthday party 3/4, 2032
+    CRAZY 8 - A St. Paul Munzee Birthday Celebration, 2033
+    Dog Days of Summer \#5, 2034
+    Ein Bonner in Bielefeld, 2035
+    Syntt8rieventti, 2036
+    Munzee 8th Birthday Debrecen, 2037
+    Maryland Munzee Birthday Celebration, 2038
+    Happy 8th Birthday - Workum, 2039
+    Cedar Rapids Good Morning 8th Birthday Party, 2040
+    4th Annual Cedar Rapids Birthday Bash, 2041
+    LGAS - Back to the 80s Birthday in Shepparton, 2042
+    Matt's Munzee Meetup - MWMB 2019, 2043
+    DK: Munzee meets Djursland - Birthday party 4/4, 2044
+    All U Can Eat Munzee B'day, 2045
+    Matt's Munzee Meetup - Denmark Birthday 2019, 2048
+    Matt's Munzee Meetup - CRAZY 8, 2049
+    Celebrate Munzee 8th Birthday at the Bash!!, 2050
+    8udapest - Munzee Szülinap, 2056
+    CRAZY 8 -Bee Walla Crazy, 2057
+    CaverScott joins the Millionaires Club!, 2058
+    Munzee 8th Birthday in California, 2059
+    LGAS West Coast Florida, 2060
+    🌺 4th Annual Birthday Luau 🌺, 2061
+    TX: National S'more(Munzee)s Day, 2062
+    CRAZY 8 - A Mpls. Munzee Birthday Celebration, 2063
+    LGAS KC Celebration, 2064
+    MA - Small Town Sturbridge, 2098
+    Yorkshire's 8th Birthday Party, 2099
+    G'day y'all, 2100
+    Celebrate 8 years with RebelGTP at Sheetz, 2101
+    Totally Awesome Munzee Birthday in KC, 2102
+    StL 2: Pirate Bash, 2103
+    8-vuotissynttärieventti, 2104
+    Sommerevent "Im Hain" by Munzeeclan LM, 2105
+    HELLsinki Goes Espoo!, 2115
+    (NC) Munzee 8th Birthday celebration, 2116
+    M8th Partille Stadsparken, 2117
+    WI - Small Town West Bend, 2123
+    Bowlrswife birthday and meet the clan event, 2127
+    FL - Small Town Dade City, 2128
+    Greer Munzee Hunt III, 2129
+    The Perfect Munzee Day - Greer Munzee Hunt III, 2130
+    VA - Woodbooger Small Town Event, 2131
+    1 NC Munzee Festival 2019 - Royal Ball, 2132
+    2 NC Munzee Festival 2019, 2133
+    3 NC Munzee Festival 2019 - Crowning Glory, 2134
+    FL Bikini & Speedo Beach Party, 2135
+    Florida Happy Hour!, 2136
+    Munzee Bash in The Villages\, FL, 2137
+    NJ- Small Town Stanhope 3, 2138
+    StL 1: Talk like a Pirate, 2146
+    Autumn Wave 2, 2147
+    StL 3: Pirates Love Tacos, 2148
+    LA - Small Town Houma Bayou Country, 2149
+    Bye Bye Bash 2019, 2150
+    It's Spookier Out West!, 2151
+    BHAM September Munzee Lunch, 2152
+    MHQ Bash 2019 Registration, 2153
+    MHQ Bash 6 Eventzee Fun, 2154
+    MHQ Bash 6 and WallaBash, 2155
+    Knight's Goblet 2019, 2156
+    The King's Fork, 2157
+    MHQ Bash 6 Fitness, 2158
+    Halloween i Hobro 2019, 2159
+    Rome\, GA Munzee Meet-Up, 2160
+    Texas Halloween 2019, 2161
+    Prattville's Spooky Gathering, 2162
+    Fright Night in KC, 2163
+    Hallo Budapest\, Halloween, 2164
+    A Ghoulish Good Time, 2165
+    BHAM Spooky Scary Lunch, 2166
+    Halloween Turku 2019, 2167
+    Munzee Day Startup\, Spartanburg, 2168
+    Chillin at the IHOP, 2169
+    A Haunting in Hampton, 2170
+    Des Moines Spooktacular Halloween, 2171
+    A Maryland Munzoween Spooktacular, 2172
+    Halloween Kaffinami, 2173
+    Say Boo and Munzee on (Berlin), 2174
+    Halloween Party Workum 2019, 2175
+    Dia de los Munzees, 2176
+    HOT DIGGITY DOG, 2177
+    Florida Frankenweenie, 2178
+    Halloween in Lithuania 2019, 2179
+    McDougall Ghosts and Goblins, 2180
+    Zauberhafte TraubenleZEE - Event 1, 2181
+    Spooktacular TomKatZEE - Event 2, 2182
+    Witch\, Please, 2185
+    Tomcat Caterwaul, 2186
+    Ghouls in Orlando, 2187
+    Goblins for Dinner in Orlando, 2188
+    All Hallows in the Rye, 2189
+    Batty Mexican, 2190
+    October Pumpkin Fest, 2191
+    A Water-Halloween-Town Event, 2192
+    Spooky Mawson Lakes \#2, 2193
+    YMH Halloween 2019, 2194
+    Pick your poison in the AL River Region, 2195
+    Meeting New & "Scary" Friends, 2198
+    Zombies are still eating my Munzees, 2199
+    Caterwauling Hallow-ZEEn 2, 2200
+    Possibly poisonous potions, 2201
+    Halloween 2019 - Praha, 2202
+    New England MunzFest: Meet & Greet, 2203
+    New England MunzFest: Saturday AM, 2204
+    New England MunzFest: Saturday Afternoon, 2205
+    New England MunzFest: Saturday P.M. - Think Pink, 2206
+    New England MunzFest: Sunday AM, 2207
+    Gettin' Spooky in Watertown!, 2208
+    THE GOLDEN HIND AT BRIXHAM, 2225
+    (NC) Halloween, 2226
+    The black cats bewitchment, 2227
+    KY - Small Town Georgetown Spooktacular, 2231
+    Pa-le Halloween 2019, 2232
+    Alabama River Region Pumpkin Splash, 2233
+    Bewitched in the Alabama RR, 2234
+    A Scary Good Time on the River, 2235
+    Falling For You in Kansas City, 2236
+    Putt loves Candy, 2237
+    BHAM Goblins & Gyros, 2238
+    Autumn is Finally Here & Someone is Turning 51!, 2239
+    Meet en Greet Lelystad, 2250
+    Celebrate Rosieree!!, 2251
+    Black Friday at Kiwanis Island Park, 2260
+    Berliner Weihnachtsevent 2019, 2261
+    Darmstädter WeihnachtZEEvent 2019, 2262
+    A Bluegrass Christmas, 2263
+    Let's Get ChristmasZee 3 - Main Event, 2264
+    Christmas at the Ranch, 2265
+    Arizona Munzee Stocking Stuffer, 2266
+    Season's Greeting from Sanibel, 2267
+    Adelaide Christmas '19, 2268
+    Munzee Karácsony 2019, 2269
+    Sukkerfeens julebal, 2270
+    Nissernes æggesnapsefest, 2271
+    Christmas at Exmouth, 2272
+    Merry Jason-mas On Friday The 13th, 2274
+    Brandon Candy Cane, 2275
+    TX: I Want a Hippopotamus for Christmas, 2276
+    O-H-I-O Christmas Celebration, 2277
+    Kansas City's Merry Christmoose, 2278
+    KC's Holiday Cheer at the Zoo, 2279
+    Cookies on Milk - 2019, 2280
+    AL RR Christmas 2019, 2281
+    Fast Christmas in Goslar, 2321
+    (NC) Christmas in North Carolina, 2322
+    2019 SoCal Munzee Christmas Event, 2323
+    It's a Dirty Job\, Santa, 2324
+    A Charlie Brown Christmas 2019, 2325
+    Het west-Friese Geuzen Kerst event, 2326
+    amsterdam christmas 2019, 2327
+    2019 Merry Christmas in Korea, 2328
+    Frosty the Snowman meets the Grinch, 2329
+    ZH Oberland Weihnachtsevent, 2330
+]

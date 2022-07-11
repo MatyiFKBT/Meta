@@ -1,0 +1,282 @@
+Group {
+    name = 2016 Events
+    parents + Events
+}
+
+Event {
+    name = $1
+    id = $2
+} for [
+    NH Capricorns Rule 2016, 413
+    Suncoast II, 414
+    A Very Merry Unbirthday 2016, 415
+    DCMDVA iamfull 1000 days, 416
+    Rise and Shine FL 2016, 417
+    NE meet and greet 2016, 418
+    Stammtisch Lueneburg Jan 2016, 419
+    TX Australia Day 2016, 420
+    Las Vegas Meet and Greet 2016, 421
+    Australia Day 2016, 422
+    Celebrate Munzee FL 2016, 423
+    Have a Heart Blood Drive 2016, 424
+    Be My Munzeetine 2016, 425
+    Munzee Lovers Meet Up 2016, 426
+    Will you Be Mine 2016, 427
+    By the ZeeSide 2016, 428
+    MM Cocoa Beach Grand Opening, 430
+    Workum2Berlin 2016, 431
+    One More Day 2016, 432
+    Leaping DudeClan Munzees, 433
+    Eggzee Hunt Prague I, 434
+    Eggzee Hunt Prague II, 435
+    Eggzee Hunt Prague III, 436
+    Eggscellent Mun Z Q 2016, 437
+    Celle and the Easter Bunny 2016, 438
+    Beyond The Pale 2016, 439
+    KC Easter Eggstravaganza 2016, 445
+    Alabama River Region Easter Parade, 446
+    A Walk along the Trails 2016, 447
+    KC Wake You Up, 448
+    NTX Fuzzy Bicentennial, 449
+    Tidewater Munzee SPDP 2016, 450
+    Double the Fun in London 2016, 451
+    Easter Eggs in Hannover, 452
+    Hop Skip Jump, 453
+    Orimattila 2016, 454
+    Easter in Budapest 2016, 455
+    SAPpalot Easter 2016, 456
+    Yorkshire Easter Party 2016, 457
+    First Day of Spring Eggstravaganza, 458
+    Easter Eggcitement 2016, 459
+    Prague 2016, 460
+    Transatlantic Eggstravaganza USA, 461
+    Transatlantic Eggstravaganza UK, 462
+    Suncoast Spring Fling 2016, 463
+    Joe Pool Lake Event 2016, 464
+    Hopping around Spartanburg 2016, 465
+    PA Easter Celebration 2016, 466
+    DEoEaster 2016, 467
+    Pask i Linkoping 2016, 468
+    Overcooked Ham 2016, 469
+    Sydney Easter Parade 2016, 472
+    Munzee Meeting Chemnitz 2016, 473
+    NE MunzEaster Games 2016, 474
+    NC Spring Fling 2016, 475
+    Malvern Egg Hunt UK 2016, 476
+    Munzee Warriors Easter 2016, 477
+    DK Ringsted Event 2016, 478
+    NTX Qrazy Unicorn Pageant 2016, 479
+    Drammunzee 2016, 480
+    Omaha Spring Fling 2016, 481
+    NorCal Easter 2016, 482
+    Hunt for the Franklin Beast 2016, 483
+    DK Easter 2016, 484
+    Franklin Evening Celebration 2016, 485
+    Exploring Middle Tennessee 2016, 486
+    Shepparton Easter Egg Hunt 2016, 487
+    Welcome To Franklin 2016, 488
+    Easter Lake Celebration 2016, 489
+    Easter Event Amsterdam 2016, 490
+    Spring Fling 2, 491
+    Wisconsin Easter Parade 2016, 492
+    Wilderness Easter 2016, 493
+    Easter MunzEgg Darlington 2016, 494
+    Hop on over to the Beach 2016, 495
+    Father Christmas, 507
+    Munzee Nation Assembly, 517
+    Food Truck Fandango, 518
+    Munzee Madness V, 519
+    Easter Bunny, 520
+    2nd Annual Munzee 4a Cure, 528
+    Melbourne Australia Welcomes Florida 2016, 529
+    Blast in the Park \#3, 530
+    May the 4th 2016, 531
+    Discover Mint Hill 2, 533
+    MunzFit Prague 2016, 534
+    Perth Welcomes Florida Down Under, 535
+    May Munzee Meet/Greet/Cap/Eat at Barbers Crossing, 551
+    Mike's Celebration of Life, 552 {
+        icons = mike'scelebrationoflife, mikescelebrationoflife
+    }
+    Munzfit Celle I, 553
+    Munzfit Celle II, 554
+    Stammtisch Celle, 555
+    Meet at the Moat!, 556
+    5-1-1 Who You Gonna Call?, 557
+    Helluntain hulinat, 558
+    DK: Munzee paa Fur, 559
+    MunzFit London, 561
+    MWMB Friday Night Hangout, 562
+    Lommel Event 2016 @ Belgium, 563
+    Midwest Munzee Bash '16, 564 {
+        icons = midwestmunzeebash'16, midwestmunzeebash16
+    }
+    Vote for GOF, 565
+    Munzee Marketplace CB Ribbon Cutting, 566
+    Grand Opening...take 3, 567
+    Virginia 2016, 569
+    On the Bike Trail, 570
+    Robicorn, 572
+    GW XIV, 575
+    GeoWoodstock 14er, 579
+    WE ARE 5, 580
+    Mile High MunzBrews, 581
+    Rocky Sunrise, 582
+    Fare thee well, 583
+    Hämäläisten käynnistys..., 585
+    Mile High Mischief, 586
+    Munzee 5zülinap - Birthday Party Budapest, 587
+    A Berlin Munzters Birthday Party, 588
+    Canada Day/Munzee/Independence Day Birthday Bash, 589
+    DK\, Ringsted - Halvrund fødselsdag, 590
+    IA- Party on the Banks!, 591
+    Munzee 5th Birthday in Plymouth, 592
+    NH - Birthday In The Park, 593
+    Orimattila - Munzee Birthday Party 2016, 594
+    RNK MM IV - 5th Birthday, 595
+    happy fifth birthday, 596
+    Gratulerer med 5-års dagen\, Munzee!, 597
+    !5th Birthday Celebrations in Shepparton!, 602
+    5th Birthday Bonn, 603
+    WI Birthday Luau, 604
+    Munzee's 5th Birthday Event OC, 605 {
+        icons = munzee's5thbirthdayeventoc, munzees5thbirthdayeventoc
+    }
+    Birthday in the Park, 606
+    X Marks the Spot, 607
+    DK Munzee 5th Birthday Dinner, 608
+    Hannover Birthday Party, 609
+    Hannover Birthday Party Afternoon, 610
+    Munzee's 5th Birthday in Leeds, 611 {
+        icons = munzee's5thbirthdayinleeds, munzees5thbirthdayinleeds
+    }
+    DK Munzee 5th Birthday, 612
+    London 5th Birthday Event, 613
+    A Kick Start, 614
+    Cedar Rapids Birthday Bash, 615
+    Berkshire Munzee Birthday Bash, 616
+    Alabama Munzee 5th Birthday, 617
+    An "Uncommon" Birthday, 618
+    Melbourne's Midwinter Munzfest 2, 619 {
+        icons = melbourne'smidwintermunzfest2, melbournesmidwintermunzfest2
+    }
+    Birthday Bash by DRV Clan, 620
+    Kent 5th Birthday Bash, 621
+    PA - Happy Birthday Munzee, 622
+    FL Munzee Birthday Celebration, 623
+    Birthday Extravaganza 2.0, 624
+    Celebrating The Toledo Zoo, 625
+    Explore Faribault MN, 626
+    Kansas City Munzee Birthday Bash 2016, 627
+    Sydney Dinner, 628
+    Warriors Birthday, 629
+    The 'Weir"d Hatters Tea Party, 630 {
+        icons = the'weir"dhattersteaparty, theweirdhattersteaparty
+    }
+    Munzee Turns 5 Sydney 2016, 631
+    WNY Birthday Gathering, 632
+    Adelaide 5th Birthday Event, 633
+    (NC)Drive 95, 634
+    Halberstadt M5, 635
+    Madison\, WI 2016, 636
+    Pinellas FAT CAT Birthday Bash, 637
+    Spartanburg Celebrates Munzee's 5th, 638 {
+        icons = spartanburgcelebratesmunzee's5th, spartanburgcelebratesmunzees5th
+    }
+    Stammtisch Halberstadt, 639
+    Florida's Flip Flop to the beach, 640
+    Best Fest 2016, 641
+    Hey Hey We're The Munzeers, 642
+    1st Social Southend, 643
+    Dog Days of Summer II, 644
+    MarkCase, 645
+    Questing for Questing4, 647
+    Coexisting on Sanibel Island 17 year Celebration, 648
+    LILYGRIMALDI'S Garden party, 649
+    Munzeeing Hampton Roads 2016, 652
+    Labor Day at the Beach, 653
+    California Admission Day Celebration, 654
+    IA-Cedar Rapids Clan Rivalry Day, 655
+    Kidney Health Research Walk 2016, 656
+    Worcester Poodle Party, 657
+    Jibby? Friday Night Jibby! - JibbyFest 2016, 670
+    Jibby! - JibbyFest 2016 Euro, 671
+    Jibby! Jibby! - JibbyFest 2016, 672
+    MunzCamp 2016\, Waypoint 1, 673
+    MunzCamp 2016\, Waypoint 2, 674
+    Jibby! Breakfast Jibby! - JibbyFest 2016 Date: 20, 675
+    Lincoln's 1st Event, 676
+    Deutschland feiert, 677
+    Gothenburg: Göta Explosion 2016, 683
+    A Munzee GEM Event, 688
+    Snail Lake Park ~ Fall Into Munzee!, 689
+    Greer Munzee Hunt, 690
+    N.E Trickzee or Treatzee Spooktacular Event, 691
+    St. Louis Mega Munzeefest, 692
+    NorthEast Great Pumpkin Bash, 693
+    FL Suncoast Spooktacular, 694
+    Munzeewe'en III, 695
+    Fun in the Sun, 710
+    1st Annual MunZters Mash, 711
+    Fright Night, 712
+    McHenry Munzee Meetup, 713
+    N.E Hunt For the Headless Horsezee, 714
+    Meerkat Munzketeers, 715
+    Bewitching Burnley, 716
+    H Street Northeast Is Scary!, 717
+    Han Shot First - Halloween Brew Event, 718
+    derde Meet en Greet, 719
+    Lonestar Co-exist Roundup, 720
+    Scottish Rite Munzee Masters, 721
+    Capture the Farmington Gem Trail!, 723
+    Father Christmas 2016, 733
+    Black Friday Capping the Coast, 734
+    2nd Alabama River Region Christmas Party, 747
+    A Frickin Findlay Christmas Event, 748
+    Camp Fa La La La La, 749
+    Christmas in the (Liquid) Sunshine, 750
+    Christmas in the Emerald City, 751
+    DK Det Store Juleevent 2016, 752
+    Findlay's Smashing Great Christmas Event, 753
+    Good Night to All! FindlayThanks You!, 754
+    NH: Frost-zee the Munzman, 755
+    Plymouth Christmas Event, 756
+    Chemnitzer Weihnachtsmarkt 2016, 757
+    Adelaide Christmas Event, 758
+    Christmas in Turku, 759
+    FLTitusvilleMunzeeWarriors riding the Xmas Rocket, 760
+    Leyduin event, 761
+    Spiraltrollets julemunzee, 762
+    XMas 2016 Dortmund, 763
+    YMH Christmas Party, 764
+    Merry Munzmas 3, 767
+    A Christmas Dinner in Shepparton, 768
+    A Very Merry Munzee Christmas, 769
+    A WNY Christmas Munz Party, 770
+    Chili Christmas Bash, 771
+    Christmas in Prague 2016, 772
+    Christmas in Shepparton 2016, 773
+    Christmas Munzee Party In Appleton\, WI, 774
+    DK Sealand Happy Xmas, 775
+    Father Christmas in Fakenham, 776
+    A North Carolina Christmas, 777
+    Berliner Weihnachtsevent, 778
+    Christmas in Texas, 779
+    Helsinki Xmas Party, 780
+    NH- Cookies on Milk 2, 781
+    A Light Saber Rogue Chrismas, 788
+    Blue Munzee (Without You), 789
+    DEoXmas 2016, 790
+    Kansas City's Let it Snow, 791
+    Santa on the Loo, 792
+    Santa's Sunshine Shingding, 793
+    Budapest Munzee Xmas/Karacsony 2016, 794
+    Leeds Christmas Bash, 795
+    New Hampshire Christmas, 796
+    A DudeClan Christmas, 797
+    Kansas City's Candy Cane Lane, 798
+    A Charlie Brown Christmas Event 2016, 799
+    Twilight Xmas in SA, 803
+    Christmas in Pa 2016, 804
+    London Christmas 2016, 805
+]

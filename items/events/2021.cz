@@ -1,0 +1,202 @@
+Group {
+    name = 2021 Events
+    parents + Events
+}
+
+Event {
+    name = $1
+    id = $2
+} for [
+  Amberwood2021, 2801
+  7e Meet en Greet Workum, 2814
+  Smashing Suncoast Event, 2828
+  Suncoast Morning in the Park, 2829
+  Blast in the Park 2021, 2902
+  Munzee Madness 10 - morning event, 2947
+  Munzee Madness 10 - afternoon event, 2948
+  AZ Tokay Madness, 2949
+  Let's have some Pi in Texas, 2950
+  Des Moines March Into May, 2952
+  Springtime in Florida, 2953
+  Alabama River Region 2021 \#1, 2955
+  It's Raining Munzees! Hallelujah!, 2956
+  Alabama River Region 2021 \#2, 2957
+  Alabama River Region 2021 \#4, 2958
+  Alabama River Region 2021 \#3, 2959
+  Another Eggscuse For Chocolate, 2960
+  Alabama River Region 2021 \#5, 2961
+  Alabama River Region 2021 \#6, 2962
+  Nijntje aan Zee/Miffy at the Seaside, 2991
+  Lake Parker Easter Bunny Cap Event, 2992
+  I'm just here for the fried food, 2993
+  Hoping for Bunnies, 2999
+  berlin im april 2021, 3005
+  St Louis Marches into Spring, 3007
+  NJ April Fool's\, the bear is still here, 3008
+  CA - Hope Springs in Rancho San Diego, 3015
+  Florida Spring Fling, 3016
+  TavasZEE Szél Vizet Áraszt..., 3033 {
+      icons = tavaszeeszélvizetÁraszt...
+  }
+  Small Town Wentzville MO, 3034
+  Small Town Cedar Rapids, 3035
+  Munzee Mania 2021 -- Saturday Morning Event, 3036
+  Munzee Mania 2021 -- Main Event, 3037
+  Little Buffalo Biohazard Blast 2021, 3038
+  Small Town Rochelle IL, 3039
+  Munzee Mania 2021 -- Mother's Day Event, 3040
+  Roadwarriors LOVE them some Jolly Dipper, 3041
+  Small Town Greenville Ohio, 3042
+  TX: Marching into Marshall, 3043
+  Kevät Biolaaksossa, 3044
+  SC Munzee Jubilee: Fishing for Munzees, 3045
+  SC Munzee Jubilee: That's A Wrap, 3046
+  SC Munzee Jubilee, 3047
+  CuriosiTea 5 - March into May, 3048
+  PaparaZEE Card, 3052
+  Munzee on the May Express, 3053
+  KC's Spring-A-Ding-Fling, 3056
+  Crossed Arrows in the Big, 3057
+  I Spy Memorial Event, 3058
+  Schmetterlingsjagd durch die Orangerie, 3099
+  Sunset on the Space Coast June 2021, 3104
+  Midsummer on the Beach, 3105
+  Alabama Welcomes Texas to Town!, 3113
+  CH: Birthday Event 1/6, 3114
+  CH: Birthday Event 2/6, 3115
+  CH: Birthday Event 3/6, 3116
+  CH: Birthday Event 4/6, 3117
+  CH: Birthday Event 5/6, 3118
+  CH: Birthday Event 6/6, 3119
+  Munzee 10\, America 245, 3120
+  Munzee 10th Birthday Event Des Moines, 3121
+  Kesä Biolaaksossa, 3122
+  Happy 10th Birthday Munzee - Workum, 3123
+  WesTEN-Super-Mare 10th Birthday Party, 3126
+  FL - Munzee Turns The BIG 1-0, 3127
+  Weston Easter Bunnies, 3128
+  Celebrating 10 years NC Style, 3129
+  Munzee Turns 10 In Kenosha, 3197
+  A decade of munzee in Alabama, 3198
+  Florida Munzee 10th Birthday Celebration!, 3199
+  The Perfect 10, 3200
+  The BIG TEN, 3201
+  Celebrating 10 years of Munzee at MWGB ‼️, 3202
+  Sunnyside of Kansas City, 3203
+  Munzee's TENacious Birthday in KC, 3204
+  OH - After the Bash Wauseon, 3205
+  Birthday with the Longhorns, 3206
+  10 Years Happy Birthday Munzee!, 3207
+  Summer game night, 3208
+  Schon 10 Jahre?, 3209
+  Vancouver Summer MunzBash - 10th Birthday Party, 3226
+  Pastebucket's Memorial Charity Event, 3227
+  10-v synttäri eventti Tampere, 3228
+  Summer Munzee in the Chicago Burbs, 3229
+  Mermaids & Munzees, 3230
+  Grenaa fejrer stadig Munzee 10, 3236
+  Grenaa fejrer Munzee 10, 3237
+  Munzee Turns 10!, 3238
+  10th Birthday in Southern California, 3239
+  HELLsinki MUNZfun III, 3240
+  Munzee 10. Születésnap Szegeden, 3243
+  Greer Munzee Hunt V, 3246
+  Holy Cow! It's a Decade!, 3247
+  Munzee 10 @ 9 Mile, 3248
+  10 Year Birthday Bash in Marion, 3249
+  berlin 10 jahre, 3250
+  Maryland's Munzee 10th Birthday Celebration, 3251
+  PNW Bash: Munzee Hobbit Birthday, 3260
+  Knaresborough's Munzee 10th Birthday Party, 3261
+  Munzee's 10th Birthday Bowling Bash, 3272
+  Wie d' Zick verjeiht - 10 Johr "M" en Colonia, 3288
+  Munzee10 - Budapest, 3289
+  Hiiden syksy, 3290
+  Vienna is calling!, 3291
+  Hoedown in Jackson County, 3292
+  Finland visits Florida!, 3293
+  V for Victory, 3294
+  Autumn Wave 4, 3310
+  Ein Bonner in Berlin, 3311
+  I Scream for Ice Cream 2021, 3334
+  Coffee\, Tea\, or Munzee, 3335
+  Florida Sweet & Corny, 3336
+  Halloween Event 2021 Spaarnwoude, 3337
+  The Dumbzees invade Rome, 3338
+  FL - Munztober Meet & Greet, 3339
+  Kokkolan Halloween-etkot, 3340
+  stahnsdorf 2021 halloween, 3350
+  Pig Pickin' Spooky Fun, 3351
+  Biolinjan Halloween, 3352
+  Halloween i Hobro, 3353
+  River Region Halloween 2021, 3354
+  Ghosts and Ghouls in Greenville, 3355
+  R.I.P. Marie Antoinette Nov. 2\,1755-Oct. 16\,1793, 3356
+  Erensteiner Pumpkin, 3357
+  Hastily Thrown Together Event in Greenville\, SC, 3358
+  Harrisburg Haunting, 3359
+  A Spooktacular Owloween, 3360
+  TX: Cappin' with my Gnomies, 3361
+  Island Lake HalloZEEn, 3362
+  Scary Times in KC, 3371
+  2021 California Hocus Pocus Event, 3372
+  MD's Munzoween Spooktacular 2021, 3373
+  It's the Great Pumpkin\, Watertown, 3374
+  Autumn in St. Louis, 3375
+  MASSpooktacular, 3376
+  Sturgis Halloween Bash, 3377
+  2021 All Hallows' Eve Summoning, 3383
+  Berlin: Halloween am Wasserturm, 3384
+  Gnome place like Home on the Space Coast, 3385
+  Halloween in Hammel\, Denmark, 3386
+  Monster Pike Loose in Thorne Halloween Event, 3387
+  Halloween in Workum, 3388
+  Dracula Event, 3389
+  Spooky Halloween Soup, 3390
+  2021 Findlay Golden Halloween, 3391
+  Sunny Worthing, 3409
+  8e Meet & Greet Workum, 3413
+  Black Friday er uh Saturday on the Space Coast, 3426
+  Armadillo’s in AZ, 3434
+  Ice Cream and Coffee With Santa, 3435
+  A Christmas event in the Alabama River Region, 3436
+  2021 Christmas in California, 3437
+  Carolina Christmas 2021, 3438
+  A St. Louis Christmas 2021, 3439
+  FL - Munzburger Munzburger on Sanibel Island, 3440
+  Christmas 2021 in Georgetown\, KY, 3441
+  FL - It's Christmas on Sanibel, 3442
+  Jolly Good Time in KC, 3443
+  Christmas Cookies 2021, 3444
+  Sweet Christmas Dreams, 3445
+  Des Moines Christmas in the Wild, 3446
+  Jolly Findlay Christmas, 3447
+  Kölsche Weihnacht '21, 3448
+  Merry Moorestown Christmas, 3449
+  Joulu Biolaaksossa, 3450
+  Munzee Advent Event 2021, 3451
+  SinterKerst Workum 2021, 3452
+  Sinterklaas bijeenkomst, 3453
+  Casey Lake Christmas, 3510
+  Casey Lake Christmas Too, 3511
+  Let's Get ChristmasZee 5, 3512
+  Twisted Munzee Gift Exchange II, 3513
+  Rote Nasen die Zweite, 3514
+  Christmas Shopping @ Solomon Pond, 3515
+  Christmas Munzee Lunch, 3516
+  Berliner Weihnachtsevent 2021, 3517
+  Yippee ki yay\, MFs!, 3523
+  Dumbzees Pizza-mas Spectacular!, 3524
+  Deck the Firehalls with Munzees, 3525
+  Jólablót, 3530
+  Kristmas @ Kendrick, 3543
+  TX: I Want a Hippopotamus for Christmas 2021, 3544
+  Maryland Munzee Christmas 2021, 3545
+  Faversham Festivities, 3546
+  A Charlie Brown Christmas 2021, 3547
+  Vancouver Christmas Party 2021, 3548
+  West-Fries Geuzen Kerst Event 2021, 3549
+  Holzmarktweihnacht 2021 in HBS, 3550
+  Weihnachtspost in Crumstadt, 3551
+  Happy Holidays Minnesota Munzeers!, 3553
+]

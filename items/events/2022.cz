@@ -1,11 +1,35 @@
-template 2022Event from Event {
-    groups + 2022 Events
+Group {
+    name = 2022 Events
+    parents + Events
 }
 
-2022Event {
+Event {
     name = $1
     id = $2
 } for [
+    Moving to Florida!, 3573
+    Beignets & Munzees for Breakfast, 3578
+    Harry Potters Birthday Party 2022, 3579
+    Sssh... Someone is having a palindrome Birthday, 3632
+    Munzee Madness 11 - Friday Evening Event, 3633
+    Munzee Madness 11 - Saturday Dinner Event, 3634
+    Munzee Madness 11 - Saturday Afternoon Event, 3635
+    Munzee Madness 11 - Saturday Lunch Event, 3636
+    Munzee Madness 11 - Saturday Morning Event, 3637
+    TX - After the Challenge, 3664
+    Arizona Triple Play - Afternoon (Out \#3), 3665
+    Arizona Triple Play - Lunch (Out \#2), 3666
+    FL - Golf vs Munzee, 3694
+    Sunlight in Spring, 3695
+    Palmurannan Alla, 3696
+    We Survived Tax Day 2022, 3713
+    CuriosiTea 6, 3722
+    Prattville Pop Up Event, 3723
+    Munzee Mania 2022 - Friday, 3738
+    Munzee Mania 2022 - Main Event, 3739
+    Munzee Mania 2022 - Saturday Morning, 3740
+    Munzee Mania 2022 - Sunday, 3741
+    Celebrate Armed Forces Day at Devens, 3794
     11 (part 1), 3903
     11 (part 2), 3904
 ]

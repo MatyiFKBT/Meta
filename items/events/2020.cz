@@ -1,0 +1,129 @@
+Group {
+    name = 2020 Events
+    parents + Events
+}
+
+Event {
+    name = $1
+    id = $2
+} for [
+    Liseberg 2020, 2331
+    Happy New Year from the Space Coast, 2332
+    Suncoast 2020 - Challenge 1, 2338
+    Suncoast 2020, 2339
+    OzDayZee 2020 - Saturday dinner (Hackham), 2340
+    OzDayZee 2020 - Saturday event (McLaren Vale), 2347
+    OzDayZee '20 - Sunday PM, 2348
+    OzDayZee 2020 - Monday Event (Murray Bridge), 2349
+    OzDayZee '20 - Australia Day, 2350
+    Donut ask why (Florida), 2354
+    Space Coast Finale 2020, 2355
+    BTHVN2020, 2378
+    Leaping in Arizona, 2379
+    Leap into West Covina for Lunch, 2380
+    MM9 Dinner Event, 2381
+    MM9 - Lunch Stop at In N Out, 2382
+    MM9: FTHQ, 2383
+    MM9: Stage 1, 2384
+    MM9: Stage 2, 2385
+    Munzee at The Movies--Dr Dolittle 1967, 2386
+    Munzee at The Movies--Princess Bride, 2387
+    Alice in Wonderland, 2388
+    Munzee At The Movies - Breakfast At Tiffany's, 2389
+    After the Challenge Meet & Greet, 2402
+    March Madness in Greenville\, SC, 2406
+    Hope it Rains, 2413
+    Findlay Freak Show, 2414
+    Frühling am Rebstock, 2449
+    Springtime in the desert, 2471
+    FL - Fall Into Spring Stroll 2020, 2472
+    Brooksville Blueberry Munzee!, 2473
+    VA Beach IAF Emerald 20K, 2474
+    A Noblesville Spring, 2475
+    Easter Frolic in Como, 2481
+    Raision pääsiäinen, 2493
+    KC's Spring Fling, 2494
+    Welcome Home EagledadandXenia, 2501
+    Dyrenes Vilde Forårsfest, 2504
+    Frodig Forårsfrokost, 2505
+    TavasZee 2020, 2506
+    CuriosiTea 4 - Fall Into Spring, 2534
+    stahnsdorf 2020 - formerly vienna spring, 2535
+    Alabama RR Kickoff at the Catfish House, 2536
+    Alabama RR Friday Night Lights, 2537
+    Alabama RR 2020 Main event, 2538
+    Alabama RR Evening Out, 2539
+    Alabama RR Saturday Morning, 2540
+    AL RR Goodbye\, Farewell 2020, 2541
+    Happy Birthday x's 9, 2543
+    Munzee Birthday Cheers, 2544
+    Social Distancing 64th Birthday, 2553
+    Greetings Social Distancers, 2554
+    Bridge Over The River, 2555
+    Hope It Rains Again, 2556
+    Yorkshire's 9th Munzee Birthday Party, 2557
+    Teddy Bear's Picnic, 2562
+    Glamping Done Right in Plano, 2563
+    COVID-NINE-teen: Munzee Edition, 2564
+    Back To School on the Space Coast, 2569
+    Berlin - 9 - Sommercamp, 2573
+    Berlin - Frühling 2020, 2574
+    AgentHop and HopsGeneral invade Sanibel, 2575
+    The Incredible Lady Covid, 2582
+    2020 Dog Days of Summer, 2585
+    KC's Camp Chippewa, 2586
+    Munzee Mania 2020 -- Main Event, 2591
+    Munzee Mania 2020 -- Doughnuts & Coffee, 2592
+    Munzee Mania 2020 -- Autumn Stroll, 2593
+    Weston Helicopters WEEK, 2605
+    Greer Munzee Hunt IV - Pizza and Goodbyes!, 2617
+    Greer Munzee Hunt IV, 2618
+    Autumn Wave III, 2619
+    Building Friendships Lake Wales\, FL 2020, 2620
+    Gratitude to Barb & Dale Road Warriors Lake Wales, 2621
+    You're not Scared are you??, 2642
+    This Is Hallozeen Town!!, 2643
+    G Spooktacular, 2644
+    FL- After Halloween Masquerade, 2645
+    THANK YOU TO ALL VETERANS, 2692
+    veterans appreciation, 2693
+    MtBiker64 Memorial Gathering, 2694
+    TX: It's fine. I'm fine. Everything's fine., 2717
+    Let's Taco Bout Christmas, 2718
+    Munzee Mikulás, 2719
+    A Waconia Winter Wonderland -- Munzee Christmas, 2720
+    Winter Freak Show, 2721
+    Krampus an Evil Christmas, 2722
+    All I want for Christmas is for 2020 to End, 2723
+    Holidays in Kansas City, 2724
+    Helsinki Xmas Party IV, 2725
+    Fa la la la Llama, 2726
+    DK: Social jul - hver for sig, 2727
+    St. Nick's Day at Horseshoe Lake, 2728
+    Berliner Nikolausevent - BYOG 2020, 2729
+    Raision joulu, 2731
+    Let's Get ChristmasZee 4, 2732
+    Maryland Munzee Christmas 2020 Style, 2733
+    December Event Spaarnwoude, 2734
+    Hope It Snows, 2745
+    TX - I Want a Hippopotamus for Christmas 2020, 2746
+    Christmas in St. Louis, 2747
+    Spartanburg's Twisted Munzee Gift Exchange, 2748
+    Jingle Bells n Taco Shells, 2749
+    Christmas in Appleton\, WI 2020, 2750
+    Corona Xmas Bonn, 2788
+    Lost Christmas, 2789
+    No drama llama but margaritas for the holidays, 2790
+    A Charlie Brown Christmas Covid Style, 2791
+    Het West-fries Geuzen Kerstevent 2020, 2792
+    VA-ECC Munzee Holiday thing, 2793
+    NC Munzee Festival 2020: Perfect Vision, 2794
+    NC Munzee Festival 2020: A Clearer Vision, 2795
+    NC Munzee Festival 2020: Time for a check up, 2796
+    Kiwi Xmas Greetings, 2797
+    Christmas in Cloverdale II, 2798
+    Nachweihnachtsfeier in SPBG, 2799
+    Nachweihnachtsfeier in SPBG., 2800 {
+        humanId = nachweihnachtsfeierinspbg2
+    }
+]

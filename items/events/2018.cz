@@ -1,0 +1,292 @@
+Group {
+    name = 2018 Events
+    parents + Events
+}
+
+Event {
+    name = $1
+    id = $2
+} for [
+    FL Suncoast IV Beach Party, 1221
+    FL Suncoast IV Welcome, 1222
+    Suncoast IV Evening, 1223
+    Suncoast IV Main Event, 1224
+    FL - Happy New Year\, part 2, 1225
+    Alabama Thanks Florida, 1226
+    FL - Happy New Year\, part 1, 1227
+    Dinner with the Snowbird Friends, 1228
+    Australia Day 2018, 1230
+    Australia Day in Perth, 1231
+    Picnic in the Park 2018, 1239
+    GA- Folkston Funnel Fun, 1244
+    MM7 - Friday Night Get Together, 1249
+    Be Happy & Follow the Sun, 1250
+    Be Happy & Have a Ball!, 1251
+    FL - Be Happy & Eat Dessert, 1252
+    Munzee Madness 7, 1253
+    WallaBee MM7 Dinner Party, 1254
+    Munzee Madness 7 Early Risers, 1256
+    TX - Space Coast comes to Denton, 1257
+    Go Green 2018, 1258
+    Activities in the Park IV, 1260
+    Go Green Phoenix\, Tour de Cure and ZeeTour, 1261
+    Sheppzee Choczee Event- Shepparton Easter Event, 1262
+    St. Patty in the Desert, 1263
+    Strikin’ It Rich on St. Patty’s Day, 1283
+    Adelaide Goes Green, 1284
+    Ausflug ins Grüne (Templin/Berlin), 1285
+    FL - Go Green on the Space Coast, 1286
+    Go Green in North Carolina, 1287
+    March 2018 equinox Event, 1288
+    Kokomo Green Initiative, 1292
+    Sebring Florida Co-Exist Go Green, 1293
+    Sowing Munzee Seeds, 1294
+    Lake Nona FL Tour de Cure, 1295
+    Nuttynan Visits Prague, 1296
+    Redwood Park Goes Green, 1297
+    Gold Fever Tuesday, 1298
+    3rd Budapest Munzee Eastern - Go Green!, 1299
+    HELLsinki Easter 2018, 1300
+    helsinki easter 2018, 1301
+    Foolish Easter Event, 1302
+    AL River Region Kickoff Party, 1303
+    AL River Region 3rd Annual Easter Bash \#2, 1304
+    AL River Region 3rd Annual Easter Bash, 1305
+    AL River Region Easter Bash \#5, 1306
+    Alabama River Region Easter Event \#3 Wake-up call, 1307
+    Go Green @ Chemnitz, 1308
+    Go Green or Go Home, 1309
+    Go Green Turku 2018, 1310
+    Hello Spring 2018, 1311
+    Kansas City's Super Green event 1, 1312
+    Kansas City's Super Green event 2, 1313
+    PNW: Going Green in 2018, 1314
+    AL River Region Farewell Event, 1315
+    Go Green New England, 1316
+    Noordwijks Go Green Event, 1317
+    Weston Super Munzees, 1318
+    Go Green Mölndal, 1321
+    Maryland Goes Green with Munzee, 1322
+    Motor City Goes Green, 1323
+    Munzee Meets OWL - Oster-Event, 1324
+    Go Green in Jordan, 1325
+    Lost River Munzee Raid, 1326
+    SC: Go Green on Tax Day, 1327
+    Space Coast comes to Nebraska..., 1328
+    Super Green in KC, 1331
+    2nd Annual Curiositea Party, 1332
+    Celebrating Earth Day in ETX!, 1333
+    Litzenberg, 1334
+    Frankfurt: Plane Spotting Sunday (Green event), 1335
+    Go Green with Munzee / CITO Event, 1336
+    Yorkshire Go Green Event, 1337
+    (LGAS) MAY the Fourth be with LOU!, 1344
+    May The Fourth Be With You - Star Wars Day, 1345
+    Seattle Tour de Cure, 1346
+    (LGAS) Love Our Unique International Sunny Events, 1347
+    Munzee Mania 2018 -- Main Event, 1348
+    Munzee Mania 2018 -- Pizza Party, 1349
+    Munzee Mania 2018 -- Mother's Day Celebration, 1350
+    (LGAS) Let's Go And Scan!, 1353
+    (LGAS) Lady London Appreciation, 1354
+    The King & Queen Visit Kansas City, 1355
+    (LGAS) Salisbury\, UK, 1356
+    NY Allegany Bear Event, 1357
+    Rosemary Buchanan memorial event, 1358
+    Munzee Woodstock Cincinnati, 1361
+    GW 2018 Munzee Meet & Greet, 1362
+    KY - Small Town Event Florence, 1363
+    Beccles Wherry Munzee Event, 1364
+    MWMB 2018 Friday Night Nature Event, 1365
+    MWMB 2018, 1366
+    Sunshine In Vilnius, 1380
+    Munzee Soul, 1381
+    Birthday Circus 2018, 1382
+    Gemütlicher Grillevent, 1383
+    Berliner M7 Geburtstagsevent, 1384
+    FL - Happy Birthday Munzee Space Coast Style, 1385
+    happy 7th birthday, 1386
+    HELLsinki MUNZfun II, 1395
+    Happy birthday munzee!, 1396
+    Stuttgart 2018-Schwabenstreich I, 1397
+    Cedar Rapids Good Morning Birthday Party, 1398
+    3rd Annual Cedar Rapids Munzee Birthday Bash, 1399
+    7th Birthday in Sheppzee, 1400
+    AL River Regions's Cirque Du Munz 7th Birthday, 1401
+    Bowlr's Birthday \#2, 1402
+    Stuttgart 2018-Schwabenstreich II, 1403
+    Stuttgart 2018-Schwabenstreich III, 1404
+    7th Birthday Event, 1405
+    Stuttgart 2018-Schwabenstreich IV, 1406
+    Stuttgart 2018-Schwabenstreich V, 1407
+    Munzee Freak Show Birthday - Birmingham\, Alabama, 1408
+    (PA) This bear is getting old, 1476
+    Cirque Du Munz Mackay, 1477
+    Cirque Du Munzee, 1478
+    Cirque-Du-Stout Spectacular, 1479
+    Dog Days of Summer Under the Big Top!, 1480
+    m7- little Bday in DD, 1481
+    MHQ Under the Big Top 7th Birthday Celebration, 1482
+    Manze onnittelee 7-vuotiasta, 1483
+    Munzee's 7th Birthday in Yorkshire, 1484
+    Munzee Birthday in Praha, 1490
+    WI - The 3rd Annual Munzee Birthday Luau, 1491
+    Adelaide Cirque Du Munz Birthday Event, 1492
+    FTHQ Cirque Du Munz 7th Birthday Celebration, 1493
+    HeLp sAve oUR BEEs Event, 1494
+    Nürnberg 2018 M7, 1495
+    Magically Marvelous Midway Munzee Mixer, 1496
+    Pre 3rd Annual Munzee Birthday, 1497
+    Sit\, Sip and Munzee, 1498
+    South Sound Summer Event, 1499
+    Birthday Board Game Bash, 1500
+    DK: 7th birthday event evening, 1501
+    Munzee Djursland \#4, 1502
+    TICKETS PLEASE, 1503
+    Munzee Turns 7 - A Minneapolis Celebration, 1504
+    Munzee Turns 7 - A Saint Paul Celebration, 1505
+    7th MunzeeBirthday / 7.Munzee Szülinap, 1506
+    Cirque du Litzenberg, 1507
+    Going Out with a Bang in KC, 1508
+    Happy Birthday\, Munzee!, 1509
+    Maryland Celebrates Munzee's 7th Birthday, 1510
+    Munzee Birthday In RI, 1511
+    OH - Small Town Event Wauseon OH, 1512
+    Richmond Park Birthday Event, 1513
+    Saw U on the Ave at the 7th, 1514
+    Celebrate 7 years with RebelGTP at Sheetz, 1515
+    A Munzee Meet & Greet in West Bend, 1516
+    An afternoon in the Prater, 1517
+    Munzee Bash 2, 1518
+    Fall Into Munzee\, Mass-Style, 1520
+    2nd Annual Greater Vancouver Summer MunzBash, 1521
+    Culturele Hoofdstad van Europa 2018\, Leeuwarden, 1525
+    Autumn Wave, 1529
+    North Carolina Munzee Festival - Cary this year 3, 1530
+    North Carolina Munzee Festival - Cary this year 2, 1531
+    North Carolina Munzee Festival - Cary this year 1, 1532
+    North Carolina Munzee Festival - Cary Getaway, 1533
+    Pre Munzee Event for the NC Munzee Festival, 1534
+    Let's Have a Kiki - Birmingham\, AL, 1547
+    Oak Mountain Paddle n' Float Picnic, 1548
+    Hello Autumn, 1549
+    When in Rome..., 1550
+    BHAM Witches & Warlocks Luncheon, 1553
+    Zee Cappers' early Halloween Meet and Greet., 1555
+    A Cedar Rapids Halloween Celebration, 1556
+    Arizona MunzeeWeen, 1557
+    Autumn in New England, 1558
+    Back-alley Broomsticks in Brenham, 1559
+    Boo Bash in the River Region 2018, 1560
+    Boo in the 'Burg, 1561
+    Budapest Halloween, 1562
+    Fall Halloween Social, 1563
+    Getting Bewitched in Brenham!, 1564
+    Halloween auf Frankensteins Spuren, 1565
+    Munzeewe'en Christmas Boo-tique, 1566
+    Spooky Gothenburg 2018, 1567
+    The HalloZEEn Caterwauling, 1568
+    Boo of Quinte 2018, 1569
+    Ghostly at Beaton Park, 1570
+    Halloween 2018 Turku, 1571
+    Halloween in Plymouth, 1572
+    Halloween Party Workum, 1573
+    Munzee Halloween Party, 1574
+    Samhain in Southbourne / All Hallow's Eve event, 1575
+    The Witching Hour, 1576
+    Swiss Main Station Helloween Event 18, 1577
+    Aakkosasema, 1578
+    Fil's Birthday Halloween Event, 1579
+    A Frighteningly Fun Time in Waconia, 1583
+    (NC) Spooktacular board games, 1584
+    A Howling Good Time in Kansas City, 1585
+    A Mischievous Kansas City Event, 1586
+    An Ominous Kansas City Event, 1587
+    Berliner Halloween-Event 2018, 1588
+    Brandon Boo 2, 1590
+    Brandon Boo Bash 2018, 1591
+    Des Moines Hallo"weenie" Roast, 1592
+    PA - Halloween event in Johnstown, 1593
+    Pumpkin Spice & Everything Nice, 1594
+    Sheppzee Halloweenzee, 1595
+    Halloween Munzee Bash!, 1596
+    Norderstedts Hexen Event, 1597
+    Tiverton’s Hallowe’en, 1598
+    las vegas 2018, 1599
+    A scary dinner Djursland, 1600
+    Djursland spooky snack, 1601
+    NJ - Small Town Stanhope, 1606
+    Hobro Halloween Horror, 1607
+    Witch Way Do We Ghoul?, 1608
+    Bundoora Halloween Bash, 1609
+    Corral the Ghouls!, 1610
+    Halloween in North Florida, 1611
+    Happy Hallow-ween, 1612
+    Maryland Munzee Monster Mash, 1613
+    A Vancouver Halloween, 1614
+    Casting A Spell in Clitheroe, 1615
+    HELLoween, 1616
+    Litzenberg Halloween Bash, 1617
+    Spooky Aussie Mawson Lakes Adventures, 1618
+    Bye bye Bash, 1619
+    Horror Halloween, 1620
+    Central Ohio Monster Mash, 1621
+    MHQ - Haunted Hangout, 1622
+    MHQ - Werewolf Walking, 1623
+    MHQ - WallaBoo!, 1624
+    Monster Mash, 1625
+    MHQ - Trick ‘R Trot Race, 1626
+    National Black Cat Day \#coexist, 1627
+    2e Meet en Greet Kampen, 1628
+    The Great Dorchester "Gunpowder\, Treason and Plot, 1629
+    Black Friday Munzee Get Together, 1642
+    Father Christmas 2018, 1652
+    A. Partridge, 1653
+    Magdeburg Christmas 2018, 1654
+    Christmas in Sanibel 2018, 1655
+    Scrooged at Central Market, 1667
+    Alabama RR Christmas 2018, 1668
+    Merry Munzmas V, 1669
+    XXL-mas event Budapest, 1670
+    I want a Hippopotamus for Christmas 2018, 1671
+    Tacos for Christmas 2018, 1672
+    Pinellas Christmas Event, 1673
+    Cookies on Milk 2018, 1674
+    Let's Get Christmas-Zee Again, 1675
+    Jouluinen Turku 2018, 1676
+    Goudse Stroopwaffel Christmas Party, 1677
+    Down Home Gathering, 1678
+    Darmstädter WeihnachtZEEvent 2.2 - Herrngarten, 1679
+    Darmstädter WeihnachtZEEvent 2.1 - Rosenhöhe, 1680
+    Christmas in the Desert, 1681
+    Budapest Munzee Christmas 2018, 1682
+    A Cedar Rapids Christmas 2018, 1683
+    Xmas at Lyndhurst, 1684
+    The Nant-Witch hunt, 1685
+    Maryland Munzee Christmas 2018, 1686
+    Helsinki Xmas Party III, 1687
+    Berliner Weihnachtsevent 2018, 1688
+    Edina MN - A Munzee Christmas, 1689
+    Findlay Naughty (or nice?) Xmas Jamboree, 1690
+    Santa is coming to Appleton!!, 1692
+    A Very Sheppzee Xmas, 1693
+    Christmas Bath Water, 1694
+    Holiday Happiness 2018, 1695
+    Mele Kalikimaka from Birmingham!, 1696
+    Christmas in Noarlunga, 1697
+    Christmas in the Emerald City 2018, 1698
+    Christmas in the NW 2, 1699
+    Julehygge på gården, 1700
+    Julestue på gården, 1701
+    Yorkshire Christmas Party 2018, 1702
+    Liseberg X-mas Event, 1703
+    A Charlie Brown Christmas 2018, 1704
+    2018 Merry Christmas event of Korea, 1710
+    A Christmas to Remember in the Carolinas, 1711
+    National Lampoon's Christmas Vacation in KC, 1712
+    A Christmas Story in KC, 1713
+    Bad Santa is Coming to Kansas City, 1714
+    Oh Christmas Palm\, Oh Christmas Palm, 1715
+    Weihnachtsstress ade, 1716
+    Maryland Mistletoe Mischief, 1717
+]

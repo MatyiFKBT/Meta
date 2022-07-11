@@ -1,0 +1,275 @@
+Group {
+    name = 2017 Events
+    parents + Events
+}
+
+Event {
+    name = $1
+    id = $2
+} for [
+    Welcome 2017 @Drachenfels, 806
+    FrankBroughton's Big Birthday Blowout Bonanza!, 810
+    FL Suncoast Event III, 811
+    Fl Suncoast Pirate Feast, 812
+    Suncoast Munzee Ahoy, 813
+    Picnic in the Park 2017, 814
+    FL Suncoast Sunrise, 815
+    Munzee Victoria Dinner, 816
+    Australia Day 2017, 817
+    A Gathering of the Federation, 818
+    TX - White Unicorn, 819
+    Western Australia Day in SheppZee, 820
+    NZ South Island Meet MHQ, 825
+    FL-Kiwanis Island Shopping Day, 826
+    MHQ in NZ, 827
+    FL - Orange You Glad You Saw A Flag Waving Manate, 828
+    1st Wolluk event, 829
+    MO:StL Valentine Blood Drive, 830
+    Munzee Love in Fort Myers FL, 852
+    Munzee Love Is In The Air, 855
+    Veteran's Memorial Park Celebration, 856
+    FL- Munzee Lighthouse Park, 857
+    Food Truck Fantastico!, 858
+    Breakfast Before The Madness, 859
+    Munzee Madness 6, 860
+    Munzee Madness VI Dinner Party, 861
+    Lucky Leprechaun Event 2017, 864
+    Space Coast comes to Tyler\, TX, 865
+    Best Fest 2, 866
+    Tea Party 2017, 867
+    FL - Lake Manatea Party 2017, 868
+    Manateeaster Celebration 2017, 869
+    Boston Tea Party 2017, 870
+    A Geneseo Tea Party Where Everyone Has Coffee, 871
+    IL 1st Annual CuriosiTea Party, 872
+    NY CAFFEINE OVERLOAD!!!, 873
+    Alyn Waters Easter Eggcitment, 874
+    A Florida Easter Luncheon 2017, 875
+    Bideford's 1st Event - It's Tea Time!, 876
+    Easter in Oz 2017, 877
+    Egg'stra Special Maryland Munzee Easter Event, 878
+    Houston\, We Have a "Tea" Party, 879
+    Munzee by the See NZ, 880
+    Munzee Húsvét - Budapest, 881
+    Springtime at the Zoo 2017, 882
+    Stuttgart - Teatime in Hohenheim, 883
+    Easter Troll Hunt, 884
+    (MA) Hoppy Easter at Indian Hill, 885
+    DK: Påske i Aarhus, 886
+    NJ Bilby Event, 887
+    Hopping Time In The Carolinas, 888
+    Adelaide Easter Event 2017, 889
+    A Happy MunzeEaster MMXVII, 890
+    Tea Party in Helsinki 2017, 891
+    Tea Party Event in Turku!, 892
+    FL - Suncoast Eggstravaganza 2017, 893
+    Pershore's Melting Eggs!, 894
+    Orimattilan Pääsiäinen, 895
+    Hunter's Easter Munzee Bash, 896
+    AL - A Catfish Easter, 972
+    MO - Shamrocks and Easter?, 973
+    Friday Night Teaser, 974
+    1st of the 2nd Annual Alabama Easter Events, 975
+    2. Munzee Húsvét, 976
+    2nd of the 2nd Annual AL River Region Tea Parties, 977
+    3rd of the 2nd Annual Alabama Easter Events, 978
+    Am Anfang war das Ei, 979
+    Frog Hollow, 980
+    Southern California April Tea Party Event, 981
+    Mills Park Easter, 982
+    St. George's Easter Party, 983
+    Tea-party Leyduin, 984
+    6 Millionth Munzee, 985
+    Movies Monsters and 1 Munzee, 986
+    6 Millionth Munzee Special, 987
+    Rackheath's Pinwheel Tea Party, 988
+    (NC) Challenges in the Pines - Event 1, 989
+    (NC) Challenges in the Pines - Event 2, 990
+    (NC) Challenges in the Pines - Event 3, 991
+    A Slinky Easter 2017, 992
+    After Easter Meet and Greet, 993
+    Easter in Shepparton, 994
+    NTX: Texas Tea Party, 995
+    Spring In The Arizona Desert, 996
+    Codnor Casino Bank Holiday Prize Bonanza, 997
+    May the 4th Be With You, 1000
+    Revenge of the Fifth, 1001
+    Revenge of the SIxTH, 1002
+    \#Helsinki \#E1EW, 1003
+    Frankfurt Lion, 1004
+    Munzee May Mayhem in Leeds, 1005
+    2e Twente Event - The Netherlands, 1009
+    Orange Park Munzee, 1010
+    A May Munzee Meetup, 1011
+    Munzee Meet & Greet in Asheville NC, 1012
+    Coexist 15!, 1013
+    Malvern Glacier Event, 1014
+    MWMB17 Friday Night Hangout, 1016
+    Get Outdoors - Baytown, 1017
+    MWMB 2017, 1018
+    GA- Folkston Funnel, 1026
+    Holmenkollbakken 2017, 1027
+    MA - EagleDadandXenia Come To MA (The Sequel), 1028
+    Sunny Southport, 1029
+    SUISSE Summer Event, 1030
+    6th Birthday Super Rob, 1031
+    6th anniversary, 1032
+    Appleton's Pre-Birthday Meet And Greet, 1033
+    Cedar Rapids Birthday Bash in the Park, 1034
+    Cedar Rapids a Second Annual Birthday Bash, 1035
+    Cedar Rapids Birthday Bash - at the Lake, 1036
+    Let's Luau! Munzee's 6th Birthday, 1037
+    West Covina's 1st Event, 1038
+    AL RR 6th Birthday Celebration, 1039
+    Munzee meets OWL - Birthday Bash 1/4, 1040
+    Munzee meets OWL - Birthday Bash 2/4, 1041
+    Dog Days of Summer III, 1042
+    Melbourne's Midwinter Munzday 3, 1043
+    Munzee Post Birthday Bash, 1044
+    Six years plus a retirement, 1045
+    NC - Another six year event, 1046
+    6° of Sunstroke!, 1047
+    Barnstaple Birthday Bash, 1048
+    Birthday Bash & Board Games, 1049
+    Munzee meets OWL - Birthday Bash 3/4, 1050
+    Munzee meets OWL - Birthday Bash 4/4, 1051
+    MD - Munzee 6th Birthday Celebration, 1052
+    YMH Birthday Party, 1053
+    Munzee 6th BD, 1054
+    Zpeeralen Birthday Event, 1058
+    MA Birthday Bash 2017, 1059
+    Birmingham\, AL Birthday Party - Coexist, 1060
+    MHQ Birthday Bash 2017, 1061
+    Munzeen 6-vuotissynttärit Turussa, 1062
+    DK: Birthday BBQ party, 1063
+    DK: Munzee 6th birthday, 1064
+    HELLsinki MUNZfun, 1065
+    IA-Des Moines Birthday Bash, 1066
+    Munzee 6th Birthday/Christmas in July, 1067
+    Munzee turns 6 in the land of the K1W1, 1068
+    Pub Crawl: Virginia Beach Edition, 1069
+    Suncoast Party Time 2017, 1070
+    Brockenhurst Village Topaz Munzee Birthday Event, 1071
+    Celebrating 6 in Battle Ground, 1072
+    Munzee In The Mountains - 6th Birthday Bash, 1073
+    Munzee's 6th Birthday Party at the park, 1074
+    6th Birthday Celebrations in Tatura, 1075
+    OH - Happy Birthday In Wauseon, 1076
+    Wichita Birthday Bash 2017, 1077
+    6th Birthday in Wellington, 1078
+    Budapest 2017 M6, 1079
+    Let's Party Like a 6 Year Old, 1080
+    SC: A Super Duper Ultra Birthday Celebration, 1081
+    Spejdernes Lejr 2017, 1082
+    Battle of Tewkesbury, 1083
+    MI - Small Town Event Vicksburg Michigan, 1084
+    MWMB @ Muncie, 1085
+    Kansas City Birthday Bash 2017, 1089
+    6 Year Old Birthday Bash, 1090
+    A Munzee Birthday Celebration, 1091
+    HAPPY BIRTHDAY!!, 1092
+    Munzee 6.Szülinap, 1093
+    Munzees 6th in Onkaparinga, 1094
+    FL - Space Coast Birthday Celebration, 1095
+    Lucky Heather, 1096
+    Ride London, 1097
+    Sheffield Special Olympics 2017, 1098
+    Secretagentbill's Big Ride, 1099
+    WI - Munzee in Regner Park, 1102
+    Vielä on kesää jäljellä..., 1103
+    WI - Space Coast visits Appleton, 1104
+    MN - Space Coast visits Bloomington, 1108
+    IA - Space Coast visits cedar rapids, 1109
+    Almost Blacked Out, 1110
+    The Great American Solar ZeE's Eclipse, 1111
+    Greer Hunt for the Ace - A Small Town Event, 1112
+    Greer Munzee Hunt II, 1113
+    Solskinsøens Summer-Event, 1114
+    (VA) Hampton Roads Encore Munzee Event, 1116
+    15th Geocaching Hampton Roads Picnic & Munz, 1117
+    Girl Scout Get Fit Trail Kickoff, 1119
+    Get Fit Trail Cooldown, 1120
+    First Limbo Event, 1121
+    Metro Vancouver Summer MunzBash, 1122
+    PNW Munzee Bash, 1123
+    LA - Small Town Event Slidell, 1124
+    FL - Small Town Event Auburndale, 1125
+    The Richards Radcliffe Ramble, 1126
+    Gråbo Explosion 1, 1127
+    MHQ MunzFit 2017, 1128
+    Gråbo Explosion 2017, 1129
+    MHQ Bash 4: Deuces Wild, 1130
+    UK's D&H Mega Weekender - Ferndown, 1131
+    UK's D&H Mega Weekender - Southampton, 1132
+    WallaBash at MHQ, 1133
+    Lincoln Winners enclosure Event, 1134
+    FL - Frightful Fete on the Suncoast, 1140
+    Munzfit 2.0 @ Berlin, 1141
+    FL - Small Town Tupperware Party, 1142
+    MA - MunzFit @ Lake Park Loop, 1143
+    MA - Run from Jason Munzfit, 1145
+    "A" Munzoween Event, 1146
+    MunzFit 2.0 @Cologne, 1147
+    Tour de Cure DFW, 1148
+    FL - Munzee in Paradise Sanibel Island, 1149
+    A Spooktacular KC Halloween, 1152
+    Kansas City's Ghoulish Last Call, 1153
+    Munzeewe'en 2017, 1154
+    2nd Annual MunZters Mash, 1155
+    Monster Munzee Mash, 1156
+    N.H. Leaf Peeping - Munzee style, 1157
+    Bewitching the Bee!, 1158
+    Night of the Living Munzee, 1159
+    Something Wicked This Way Munzees, 1160
+    Munzee Salutes Veterans, 1161
+    Meet&Greet; Kampen, 1162
+    Suomi100 - Finland 100 years, 1165
+    Munzee CoExist / Alexandra MEGA 2017, 1166
+    FL- Black Friday Event Space Coast Style, 1167
+    Father Christmas 2017, 1171
+    Leipzig Ho - Ho - Ho!, 1172
+    The Xmas Magic of Munzee, 1173
+    TX - 2nd Annual White Unicorn, 1174
+    Santa’s Munzee Work Shop, 1175
+    Andover Xmas - UK (Hampshire), 1176
+    DK: Jul 2017 (Østjylland), 1177 {
+        icons = dk:jul2017(Østjylland)
+    }
+    NH | Cookies on Milk 3, 1178
+    TX-I want a Hippopotamus for Christmas, 1179
+    Texas Qrazy Christmas!, 1180
+    A N.E Naughty or Nice Xmas Meet and Greet, 1181
+    Alabama Christmas Gathering 2017, 1182
+    Budapesti Munzee Karácsony 2017, 1183
+    Christmas In Cedar Rapids 2017, 1184
+    Christmas in Faversham, 1185
+    Christmas in Shepparton 2017, 1186
+    Clan Creed Christmas Catchup, 1187
+    Getting Christmas-Zee!!!, 1188
+    Maryland Munzee Christmas 2017, 1189
+    Berliner MunzeeWeihnacht, 1190
+    Carolina Christmas Challenges (2017), 1191
+    Christmas in Connecticut 2017, 1192
+    Darmstädter WeihnachtZEEvent 2017, 1193
+    Helsinki Xmas Party II, 1194
+    Rainy Christmas in the PNW, 1195
+    Swiss Christmas Eventzee Dec. 12th 2017, 1196
+    A Merry "Curling" Christmas in Chaska, 1199
+    Feliz Navidad, 1200
+    Goudse Stroopwaffel Christmas event 2017, 1201
+    It's A Summer Munzee Christmas, 1202
+    Kansas City Coffee & Donuts In The Park, 1203
+    Christmas in the Emerald City 2017, 1204
+    A Charlie Brown Christmas 2017, 1205
+    HSM Munzee Christmas, 1206
+    Leeds Christmas Party 2017, 1207
+    Pickled for Xmas with Mrs Herbert, 1208
+    Adelaide Christmas Event 2017, 1209
+    Crazy Corn-y Christmas, 1211
+    Merry Munzmas IV, 1212
+    Merry Christmas 2017 in Incheon, 1213
+    Christmas in the Carolinas 2017, 1214
+    Too Chicken to Plunge Munzee / Eventzee Event, 1215
+    Home for the Holidays 2017, 1216
+    Christmas 2017 - Florida, 1217
+]

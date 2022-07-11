@@ -106,6 +106,12 @@ class CZFileParser {
         case "physical":
           type.setState(TypeState.Physical);
           break;
+        case "icons":
+          property.excludeAll ? type.setIcons(property.include) : type.addIcons(property.include);
+          break;
+        case "humanId":
+          type.setHumanId(property.requiredString);
+          break;
         default:
           throw new Error(`Unknown Base property ${property.key}`);
       }

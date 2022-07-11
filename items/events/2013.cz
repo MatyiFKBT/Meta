@@ -1,0 +1,22 @@
+Group {
+    name = 2013 Events
+    parents + Events
+}
+
+Event {
+    name = $1
+    id = $2
+} for [
+    Euro Ambassador, 30
+    Miss Michigan, 33
+    Munzee Madness 2, 35
+    Washington Parks, 38
+    Europe Event, 41
+    Europe Event robje64, 42
+    Europe Event Zeusi, 43
+    Europe Event PappaPad, 44
+    Garlic Breath After Party, 49
+    Team Munzee Canada, 74
+    New England, 77
+    Rob visits Deutschland, 79
+]

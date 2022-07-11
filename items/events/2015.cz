@@ -1,0 +1,184 @@
+Group {
+    name = 2015 Events
+    parents + Events
+}
+
+Event {
+    name = $1
+    id = $2
+} for [
+    Suncoast 2015, 191
+    Australia Day 2015, 192
+    Aussie Rob, 193
+    Munzee Bowl 2015, 194
+    Ancient Market Kingston 2015, 195
+    QRazy turns one, 201
+    From Spacecoast With Love, 203
+    Wisconsin 2015, 204
+    Love In The Air, 205
+    MMIV, 207
+    MMIV Friday Night, 208
+    Amsterdam 2015, 209
+    Celle 2015, 211
+    Hearts In DC, 212
+    SpaceCoast Pi Day, 213
+    Spartanburg Hunt, 214
+    Eagle Lake Event, 215
+    Second Battle Of Franklin, 217
+    Spring Fling 2015, 219
+    IAF 2015, 221
+    Barton Blues 2015, 222
+    DEocaching 2015, 223
+    SWFL 2015, 224
+    London Robbed, 225
+    London Timing, 226
+    Munzee 4a CURE, 227
+    Post Relay Challenge, 228
+    Rob in NC 2015, 229
+    Mint Hill 2015, 230
+    Danville Comic Con 2015, 231
+    Intercontinental Munzee Meet and Greet 2015, 232
+    Twente 2015, 233
+    Greetings From Florida 2015, 235
+    Wey May Day 2015, 236
+    MWMB 2015, 237
+    GW XIII, 238
+    Forging Community 2015, 239
+    Crossing Over II, 240
+    Towel Day 2015, 241
+    Plymouth 2015, 243
+    College For Kids 2015, 244
+    Wisconsin Party 2015, 245
+    Happy 4th Birthday Punta Gorda, 246
+    Happy 4th Birthday DK, 247
+    Happy 4th Birthday Fitchburg, 248
+    Happy 4th Birthday Ohio, 249
+    Blast In The Park II, 252
+    Happy 4th Birthday NC, 253
+    Happy 4th Birthday Debrecen, 254
+    Happy 4th Birthday Prague, 255
+    Happy 4th Birthday Zwolle, 256
+    Happy 4th Birthday Princeton, 257
+    Happy 4th Birthday Berlin Grunewald, 258
+    Happy 4th Birthday Yorkshire, 259
+    Happy 4th Birthday Tasmania, 260
+    Happy 4th Birthday Miami, 261
+    Happy 4th Birthday Kalispell, 262
+    Happy 4th Birthday Keysborough, 263
+    Happy 4th Birthday Kansas City, 264
+    Happy 4th Birthday Berlin Humboldthain, 270
+    Happy 4th Birthday Perth, 271
+    Happy 4th Birthday Sydney, 272
+    Happy 4th Birthday Shepparton, 273
+    Happy 4th Birthday Stuttgart, 274
+    Happy 4th Birthday Kent, 275
+    Happy 4th Birthday Tidewater, 276
+    Happy 4th Birthday Switzerland, 277
+    Happy 4th Birthday PA, 278
+    Happy 4th Birthday Grafton, 279
+    3rd Europe Event, 281
+    Cologne 2015 Day 2, 282
+    SoCal MunzeeCon 2015, 283
+    Meet Skylar, 284
+    EagleDadandXenia come to MA 2015, 285
+    A Walk In The Park 2015 Celle, 286
+    FL2Berlin 2015, 287
+    The Dog Days of Summer in NH 2015, 288
+    Rods Ribs and Munzees 2015, 289
+    Flag City MunzeeFest 2015, 291
+    Zombies ate my Munzees 2015, 292
+    West Bend Munzee Bash 2015, 293
+    Meet And Eat, 295
+    Summertime Blues 2015, 298
+    2nd Annual Kalispell Event, 299
+    Hot Dog PA 2015, 300
+    St Marys Bacon, 301
+    St Marys Egg, 302
+    DDCARDS ELK EVENT, 303
+    Dog Days of Summer in FL 2015, 304
+    Taste of Chittering 2015, 305
+    Hamptonroads Multi Event 2015, 309
+    A Walk In The Park 2015, 310
+    Mannheim 2015, 311
+    Friday Night Jibby 2015, 323
+    JibbyFest 2015, 324
+    Chittering Wildflower Festival 2015, 325
+    CA Munzee Pizza Bash 2015, 326
+    Live Free or Die 1 year celebration UK, 327
+    Live Free or Die 1 year celebration USA, 328
+    Triple Crown 2015, 329
+    Round The Bend 2015, 330
+    What is MUNZEE MA Cat, 331
+    What is MUNZEE MA, 332
+    Arts5 5th year anniversary, 333
+    MHQ Bash 2015, 334
+    Koelner Stammtisch V, 335
+    Pre UK Bash Breakfast, 336
+    MHQ Bash UK 2015, 337
+    New England Munzeers 2015, 338
+    Arthurs Seat MunzFest 2015, 339
+    Forging Community in Rome 2015, 340
+    The Hills Are Alive 2015, 341
+    Munzspooktackular I, 342
+    Munzspooktackular II, 343
+    Halloween in Space 2015, 344
+    Some More Fun 2015, 345
+    Munzeeween II, 347
+    Munztober Rob Zombee Event 2015, 348
+    Munzees and Treats I, 349
+    Munzees and Treats II, 350
+    Drammunzee Lunchzee 2015, 351
+    HAPPY BIRTHDAY BILLY 2015, 352
+    Meet and Greet in Workum 2015, 359
+    N E Munzee Meet and Greet 2015, 360
+    Cookie Crumbles 2015, 361
+    Brooklands Motor Circuit 2015, 362
+    Spartanburg Turkey Hunt 2015, 363
+    HiDude turns 1 Million, 364
+    The Return of the Minutemen, 365
+    Kalispell Christmas Munzee Event, 366
+    A Dickens Christmas At Downtown Disney, 367
+    Weihnachten in Berlin, 368
+    Capping the Coast Friday night, 369
+    MerryMunzmas 2, 370
+    A Beary Munzee Christmas, 371
+    Santa Rob, 372
+    Capping the Coast 2 Merritt Island, 373
+    Christmas in the Village, 374
+    Frohe Weihnacht Merry Christmas, 375
+    Merry Maryland, 376
+    NH Redneck Christmas Fun, 377
+    STX Merry Christmas, 378
+    Bah Munzee, 379
+    MaerchenMarkt MunzeeMeeting Gera, 380
+    Munzee Karacsony Budapest 2015, 381
+    ShoqAGA Christmas, 382
+    Texas Craft Christmas, 383
+    Christmas in Rochester, 384
+    Alabama River Christmas, 385
+    Christmas Qracker Portland, 386
+    DEoMunzee Xmas Debrecen, 387
+    Drammunzee Chrizeemas, 388
+    Gluehwein im Pott, 389
+    MA Ooooohhh Fudge, 391
+    Rudolph River Rumble, 392
+    Christmas Cookies on Milk, 393
+    12 Days of Munzee Christmas I, 394
+    12 Days of Munzee Christmas II, 395
+    SAPpalot Christmas, 396
+    Yorkshire Christmas Party, 397
+    PA Christmas Party, 398
+    Deck The Halls, 399
+    Noel in Shepparton, 401
+    Scan Click Cache, 402
+    Xmas in Celle, 403
+    Suncoast Christmas Cheer, 404
+    Will the Bells End, 405
+    Xmas in Hannover, 406
+    Christmas In Spartanburg, 407
+    A Charlie Brown Christmas, 408
+    Christmas in Workum 2015, 409
+    Det store Juleevent, 410
+    Snowshoes and FlipFlops, 411
+    Christmas in Amsterdam 2015, 412
+]
