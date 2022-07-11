@@ -1,0 +1,11 @@
+template 2022Event from Event {
+    groups + 2022 Events
+}
+
+2022Event {
+    name = $1
+    id = $2
+} for [
+    11 (part 1), 3903
+    11 (part 2), 3904
+]

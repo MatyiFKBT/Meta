@@ -124,9 +124,11 @@ export class CZPropertySet {
           const properties = {
             get: (key: string) => {
               if (key === "_index") return this.index;
-              const property = this.mergeFrom?.getProperty(key);
+              let useKey = key;
+              if (useKey.match(/^_[0-9]+$/)) useKey = useKey.slice(1);
+              const property = this.mergeFrom?.getProperty(useKey);
               if (!property) {
-                throw new Error(`Property ${i} not found`);
+                throw new Error(`Property ${useKey} not found`);
               }
               this.used(property);
               return property.number;
@@ -136,7 +138,10 @@ export class CZPropertySet {
             },
             has: (key: string) => {
               if (key === "end") return false;
-              return this.mergeFrom?.getProperty(key) !== undefined;
+              if (key === "_index") return true;
+              let useKey = key;
+              if (useKey.match(/^_[0-9]+$/)) useKey = useKey.slice(1);
+              return this.mergeFrom?.getProperty(useKey) !== undefined;
             },
             keys: () => {
               return this.mergeFrom?.properties.map(p => p.key).filter(i => i !== "end");

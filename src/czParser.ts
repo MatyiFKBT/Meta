@@ -103,6 +103,9 @@ class CZFileParser {
         case "standalone":
           ScatterType.prototype.standalone.bind(type)();
           break;
+        case "physical":
+          type.setState(TypeState.Physical);
+          break;
         default:
           throw new Error(`Unknown Base property ${property.key}`);
       }
