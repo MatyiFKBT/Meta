@@ -1,5 +1,0 @@
-template Event from Base {
-    physical
-    tags + TypeEvent, TypeEventCustom
-    hidden + Deploy, Inventory
-}
