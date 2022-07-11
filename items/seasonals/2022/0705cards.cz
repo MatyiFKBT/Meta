@@ -7,8 +7,8 @@ SeasonalGroup {
 
 template CardSuit from SeasonalBouncer {
     year = 2022
-    name = $(1) of $(card)
-    id = $((baseId + _index))
+    name = $(.1) of $(card)
+    id = $(baseId + .index)
 } for [
     Ace
     Two
@@ -26,9 +26,9 @@ template CardSuit from SeasonalBouncer {
 ]
 
 CardSuit {
-    card = $1
-    jackName = $2
-    baseId = $3
+    card = .1
+    jackName = .2
+    baseId = .3
 } for [
     Spades, Jack, 3810
     Clubs, Jack, 3823

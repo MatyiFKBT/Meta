@@ -1,5 +1,11 @@
-import { Operation, Property } from "./czParser";
-import * as mathjs from "mathjs";
+import {
+  Operation,
+  Property,
+  ExpressionOrString,
+  ReferenceExpression,
+  DotReferenceExpression,
+  Expression,
+} from "./czParser";
 
 type CZPropertyValue = string;
 
@@ -105,10 +111,72 @@ export class CZPropertySet {
 
   private readonly index: number = 0;
 
-  private resolveValuesAndApply(key: string, values: string[], inverse: boolean) {
+  private getMergeFromProperty(ref: ReferenceExpression | DotReferenceExpression) {
+    if (ref.type === "dot_reference") {
+      if (ref.value === "index") {
+        const property = new CZPropertyItem("index");
+        property.add(this.index.toString());
+        return property;
+      }
+      return this.mergeFrom?.getProperty("." + ref.value);
+    }
+    return this.mergeFrom?.getProperty(ref.value);
+  }
+
+  private resolveNumericExpression(expression: Expression): number | undefined {
+    const resolved = this.resolveExpression(expression);
+    if (resolved === undefined) return undefined;
+    return Number(resolved);
+  }
+
+  private resolveExpression(expression: Expression): string | undefined {
+    if (expression.type === "reference" || expression.type === "dot_reference") {
+      const property = this.getMergeFromProperty(expression);
+      if (property) this.used(property);
+      return property?.string;
+    }
+    if (expression.type === "number") {
+      return expression.value;
+    }
+    if (expression.type === "calculation") {
+      switch (expression.operator) {
+        case "+":
+          return (
+            this.resolveNumericExpression(expression.left)! +
+            this.resolveNumericExpression(expression.right)!
+          ).toString();
+        case "-":
+          return (
+            this.resolveNumericExpression(expression.left)! -
+            this.resolveNumericExpression(expression.right)!
+          ).toString();
+        case "*":
+          return (
+            this.resolveNumericExpression(expression.left)! *
+            this.resolveNumericExpression(expression.right)!
+          ).toString();
+        case "/":
+          return (
+            this.resolveNumericExpression(expression.left)! /
+            this.resolveNumericExpression(expression.right)!
+          ).toString();
+      }
+    }
+    if (expression.type === "or") {
+      return this.resolveExpression(expression.left) ?? this.resolveExpression(expression.right);
+    }
+    // @ts-expect-error Throw in case of unknown expression type
+    throw new Error(`Unsupported expression type ${expression.type}`);
+  }
+
+  private resolveValuesAndApply(
+    key: string,
+    values: (ExpressionOrString[] | DotReferenceExpression | ReferenceExpression)[],
+    inverse: boolean
+  ) {
     for (const value of values) {
-      if (value.startsWith("$") && !value.startsWith("$(")) {
-        const property = this.mergeFrom?.getProperty(value.slice(1));
+      if (!("length" in value)) {
+        const property = this.getMergeFromProperty(value);
         if (!property) {
           throw new Error(`Property ${value} not found`);
         }
@@ -118,53 +186,23 @@ export class CZPropertySet {
         this.getProperty(key)[inverse ? "remove" : "add"](...property.include);
         return;
       }
-      const updatedValue = value
-        .replace(/\$\(\([^)]+\)\)/g, i => {
-          const expression = i.slice(3, -2);
-          const properties = {
-            get: (key: string) => {
-              if (key === "_index") return this.index;
-              let useKey = key;
-              if (useKey.match(/^_[0-9]+$/)) useKey = useKey.slice(1);
-              const property = this.mergeFrom?.getProperty(useKey);
-              if (!property) {
-                throw new Error(`Property ${useKey} not found`);
-              }
-              this.used(property);
-              return property.number;
-            },
-            set: (key: string) => {
-              throw new Error(`Cannot set property ${key}`);
-            },
-            has: (key: string) => {
-              if (key === "end") return false;
-              if (key === "_index") return true;
-              let useKey = key;
-              if (useKey.match(/^_[0-9]+$/)) useKey = useKey.slice(1);
-              return this.mergeFrom?.getProperty(useKey) !== undefined;
-            },
-            keys: () => {
-              return this.mergeFrom?.properties.map(p => p.key).filter(i => i !== "end");
-            },
-          };
-          return mathjs.evaluate(expression, properties).toString();
-        })
-        .replace(/\$\([^)]+\)/g, i => {
-          const property = this.mergeFrom?.getProperty(i.slice(2, -1));
-          if (!property) {
-            throw new Error(`Property ${i} not found`);
+      const resolvedValue = value
+        .map(expression => {
+          if (typeof expression === "string") {
+            return expression;
           }
-          this.used(property);
-          return property.include[0];
-        });
-      this.getProperty(key)[inverse ? "remove" : "add"](updatedValue);
+          return this.resolveExpression(expression);
+        })
+        .join("");
+      this.getProperty(key)[inverse ? "remove" : "add"](resolvedValue);
     }
   }
 
   private addProperty(property: Property) {
     if (property.key === "...rest") {
-      if (property.value[0] === "true") {
+      if ((property.value[0] as string[])[0] === "true") {
         for (const unusedProperty of this.unusedProperties) {
+          if (unusedProperty.key.startsWith(".")) continue;
           if (unusedProperty.excludeAll) this.getProperty(unusedProperty.key).reset();
           this.getProperty(unusedProperty.key).remove(...unusedProperty.exclude);
           this.getProperty(unusedProperty.key).add(...unusedProperty.include);

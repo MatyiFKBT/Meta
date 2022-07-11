@@ -15,8 +15,8 @@ template UnBirthdayMailboxScatter from Scatter {
 }
 
 UnBirthdayMailboxCard {
-    name = $1
-    id = $((_2 ? _2 : 3863 + _index))
+    name = .1
+    id = $(.2 || 3863 + .index)
 } for [
     UnBirthday Mailbox, 3745
     UnBirthday Party Invitation Card

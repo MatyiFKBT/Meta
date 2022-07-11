@@ -4,8 +4,8 @@ Group {
 }
 
 Event {
-    name = $1
-    id = $2
+    name = .1
+    id = .2
 } for [
     Happy New Year 2019 Space Coast, 1718
     Bon Voyage KlassicKelly, 1719

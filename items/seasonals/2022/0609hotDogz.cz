@@ -7,8 +7,8 @@ SeasonalGroup {
 
 SeasonalBouncer {
     year = 2022
-    name = $1
-    id = $2
+    name = .1
+    id = .2
 } for [
     Hot Dog Buns, 3776
     Hot Dogs, 3777

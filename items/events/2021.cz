@@ -4,8 +4,8 @@ Group {
 }
 
 Event {
-    name = $1
-    id = $2
+    name = .1
+    id = .2
 } for [
   Amberwood2021, 2801
   7e Meet en Greet Workum, 2814

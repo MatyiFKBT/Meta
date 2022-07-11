@@ -4,8 +4,8 @@ Group {
 }
 
 Event {
-    name = $1
-    id = $2
+    name = .1
+    id = .2
 } for [
     Euro Ambassador, 30
     Miss Michigan, 33

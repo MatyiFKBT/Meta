@@ -4,8 +4,8 @@ Group {
 }
 
 Event {
-    name = $1
-    id = $2
+    name = .1
+    id = .2
 } for [
     Suncoast 2015, 191
     Australia Day 2015, 192

@@ -4,8 +4,8 @@ Group {
 }
 
 Event {
-    name = $1
-    id = $2
+    name = .1
+    id = .2
 } for [
     Liseberg 2020, 2331
     Happy New Year from the Space Coast, 2332

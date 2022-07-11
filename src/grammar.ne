@@ -39,7 +39,7 @@ template_from_statement -> %template _ [^\s]:+ _ %from _ [^\s]:+ _ properties (_
             {
                 item: "new",
                 type: d[6].map((i: any) => i.value).join(""),
-                properties: [...d[8], {key: "...rest", value: ["true"], operation: "="}],
+                properties: [...d[8], {key: "...rest", value: [["true"]], operation: "="}],
                 for: d[9]?.[1] ?? undefined,
             }
         ]
@@ -93,7 +93,7 @@ item_property -> [^\s=\+\-]:+ _ property_operation _ comma_separated_item {%
 %} | [^\s=\+\-\n}]:+ {%
      d => ({
          key: d[0].map((i: any) => i.value).join(""),
-         value: ["true"],
+         value: [["true"]],
          operation: "=",
      })
  %}
@@ -113,13 +113,30 @@ for_item -> comma_separated_item (_nll properties):? {%
 
 comma_separated_item -> comma_separated_item _nll comma _nll item {% d => ([...d[0], d[4]]) %} | item
 
-item -> non_ws_char (char:* non_ws_char):? {% d => [d[0], d[1]?.[0].join(""), d[1]?.[1]].filter(i => i).join("") %}
+item -> item_expression {% id %} | item_with_interpolation {% id %}
 
-non_ws_char -> [^\,\n\{\s\\] {% d => d[0].value %} | escaped_char
+item_expression -> minimal_expression {% id %}
+item_with_interpolation -> non_ws_first_char (char:* non_ws_char):? {% d => [d[0], ...d[1]?.[0]??[], d[1]?.[1]].filter(i => i) %}
 
-char -> [^\,\n\{\\] {% d => d[0].value %} | escaped_char
+non_ws_first_char -> [^\,\n\{\s\\$\.] {% d => d[0].value %} | escaped_char {% id %} | bracketed_expression {% id %}
+non_ws_char -> [^\,\n\{\s\\$] {% d => d[0].value %} | escaped_char {% id %} | bracketed_expression {% id %}
+
+char -> [^\,\n\{\\$] {% d => d[0].value %} | escaped_char {% id %} | bracketed_expression {% id %}
 
 escaped_char -> "\\" [^] {% d => d[1].value %}
+
+minimal_expression -> "$" reference_expression {% d => d[1] %} | dot_reference_expression {% d => d[0] %}
+
+bracketed_expression -> "$" "(" variable_expression ")" {% d => d[2] %}
+
+variable_expression -> or_expression {% id %}
+or_expression -> or_expression _ "|" "|" _ sum_expression {% d => ({type: "or", left: d[0], right: d[5]}) %} | sum_expression {% id %}
+sum_expression -> sum_expression _ ("+"|"-") _ product_expression {% d => ({type: "calculation", operator: d[2][0].value, left: d[0], right: d[4]}) %} | product_expression {% id %}
+product_expression -> product_expression _ ("*"|"/"|"%") _ value_expression {% d => ({type: "calculation", operator: d[2][0].value, left: d[0], right: d[4]}) %} | value_expression {% id %}
+value_expression -> number_expression {% id %} | reference_expression {% id %} | dot_reference_expression {% id %}
+number_expression -> [0-9]:+ {% d => ({type:"number", value: d[0].map(i => i.value).join("")}) %}
+reference_expression -> [^()\s0-9\.] [^()\s]:* {% d => ({type:"reference", value: [d[0], ...d[1]].map(i => i.value).join("")}) %}
+dot_reference_expression -> "." [^()\s]:+ {% d => ({type:"dot_reference", value: d[1].map(i => i.value).join("")}) %}
 
 # Aliases
 property_operation -> %property_operation

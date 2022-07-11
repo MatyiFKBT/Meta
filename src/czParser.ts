@@ -23,7 +23,7 @@ type TemplateItem = {
 type Item = BuilderItem | TemplateItem;
 
 interface For {
-  values: string[];
+  values: (ExpressionOrString[] | DotReferenceExpression | ReferenceExpression)[];
   properties?: Property[];
 }
 
@@ -35,9 +35,46 @@ export enum Operation {
 
 export interface Property {
   key: string;
-  value: string[];
+  value: (ExpressionOrString[] | DotReferenceExpression | ReferenceExpression)[];
   operation: Operation;
 }
+
+export interface OrExpression {
+  type: "or";
+  left: Expression;
+  right: Expression;
+}
+
+export interface CalculationExpression {
+  type: "calculation";
+  operator: "*" | "/" | "+" | "-";
+  left: Expression;
+  right: Expression;
+}
+
+export interface NumberExpression {
+  type: "number";
+  value: string;
+}
+
+export interface ReferenceExpression {
+  type: "reference";
+  value: string;
+}
+
+export interface DotReferenceExpression {
+  type: "dot_reference";
+  value: string;
+}
+
+export type Expression =
+  | OrExpression
+  | CalculationExpression
+  | NumberExpression
+  | ReferenceExpression
+  | DotReferenceExpression;
+
+export type ExpressionOrString = Expression | string;
 
 class CZFileParser {
   private fileName: string;
@@ -211,7 +248,7 @@ export class CZParser {
       const used = usedProperties as Set<CZPropertyItem> | undefined;
       const forProperties = new CZPropertySet(
         f.values.map((i, n) => ({
-          key: `${n + 1}`,
+          key: `.${n + 1}`,
           value: [i],
           operation: Operation.Equals,
         })),

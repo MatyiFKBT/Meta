@@ -4,8 +4,8 @@ Group {
 }
 
 Event {
-    name = $1
-    id = $2
+    name = .1
+    id = .2
 } for [
     FL Suncoast IV Beach Party, 1221
     FL Suncoast IV Welcome, 1222

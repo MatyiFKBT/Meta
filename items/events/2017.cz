@@ -4,8 +4,8 @@ Group {
 }
 
 Event {
-    name = $1
-    id = $2
+    name = .1
+    id = .2
 } for [
     Welcome 2017 @Drachenfels, 806
     FrankBroughton's Big Birthday Blowout Bonanza!, 810
