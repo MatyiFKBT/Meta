@@ -1,0 +1,193 @@
+template Tourism from Base {
+  groups = Tourism
+  tags = TypeTourism, TypeUnique
+  hidden = Inventory, Deploy
+  virtual
+}
+
+Group {
+    name = Tourism
+    parents = Normal
+}
+
+Tourism {
+    name = InternationElles
+    id = 2046
+    physical
+}
+
+Tourism {
+    name = InternationElles Virtual
+    id = 2047
+}
+
+Tourism {
+    name = Road Warriors 2022
+    physical
+}
+
+Tourism {
+    name = TX Historical Location
+    id = 682
+}
+
+Tourism {
+    name = FL Historical Location
+    id = 1474
+}
+
+Tourism {
+    name = CA Historical Location
+    id = 1475
+}
+
+Tourism {
+    name = World Heritage Historical Location
+    id = 1489
+}
+
+Tourism {
+    name = Great Britain Iconic Location
+    id = 1552
+}
+
+Tourism {
+    name = Czech Republic Iconic Location
+    id = 1767
+}
+
+Tourism {
+    name = Slovakia Iconic Location
+    id = 1768
+}
+
+Tourism {
+    name = Washington Iconic Location
+    id = 1831
+}
+
+Tourism {
+    name = New Hampshire Iconic Location
+    id = 2196
+}
+
+Tourism {
+    name = New Mexico Iconic Location
+    id = 2197
+}
+
+Tourism {
+    name = Minnesota Iconic Location
+    id = 2587
+}
+
+Tourism {
+    name = Australia Iconic Location
+    id = 1744
+}
+
+Tourism {
+    name = MHQ Flat Matt
+    id = 1006
+}
+
+Tourism {
+    name = MHQ Flat Rob
+    id = 1007
+}
+
+Tourism {
+    name = Tower Bridge Flat Lou
+    id = 1343
+}
+
+Tourism {
+    name = Gettysburg Flat Hammock
+    id = 1582
+}
+
+
+Tourism {
+    name = Get Fit Munzee Trail
+    id = 1115
+}
+
+Tourism {
+    name = Garfield Statue
+    id = 1019
+}
+
+Tourism {
+    name = Coexist
+    id = 216
+}
+
+Tourism {
+    name = Wayward Nation
+    id = 46
+}
+
+Tourism {
+    name = Whomp Nation
+    id = 47
+}
+
+Tourism {
+    name = Ice Bucket
+    id = 146
+}
+
+Tourism {
+    name = 10 Millionth Munzee
+    id = 2823
+}
+
+Tourism {
+    name = One Millionth
+    id = 101
+}
+
+
+# SafarZee
+Tourism {
+    name = Talon Print
+    id = 845
+}
+
+Tourism {
+    name = Hoof Print
+    id = 846
+}
+
+Tourism {
+    name = Foot Print
+    id = 847
+}
+
+Tourism {
+    name = Paw Print
+    id = 848
+}
+
+Tourism {
+    name = Claw Print
+    id = 849
+}
+
+
+Tourism {
+    name = BCA Garden
+    id = 686
+}
+
+Tourism {
+    name = Paw Garden
+    id = 862
+}
+
+
+Tourism {
+    name = MWTxUSA
+    id = 251
+}
+

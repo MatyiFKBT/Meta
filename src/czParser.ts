@@ -143,6 +143,9 @@ class CZFileParser {
         case "physical":
           type.setState(TypeState.Physical);
           break;
+        case "virtual":
+          type.setState(TypeState.Virtual);
+          break;
         case "icons":
           property.excludeAll ? type.setIcons(property.include) : type.addIcons(property.include);
           break;
