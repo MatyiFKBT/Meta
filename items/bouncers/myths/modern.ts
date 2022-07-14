@@ -4,31 +4,8 @@ import { skyland, treehouse } from "../../normal/destination";
 import { aquamarine, citrine, pinkDiamond, topaz } from "../../normal/jewels";
 import { greenie } from "../../normal/misc";
 import { airMystery, electricMystery, fireMystery, waterMystery } from "../../normal/mystery";
-import {
-  virtualAsparagus,
-  virtualBlack,
-  virtualBlue,
-  virtualBlueGreen,
-  virtualBlueViolet,
-  virtualBurntOrange,
-  virtualCadetBlue,
-  virtualCerulean,
-  virtualDandelion,
-  virtualGold,
-  virtualGoldenrod,
-  virtualGray,
-  virtualGreenYellow,
-  virtualIndigo,
-  virtualOliveGreen,
-  virtualOrange,
-  virtualPacificBlue,
-  virtualSilver,
-  virtualSpringGreen,
-  virtualTimberwolf,
-  virtualYellow,
-  virtualYellowGreen,
-} from "../../normal/virtual";
 import { mythsGroup } from "../_index";
+import { CZReference } from "../../../src/czProperties";
 
 export const ModernMythGroup = new Group({ name: "Modern Myths" }).addParent(mythsGroup);
 
@@ -106,17 +83,17 @@ export const hades = new ModernMythType("Hades", 2994)
     treehouse,
     greenie,
     fireMystery,
-    virtualTimberwolf,
-    virtualSilver,
-    virtualGray,
-    virtualBlack,
-    virtualBlueViolet,
-    virtualBlue,
-    virtualCadetBlue,
-    virtualBlueGreen,
-    virtualPacificBlue,
-    virtualCerulean,
-    virtualIndigo,
+    new CZReference("Virtual Timberwolf"),
+    new CZReference("Virtual Silver"),
+    new CZReference("Virtual Gray"),
+    new CZReference("Virtual Black"),
+    new CZReference("Virtual Blue Violet"),
+    new CZReference("Virtual Blue"),
+    new CZReference("Virtual Cadet Blue"),
+    new CZReference("Virtual Blue Green"),
+    new CZReference("Virtual Pacific Blue"),
+    new CZReference("Virtual Cerulean"),
+    new CZReference("Virtual Indigo"),
     citrine
   )
   .scattererScatters(bident, firestarter);
@@ -137,17 +114,17 @@ export const zeus = new ModernMythType("Zeus", 3421)
     greenie,
     topaz,
     electricMystery,
-    virtualAsparagus,
-    virtualOliveGreen,
-    virtualYellowGreen,
-    virtualGreenYellow,
-    virtualSpringGreen,
-    virtualGold,
-    virtualYellow,
-    virtualGoldenrod,
-    virtualDandelion,
-    virtualOrange,
-    virtualBurntOrange
+    new CZReference("Virtual Asparagus"),
+    new CZReference("Virtual Olive Green"),
+    new CZReference("Virtual Yellow Green"),
+    new CZReference("Virtual Green Yellow"),
+    new CZReference("Virtual Spring Green"),
+    new CZReference("Virtual Gold"),
+    new CZReference("Virtual Yellow"),
+    new CZReference("Virtual Goldenrod"),
+    new CZReference("Virtual Dandelion"),
+    new CZReference("Virtual Orange"),
+    new CZReference("Virtual Burnt Orange")
   )
   .scattererScatters(lightningBolt, multimeter);
 export const zeusHost = new ModernMythHostType("Zeus Host", 3424)

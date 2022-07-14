@@ -152,6 +152,9 @@ class CZFileParser {
         case "humanId":
           type.setHumanId(property.requiredString);
           break;
+        case "custom:useVirtualIcon":
+          type.setIcon(type.name.toLowerCase().replace(/\s/g, "_"));
+          break;
         default:
           throw new Error(`Unknown Base property ${property.key}`);
       }
@@ -166,6 +169,7 @@ class CZFileParser {
   runGroupTemplate(properties: CZPropertySet) {
     const group = new Group({
       name: properties.get("name").at(-1)!,
+      human_id: properties.get("humanId")?.at(-1),
     });
     if (properties.properties.some(i => i.exclude.length > 0)) {
       throw new Error("Remove found in Group template");
@@ -173,6 +177,7 @@ class CZFileParser {
     for (const property of properties.properties) {
       switch (property.key) {
         case "name":
+        case "humanId":
           break;
         case "seasonal.year":
           group.setSeasonalYear(property.requiredNumber);

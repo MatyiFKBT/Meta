@@ -1,15 +1,9 @@
 import { Year2020SeasonalGroup, Year2020SeasonalPOBType } from "./_index";
-import { Type, TypeTags } from "../../../src/items/type";
+import { TypeTags } from "../../../src/items/type";
 import { skyland, treehouse } from "../../normal/destination";
 import { earthMystery, iceMystery, airMystery, electricMystery } from "../../normal/mystery";
-import {
-  virtual,
-  virtualBlack,
-  virtualGray,
-  virtualSilver,
-  virtualTimberwolf,
-} from "../../normal/virtual";
 import { flatHammock, flatLou } from "../../normal/flats";
+import { CZReference } from "../../../src/czProperties";
 
 export const babyAnimalsGroup = new Year2020SeasonalGroup({
   name: "Baby Animals",
@@ -27,9 +21,13 @@ export const hedgehog = new Year2020SeasonalPOBType("Hedgehog", 2427)
     flatLou,
     type =>
       type.hasTags(TypeTags.TypeVirtual) &&
-      !([virtual, virtualBlack, virtualTimberwolf, virtualGray, virtualSilver] as Type[]).includes(
-        type
-      )
+      ![
+        "Virtual",
+        "Virtual Black",
+        "Virtual Timberwolf",
+        "Virtual Gray",
+        "Virtual Silver",
+      ].includes(type.name)
   );
 export const polarBear = new Year2020SeasonalPOBType("Polar Bear", 2428)
   .addGroup(babyAnimalsGroup)
@@ -41,10 +39,21 @@ export const polarBear = new Year2020SeasonalPOBType("Polar Bear", 2428)
     flatLou,
     type =>
       type.hasTags(TypeTags.TypeVirtual) &&
-      !([virtual, virtualBlack, virtualTimberwolf, virtualGray, virtualSilver] as Type[]).includes(
-        type
-      )
+      ![
+        "Virtual",
+        "Virtual Black",
+        "Virtual Timberwolf",
+        "Virtual Gray",
+        "Virtual Silver",
+      ].includes(type.name)
   );
 export const owlet = new Year2020SeasonalPOBType("Owlet", 2429)
   .addGroup(babyAnimalsGroup)
-  .addBouncerLandsOn(skyland, treehouse, virtual, airMystery, electricMystery, flatHammock);
+  .addBouncerLandsOn(
+    skyland,
+    treehouse,
+    new CZReference("Virtual"),
+    airMystery,
+    electricMystery,
+    flatHammock
+  );

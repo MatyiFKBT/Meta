@@ -2,8 +2,8 @@ import { Year2020SeasonalBouncerType, Year2020SeasonalGroup } from "./_index";
 import { TypeTags } from "../../../src/items/type";
 import { skyland } from "../../normal/destination";
 import { airMystery, electricMystery } from "../../normal/mystery";
-import { virtual } from "../../normal/virtual";
 import { amethyst, sapphire, citrine, onyx } from "../../normal/jewels";
+import { CZReference } from "../../../src/czProperties";
 
 export const hometownHeroes2020Group = new Year2020SeasonalGroup({
   name: "Hometown Heroes 2020",
@@ -13,7 +13,7 @@ export const hometownHeroes2020Group = new Year2020SeasonalGroup({
 
 export const staySafe = new Year2020SeasonalBouncerType("Stay Safe", 2482)
   .addGroup(hometownHeroes2020Group)
-  .addBouncerLandsOn(virtual);
+  .addBouncerLandsOn(new CZReference("Virtual"));
 export const groceryHero = new Year2020SeasonalBouncerType("Grocery Hero", 2485)
   .addGroup(hometownHeroes2020Group)
   .addBouncerLandsOn(type => type.hasTags(TypeTags.TypeVirtual));

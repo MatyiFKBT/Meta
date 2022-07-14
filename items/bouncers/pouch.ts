@@ -30,9 +30,9 @@ import {
   voidMystery,
   waterMystery,
 } from "../normal/mystery";
-import { virtualYellow, virtualGoldenrod, virtualDandelion } from "../normal/virtual";
 import { briefcase, catapult, crossbow, theHammer } from "../normal/weapons";
 import { pouchCreaturesGroup } from "./_index";
+import { CZReference } from "../../src/czProperties";
 
 export const S1PouchCreatureGroup = new Group({ name: "Season 1 Pouch Creatures" }).addParent(
   pouchCreaturesGroup
@@ -289,9 +289,9 @@ export const magnetus = new S2PouchCreatureType("Magnetus", 2306)
     waterMystery,
     joystickVirtual,
     joystickPhysical,
-    virtualYellow,
-    virtualGoldenrod,
-    virtualDandelion
+    new CZReference("Virtual Yellow"),
+    new CZReference("Virtual Goldenrod"),
+    new CZReference("Virtual Dandelion")
   )
   .addTag(TypeTags.BouncerPCStageless);
 export const magnetusVirtualHost = new S2PouchCreatureHostType("Magnetus Virtual Host", 2308)

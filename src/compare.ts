@@ -6,6 +6,39 @@ import path from "node:path";
 import fjss from "fast-json-stable-stringify";
 import chalk from "chalk";
 
+function mutateForBetterStringify(
+  typesName: Map<number, string>,
+  groupsName: Map<number, string>,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  obj: any
+) {
+  // IDs aren't stable, so we need to resolve IDs to names, which should be stable.
+  const clone = JSON.parse(JSON.stringify(obj));
+  if (clone.meta?.bouncer?.landsOn) {
+    clone.meta.bouncer.landsOn = clone.meta.bouncer.landsOn
+      .map((x: number) => typesName.get(x))
+      .sort();
+  }
+  if (clone.meta?.scatterer?.types) {
+    clone.meta.scatterer.types = clone.meta.scatterer.types
+      .map((x: number) => typesName.get(x))
+      .sort();
+  }
+  if (clone.meta?.bouncerHost?.types) {
+    clone.meta.bouncerHost.types = clone.meta.bouncerHost.types
+      .map((x: number) => typesName.get(x))
+      .sort();
+  }
+  if (clone.groups) {
+    clone.groups = clone.groups.map((x: number) => groupsName.get(x)).sort();
+  }
+  if (clone.meta?.evolution?.base) {
+    clone.meta.evolution.base = typesName.get(clone.meta.evolution.base);
+  }
+  delete clone.id;
+  return clone;
+}
+
 (async function () {
   const newDB = JSON.parse(
     fs.readFileSync(path.resolve(__dirname, "../output/database.json"), "utf8")
@@ -16,15 +49,32 @@ import chalk from "chalk";
     )
   );
 
-  const newDBTypes = new Map<string, string>();
-  const oldDBTypes = new Map<string, string>();
-
-  for (const type of newDB.types) {
-    newDBTypes.set(type.name, fjss(type));
+  const oldTypesName = new Map<number, string>();
+  const oldGroupsName = new Map<number, string>();
+  for (const type of oldDB.types) {
+    oldTypesName.set(type.id, type.name);
+  }
+  for (const group of oldDB.groups) {
+    oldGroupsName.set(group.id, group.name);
   }
 
+  const oldDBTypes = new Map<string, string>();
   for (const type of oldDB.types) {
-    oldDBTypes.set(type.name, fjss(type));
+    oldDBTypes.set(type.name, fjss(mutateForBetterStringify(oldTypesName, oldGroupsName, type)));
+  }
+
+  const newTypesName = new Map<number, string>();
+  const newGroupsName = new Map<number, string>();
+  for (const type of newDB.types) {
+    newTypesName.set(type.id, type.name);
+  }
+  for (const group of newDB.groups) {
+    newGroupsName.set(group.id, group.name);
+  }
+
+  const newDBTypes = new Map<string, string>();
+  for (const type of newDB.types) {
+    newDBTypes.set(type.name, fjss(mutateForBetterStringify(newTypesName, newGroupsName, type)));
   }
 
   for (const type of oldDBTypes.keys()) {

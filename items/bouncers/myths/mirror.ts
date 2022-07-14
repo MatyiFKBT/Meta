@@ -23,8 +23,8 @@ import {
   iceMystery,
 } from "../../normal/mystery";
 import { poiCemetery } from "../../normal/places";
-import { virtual } from "../../normal/virtual";
 import { mythsGroup } from "../_index";
+import { CZReference } from "../../../src/czProperties";
 
 export const MirrorMythGroup = new Group({ name: "Mirror Myths" }).addParent(mythsGroup);
 
@@ -175,7 +175,7 @@ export const elfNymph = new MirrorMythType("Elf Nymph", 2480)
     earthMystery,
     type => type.hasTags(TypeTags.TypeWeaponClan),
     type => type.hasTags(TypeTags.VirtualColourGreen),
-    virtual
+    new CZReference("Virtual")
   );
 export const snowQueen = new MirrorMythType("Snow Queen", 3455).addTag(TypeTags.BouncerMythVariant);
 export const nymphHost = new MirrorMythHostType("Nymph Host", 2119)

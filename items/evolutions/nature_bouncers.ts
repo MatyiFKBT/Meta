@@ -21,7 +21,6 @@ import {
   tomatoPlant,
   pottedPlant,
 } from "./farm";
-import { virtualRainbow } from "../normal/virtual";
 import { seaweed, canoe, safariTruck, muscleCar } from "./education";
 import {
   carnationSeed,
@@ -32,6 +31,7 @@ import {
   tulipSeed,
 } from "./nature";
 import { TPOBHostType } from "../bouncers/tpobs";
+import { CZReference } from "../../src/czProperties";
 
 export class NatureEvolutionBouncerHostType extends BouncerHostType {
   override template(): this {
@@ -96,7 +96,7 @@ export const butterfly = new NatureEvolutionBouncerType("Butterfly", 1830)
     type => type.hasTags(TypeTags.TypeSeasonal),
     trailMunzee,
     greenie,
-    virtualRainbow
+    new CZReference("Virtual Rainbow")
   )
   .setEvolutionStage(5)
   .setEvolutionBase(butterflyEgg);
@@ -121,7 +121,7 @@ export const morphoButterfly = new NatureEvolutionBouncerType("Morpho Butterfly"
     type => type.hasTags(TypeTags.TypeSeasonal),
     trailMunzee,
     greenie,
-    virtualRainbow
+    new CZReference("Virtual Rainbow")
   )
   .setEvolutionStage(5)
   .setEvolutionBase(butterflyEgg);
@@ -146,7 +146,7 @@ export const monarchButterfly = new NatureEvolutionBouncerType("Monarch Butterfl
     type => type.hasTags(TypeTags.TypeSeasonal),
     trailMunzee,
     greenie,
-    virtualRainbow
+    new CZReference("Virtual Rainbow")
   )
   .setEvolutionStage(5)
   .setEvolutionBase(butterflyEgg);
@@ -171,7 +171,7 @@ export const limeButterfly = new NatureEvolutionBouncerType("Lime Butterfly", 18
     type => type.hasTags(TypeTags.TypeSeasonal),
     trailMunzee,
     greenie,
-    virtualRainbow
+    new CZReference("Virtual Rainbow")
   )
   .setEvolutionStage(5)
   .setEvolutionBase(butterflyEgg);

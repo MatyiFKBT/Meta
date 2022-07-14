@@ -1,0 +1,173 @@
+Group {
+    name = Virtuals
+    humanId = virtual
+    parents + Normal
+}
+
+template Virtual from Base {
+    custom:useVirtualIcon
+    groups + Virtuals
+    tags + TypeVirtual
+    virtual
+    hidden = Inventory
+}
+
+Virtual {
+    name = .1
+    id = .2
+} for [
+    Virtual, 1409 {
+        hidden - Inventory
+    }
+    Virtual Rainbow, 1410
+    Virtual Timberwolf, 1411 {
+        tags + VirtualColourBlack
+    }
+    Virtual Silver, 1412 {
+        tags + VirtualColourBlack
+    }
+    Virtual Gray, 1413 {
+        tags + VirtualColourBlack
+    }
+    Virtual Black, 1414 {
+        tags + VirtualColourBlack
+    }
+    Virtual Orchid, 1415 {
+        tags + VirtualColourPink
+    }
+    Virtual Wisteria, 1416
+    Virtual Purple Mountains Majesty, 1417
+    Virtual Violet, 1418
+    Virtual Plum, 1419
+    Virtual Blue Violet, 1420 {
+        tags + VirtualColourBlue
+    }
+    Virtual Blue, 1421 {
+        tags + VirtualColourBlue
+    }
+    Virtual Cadet Blue, 1423 {
+        tags + VirtualColourBlue
+    }
+    Virtual Periwinkle, 1424 {
+        tags + VirtualColourBlue
+    }
+    Virtual Cornflower, 1425 {
+        tags + VirtualColourBlue
+    }
+    Virtual Blue Green, 1426 {
+        tags + VirtualColourBlue
+    }
+    Virtual Pacific Blue, 1427 {
+        tags + VirtualColourBlue
+    }
+    Virtual Cerulean, 1428 {
+        tags + VirtualColourBlue
+    }
+    Virtual Robin Egg Blue, 1429 {
+        tags + VirtualColourBlue
+    }
+    Virtual Indigo, 1430 {
+        tags + VirtualColourBlue
+    }
+    Virtual Turquoise Blue, 1431 {
+        tags + VirtualColourBlue
+    }
+    Virtual Sea Green, 1432 {
+        tags + VirtualColourGreen
+    }
+    Virtual Granny Smith Apple, 1433 {
+        tags + VirtualColourGreen
+    }
+    Virtual Green, 1434 {
+        tags + VirtualColourGreen
+    }
+    Virtual Forest Green, 1435 {
+        tags + VirtualColourGreen
+    }
+    Virtual Asparagus, 1436 {
+        tags + VirtualColourGreen
+    }
+    Virtual Olive Green, 1437 {
+        tags + VirtualColourGreen
+    }
+    Virtual Yellow Green, 1438 {
+        tags + VirtualColourGreen
+    }
+    Virtual Green Yellow, 1439 {
+        tags + VirtualColourGreen
+    }
+    Virtual Spring Green, 1440 {
+        tags + VirtualColourGreen
+    }
+    Virtual Gold, 1441
+    Virtual Yellow, 1442
+    Virtual Goldenrod, 1443
+    Virtual Dandelion, 1444
+    Virtual Orange, 1445
+    Virtual Burnt Orange, 1446
+    Virtual Melon, 1448 {
+        tags + VirtualColourPink
+    }
+    Virtual Pink, 1449 {
+        tags + VirtualColourPink, VirtualColourLouPink
+    }
+    Virtual Carnation Pink, 1450 {
+        tags + VirtualColourPink, VirtualColourLouPink
+    }
+    Virtual Mauvelous, 1451 {
+        tags + VirtualColourPink, VirtualColourLouPink
+    }
+    Virtual Salmon, 1452 {
+        tags + VirtualColourPink, VirtualColourLouPink
+    }
+    Virtual Tickle Me Pink, 1453 {
+        tags + VirtualColourPink, VirtualColourLouPink
+    }
+    Virtual Magenta, 1454 {
+        tags + VirtualColourPink, VirtualColourLouPink
+    }
+    Virtual Wild Strawberry, 1455 {
+        tags + VirtualColourPink, VirtualColourLouPink
+    }
+    Virtual Violet Red, 1456 {
+        tags + VirtualColourPink, VirtualColourLouPink
+    }
+    Virtual Red Violet, 1457 {
+        tags + VirtualColourPink, VirtualColourLouPink
+    }
+    Virtual Apricot, 1458
+    Virtual Peach, 1459
+    Virtual Macaroni and Cheese, 1460
+    Virtual Tan, 1461
+    Virtual Burnt Sienna, 1462
+    Virtual Bittersweet, 1463 {
+        tags + VirtualColourRed
+    }
+    Virtual Red Orange, 1464 {
+        tags + VirtualColourRed
+    }
+    Virtual Scarlet, 1465 {
+        tags + VirtualColourRed
+    }
+    Virtual Red, 1466 {
+        tags + VirtualColourRed
+    }
+    Virtual Brick Red, 1467 {
+        tags + VirtualColourRed
+    }
+    Virtual Mahogany, 1468 {
+        tags + VirtualColourRed, VirtualColourBrown
+    }
+    Virtual Chestnut, 1469 {
+        tags + VirtualColourBrown
+    }
+    Virtual Tumbleweed, 1470 {
+        tags + VirtualColourBrown
+    }
+    Virtual Raw Sienna, 1471 {
+        tags + VirtualColourBrown
+    }
+    Virtual Brown, 1473 {
+        tags + VirtualColourBrown
+    }
+]

@@ -291,7 +291,7 @@ export interface TypeData {
   details?: TypeDetails;
 }
 
-export type TypeReference = number | Type | ((type: Type) => boolean);
+export type TypeReference = number | Type | ((type: Type) => boolean) | CZReference;
 
 export class Type {
   static ids = new Set<number>();
@@ -903,6 +903,9 @@ export class TypeDatabase {
   private resolveReference(type: Type, ref: TypeReference): number[] {
     if (typeof ref === "number") return [ref];
     if (ref instanceof Type) return [ref.id];
+    if (ref instanceof CZReference) {
+      return this.types.filter(i => i.name === ref.value).map(i => i.id);
+    }
     const types = this.types.filter(ref);
     if (types.length === 0)
       console.warn(

@@ -22,9 +22,9 @@ import {
   voidMystery,
   waterMystery,
 } from "../normal/mystery";
-import { virtualGold, virtualYellow, virtualDandelion, virtualGoldenrod } from "../normal/virtual";
 import { mace, longsword, crossbow, battleAxe, theHammer } from "../normal/weapons";
 import { otherBouncersGroup } from "./_index";
+import { CZReference } from "../../src/czProperties";
 
 export const TOBGroup = new Group({ name: "Team Owned Bouncers" }).addParent(otherBouncersGroup);
 
@@ -112,10 +112,10 @@ export const gorgon = new TOBType("Gorgon", 1929)
     shamrock,
     type => type.hasTags(TypeTags.TypeZodiacWestern),
     type => type.hasTags(TypeTags.TypeJewel),
-    virtualGold,
-    virtualYellow,
-    virtualGoldenrod,
-    virtualDandelion
+    new CZReference("Virtual Gold"),
+    new CZReference("Virtual Yellow"),
+    new CZReference("Virtual Goldenrod"),
+    new CZReference("Virtual Dandelion")
   );
 export const motherEarth = new TOBType("Mother Earth", 2337)
   .addTags(TypeTags.BouncerMyth, TypeTags.BouncerMythAlterna, TypeTags.BouncerMythMirror)

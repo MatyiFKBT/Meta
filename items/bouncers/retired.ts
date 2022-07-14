@@ -14,9 +14,9 @@ import {
   voidMystery,
   mystery,
 } from "../normal/mystery";
-import { virtualYellow, virtualGoldenrod, virtualDandelion } from "../normal/virtual";
 import { briefcase, catapult, crossbow, theHammer } from "../normal/weapons";
 import { otherBouncersGroup } from "./_index";
+import { CZReference } from "../../src/czProperties";
 
 export const RetiredBouncerGroup = new Group({ name: "Retired Bouncers" }).addParent(
   otherBouncersGroup
@@ -104,9 +104,9 @@ export const zombieMagnetus = new RetiredBouncerType("Zombie Magnetus", 2820)
     waterMystery,
     joystickVirtual,
     joystickPhysical,
-    virtualYellow,
-    virtualGoldenrod,
-    virtualDandelion
+    new CZReference("Virtual Yellow"),
+    new CZReference("Virtual Goldenrod"),
+    new CZReference("Virtual Dandelion")
   );
 export const zombiePimedus = new RetiredBouncerType("Zombie Pimedus", 2821)
   .addTags(TypeTags.BouncerPC, TypeTags.BouncerPCZombie, TypeTags.BouncerRetired)
