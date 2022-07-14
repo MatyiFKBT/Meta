@@ -279,6 +279,7 @@ export const pinkPetal = new MechScatterType("Pink PETAL", 3801).standalone();
 export const purplePetal = new MechScatterType("Purple PETAL", 3799).standalone();
 export const redPetal = new MechScatterType("Red PETAL", 3803).standalone();
 export const yellowPetal = new MechScatterType("Yellow PETAL", 3805).standalone();
+export const paintedPetal = new MechScatterType("Painted PETAL", 3807).standalone();
 export const s33dl1n9 = new MechType("S33DL1N9", 3796);
 export const spr0u7 = new MechType("SPR0U7", 3797);
 export const n7ul1p = new MechType("7UL1P", 3798).scattererScatters(pinkPetal, purplePetal);

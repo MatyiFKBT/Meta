@@ -32,9 +32,15 @@ UnBirthdayMailboxCard {
     Carpenter Card
     Dodo Card
     Mock Turtle Card
+    Eat Me Cookie Card
 ]
 
 UnBirthdayMailboxScatter {
     name = Drink Me Potion
     id = 3896
+}
+
+UnBirthdayMailboxScatter {
+    name = Eat Me Cookie
+    id = 3897
 }
