@@ -12,6 +12,17 @@ template MechScatter from Scatter {
     standalone
 }
 
+template MechWithoutBroken {
+    MechBouncer {
+        name = $name
+        id = $id
+    }
+    MechScatter {
+        name = $scatterName
+        id = $scatterId
+    }
+}
+
 template MechWithoutScatter {
     MechBouncer {
         name = $name
@@ -42,4 +53,16 @@ Mech {
     id = 3900
     brokenName = Floating Ch3shire Cat
     scatterName = Floating Head
+}
+
+MechWithoutBroken {
+    name = C4T3RP1LL4R
+    id = 3909
+    scatterName = Sm0ke Message
+    scatterId = 3912
+}
+
+MechWithoutBroken {
+    name = Butt3rFry
+    scatterName = Sm0ke Song
 }
