@@ -38,7 +38,7 @@ async function generate(): Promise<Database> {
       const items: unknown[] = Object.values(imp);
       if (imp.SORT_BY === "id") {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        items.sort((a: any, b: any) => a.id - b.id);
+        items.sort((a: any, b: any) => (a.munzee_id ?? 100000) - (b.munzee_id ?? 100000));
       }
       for (const item of items) {
         if (item instanceof Type) {
