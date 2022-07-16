@@ -36,10 +36,8 @@ async function generate(): Promise<Database> {
     } else if (file.endsWith(".ts")) {
       const imp = await import(file);
       const items: unknown[] = Object.values(imp);
-      if (imp.SORT_BY === "id") {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        items.sort((a: any, b: any) => (a.munzee_id ?? 100000) - (b.munzee_id ?? 100000));
-      }
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      items.sort((a: any, b: any) => a.internal_id - b.internal_id);
       for (const item of items) {
         if (item instanceof Type) {
           database.types.add(item);

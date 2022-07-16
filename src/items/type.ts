@@ -297,6 +297,9 @@ export class Type {
   static ids = new Set<number>();
   static humanIds = new Set<string>();
 
+  private static i = 0;
+  private internal_id: number = Type.i++;
+
   static generateId(human_id: string) {
     if (this.humanIds.has(human_id)) {
       throw new Error(`Duplicate human_id: ${human_id}`);
@@ -946,6 +949,9 @@ export class TypeDatabase {
 }
 
 export class TypeSet<T extends Type = Type> extends Array<T> {
+  private static i = 0;
+  private internal_id: number = TypeSet.i++;
+
   constructor(array?: T[]) {
     super();
     if (array) this.push(...array);

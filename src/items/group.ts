@@ -23,6 +23,7 @@ export interface GroupSeasonalProperties {
   starts: string;
   ends: string;
 }
+
 export interface GroupDetails {
   related?: {
     blog?: string[];
@@ -31,8 +32,12 @@ export interface GroupDetails {
 }
 
 export class Group {
+  private static i = 0;
+  private internal_id: number = Group.i++;
+
   static ids = new Set<number>();
   static humanIds = new Set<string>();
+
   static generateId(human_id: string) {
     if (this.humanIds.has(human_id)) {
       throw new Error(`Duplicate human_id: ${human_id}`);
@@ -49,6 +54,7 @@ export class Group {
     }
     throw new Error(`Could not find a unique ID for ${human_id}`);
   }
+
   _db!: GroupDatabase;
   id: number;
   icons: string[] = null!;
@@ -58,6 +64,7 @@ export class Group {
   get parents() {
     return this._parents.map(v => this._db.deref(v));
   }
+
   seasonal?: GroupSeasonalProperties;
   legacyAccessories: LegacyAccessory[] = [];
   details: GroupDetails = {};
