@@ -18,6 +18,8 @@ import { poiCampground, poiCinema } from "../normal/places";
 import { crossbow, longsword, mace, shield } from "../normal/weapons";
 import { mechzGroup } from "./_index";
 
+export const SORT_BY = "id";
+
 export const MechGroup = new Group({ name: "MechZ" }).addParent(mechzGroup);
 
 export class MechType extends BouncerType {

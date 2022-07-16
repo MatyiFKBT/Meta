@@ -34,7 +34,12 @@ async function generate(): Promise<Database> {
     if (file.endsWith(".cz")) {
       czParser.runFileBuilders(file, database);
     } else if (file.endsWith(".ts")) {
-      const items: unknown[] = Object.values(await import(file));
+      const imp = await import(file);
+      const items: unknown[] = Object.values(imp);
+      if (imp.SORT_BY === "id") {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        items.sort((a: any, b: any) => a.id - b.id);
+      }
       for (const item of items) {
         if (item instanceof Type) {
           database.types.add(item);
