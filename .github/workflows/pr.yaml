@@ -1,0 +1,56 @@
+---
+name: PR
+
+on: pull_request
+
+jobs:
+  pr:
+    name: Check PR
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Cache pnpm modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: ^6.26.0
+          run_install: true
+      - name: Run build & compare
+        run: |
+          echo "::set-output name=build::$(pnpm run build)\n"
+          echo "::set-output name=check-images::$(pnpm run check-images)\n"
+          echo "::set-output name=compare::$(pnpm run compare)\n"
+        id: build
+      
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@v1
+        with:
+          message: |
+            Output of `pnpm run build`:
+            ${{ steps.build.outputs.build}}
+            Output of `pnpm run check-images`:
+            ${{ steps.build.outputs.check-images}}
+            Output of `pnpm run compare`:
+            ${{ steps.build.outputs.compare}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Edit PR comment
+        uses: thollander/actions-comment-pull-request@v1
+        with:
+          message: |
+            Output of `pnpm run build`:
+            ${{ steps.build.outputs.build}}
+            Output of `pnpm run check-images`:
+            ${{ steps.build.outputs.check-images}}
+            Output of `pnpm run compare`:
+            ${{ steps.build.outputs.compare}}
+          comment_includes: 'Output of'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
