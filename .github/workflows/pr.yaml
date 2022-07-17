@@ -1,0 +1,77 @@
+---
+name: PR
+# This workflow is meant to check every PR and create (or update) a comment with helpful logs.
+
+on: pull_request
+
+jobs:
+  pr:
+    name: Check PR
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Cache pnpm modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: ^6.26.0
+          run_install: true
+      - name: Run build & set outputs
+        run: |
+          echo "::set-output name=hello::world"
+          pnpm run build > build.txt
+          BUILD=$(cat build.txt)
+          BUILD="${BUILD//'%'/'%25'}"
+          BUILD="${BUILD//$'\n'/'%0A'}"
+          BUILD="${BUILD//$'\r'/'%0D'}"
+          echo ::set-output name=build::$BUILD
+          
+          pnpm run compare > compare.txt
+          COMPARE=$(cat compare.txt)
+          COMPARE="${COMPARE//'%'/'%25'}"
+          COMPARE="${COMPARE//$'\n'/'%0A'}"
+          COMPARE="${COMPARE//$'\r'/'%0D'}"
+          echo ::set-output name=compare::$COMPARE
+        id: build
+      - name: Run check-images
+        run: pnpm run check-images
+        continue-on-error: true
+        id: chkimg
+
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@v1
+        with:
+          message: |
+            # PR Status
+            <small>Commit: ${{ github.sha }}</small>
+            
+            ## Build
+            <details open>
+            <summary> Output of `pnpm run build`:</summary>
+            
+            ```sh
+            ${{ steps.build.outputs.build }}
+            ```
+            </details>
+
+            ## Compare
+            <details open>
+            <summary> Output of `pnpm run compare`:</summary>
+            
+            ```sh
+            ${{ steps.build.outputs.compare }}
+            ```
+            
+            ## Check-images
+            Status: `${{ steps.chkimg.outcome }}`
+            </details>
+          comment_includes: 'Output of'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
