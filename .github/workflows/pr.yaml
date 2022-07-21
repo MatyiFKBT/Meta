@@ -83,8 +83,8 @@ jobs:
             
             ```sh
             ${{ steps.compare.outputs.output }}
-            </details>
             ```
+            </details>
             
             ## Check-images
             <details open>
