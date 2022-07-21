@@ -1,0 +1,101 @@
+---
+name: PR
+# This workflow is meant to check every PR and create (or update) a comment with helpful logs.
+
+on: pull_request
+
+jobs:
+  pr:
+    name: Check PR
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Cache pnpm modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: ^6.26.0
+          run_install: true
+      - name: Run build
+        id: build
+        continue-on-error: true
+        run: |
+          set +e
+          pnpm run build > build.txt
+          set -e
+          BUILD=$(cat build.txt)
+          BUILD="${BUILD//'%'/'%25'}"
+          BUILD="${BUILD//$'\n'/'%0A'}"
+          BUILD="${BUILD//$'\r'/'%0D'}"
+          echo ::set-output name=output::$BUILD
+      - name: Run build & set outputs
+        id: compare
+        continue-on-error: true
+        run: |
+          set +e
+          pnpm run compare > compare.txt
+          set -e
+          COMPARE=$(cat compare.txt)
+          COMPARE="${COMPARE//'%'/'%25'}"
+          COMPARE="${COMPARE//$'\n'/'%0A'}"
+          COMPARE="${COMPARE//$'\r'/'%0D'}"
+          echo ::set-output name=output::$COMPARE
+      - name: Run check-images
+        id: chkimg
+        continue-on-error: true
+        run: |
+          set +e
+          pnpm run check-images > chkimg.txt
+          set -e
+          CHKIMG=$(cat chkimg.txt)
+          CHKIMG="${CHKIMG//'%'/'%25'}"
+          CHKIMG="${CHKIMG//$'\n'/'%0A'}"
+          CHKIMG="${CHKIMG//$'\r'/'%0D'}"
+          echo ::set-output name=output::$CHKIMG
+
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@v1
+        with:
+          message: |
+            # PR Status
+            <small>Commit: ${{ github.sha }}</small>
+            
+            ## Build
+            <details open>
+            <summary> Output of `pnpm run build`:</summary>
+            
+            ```sh
+            ${{ steps.build.outputs.output }}
+            ```
+            </details>
+
+            ## Compare
+            <details open>
+            <summary> Output of `pnpm run compare`:</summary>
+            
+            ```sh
+            ${{ steps.compare.outputs.output }}
+            </details>
+            ```
+            
+            ## Check-images
+            <details open>
+            <summary> Output of `pnpm run check-images`:</summary>
+            
+            ```sh
+            ${{ steps.chkimg.outputs.output }}
+            ```
+            </details>
+          comment_includes: 'Output of'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Set job result
+        if: steps.build.outcome != 'success' || steps.compare.outcome != 'success' || steps.chkimg.outcome != 'success'
+        run: exit 1
