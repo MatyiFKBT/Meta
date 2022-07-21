@@ -51,3 +51,8 @@ UnBirthdayMailboxScatter {
     name = Eat Me Cookie
     id = 3897
 }
+
+UnBirthdayMailboxScatter {
+    name = Bread-and-Butterfly
+    id = 3898
+}
