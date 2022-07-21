@@ -1,18 +1,17 @@
 import { Group } from "../../../src/items/group";
 import { BouncerHostType, BouncerType, TypeTags } from "../../../src/items/type";
+import { carrotEvos, goldenCarrot } from "../../evolutions/farm";
 import { coin } from "../../evolutions/reseller";
 import { skyland, treehouse } from "../../normal/destination";
 import { amethyst } from "../../normal/jewels";
 import { greenie, shamrock } from "../../normal/misc";
 import {
-  fireMystery,
-  iceMystery,
-  waterMystery,
   airMystery,
-  earthMystery,
-  voidMystery,
+  earthMystery, fireMystery,
+  iceMystery, voidMystery, waterMystery
 } from "../../normal/mystery";
-import { mace, longsword, theHammer, battleAxe } from "../../normal/weapons";
+import { battleAxe, longsword, mace, theHammer } from "../../normal/weapons";
+import { rabbitChineseZodiac } from "../../normal/zodiacs";
 import { mythsGroup } from "../_index";
 
 export const OriginalMythGroup = new Group({ name: "Original Myths" }).addParent(mythsGroup);
@@ -134,6 +133,9 @@ export const reptoidYeti = new OriginalMythType("Reptoid Yeti", 1877)
 export const monsterYeti = new OriginalMythType("Monster Yeti", 3368).addTag(
   TypeTags.BouncerMythVariant
 );
+export const whiteRabbitYeti = new OriginalMythType("White Rabbit", 3905)
+  .addTag(TypeTags.BouncerMythVariant)
+  .addBouncerLandsOn(greenie, rabbitChineseZodiac, goldenCarrot, carrotEvos, voidMystery, treehouse, skyland);
 export const yetiHost = new OriginalMythHostType("Yeti Host", 726)
   .physical()
   .addBouncerLandsOn(yeti, lycanthropeYeti, reptoidYeti, monsterYeti);
