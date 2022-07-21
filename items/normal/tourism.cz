@@ -23,6 +23,7 @@ Tourism {
 
 Tourism {
     name = Road Warriors 2022
+    id = 3908
     physical
 }
 
