@@ -217,6 +217,15 @@ export const newYearsEveGardenGnome = new Year2021SeasonalPOBType(
     treehouse,
     skyland
   );
+export const madHatterGnome = new Year2021SeasonalPOBType("Mad Hatter Garden Gnome", 3750)
+  .addGroup(gardenGnomesGroup)
+  .addBouncerLandsOn(
+    type => type.hasTags(TypeTags.TypeVirtual),
+    greenie,
+    treehouse,
+    skyland,
+    poiDrinkDepot
+  );
 export const gnomeHockeyHelmet = new Year2021SeasonalScatterType("Gnome Hockey Helmet", 2802)
   .addGroup(gardenGnomesGroup)
   .standalone();
@@ -273,5 +282,8 @@ export const gnomeToqueTopper = new Year2021SeasonalScatterType("Gnome Toque Top
   .addGroup(gardenGnomesGroup)
   .standalone();
 export const gnomeCountdownCap = new Year2021SeasonalScatterType("Gnome Countdown Cap", 3428)
+  .addGroup(gardenGnomesGroup)
+  .standalone();
+export const madHatterGnomeHat = new Year2021SeasonalScatterType("Mad Hatter Gnome Hat", 3751)
   .addGroup(gardenGnomesGroup)
   .standalone();
