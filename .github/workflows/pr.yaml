@@ -24,27 +24,39 @@ jobs:
         with:
           version: ^6.26.0
           run_install: true
-      - name: Run build & set outputs
+      - name: Run build
+        id: build
+        continue-on-error: true
         run: |
-          echo "::set-output name=hello::world"
           pnpm run build > build.txt
           BUILD=$(cat build.txt)
           BUILD="${BUILD//'%'/'%25'}"
           BUILD="${BUILD//$'\n'/'%0A'}"
           BUILD="${BUILD//$'\r'/'%0D'}"
-          echo ::set-output name=build::$BUILD
-          
+          echo ::set-output name=output::$BUILD
+          echo $BUILD > $GITHUB_STEP_SUMMARY
+      - name: Run build & set outputs
+        id: compare
+        continue-on-error: true
+        run: |
           pnpm run compare > compare.txt
           COMPARE=$(cat compare.txt)
           COMPARE="${COMPARE//'%'/'%25'}"
           COMPARE="${COMPARE//$'\n'/'%0A'}"
           COMPARE="${COMPARE//$'\r'/'%0D'}"
-          echo ::set-output name=compare::$COMPARE
-        id: build
+          echo ::set-output name=output::$COMPARE
+          echo $COMPARE > $GITHUB_STEP_SUMMARY
       - name: Run check-images
-        run: pnpm run check-images
-        continue-on-error: true
         id: chkimg
+        continue-on-error: true
+        run: |
+          pnpm run check-images > chkimg.txt
+          CHKIMG=$(cat chkimg.txt)
+          CHKIMG="${CHKIMG//'%'/'%25'}"
+          CHKIMG="${CHKIMG//$'\n'/'%0A'}"
+          CHKIMG="${CHKIMG//$'\r'/'%0D'}"
+          echo ::set-output name=output::$CHKIMG
+          echo $CHKIMG > $GITHUB_STEP_SUMMARY
 
       - name: Comment PR
         uses: thollander/actions-comment-pull-request@v1
@@ -58,7 +70,7 @@ jobs:
             <summary> Output of `pnpm run build`:</summary>
             
             ```sh
-            ${{ steps.build.outputs.build }}
+            ${{ steps.build.outputs.output }}
             ```
             </details>
 
@@ -67,14 +79,20 @@ jobs:
             <summary> Output of `pnpm run compare`:</summary>
             
             ```sh
-            ${{ steps.build.outputs.compare }}
+            ${{ steps.compare.outputs.output }}
+            </details>
             ```
             
             ## Check-images
-            Status: `${{ steps.chkimg.outcome }}`
+            <details open>
+            <summary> Output of `pnpm run check-images`:</summary>
+            
+            ```sh
+            ${{ steps.chkimg.outputs.output }}
+            ```
             </details>
           comment_includes: 'Output of'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Set job result
-        if: steps.chkimg.outcome != 'success'
+        if: steps.build.outcome != 'success' || steps.compare.outcome != 'success' || steps.chkimg.outcome != 'success'
         run: exit 1
