@@ -64,5 +64,7 @@ MechWithoutBroken {
 
 MechWithoutBroken {
     name = Butt3rFry
+    id = 3910
     scatterName = Sm0ke Song
+    scatterId = 3913
 }
