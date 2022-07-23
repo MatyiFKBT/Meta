@@ -138,4 +138,4 @@ export const whiteRabbitYeti = new OriginalMythType("White Rabbit", 3905)
   .addBouncerLandsOn(greenie, rabbitChineseZodiac, goldenCarrot, carrotEvos, voidMystery, treehouse, skyland);
 export const yetiHost = new OriginalMythHostType("Yeti Host", 726)
   .physical()
-  .addBouncerLandsOn(yeti, lycanthropeYeti, reptoidYeti, monsterYeti);
+  .addBouncerLandsOn(yeti, lycanthropeYeti, reptoidYeti, monsterYeti, whiteRabbitYeti);
