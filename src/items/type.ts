@@ -4,7 +4,8 @@ import { XMLBuilder } from "xmlbuilder2/lib/interfaces";
 import { Group } from "./group";
 import { LegacyType } from "./legacy";
 import { Database } from "../database";
-import { CZReference } from "../czProperties";
+import { CZPropertySet, CZReference } from "../czProperties";
+import { Operation } from "../czParser";
 
 export enum TypeState {
   Physical = 0x01,
@@ -298,7 +299,7 @@ export class Type {
   static humanIds = new Set<string>();
 
   private static i = 0;
-  private internal_id: number = Type.i++;
+  internal_id: number = Type.i++;
 
   static generateId(human_id: string) {
     if (this.humanIds.has(human_id)) {
@@ -333,7 +334,7 @@ export class Type {
   // State - `physical`/`virtual`/`bouncer`/`locationless`
   private data_state: TypeState;
   // Groups
-  private data_groups: Set<Group | CZReference>;
+  data_groups: Set<Group | CZReference>;
   // Points Data
   private data_points?: TypePoints;
   // Type Tags
@@ -384,12 +385,8 @@ export class Type {
     return this.data_munzee_id;
   }
 
-  get refed_groups(): (Group | CZReference)[] {
+  get groups(): (Group | CZReference)[] {
     return [...this.data_groups];
-  }
-
-  get groups(): Group[] {
-    return [...this.data_groups].map(v => this._db.groups.deref(v));
   }
 
   get state(): TypeState {
@@ -641,11 +638,7 @@ export class Type {
 
     if (this.data_state) data.state = this.data_state;
 
-    if (this.data_groups)
-      data.groups = [...this.data_groups]
-        .map(v => this._db.groups.deref(v))
-        .map(i => i.id)
-        .sort();
+    if (this.data_groups) data.groups = ([...this.data_groups] as Group[]).map(i => i.id).sort();
 
     if (this.data_points) data.points = this.data_points;
 
@@ -716,7 +709,10 @@ export class Type {
 
     if (this.data_groups)
       for (const group of this.data_groups)
-        type.ele("group").txt(this._db.groups.deref(group).id.toString()).up();
+        type
+          .ele("group")
+          .txt((group as Group).id.toString())
+          .up();
 
     if (this.data_points) type.ele("points").txt(JSON.stringify(this.data_points)).up();
 
@@ -805,7 +801,7 @@ export class Type {
       icons: this.data_icons,
       id: this.data_id.toString(),
       state: this.data_state,
-      category: this.groups[this.groups.length - 1].human_id.toString(),
+      category: (this.groups[this.groups.length - 1] as Group).human_id.toString(),
       tags: [...this.data_tags],
       hidden: [...this.data_hidden],
       meta:
@@ -903,11 +899,16 @@ export class TypeDatabase {
     return [...this.data];
   }
 
-  private resolveReference(type: Type, ref: TypeReference): number[] {
+  private resolveReference(
+    typeProperties: CZPropertySet[],
+    type: Type,
+    ref: TypeReference
+  ): number[] {
     if (typeof ref === "number") return [ref];
     if (ref instanceof Type) return [ref.id];
     if (ref instanceof CZReference) {
-      return this.types.filter(i => i.name === ref.value).map(i => i.id);
+      const resolvedRef = ref.resolve(typeProperties, "name");
+      return resolvedRef.map(i => i.get("id").requiredNumbers).flat();
     }
     const types = this.types.filter(ref);
     if (types.length === 0)
@@ -922,25 +923,43 @@ export class TypeDatabase {
   public resolveReferences(): void {
     if (this.referencesResolved) throw new Error("References have already been resolved");
     this.referencesResolved = true;
+    const typeProperties: CZPropertySet[] = this.types.map(
+      type =>
+        new CZPropertySet([
+          {
+            key: "name",
+            value: [[type.name]],
+            operation: Operation.Equals,
+          },
+          {
+            key: "id",
+            value: [[type.id.toString()]],
+            operation: Operation.Equals,
+          },
+        ])
+    );
     for (const type of this.types) {
+      type.data_groups = new Set(
+        [...type.data_groups].map(i => this._db.groups.publicResolveReference(type, i)).flat()
+      );
       if (type.meta.scatterer?.types) {
         type.meta.scatterer.types = type.meta.scatterer.types
-          .map(i => this.resolveReference(type, i))
+          .map(i => this.resolveReference(typeProperties, type, i))
           .flat();
       }
       if (type.meta.scatter?.landsOn) {
         type.meta.scatter.landsOn = type.meta.scatter.landsOn
-          .map(i => this.resolveReference(type, i))
+          .map(i => this.resolveReference(typeProperties, type, i))
           .flat();
       }
       if (type.meta.bouncer?.landsOn) {
         type.meta.bouncer.landsOn = type.meta.bouncer.landsOn
-          .map(i => this.resolveReference(type, i))
+          .map(i => this.resolveReference(typeProperties, type, i))
           .flat();
       }
       if (type.meta.bouncerHost?.types) {
         type.meta.bouncerHost.types = type.meta.bouncerHost.types
-          .map(i => this.resolveReference(type, i))
+          .map(i => this.resolveReference(typeProperties, type, i))
           .flat();
       }
       delete type.file;
@@ -950,7 +969,7 @@ export class TypeDatabase {
 
 export class TypeSet<T extends Type = Type> extends Array<T> {
   private static i = 0;
-  private internal_id: number = TypeSet.i++;
+  internal_id: number = TypeSet.i++;
 
   constructor(array?: T[]) {
     super();
