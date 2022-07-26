@@ -3,33 +3,51 @@ Group {
     parents + Mythicals
 }
 
-template StorylandMyth from Bouncer {
-    tags + BouncerMyth, BouncerMythStoryland
-}
-
-template StorylandMythHost from BouncerHost {
-    tags + BouncerHostMyth, BouncerHostMythStoryland
+template StorylandMyth {
+    Bouncer {
+        name = $name
+        id = $id
+        tags + BouncerMyth, BouncerMythStoryland
+        bouncer {
+            lands_on = $lands_on
+        }
+        scatterer {
+            scatters = $scatter.name
+        }
+    }
+    Scatter {
+        name = $scatter.name
+        id = $((scatter.id || id + 1))
+        standalone
+    }
 }
 
 StorylandMyth {
     name = Jabberwock
     id = 3917
-}
-Scatter {
-    name = Vorpal Sword
-    id = 3918
-    standalone
+    lands_on = (
+        Fire Mystery
+        Earth Mystery
+        Battle Axe
+        Longsword
+        Crossbow
+        Catapult
+        Shield
+        Skyland
+    )
+    scatter.name = Vorpal Sword
 }
 
-
-StorylandMythHost {
+BouncerHost {
     name = Storyland Host
     id = 3919
+    tags + BouncerHostMyth, BouncerHostMythStoryland
     state = Physical
 }
-StorylandMythHost {
+BouncerHost {
     name = Storyland Virtual Host
     id = 3920
+    tags + BouncerHostMyth, BouncerHostMythStoryland
     icons = storyland_virtual_host, storylandvirtualhost
     state = Virtual
 }

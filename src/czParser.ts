@@ -210,6 +210,12 @@ class CZFileParser extends CZScope {
         case "humanId":
           type.setHumanId(property.requiredString);
           break;
+        case "bouncer.lands_on":
+          type.setBouncerLandsOn(property.references);
+          break;
+        case "scatterer.scatters":
+          type.scattererScatters(property.references);
+          break;
         case "custom:useVirtualIcon":
           type.setIcon(type.name.toLowerCase().replace(/\s/g, "_"));
           break;
