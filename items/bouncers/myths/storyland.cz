@@ -1,0 +1,35 @@
+Group {
+    name = Storyland Myths
+    parents + Mythicals
+}
+
+template StorylandMyth from Bouncer {
+    tags + BouncerMyth, BouncerMythStoryland
+}
+
+template StorylandMythHost from BouncerHost {
+    tags + BouncerHostMyth, BouncerHostMythStoryland
+}
+
+StorylandMyth {
+    name = Jabberwock
+    id = 3917
+}
+Scatter {
+    name = Vorpal Sword
+    id = 3918
+    standalone
+}
+
+
+StorylandMythHost {
+    name = Storyland Host
+    id = 3919
+    state = Physical
+}
+StorylandMythHost {
+    name = Storyland Virtual Host
+    id = 3920
+    icons = storyland_virtual_host, storylandvirtualhost
+    state = Virtual
+}

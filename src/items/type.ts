@@ -88,6 +88,7 @@ export enum TypeTags {
   BouncerMythOriginal = 0x27,
   BouncerMythClassical = 0x28,
   BouncerMythMirror = 0x29,
+  BouncerMythStoryland = 0x7e,
   BouncerMythModern = 0x2a,
   BouncerMythAlterna = 0x2b,
   BouncerMythVariant = 0x2c,
@@ -124,6 +125,7 @@ export enum TypeTags {
   BouncerHostMythClassical = 0x48,
   BouncerHostMythMirror = 0x49,
   BouncerHostMythModern = 0x4a,
+  BouncerHostMythStoryland = 0x7f,
   BouncerHostMythAlterna = 0x4b,
   BouncerHostMythVariant = 0x4c,
   BouncerHostRetired = 0x4d,
@@ -190,7 +192,7 @@ export enum TypeTags {
   FunctionBlast = 0x72,
 }
 
-// Latest: DestinationBouncerTemporary = 0x7d,
+// Latest: BouncerHostMythStoryland = 0x7f,
 
 export interface TypeVirtualMeta {
   captureRadius?: number;

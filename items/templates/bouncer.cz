@@ -3,3 +3,7 @@ global template Bouncer from Base {
     hidden + Inventory
     state = Bouncer
 }
+global template BouncerHost from Base {
+    tags + BouncerHost
+    hidden + Inventory, Deploy
+}
