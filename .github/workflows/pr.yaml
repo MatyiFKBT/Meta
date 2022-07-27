@@ -96,6 +96,11 @@ jobs:
             </details>
           comment_includes: 'Output of'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Add labels
+        uses: actions-ecosystem/action-add-labels@v1
+        if: ${{ contains(steps.compare.outputs.output, 'No changes detected') }}
+        with:
+          labels: bug
       - name: Set job result
         if: steps.build.outcome != 'success' || steps.compare.outcome != 'success' || steps.chkimg.outcome != 'success'
         run: exit 1
