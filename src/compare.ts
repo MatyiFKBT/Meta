@@ -109,6 +109,6 @@ function mutateForBetterStringify(
     }
   }
   if (!changed) {
-    console.log(chalk.green("No changes detected"));
+    console.log(chalk.green`No changes detected`);
   }
 })();
