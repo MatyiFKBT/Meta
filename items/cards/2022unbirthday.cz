@@ -47,6 +47,7 @@ UnBirthdayMailboxCard {
     Dinah Card
     Dormouse Card
     Tiger Lily Card
+    Looking Glass Card
 ]
 
 UnBirthdayMailboxScatter { 
@@ -56,4 +57,5 @@ UnBirthdayMailboxScatter {
     Drink Me Potion
     Eat Me Cookie
     Bread-and-Butterfly
+    Looking Glass
 ]
