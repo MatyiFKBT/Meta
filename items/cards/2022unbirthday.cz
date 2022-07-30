@@ -51,7 +51,7 @@ UnBirthdayMailboxCard {
     Jabberwock Card
 ]
 
-UnBirthdayMailboxScatter { 
+UnBirthdayMailboxScatter {
     name = .1
     id = $(.2 || 3896 + .index)
 } for [

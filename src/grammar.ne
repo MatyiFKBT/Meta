@@ -42,7 +42,7 @@ template_from_statement -> scope %template _ [^\s\(\)]:+ (_ template_params):? _
             {
                 item: "new",
                 type: d[8].map((i: any) => i.value).join(""),
-                properties: [...d[10], {key: "...rest", value: [["true"]], operation: "="}],
+                properties: [...d[10], {key: "...", value: [["true"]], operation: "="}],
                 for: d[11]?.[1] ?? undefined,
             }
         ]
@@ -63,9 +63,13 @@ scope -> (("global"|"file") _):? {% d => d[0]?.[0][0].value %}
 
 template_params -> "(" _ template_params_list _ ")" {% d => d[2] %}
 
-template_params_list -> template_params_list "," _ template_param {% d => [...d[0], d[3]] %} | template_param {% id %}
+template_params_list -> template_params_list "," _ template_param {% d => [...d[0], d[3]] %} | template_param
 
-template_param -> [^\s\(\)\,]:+ {% id %}
+template_param -> (("." "." "."):+):? [^\s\(\)\,\.]:+ {% d => ({
+    item: "template_param",
+    name: d[1].map((i: any) => i.value).join(""),
+    modifiers: d[0]?.map((i: any) => i[0].value) ?? []
+}) %}
 
 template_internal_list -> template_internal_list _nll "\n" _ builder_statement {% d => ([...d[0], d[4]]) %} | builder_statement
 
@@ -89,7 +93,7 @@ property -> item_property | group_property {% d => d[0] %}
 
 group_property -> [^\s=\+\-{]:+ _ properties {%
     d => {
-        const key = d[0].map((i: any) => i.value).join("") + ".";
+        const key = d[0].map((i: any) => i.value).join("") + ":";
         return d[2].map((i: any) => ({
             key: key + i.key,
             value: i.value,

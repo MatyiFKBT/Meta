@@ -5,7 +5,7 @@ SeasonalGroup {
     end = 2022-08-07T23:59:00-05:00
 }
 
-template CardSuit from SeasonalBouncer {
+template CardSuit(card, jackName, baseId) from SeasonalBouncer {
     year = 2022
     name = $(.1) of $(card)
     id = $(baseId + .index)

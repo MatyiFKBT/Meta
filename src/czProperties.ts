@@ -1,12 +1,14 @@
 import {
-  Operation,
-  Property,
-  ExpressionOrString,
-  ReferenceExpression,
+  CZExpressionFunction,
   DotReferenceExpression,
   Expression,
   ExpressionFunctionOrString,
-  CZExpressionFunction,
+  ExpressionOrString,
+  Operation,
+  Property,
+  ReferenceExpression,
+  TemplateParam,
+  TemplateParamModifier,
 } from "./czParser";
 
 type CZPropertyValue = ExpressionFunctionOrString;
@@ -29,7 +31,7 @@ export class CZReference {
       return objects.filter(i => i.get(key).string === val);
     }
     return objects.filter(i => {
-      const resolved = i.resolveExpression(val.expression, true);
+      const resolved = i.resolveExpression(val.expression);
       return resolved !== undefined && resolved !== null && resolved !== false;
     });
   }
@@ -124,12 +126,10 @@ export class CZPropertySet {
 
   constructor(
     properties: Property[] | CZPropertyItem[],
-    mergeFrom?: CZPropertySet,
-    index = 0,
-    usedProperties = new Set<CZPropertyItem>()
+    params?: TemplateParam[],
+    paramsSet?: CZPropertySet,
+    index?: number
   ) {
-    this.usedProperties = usedProperties;
-
     if (properties[0] instanceof CZPropertyItem) {
       for (const property of properties) {
         this.propertiesMap.set(property.key, property as CZPropertyItem);
@@ -137,75 +137,67 @@ export class CZPropertySet {
       return;
     }
 
-    this.mergeFrom = mergeFrom;
-    this.unusedProperties = new Set(mergeFrom?.properties);
-    this.index = index;
-
-    for (const property of usedProperties) {
-      this.unusedProperties.delete(property);
-    }
+    this.params = params;
+    this.paramsSet = paramsSet;
+    if (index) this.index = index;
 
     for (const property of properties) {
       this.addProperty(property as Property);
     }
   }
 
-  private mergeFrom?: CZPropertySet;
-  private readonly unusedProperties!: Set<CZPropertyItem>;
-  public readonly usedProperties: Set<CZPropertyItem>;
-
-  private used(property: CZPropertyItem) {
-    this.usedProperties.add(property);
-    this.unusedProperties.delete(property);
-  }
+  paramsSet?: CZPropertySet;
+  params?: TemplateParam[];
 
   private readonly index: number = 0;
 
-  private getMergeFromProperty(
+  private getReferenceProperty(
     ref: ReferenceExpression | DotReferenceExpression,
-    resolveWithSelf: boolean
+    params?: TemplateParam[],
+    index?: number
   ) {
     if (ref.type === "dot_reference") {
       if (ref.value === "index") {
         const property = new CZPropertyItem("index");
-        property.add(this.index.toString());
+        if (index !== undefined) property.add(index?.toString());
         return property;
       }
-      if (resolveWithSelf) return this.getProperty("." + ref.value);
-      return this.mergeFrom?.getProperty("." + ref.value);
+      return this.getProperty("." + ref.value);
     }
-    if (resolveWithSelf) return this.getProperty(ref.value);
-    return this.mergeFrom?.getProperty(ref.value);
+    if (params && !params.some(i => i.name === ref.value))
+      throw new Error(`Param ${ref.value} not found`);
+    return this.getProperty(ref.value);
   }
 
   private resolveNumericExpression(
     expression: Expression,
-    resolveWithSelf: boolean
+    params?: TemplateParam[],
+    index?: number
   ): number | undefined {
-    const resolved = this.resolveExpression(expression, resolveWithSelf);
+    const resolved = this.resolveExpression(expression, params, index);
     if (resolved === undefined) return undefined;
     return Number(resolved);
   }
 
   private resolveArrayExpression(
     expression: Expression,
-    resolveWithSelf: boolean
+    params?: TemplateParam[],
+    index?: number
   ): (string | boolean | undefined)[] | string | boolean | undefined {
     if (expression.type === "reference" || expression.type === "dot_reference") {
-      const property = this.getMergeFromProperty(expression, resolveWithSelf);
-      if (property) this.used(property);
+      const property = this.getReferenceProperty(expression, params, index);
       return property?.strings;
     }
-    return this.resolveExpression(expression, resolveWithSelf);
+    return this.resolveExpression(expression, params, index);
   }
 
   public resolveExpression(
     expression: Expression,
-    resolveWithSelf: boolean
+    params?: TemplateParam[],
+    index?: number
   ): string | boolean | undefined {
     if (expression.type === "reference" || expression.type === "dot_reference") {
-      const property = this.getMergeFromProperty(expression, resolveWithSelf);
-      if (property) this.used(property);
+      const property = this.getReferenceProperty(expression, params, index);
       return property?.string;
     }
     if (expression.type === "number") {
@@ -218,44 +210,44 @@ export class CZPropertySet {
       switch (expression.operator) {
         case "+":
           return (
-            this.resolveNumericExpression(expression.left, resolveWithSelf)! +
-            this.resolveNumericExpression(expression.right, resolveWithSelf)!
+            this.resolveNumericExpression(expression.left, params, index)! +
+            this.resolveNumericExpression(expression.right, params, index)!
           ).toString();
         case "-":
           return (
-            this.resolveNumericExpression(expression.left, resolveWithSelf)! -
-            this.resolveNumericExpression(expression.right, resolveWithSelf)!
+            this.resolveNumericExpression(expression.left, params, index)! -
+            this.resolveNumericExpression(expression.right, params, index)!
           ).toString();
         case "*":
           return (
-            this.resolveNumericExpression(expression.left, resolveWithSelf)! *
-            this.resolveNumericExpression(expression.right, resolveWithSelf)!
+            this.resolveNumericExpression(expression.left, params, index)! *
+            this.resolveNumericExpression(expression.right, params, index)!
           ).toString();
         case "/":
           return (
-            this.resolveNumericExpression(expression.left, resolveWithSelf)! /
-            this.resolveNumericExpression(expression.right, resolveWithSelf)!
+            this.resolveNumericExpression(expression.left, params, index)! /
+            this.resolveNumericExpression(expression.right, params, index)!
           ).toString();
       }
     }
     if (expression.type === "or") {
       return (
-        this.resolveExpression(expression.left, resolveWithSelf) ||
-        this.resolveExpression(expression.right, resolveWithSelf)
+        this.resolveExpression(expression.left, params, index) ||
+        this.resolveExpression(expression.right, params, index)
       );
     }
     if (expression.type === "and") {
       return (
-        this.resolveExpression(expression.left, resolveWithSelf) &&
-        this.resolveExpression(expression.right, resolveWithSelf)
+        this.resolveExpression(expression.left, params, index) &&
+        this.resolveExpression(expression.right, params, index)
       );
     }
     if (expression.type === "comparison") {
-      const left = this.resolveArrayExpression(expression.left, resolveWithSelf);
+      const left = this.resolveArrayExpression(expression.left, params, index);
       if (typeof left === "object") {
-        return left.includes(this.resolveExpression(expression.right, resolveWithSelf));
+        return left.includes(this.resolveExpression(expression.right, params, index));
       }
-      return left === this.resolveExpression(expression.right, resolveWithSelf);
+      return left === this.resolveExpression(expression.right, params, index);
     }
 
     // @ts-expect-error Throw in case of unknown expression type
@@ -278,11 +270,10 @@ export class CZPropertySet {
         return;
       }
       if (!("length" in value)) {
-        const property = this.getMergeFromProperty(value, false);
+        const property = this.paramsSet?.getReferenceProperty(value, this.params ?? [], this.index);
         if (!property) {
           throw new Error(`Property ${value} not found`);
         }
-        this.used(property);
         if (!inverse && property.excludeAll) this.getProperty(key).reset();
         this.getProperty(key)[inverse ? "add" : "remove"](...property.exclude);
         this.getProperty(key)[inverse ? "remove" : "add"](...property.include);
@@ -293,7 +284,7 @@ export class CZPropertySet {
           if (typeof expression === "string") {
             return expression;
           }
-          return this.resolveExpression(expression, false);
+          return this.paramsSet?.resolveExpression(expression, this.params ?? [], this.index);
         })
         .join("");
       this.getProperty(key)[inverse ? "remove" : "add"](resolvedValue);
@@ -301,25 +292,42 @@ export class CZPropertySet {
   }
 
   private addProperty(property: Property) {
-    if (property.key === "...rest") {
+    if (property.key.startsWith("...")) {
       if ((property.value[0] as string[])[0] === "true") {
-        for (const unusedProperty of this.unusedProperties) {
-          if (unusedProperty.key.startsWith(".")) continue;
-          if (unusedProperty.excludeAll) this.getProperty(unusedProperty.key).reset();
-          this.getProperty(unusedProperty.key).remove(...unusedProperty.exclude);
-          this.getProperty(unusedProperty.key).add(...unusedProperty.include);
+        const key = property.key.slice(3);
+        for (const paramProperty of this.paramsSet?.properties ?? []) {
+          if (paramProperty.key.startsWith(".")) continue;
+          if (key !== "" && !paramProperty.key.startsWith(`${key}:`)) continue;
+          if (this.params?.some(i => i.name === paramProperty.key)) continue;
+          if (
+            this.params?.some(
+              i =>
+                i.modifiers.includes(TemplateParamModifier.Rest) &&
+                i.name !== key &&
+                paramProperty.key.startsWith(`${i.name}:`)
+            )
+          )
+            continue;
+          const paramKey = key === "" ? paramProperty.key : paramProperty.key.slice(key.length + 1);
+          if (paramProperty.excludeAll) this.getProperty(paramKey).reset();
+          this.getProperty(paramKey).remove(...paramProperty.exclude);
+          this.getProperty(paramKey).add(...paramProperty.include);
         }
       }
       return;
     }
 
-    if (property.operation === Operation.Equals) {
-      this.getProperty(property.key).reset();
-      this.resolveValuesAndApply(property.key, property.value, false);
-    } else if (property.operation === Operation.Plus) {
-      this.resolveValuesAndApply(property.key, property.value, false);
-    } else if (property.operation === Operation.Minus) {
-      this.resolveValuesAndApply(property.key, property.value, true);
+    switch (property.operation) {
+      case Operation.Equals:
+        this.getProperty(property.key).reset();
+        this.resolveValuesAndApply(property.key, property.value, false);
+        break;
+      case Operation.Plus:
+        this.resolveValuesAndApply(property.key, property.value, false);
+        break;
+      case Operation.Minus:
+        this.resolveValuesAndApply(property.key, property.value, true);
+        break;
     }
   }
 

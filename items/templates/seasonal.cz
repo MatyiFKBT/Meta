@@ -1,9 +1,9 @@
-global template SeasonalBouncer from Bouncer {
+global template SeasonalBouncer(year) from Bouncer {
     tags + BouncerSeasonal, BouncerSeasonal$(year)
     hidden + Deploy
 }
 
-global template SeasonalGroup from Group {
+global template SeasonalGroup(year, start, end) from Group {
     seasonal {
         year = $year
         start = $start

@@ -54,7 +54,7 @@ Year2021Card {
     Halloween 2021 Card, 3304
     Sweet Treats Card, 3305
     Trick or Treat Card, 3326 {
-        scatterer.scatters = Trick or Treat
+        scatterer:scatters = Trick or Treat
     }
     Frankenstein Card, 3330
     Mummy Card, 3331

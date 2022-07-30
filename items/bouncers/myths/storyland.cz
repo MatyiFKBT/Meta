@@ -3,7 +3,7 @@ Group {
     parents + Mythicals
 }
 
-template StorylandMyth {
+template StorylandMyth(name, id, lands_on, scatter:name, scatter:id) {
     Bouncer {
         name = $name
         id = $id
@@ -12,12 +12,12 @@ template StorylandMyth {
             lands_on = $lands_on
         }
         scatterer {
-            scatters = $scatter.name
+            scatters = $scatter:name
         }
     }
     Scatter {
-        name = $scatter.name
-        id = $((scatter.id || id + 1))
+        name = $scatter:name
+        id = $((scatter:id || id + 1))
         standalone
     }
 }
@@ -35,7 +35,7 @@ StorylandMyth {
         Shield
         Skyland
     )
-    scatter.name = Vorpal Sword
+    scatter:name = Vorpal Sword
 }
 
 BouncerHost {

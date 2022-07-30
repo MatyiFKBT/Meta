@@ -4,7 +4,7 @@ import fs from "node:fs";
 import { Database } from "./database";
 import { ScatterType, Type, TypeHidden, TypeState, TypeTags } from "./items/type";
 import { Group } from "./items/group";
-import { CZPropertyItem, CZPropertySet } from "./czProperties";
+import { CZPropertySet } from "./czProperties";
 import { checkType } from "./build";
 
 type BuilderItem = {
@@ -15,11 +15,20 @@ type BuilderItem = {
   if?: Expression;
 };
 
+export enum TemplateParamModifier {
+  Rest = "...",
+}
+
+export interface TemplateParam {
+  item: "template_param";
+  name: string;
+  modifiers: TemplateParamModifier[];
+}
+
 type TemplateItem = {
   item: "template";
   type: string;
-  // TODO: Handle explicit parameters
-  params: string[];
+  params: TemplateParam[];
   items: BuilderItem[];
   scope?: string;
 };
@@ -210,17 +219,17 @@ class CZFileParser extends CZScope {
         case "humanId":
           type.setHumanId(property.requiredString);
           break;
-        case "bouncer.lands_on":
+        case "bouncer:lands_on":
           type.setBouncerLandsOn(property.references);
           break;
-        case "scatterer.scatters":
+        case "scatterer:scatters":
           type.scattererScatters(property.references);
           break;
         case "custom:useVirtualIcon":
           type.setIcon(type.name.toLowerCase().replace(/\s/g, "_"));
           break;
         default:
-          throw new Error(`Unknown Base property ${property.key}`);
+          throw new Error(`Unknown Base property ${property.key}\nin ${this.fileName}`);
       }
     }
     if (this.lastGroup && type.groups.length === 0) {
@@ -243,20 +252,20 @@ class CZFileParser extends CZScope {
         case "name":
         case "humanId":
           break;
-        case "seasonal.year":
+        case "seasonal:year":
           group.setSeasonalYear(property.requiredNumber);
           break;
-        case "seasonal.start":
+        case "seasonal:start":
           group.setSeasonalStart(property.requiredString);
           break;
-        case "seasonal.end":
+        case "seasonal:end":
           group.setSeasonalEnd(property.requiredString);
           break;
         case "parents":
           group.setParents(property.references);
           break;
         default:
-          throw new Error(`Unknown Group property ${property.key}`);
+          throw new Error(`Unknown Group property ${property.key}\nin ${this.fileName}`);
       }
     }
     this.lastGroup = group;
@@ -323,27 +332,25 @@ export class CZParser extends CZScope {
 
   private flattenProperties(
     item: Pick<BuilderItem, "properties" | "for">,
-    withProperties?: CZPropertySet
+    withProperties?: CZPropertySet,
+    params?: TemplateParam[]
   ) {
     const propertiesList = [];
     let index = 0;
-    let usedProperties: Set<CZPropertyItem> | undefined = undefined;
 
     const forItems: [Property[], CZPropertySet][] = [];
 
     for (const f of item.for ?? [{ values: [] }]) {
-      const used = usedProperties as Set<CZPropertyItem> | undefined;
       const forProperties = new CZPropertySet(
         f.values.map((i, n) => ({
           key: `.${n + 1}`,
           value: [i],
           operation: Operation.Equals,
         })),
+        params,
         new CZPropertySet(withProperties?.properties ?? []),
-        index,
-        used
+        index
       );
-      usedProperties = forProperties.usedProperties;
 
       forItems.push([
         f.properties ?? [],
@@ -360,12 +367,11 @@ export class CZParser extends CZScope {
           // Base Properties
           [...item.properties, ...forItem[0]],
           // Applied Properties
+          params,
           forItem[1],
-          index,
-          usedProperties
+          index
         )
       );
-      usedProperties = propertiesList[propertiesList.length - 1].usedProperties;
       index++;
     }
     return propertiesList;
@@ -390,12 +396,12 @@ export class CZParser extends CZScope {
       throw new Error(`Template ${templateName} not found`);
     }
     for (const item of template.items) {
-      const itemPropertiesList = this.flattenProperties(item, properties);
+      const itemPropertiesList = this.flattenProperties(item, properties, template.params);
       for (const itemProperties of itemPropertiesList) {
         if (!item.if) {
           this.runTemplate(item.type, itemProperties, fileParser);
         } else {
-          const resolvedIf = itemProperties.resolveExpression(item.if, false);
+          const resolvedIf = itemProperties.paramsSet?.resolveExpression(item.if, template.params);
           if (resolvedIf !== undefined && resolvedIf !== null) {
             this.runTemplate(item.type, itemProperties, fileParser);
           }

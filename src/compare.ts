@@ -5,6 +5,7 @@ import fs from "node:fs";
 import path from "node:path";
 import fjss from "fast-json-stable-stringify";
 import chalk from "chalk";
+import { TypeTags, TypeHidden } from "./items/typeTags";
 
 function mutateForBetterStringify(
   typesName: Map<number, string>,
@@ -34,6 +35,12 @@ function mutateForBetterStringify(
   }
   if (clone.meta?.evolution?.base) {
     clone.meta.evolution.base = typesName.get(clone.meta.evolution.base);
+  }
+  if (clone.tags) {
+    clone.tags = clone.tags.map((x: number) => TypeTags[x]).sort();
+  }
+  if (clone.hidden) {
+    clone.hidden = clone.hidden.map((x: number) => TypeHidden[x]).sort();
   }
   delete clone.id;
   return clone;
